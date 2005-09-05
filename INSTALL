@@ -1,0 +1,13 @@
+safelist requires the following debian packages:
+
+apache2
+ruby1.8
+rake
+libapache2-mod-ruby
+libdbd-pg-ruby1.8
+postgresql
+postgresql-client
+
+
+Other software we are using
+request-tracker3.4

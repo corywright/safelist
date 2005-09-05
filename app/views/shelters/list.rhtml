@@ -1,0 +1,38 @@
+<h2> Shelter List</h1>
+
+<table>
+  <tr>
+  	<th class="horizontal">#</th>
+  <% for column in Shelter.content_columns %>
+    <th class="horizontal"><%= column.human_name %></th>
+  <% end %>
+  	<th class="horizontal" colspan="3"></th>
+  </tr>
+  
+<% for shelter in @shelters %>
+  <tr class="<%=h row_style :shelters %>">
+	<th class="counter"> <%=h counter :shelters %></th>  	
+  <% for column in Shelter.content_columns %>
+    <td><%=h shelter.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', {:action => 'show', :id => shelter}, :class => 'textbutton'  %></td>
+    <td><%= link_to 'Edit', {:action => 'edit', :id => shelter}, :class => 'textbutton'  %></td>
+    <td><%= link_to 'Delete', {:action => 'destroy', :id => shelter}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+	<tr>
+	<td colspan="5" align="right"><%= link_to 'Add Shelter', {:action => 'new'}, :class => 'textbutton'  %></td>
+	
+	</tr>
+</table>
+
+<%= link_to 'Previous page', { :page => @shelter_pages.current.previous }, :class =>'textbutton'  if @shelter_pages.current.previous %>
+<%= link_to 'Next page', { :page => @shelter_pages.current.next }, :class =>'textbutton'  if @shelter_pages.current.next %> 
+
+<br />
+
+<p>
+<!-- Feature needs added -->
+<!-- <%= link_to 'Add Shelter', {:action => 'new'}, :class => 'textbutton'  %> --></p>
+
+<br>

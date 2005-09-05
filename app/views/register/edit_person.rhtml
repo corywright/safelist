@@ -1,0 +1,6 @@
+<h2>Edit Family Member</h2>
+
+<%= start_form_tag :action => "update_person",:id=> @id %>
+    <%= render_partial 'form' %>
+    <input type="submit" value="Save" name="next"><br>
+<%= end_form_tag %>

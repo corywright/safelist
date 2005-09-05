@@ -1,0 +1,17 @@
+<h2>Shelter Details</h2>
+<table>
+<tr>
+	<th class="vertical"> Name </th>
+	<td> <%=h @shelter.name %></td>
+</tr>
+<tr>
+	<th class="vertical"> Address </th>
+	<td> <%=h @shelter.address_id %> </td>
+</tr>
+<tr>
+	<td colspan="2" align="right"><%= link_to 'Edit', {:action => 'edit', :id => @shelter}, :class => 'textbutton'  %></td>
+</tr>
+</table>
+
+<p> 
+<%= link_to 'Shelter List', {:action => 'list'}, :class => 'textbutton'  %></p>

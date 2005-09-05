@@ -1,0 +1,9 @@
+<h2>Edit a Shelter</h2>
+
+<%= start_form_tag :action => 'update', :id => @shelter %>
+  <%= render_partial 'form' %>
+  <%= submit_tag 'Save' %>
+<%= end_form_tag %>
+
+<%= link_to 'View Shelter', {:action => 'show', :id => @shelter}, :class => 'textbutton'  %>
+<%= link_to 'Shelter List', {:action => 'list'}, :class => 'textbutton'  %>

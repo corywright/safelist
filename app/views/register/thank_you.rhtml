@@ -1,0 +1,81 @@
+<h1>American Red Cross</h1>
+
+Family Last Name: <%= @people[0].last_name %><br>
+<table>
+<tr>
+	<td><table>
+		<tr>
+			<th>Names</th>
+			<th>Age</th>
+			<th>Medical<br>Problem</th>
+			<th>Referred To Nurse</th>
+		</tr>
+		
+		<% for person in @people %>
+            <% if !person.shelter.nil? %>
+                <tr>
+                    <td><%= person.name %> (<%= person.person_type.name%>)</td>
+                    <td><%= person.medical_problems%></td>
+                    <td><%= person.referred_to_nurse? ? "Yes" : "No"%></td>
+                </tr>
+            <% end %>
+		<% end %>
+        <tr>
+            <th colspan=4>Family NOT at the Facility</th>
+        </tr>
+		<% for person in @people %>
+            <% if person.shelter.nil? %>
+                <tr>
+                    <td><%= person.name %> (<%= person.person_type.name%>)</td>
+                    <td><%= person.medical_problems%></td>
+                    <td><%= person.referred_to_nurse? ? "Yes" : "No"%></td>
+                </tr>
+            <% end %>
+		<% end %>
+		</table></td>
+	<td><table>
+		<tr>
+		<th>Shelter Location</th>
+		<td><%= @shelter.name %> <%= @shelter.address.street %><br><%= @shelter.address.city%>,<%= @shelter.address.state%> <%= @shelter.address.zipcode%></td>
+		</tr>
+		<tr>
+		<th>Shelter Telephone No.</th>
+		<td><%= @shelter.address.phone%></td></tr>
+		<tr><th colspan=2>Pre-Disaster Address and Telephone</th></tr>
+		<tr><td colspan=2>
+		<%=@address.street%><br>
+		<%=@address.city%>,<%= @address.state%> <%= @address.zipcode %><br>
+		<%=@address.zipcode%>
+		</td>
+		</tr>
+		<tr>
+			<td colspan="2"><br>
+				<p><% if @family.disclosure_consent? %>
+				I do authorize the release of the above information concerning my whereabouts or general condition.
+				<% else %>
+				I do not authorize the release of the above information concerning my whereabouts or general condition.
+				<% end %></p>
+				<br><br>
+				Signature ______________________________________________________________
+				<br><br></td>
+			</tr>
+		    <tr>
+		        <th>Date Left Shelter:</th>
+		        <td></td>
+		    </tr>
+		    <tr>
+		        <th>Time Left Shelter:</th>
+		        <td></td>
+		    </tr>
+		    <tr>
+		        <th colspan=2>Post Disaster Address And Telephone</th>
+		    </tr>
+		    <tr>
+		        <td colspan=2><br><br><br><br></td>
+		    </tr>
+		</table></td>
+</tr>
+</table>
+
+
+

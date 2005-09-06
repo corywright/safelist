@@ -73,3 +73,13 @@ end
 	  })
 %>
 
+<%= getIframe('Craigslist New Orleans Lost & Found',
+	'http://neworleans.craigslist.org/cgi-bin/search?',
+	{
+	    'areaID' => '31',
+	    'subAreaID' => '0',
+	    'query' => search_string,
+	    'cat' => 'laf', # lost & found,
+	})
+%>
+

@@ -1,14 +1,17 @@
-<h1>Listing volunteers</h1>
-
+<h2>Volunteers List</h2>
+<p><%= link_to 'Add a Volunteer', {:action => 'new'}, :class => 'textbutton'  %></p>
 <table>
+	
   <tr>
+	<th class="horizontal">#</th>
   <% for column in Volunteer.content_columns %>
-    <th><%= column.human_name %></th>
+    <th class="horizontal"><%= column.human_name %></th>
   <% end %>
   </tr>
   
 <% for volunteer in @volunteers %>
-  <tr>
+  <tr class="<%=h row_style :volunteers %>">
+  	<th class="counter"> <%=h counter :volunteers %></th>
   <% for column in Volunteer.content_columns %>
     <td><%=h volunteer.send(column.name) %></td>
   <% end %>
@@ -18,10 +21,7 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to 'Previous page', { :page => @volunteer_pages.current.previous } if @volunteer_pages.current.previous %>
-<%= link_to 'Next page', { :page => @volunteer_pages.current.next } if @volunteer_pages.current.next %> 
+<%= link_to '<< Previous', { :page => @volunteer_pages.current.previous } if @volunteer_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @volunteer_pages.current.next } if @volunteer_pages.current.next %> 
 
 <br />
-
-<%= link_to 'New volunteer', :action => 'new' %>

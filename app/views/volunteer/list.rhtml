@@ -4,8 +4,10 @@
 	
   <tr>
 	<th class="horizontal">#</th>
+	<th class="horizontal">ID #</th>	
 	<th class="horizontal">First</th>
 	<th class="horizontal">Last</th>
+	<th class="horizontal"> Affiliation </th>
 	<th class="horizontal">Check-In</th>
 	<th class="horizontal">Check-Out</th>
 	<th class="horizontal">Cell</th>
@@ -15,14 +17,15 @@
 <% for volunteer in @volunteers %>
   <tr class="<%=h row_style :volunteers %>">
   	<th class="counter"> <%=h counter :volunteers %></th>
+	<td> <%=h volunteer.id %></td>
 	<td> <%=h volunteer.first_name %></td>
 	<td> <%=h volunteer.last_name %></td>
+	<td> <%=h volunteer.affiliation %></td>
 	<td> in </td>
 	<td> out </td>
 	<td> <%=h volunteer.mobile_phone %></td>	
     <td><%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>
-        <%= link_to 'Edit', {:action => 'edit', :id => volunteer}, :class => 'textbutton'  %>
-        <%= link_to 'Delete', {:action => 'destroy', :id => volunteer}, :class =>'textbuttonwarn', :confirm => 'Are you sure?' %></td>
+        <%= link_to 'Edit', {:action => 'edit', :id => volunteer}, :class => 'textbutton'  %></td>
   </tr>
 <% end %>
 </table>

@@ -1,8 +1,46 @@
-<% for column in Volunteer.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @volunteer.send(column.name) %>
-</p>
-<% end %>
+<h2> Volunteer - <%=h @volunteer.first_name %> <%=h @volunteer.last_name %> </h2>
 
-<%= link_to 'Edit', :action => 'edit', :id => @volunteer %> |
-<%= link_to 'Back', :action => 'list' %>
+<table>
+<tr>
+	<th class="vertical">ID #</th>
+	<td><%=h @volunteer.id %></td>
+</tr>
+<tr>
+	<th class="vertical">First Name</th>
+	<td><%=h @volunteer.first_name %></td>
+</tr>
+<tr>
+	<th class="vertical">Last name</th>
+	<td><%=h @volunteer.last_name %></td>
+</tr>
+<tr>
+	<th class="vertical">Affiliation</th>
+	<td><%=h @volunteer.affiliation %></td>
+</tr>
+<tr>
+	<th class="vertical">DOB</th>
+	<td><%=h @volunteer.dob %></td>
+</tr>
+<tr>
+	<th class="vertical">Mobile Phone</th>
+	<td><%=h @volunteer.mobile_phone %></td>
+</tr>
+<tr>
+	<th class="vertical">Home Phone</th>
+	<td><%=h @volunteer.home_phone %></td>
+</tr>
+<tr>
+	<th class="vertical">Email</th>
+	<td><%=h @volunteer.email %></td>
+</tr>
+<tr>
+	<th class="vertical">Trained by red cross</th>
+	<td><%=h @volunteer.trained_by_red_cross %></td>
+</tr>
+</table>
+<br />
+
+<%= link_to 'Edit', {:action => 'edit', :id => @volunteer}, :class => 'textbutton'  %>
+<%= link_to 'Delete', {:action => 'destroy', :id => @volunteer}, :class =>'textbuttonwarn', :confirm => 'Are you sure?' %>
+<br><br>
+<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>

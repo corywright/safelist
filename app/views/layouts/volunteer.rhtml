@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Volunteer: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'robotRepair' %>
+</head>
+<body>
+
+<% if flash[:notice] %>
+<div class="confirm"><%= flash[:notice] %></div>
+<% end %>
+
+<%= @content_for_layout %>
+<br>
+<br>
+</body>
+</html>

@@ -18,7 +18,12 @@ class SheltersController < ApplicationController
   end
 
   def create
+    @address = Address.new(params[:address])
+    @address.save
+
     @shelter = Shelter.new(params[:shelter])
+    @shelter.address_id = @address.id
+
     if @shelter.save
       flash[:notice] = 'Shelter was successfully created.'
       redirect_to :action => 'list'

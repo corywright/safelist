@@ -1,4 +1,5 @@
 class Volunteer < ActiveRecord::Base
+  has_many :events
   protected
     def validate
       errors.add_on_empty %w( first_name last_name )

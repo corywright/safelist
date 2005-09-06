@@ -5,6 +5,9 @@
 	<th class="horizontal" colspan="2"> Actions </th>
 </tr>
 <tr>
+	<th class="subhead" colspan="2">Citizens</th>
+</tr>
+<tr>
 	<td><%= link_to 'Register New Family', 
 	     {:controller => 'register', 
 		  :action => 'index'}, 
@@ -45,12 +48,21 @@
 	the facility </p> </td>
 </tr>
 <tr>
-	<td><%= link_to 'Check-In/Check-Out Volunteer', 
+	<th class="subhead" colspan="2">Volunteers</th>
+</tr>
+<tr>
+	<td><%= link_to 'Check-In Volunteer', 
 	     {:controller => '', 
 		  :action => ''}, 
 		  :class => 'textbutton'  %></td>
-	<td class="note"> <p> Check-In/Check-Out Volunteer -- Add a volunteer or mark 
-	that a volunteer is leaving </p> </td>
+	<td class="note"> <p> Check-In Volunteer -- Add a volunteer on Duty </p> </td>
+</tr>
+<tr>
+	<td><%= link_to 'Check-Out Volunteer', 
+	     {:controller => '', 
+		  :action => ''}, 
+		  :class => 'textbutton'  %></td>
+	<td class="note"> <p> Check-Out Volunteer -- Mark that a volunteer is leaving </p> </td>
 </tr>
 <tr>
 	<th class="horizontal" colspan="2"> Reports </th>

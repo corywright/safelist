@@ -11,14 +11,13 @@
 	<th class="vertical">Last Name</th>
 	<td><%= text_field 'person', 'last_name' %></td>
 </tr>
-
-<tr>
-	<th class="vertical">Age</th>
-	<td><%= text_field 'person','age' %></td>
-</tr>
 <tr>
 	<th class="vertical">Date Of Birth</th>
 	<td><%= date_select'person','dob' ,:start_year => 1905 ,:end_year => 2005%></td>
+</tr>
+<tr>
+	<th class="vertical">Age</th>
+	<td><%= text_field 'person','age' %></td>
 </tr>
 <tr>
 	<th class="vertical">SSN</th>

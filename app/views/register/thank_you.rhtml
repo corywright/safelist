@@ -28,6 +28,7 @@ Family Last Name: <%= @people[0].last_name %><br>
             <% if person.shelter.nil? %>
                 <tr>
                     <td><%= person.name %> (<%= person.person_type.name%>)</td>
+					<td><%= person.age %></td>
                     <td><%= person.medical_problems%></td>
                     <td><%= person.referred_to_nurse? ? "Yes" : "No"%></td>
                 </tr>
@@ -77,6 +78,7 @@ Family Last Name: <%= @people[0].last_name %><br>
 		</table></td>
 </tr>
 </table>
+SA Safe List (Red Cross Form 5972)
 
 
 

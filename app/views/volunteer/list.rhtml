@@ -10,6 +10,7 @@
 	<th class="horizontal"> Affiliation </th>
 	<th class="horizontal">Check-In</th>
 	<th class="horizontal">Check-Out</th>
+	<th class="horizontal">Duration</th>
 	<th class="horizontal">Cell</th>
     <th class="horizontal"></th>
   </tr>
@@ -23,6 +24,7 @@
 	<td> <%=h volunteer.affiliation %></td>
 	<td> in </td>
 	<td> out </td>
+	<td> X hrs </td>
 	<td> <%=h volunteer.mobile_phone %></td>	
     <td><%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>
         <%= link_to 'Edit', {:action => 'edit', :id => volunteer}, :class => 'textbutton'  %></td>

@@ -94,3 +94,11 @@ CREATE TABLE events(
     FOREIGN KEY("volunteer_id") REFERENCES "volunteers" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE
 );
+select drop_if_exists('injury_reports');
+CREATE TABLE injury_reports(
+    id serial PRIMARY KEY,
+    person_id int4 not null,
+    report text NOT NULL default '',
+    referred_to_nurse boolean not null default 'f',
+    FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE
+);

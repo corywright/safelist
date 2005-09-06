@@ -5,5 +5,4 @@ COPY event_types(id, name) FROM stdin;
 4	Volunteer Check Out
 5	Citizen Temporary Leave 
 6	Citizen Return
-7	Injury Report
 \.

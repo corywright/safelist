@@ -1,0 +1,50 @@
+<h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
+<table>
+<tr>
+	<th class="vertical"> First Name </th>
+	<td> <%=h @person.first_name %></td>
+</tr>
+<tr>
+	<th class="vertical"> Last Name </th>
+	<td> <%=h @person.last_name %></td>
+</tr>
+<tr>
+	<th class="vertical"> Tag ID </th>
+	<td> <%=h @person.tag_id %></td>
+</tr>
+<tr>
+	<th class="vertical"> SSN </th>
+	<td> <%=h @person.ssn %></td>
+</tr>
+<tr>
+	<th class="vertical"> DOB </th>
+	<td> <%=h @person.dob %></td>
+</tr>
+<tr>
+	<th class="vertical"> Age </th>
+	<td> <%=h @person.age %></td>
+</tr>
+<tr>
+	<th class="vertical"> Medical Problems </th>
+	<td> <%=h @person.medical_problems %></td>
+</tr>
+<tr>
+	<th class="vertical"> Current Location </th>
+	<td><%=h @shelter.name %>
+		<%=h @person.location_description %></td>
+</tr>
+<tr>
+	<th class="vertical"> Pre-Disaster Address </th>
+	<td><%=h @pre_disaster_address.street %><br>
+		<%=h @pre_disaster_address.city %>, <%=h @pre_disaster_address.state %>
+		<%=h @pre_disaster_address.zipcode %>
+		<%=h @pre_disaster_address.country %><br>
+		Ph: <%=h @pre_disaster_address.phone %></td>
+</tr>
+<tr>
+	<td colspan="2" align="right"><%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %></td>
+</tr>
+</table>
+
+<p> 
+<%= link_to 'People List', {:action => 'list'}, :class => 'textbutton'  %></p>

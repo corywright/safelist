@@ -89,10 +89,12 @@ CREATE TABLE events(
     event_type_id int4 not null,
     person_id int4,
     volunteer_id int4,
+    shelter_id int4,
     notes text not null default '',
     FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("volunteer_id") REFERENCES "volunteers" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
-    FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE
+    FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
 );
 select drop_if_exists('injury_reports');
 CREATE TABLE injury_reports(

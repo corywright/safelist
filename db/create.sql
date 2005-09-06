@@ -65,3 +65,14 @@ CREATE TABLE people(
     FOREIGN KEY("person_type_id") REFERENCES "person_types" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
+select drop_if_exists('volunteers');
+CREATE TABLE volunteers(
+    id serial PRIMARY KEY,
+    first_name text NOT NULL,
+    last_name text NOT NULL,
+    dob date NOT NULL default now(),
+    trained_by_red_cross boolean NOT NULL default 'f',
+    email text not null default '',
+    home_phone text not null default '',
+    mobile_phone text not null default ''
+);

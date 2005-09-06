@@ -1,0 +1,2 @@
+module InjuryReportHelper
+end

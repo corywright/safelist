@@ -1,0 +1,8 @@
+<% for column in InjuryReport.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @injury_report.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @injury_report %> |
+<%= link_to 'Back', :action => 'list' %>

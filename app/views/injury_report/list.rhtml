@@ -1,0 +1,27 @@
+<h1>Listing injury_reports</h1>
+
+<table>
+  <tr>
+  <% for column in InjuryReport.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for injury_report in @injury_reports %>
+  <tr>
+  <% for column in InjuryReport.content_columns %>
+    <td><%=h injury_report.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => injury_report %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => injury_report %></td>
+    <td><%= link_to 'Destroy', {:action => 'destroy', :id => injury_report}, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @injury_report_pages.current.previous } if @injury_report_pages.current.previous %>
+<%= link_to 'Next page', { :page => @injury_report_pages.current.next } if @injury_report_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New injury_report', :action => 'new' %>

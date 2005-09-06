@@ -1,0 +1,11 @@
+<%= error_messages_for 'injury_report' %>
+
+<!--[form:injury_report]-->
+<%= hidden_field ('injury_report','person_id') %>
+<p><label for="injury_report_report">Report</label><br/>
+<%= text_area 'injury_report', 'report'  %></p>
+
+<p><label for="injury_report_referred_to_nurse">Referred to nurse</label><br/>
+<select id="injury_report_referred_to_nurse" name="injury_report[referred_to_nurse]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<!--[eoform:injury_report]-->
+

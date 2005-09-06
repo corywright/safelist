@@ -1,0 +1,39 @@
+<%= error_messages_for 'volunteer' %>
+
+<!--[form:volunteer]-->
+<table>
+<tr>
+	<th class="vertical">First Name</th>
+	<td><%= text_field 'volunteer', 'first_name' %></td>
+</tr>
+<tr>
+	<th class="vertical">Last Name</th>
+	<td><%= text_field 'volunteer', 'last_name' %></td>
+</tr>
+<tr>
+	<th class="vertical">Date Of Birth</th>
+	<td><%= date_select'volunteer','dob' ,:start_year => 1905 ,:end_year => 2005%></td>
+</tr>
+<tr>
+	<th class="vertical">Red Cross training</th>
+	<td><%= check_box 'volunteer','trained_by_red_cross' %></td>
+</tr>
+<tr>
+	<th class="vertical">Email</th>
+	<td><%= text_field 'volunteer','email' %></td>
+</tr>
+<tr>
+	<th class="vertical">Home phone</th>
+	<td><%= text_field 'volunteer','home_phone' %></td>
+</tr>
+<tr>
+	<th class="vertical">Mobile phone</th>
+	<td><%= text_field 'volunteer','mobile_phone' %></td>
+</tr>
+<tr>
+	<th class="vertical">Affiliation</th>
+	<td><%= text_field 'volunteer','affiliation' %></td>
+</tr>
+
+</table>
+<!--[eoform:volunteer]-->

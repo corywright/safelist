@@ -9,5 +9,6 @@ psql safelist_development <create.sql
 psql safelist_development < data.person_types.sql
 psql safelist_development < data.addresses.sql
 psql safelist_development < data.shelters.sql
+psql safelist_development < data.event_types.sql
 
 psql safelist_test<create.sql

@@ -77,3 +77,20 @@ CREATE TABLE volunteers(
     mobile_phone text not null default '',
     affiliation text not null default ''
 );
+select drop_if_exists('event_types');
+CREATE TABLE event_types(
+    id serial PRIMARY KEY,
+    name text NOT NULL UNIQUE
+);
+select drop_if_exists('events');
+CREATE TABLE events(
+    id serial PRIMARY KEY,
+    event_time timestamp NOT NULL default now(),
+    event_type_id int4 not null,
+    person_id int4,
+    volunteer_id int4,
+    notes text not null default '',
+    FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
+    FOREIGN KEY("volunteer_id") REFERENCES "volunteers" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
+    FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE
+);

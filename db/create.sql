@@ -50,6 +50,7 @@ CREATE TABLE families(
 select drop_if_exists('people');
 CREATE TABLE people(
     id serial PRIMARY KEY,
+    tag_id text NOT NULL default '',
     first_name text NOT NULL default '',
     last_name text NOT NULL default '',
     family_id int4 NOT NULL,

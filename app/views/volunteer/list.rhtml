@@ -4,20 +4,25 @@
 	
   <tr>
 	<th class="horizontal">#</th>
-  <% for column in Volunteer.content_columns %>
-    <th class="horizontal"><%= column.human_name %></th>
-  <% end %>
+	<th class="horizontal">First</th>
+	<th class="horizontal">Last</th>
+	<th class="horizontal">Check-In</th>
+	<th class="horizontal">Check-Out</th>
+	<th class="horizontal">Cell</th>
+    <th class="horizontal"></th>
   </tr>
   
 <% for volunteer in @volunteers %>
   <tr class="<%=h row_style :volunteers %>">
   	<th class="counter"> <%=h counter :volunteers %></th>
-  <% for column in Volunteer.content_columns %>
-    <td><%=h volunteer.send(column.name) %></td>
-  <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => volunteer %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => volunteer %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => volunteer}, :confirm => 'Are you sure?' %></td>
+	<td> <%=h volunteer.first_name %></td>
+	<td> <%=h volunteer.last_name %></td>
+	<td> in </td>
+	<td> out </td>
+	<td> <%=h volunteer.mobile_phone %></td>	
+    <td><%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>
+        <%= link_to 'Edit', {:action => 'edit', :id => volunteer}, :class => 'textbutton'  %>
+        <%= link_to 'Delete', {:action => 'destroy', :id => volunteer}, :class =>'textbuttonwarn', :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>

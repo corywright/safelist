@@ -1,4 +1,3 @@
-<center>
 <h2>Search for Missing Persons</h2>
 <%= javascript_include_tag "prototype" %>
 
@@ -13,15 +12,12 @@
 	<input type="submit" value="Search" name="next"></td>
 </tr>
 </table>
-</center>
+
 <%= end_form_tag %>
 
 <% search_string = @params['form']['search_string'] %>
 
-<hr>
-<center>
 <h2>Search Results for "<%= search_string %>"</h2>
-</center>
 
 <%
 def escapeGetVars(list)
@@ -34,8 +30,8 @@ end
 
 %>
 
-<div style="border: 7px solid gray">
-<b>SunHerald.com Results:</b>
+<div style="border: 2px solid gray">
+<h3>SunHerald.com Results:</h3>
 <%
     get_var_list = {
 	'qu' => search_string,

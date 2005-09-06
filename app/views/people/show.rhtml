@@ -22,7 +22,7 @@
 </tr>
 <tr>
 	<th class="vertical"> Age </th>
-	<td> <%=h @person.age %></td>
+	<td> <%=h @person.age %> </td>
 </tr>
 <tr>
 	<th class="vertical"> Medical Problems </th>
@@ -31,7 +31,10 @@
 <tr>
 	<th class="vertical"> Current Location </th>
 	<td><%=h @shelter.name %>
-		<%=h @person.location_description %></td>
+	<% if @person.location_description.length > 0 %>
+		<br><div class="errormsg"> MISSING PERSON <br>
+		<%=h @person.location_description %></div>
+	<% end %></td>
 </tr>
 <tr>
 	<th class="vertical"> Pre-Disaster Address </th>

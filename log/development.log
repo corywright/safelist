@@ -4799,3 +4799,1719 @@ Rendering shelters/list (200 OK)
  ORDER BY a.attnum
 [m
 Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) [http://localhost/shelters/list]
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:03:25 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:04:08 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:13:24 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:13:41 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:13:47 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:14:16 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:14:25 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing Base#index (for 67.11.232.235 at Mon Sep 05 22:15:48 CDT 2005)
+  Parameters: {}
+
+
+MissingSourceFile (No such file to load -- ./../config/../config/routes.rb):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.1.1/lib/active_support/dependencies.rb:193:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:530:in `reload'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:49:in `prepare_application'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:31:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#index (for 67.11.232.235 at Mon Sep 05 22:16:35 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Completed in 0.00098 (1024 reqs/sec) | Rendering: 0.00017 (17%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:07:59 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+
+
+ActionView::TemplateError (WARNING:  You have a nil object when you probably didn't expect it!  Odds are you
+want an instance of ActiveRecord::Base instead.
+
+Look in the callstack to see where you're working with an object that could be nil.
+Investigate your methods and make sure the object is what you expect!
+) on line #1 of /missing_persons/_form.rhtml:
+1: <%= error_messages_for 'person' %>
+2: 
+3: <!--[form:person]-->
+4: <table>
+
+    /gems/actionpack-1.9.1/lib/action_view/helpers/active_record_helper.rb:102:in `error_messages_for'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:188:in `render'
+    /gems/actionpack-1.9.1/lib/action_view/partials.rb:55:in `render_partial'
+    (erb):7:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:08:30 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #7 of /missing_persons/_form.rhtml:
+4: <tr>
+5: <tr>
+6: 	<th class="vertical">Name</th>
+7: 	<td><%= text_field 'search_string' %></td>
+8: </tr>
+9: </table>
+10: <!--[eoform:person]-->
+
+    (erb):7:in `text_field'
+    (erb):7:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:188:in `render'
+    /gems/actionpack-1.9.1/lib/action_view/partials.rb:55:in `render_partial'
+    (erb):7:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:09:12 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00302 (330 reqs/sec) | Rendering: 0.00224 (74%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:09:51 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00322 (310 reqs/sec) | Rendering: 0.00246 (76%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:10:01 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00351 (285 reqs/sec) | Rendering: 0.00268 (76%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:10:13 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00324 (309 reqs/sec) | Rendering: 0.00246 (76%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:12:57 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00361 (277 reqs/sec) | Rendering: 0.00270 (74%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:12:58 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00268 (372 reqs/sec) | Rendering: 0.00189 (70%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:13:00 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00266 (375 reqs/sec) | Rendering: 0.00186 (69%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:13:09 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00340 (294 reqs/sec) | Rendering: 0.00259 (76%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 11:13:28 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00304 (328 reqs/sec) | Rendering: 0.00226 (74%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 11:13:43 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+
+
+ActionController::UnknownAction (No action responded to search):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 12:58:51 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):37: syntax error
+		'webtag' => kr-biloxkatrina',
+		                            ^
+(erb):38: syntax error
+		'ctx' => 'search',
+		    ^
+(erb):38: syntax error
+		'ctx' => 'search',
+		                ^
+(erb):39: syntax error
+		'cl' => '712847',
+		   ^
+(erb):39: syntax error
+		'cl' => '712847',
+		               ^
+(erb):40: syntax error
+		'af' => '31',
+		   ^
+(erb):40: syntax error
+		'af' => '31',
+		           ^
+(erb):41: syntax error
+		'o' => 'relevance',
+		  ^
+(erb):41: syntax error
+		'o' => 'relevance',
+		                 ^
+(erb):42: syntax error
+		'be' => '0',
+		   ^
+(erb):42: syntax error
+		'be' => '0',
+		          ^
+(erb):51: syntax error
+_erbout.concat "var sunherald = getElementById('sunherald');\r\n"
+                                                         ^
+(erb):51: unterminated string meets end of file
+(erb):51: syntax error
+_erbout
+       ^) on line #51 of /missing_persons/search.rhtml:
+48: 
+49: <script type="text/javascript">
+50: 
+51: var sunherald = getElementById('sunherald');
+52: sunherald.innerHTML = 
+53: </script>
+54: 
+
+    (erb):51:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:00:26 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):35: syntax error
+	'webtag' => kr-biloxkatrina',
+	                            ^
+(erb):36: syntax error
+	'ctx' => 'search',
+	    ^) on line #36 of /missing_persons/search.rhtml:
+33: 	'ssInput' => 'hi',
+34: 	'find' => 'Search',
+35: 	'webtag' => kr-biloxkatrina',
+36: 	'ctx' => 'search',
+37: 	'cl' => '712847',
+38: 	'af' => '31',
+39: 	'o' => 'relevance',
+
+    (erb):36:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:00:51 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):43: syntax error
+	    })
+	     ^) on line #43 of /missing_persons/search.rhtml:
+40: 	'be' => '0',
+41:     }
+42: 
+43: 	    })
+44: <%= link_to_remote("Load Sunherald Results",
+45: 	{ :update => 'sunherald' },
+46: 	{ :url => 'http://forums.sunherald.com/n/mb/action=/n/find/results.asp?webtag=kr-biloxkatrina?' + escapeGetVars(get_var_list) })
+
+    (erb):43:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:01:11 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):43: syntax error
+<%= link_to_remote("Load Sunherald Results",
+ ^) on line #43 of /missing_persons/search.rhtml:
+40: 	'be' => '0',
+41:     }
+42: 
+43: <%= link_to_remote("Load Sunherald Results",
+44: 	{ :update => 'sunherald' },
+45: 	{ :url => 'http://forums.sunherald.com/n/mb/action=/n/find/results.asp?webtag=kr-biloxkatrina?' + escapeGetVars(get_var_list) })
+46: %>
+
+    (erb):43:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:01:53 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):43: syntax error
+<%= link_to_remote("Load Sunherald Results",
+ ^) on line #43 of /missing_persons/search.rhtml:
+40: 	'be' => '0',
+41:     }
+42: 
+43: <%= link_to_remote("Load Sunherald Results",
+44: 	{ :update => 'sunherald' },
+45: 	{ :url => 'http://forums.sunherald.com/n/mb/action=/n/find/results.asp?webtag=kr-biloxkatrina?' + escapeGetVars(get_var_list) })
+46: %>
+
+    (erb):43:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:03:29 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):43: syntax error
+<%= link_to_remote("Load Sunherald Results",
+ ^) on line #43 of /missing_persons/search.rhtml:
+40: 	'be' => '0'
+41:     }
+42: 
+43: <%= link_to_remote("Load Sunherald Results",
+44: 	{ :update => 'sunherald' },
+45: 	{ :url => 'http://forums.sunherald.com/n/mb/action=/n/find/results.asp?webtag=kr-biloxkatrina?' + escapeGetVars(get_var_list) })
+46: %>
+
+    (erb):43:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:03:35 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):43: syntax error
+<%= link_to_remote("Load Sunherald Results",
+ ^) on line #43 of /missing_persons/search.rhtml:
+40: 	'be' => '0'
+41:     }
+42: 
+43: <%= link_to_remote("Load Sunherald Results",
+44: 	{ :update => 'sunherald' },
+45: 	{ :url => 'http://forums.sunherald.com/n/mb/action=/n/find/results.asp?webtag=kr-biloxkatrina?' + escapeGetVars(get_var_list) })
+46: %>
+
+    (erb):43:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:03:51 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00461 (216 reqs/sec) | Rendering: 0.00380 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:04:10 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"hi"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00340 (293 reqs/sec) | Rendering: 0.00258 (75%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:04:28 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"yo"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00444 (225 reqs/sec) | Rendering: 0.00363 (81%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:05:04 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"yo"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00320 (312 reqs/sec) | Rendering: 0.00243 (75%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:07:34 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"adsf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00477 (209 reqs/sec) | Rendering: 0.00396 (83%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:10:45 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00535 (187 reqs/sec) | Rendering: 0.00443 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:11:28 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"adsf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00393 (254 reqs/sec) | Rendering: 0.00314 (80%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:12:04 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00388 (257 reqs/sec) | Rendering: 0.00311 (80%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:12:54 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (undefined method `stringify_keys' for "asdf":String) on line #10 of /missing_persons/_form.rhtml:
+7: <tr>
+8: <tr>
+9:     <th class="vertical">Name:</th>
+10:     <td><%= text_field 'form', 'search_string', @params['form']['search_string']  %></td>
+11: </tr>
+12: </table>
+13: <!--[eoform:person]-->
+
+    /gems/actionpack-1.9.1/lib/action_view/helpers/form_helper.rb:161:in `to_input_field_tag'
+    /gems/actionpack-1.9.1/lib/action_view/helpers/form_helper.rb:76:in `text_field'
+    (erb):10:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:188:in `render'
+    /gems/actionpack-1.9.1/lib/action_view/partials.rb:55:in `render_partial'
+    (erb):9:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:13:03 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00350 (285 reqs/sec) | Rendering: 0.00269 (76%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:13:10 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00379 (263 reqs/sec) | Rendering: 0.00301 (79%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:14:13 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00466 (214 reqs/sec) | Rendering: 0.00388 (83%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:14:19 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00496 (201 reqs/sec) | Rendering: 0.00415 (83%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:16:09 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00466 (214 reqs/sec) | Rendering: 0.00386 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:18:40 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00510 (196 reqs/sec) | Rendering: 0.00429 (84%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:23:55 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00502 (199 reqs/sec) | Rendering: 0.00424 (84%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:24:24 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00392 (254 reqs/sec) | Rendering: 0.00299 (76%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:24:26 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00361 (276 reqs/sec) | Rendering: 0.00282 (78%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:24:33 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00373 (267 reqs/sec) | Rendering: 0.00292 (78%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:24:35 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00365 (274 reqs/sec) | Rendering: 0.00286 (78%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:27:36 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00518 (193 reqs/sec) | Rendering: 0.00436 (84%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:28:48 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00544 (183 reqs/sec) | Rendering: 0.00466 (85%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:28:50 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+
+
+ActionView::TemplateError (WARNING:  You have a nil object when you probably didn't expect it!  Odds are you
+want an instance of Array instead.
+
+Look in the callstack to see where you're working with an object that could be nil.
+Investigate your methods and make sure the object is what you expect!
+) on line #7 of /missing_persons/_form.rhtml:
+4: <tr>
+5: <tr>
+6:     <th class="vertical">Name:</th>
+7:     <td><%= text_field 'form', 'search_string', :value => @params['form']['search_string']  %></td>
+8: </tr>
+9: </table>
+10: <!--[eoform:person]-->
+
+    (erb):7:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:188:in `render'
+    /gems/actionpack-1.9.1/lib/action_view/partials.rb:55:in `render_partial'
+    (erb):8:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:30:40 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+
+
+ActionView::TemplateError (compile error
+(erb):13: syntax error
+    <th class="vertical">Name:</th>
+     ^) on line #13 of /missing_persons/_form.rhtml:
+10:     else
+11: 	value = ''
+12:     end
+13:     <th class="vertical">Name:</th>
+14:     <td><%= text_field 'form', 'search_string', :value => value %></td>
+15: </tr>
+16: </table>
+
+    (erb):13:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:188:in `render'
+    /gems/actionpack-1.9.1/lib/action_view/partials.rb:55:in `render_partial'
+    (erb):9:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:272:in `evaluate_locals'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:283:in `rhtml_render'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `send'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:208:in `render_template'
+    /gems/actionpack-1.9.1/lib/action_view/base.rb:173:in `render_file'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:588:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:591:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:604:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:627:in `render_with_no_layout'
+    /gems/actionpack-1.9.1/lib/action_controller/layout.rb:216:in `render_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:25:in `render'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:757:in `perform_action_without_filters'
+    /gems/actionpack-1.9.1/lib/action_controller/filters.rb:295:in `perform_action_without_benchmark'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `measure'
+    /gems/actionpack-1.9.1/lib/action_controller/benchmarking.rb:41:in `perform_action_without_rescue'
+    /gems/actionpack-1.9.1/lib/action_controller/rescue.rb:80:in `perform_action'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `send'
+    /gems/actionpack-1.9.1/lib/action_controller/base.rb:356:in `process'
+    /gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:30:52 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00561 (178 reqs/sec) | Rendering: 0.00476 (84%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:30:56 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00281 (355 reqs/sec) | Rendering: 0.00200 (71%) [http://www.sasafelist.org/missing_persons]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:30:57 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00300 (333 reqs/sec) | Rendering: 0.00209 (69%) [http://www.sasafelist.org/missing_persons]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:30:59 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00274 (364 reqs/sec) | Rendering: 0.00195 (70%) [http://www.sasafelist.org/missing_persons]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:31:41 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00402 (248 reqs/sec) | Rendering: 0.00321 (79%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:31:49 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00282 (354 reqs/sec) | Rendering: 0.00201 (71%) [http://www.sasafelist.org/missing_persons]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:33:38 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00476 (85%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:33:53 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00568 (175 reqs/sec) | Rendering: 0.00487 (85%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing HelloController#index (for 64.39.0.39 at Tue Sep 06 13:33:54 CDT 2005)
+  Parameters: {"controller"=>"hello"}
+Rendering  within layouts/hello
+Rendering hello/index (200 OK)
+Completed in 0.00715 (139 reqs/sec) | Rendering: 0.00635 (88%) [http://www.sasafelist.org/]
+
+
+Processing HelloController#index (for 64.39.0.39 at Tue Sep 06 13:34:03 CDT 2005)
+  Parameters: {"controller"=>"hello"}
+Rendering  within layouts/hello
+Rendering hello/index (200 OK)
+Completed in 0.00427 (233 reqs/sec) | Rendering: 0.00346 (80%) [http://www.sasafelist.org/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:34:05 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00282 (355 reqs/sec) | Rendering: 0.00199 (70%) [http://www.sasafelist.org/missing_persons]
+
+
+Processing HelloController#index (for 64.39.0.39 at Tue Sep 06 13:34:06 CDT 2005)
+  Parameters: {"controller"=>"hello"}
+Rendering  within layouts/hello
+Rendering hello/index (200 OK)
+Completed in 0.00410 (244 reqs/sec) | Rendering: 0.00331 (80%) [http://www.sasafelist.org/]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 13:34:08 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00284 (351 reqs/sec) | Rendering: 0.00202 (71%) [http://www.sasafelist.org/missing_persons]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:43:32 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00410 (244 reqs/sec) | Rendering: 0.00329 (80%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:44:35 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00552 (181 reqs/sec) | Rendering: 0.00475 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:49:10 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00512 (195 reqs/sec) | Rendering: 0.00432 (84%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:50:38 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00496 (201 reqs/sec) | Rendering: 0.00414 (83%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 13:52:36 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00591 (169 reqs/sec) | Rendering: 0.00509 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing Base#index (for 64.39.0.39 at Tue Sep 06 13:52:41 CDT 2005)
+  Parameters: {"be"=>"0", "o"=>"relevance", "qu"=>"asdf", "af"=>"31", "webtag"=>"kr-biloxkatrina", "ctx"=>"search", "find"=>"Search", "cl"=>"712847"}
+
+
+ActionController::RoutingError (Recognition failed for "/n/find/results.asp"):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:444:in `recognition_failed'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/routing.rb:434:in `recognize!'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:105:in `handle_dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:71:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-0.13.1/lib/webrick_server.rb:57:in `dispatch'
+    script/server:49
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.9.1/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:10:44 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00563 (177 reqs/sec) | Rendering: 0.00485 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:13:23 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00590 (169 reqs/sec) | Rendering: 0.00507 (85%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:13:55 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00569 (175 reqs/sec) | Rendering: 0.00490 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:14:07 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00586 (170 reqs/sec) | Rendering: 0.00504 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:14:23 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00574 (174 reqs/sec) | Rendering: 0.00496 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:15:04 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00602 (166 reqs/sec) | Rendering: 0.00520 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:15:35 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00586 (170 reqs/sec) | Rendering: 0.00508 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:18:10 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00615 (162 reqs/sec) | Rendering: 0.00533 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:18:43 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00497 (201 reqs/sec) | Rendering: 0.00419 (84%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:20:04 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00442 (226 reqs/sec) | Rendering: 0.00365 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:20:20 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00465 (215 reqs/sec) | Rendering: 0.00384 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:21:01 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00647 (154 reqs/sec) | Rendering: 0.00562 (86%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:21:14 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00487 (205 reqs/sec) | Rendering: 0.00395 (81%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:21:41 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"asdf33"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00452 (221 reqs/sec) | Rendering: 0.00374 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:22:09 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"james"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00308 (324 reqs/sec) | Rendering: 0.00226 (73%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:22:22 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Terry"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00323 (309 reqs/sec) | Rendering: 0.00241 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:23:35 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Terry"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00469 (212 reqs/sec) | Rendering: 0.00383 (81%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:25:25 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Terry"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.01603 (62 reqs/sec) | Rendering: 0.00412 (25%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:25:48 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Terry"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00458 (218 reqs/sec) | Rendering: 0.00378 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:26:12 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Terry"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00455 (219 reqs/sec) | Rendering: 0.00377 (82%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:26:44 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Alfred"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00323 (309 reqs/sec) | Rendering: 0.00242 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:32:00 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Alfred"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00658 (151 reqs/sec) | Rendering: 0.00574 (87%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#index (for 64.39.0.39 at Tue Sep 06 14:32:16 CDT 2005)
+  Parameters: {"action"=>"index", "controller"=>"missing_persons"}
+Rendering missing_persons/index (200 OK)
+Completed in 0.00475 (210 reqs/sec) | Rendering: 0.00336 (70%) [http://www.sasafelist.org/missing_persons/]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:32:20 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Brett"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00312 (320 reqs/sec) | Rendering: 0.00233 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:33:01 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Brettasdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00310 (322 reqs/sec) | Rendering: 0.00232 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:33:50 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Brettasdf"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00495 (202 reqs/sec) | Rendering: 0.00413 (83%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:33:55 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Brett"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00307 (325 reqs/sec) | Rendering: 0.00228 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:34:10 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Mof"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00531 (188 reqs/sec) | Rendering: 0.00391 (73%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:34:16 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Charles"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00314 (318 reqs/sec) | Rendering: 0.00234 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:34:37 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Edwin"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00499 (200 reqs/sec) | Rendering: 0.00380 (76%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:34:47 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Ladner"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00319 (313 reqs/sec) | Rendering: 0.00237 (74%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:35:11 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Curly"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00324 (308 reqs/sec) | Rendering: 0.00245 (75%) [http://www.sasafelist.org/missing_persons/search]
+
+
+Processing MissingPersonsController#search (for 64.39.0.39 at Tue Sep 06 14:35:22 CDT 2005)
+  Parameters: {"action"=>"search", "controller"=>"missing_persons", "form"=>{"search_string"=>"Tana"}, "next"=>"Search"}
+Rendering missing_persons/search (200 OK)
+Completed in 0.00304 (328 reqs/sec) | Rendering: 0.00227 (74%) [http://www.sasafelist.org/missing_persons/search]

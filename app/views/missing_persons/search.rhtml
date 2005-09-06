@@ -1,0 +1,55 @@
+<center>
+<h2>Search for Missing Persons</h2>
+<%= javascript_include_tag "prototype" %>
+
+<%= start_form_tag :action => "search" %>
+
+<table style="background: #ddDDdd">
+<tr>
+	<td> <%= render_partial 'form' %> </td>
+</tr>
+<tr>
+	<td align="center">
+	<input type="submit" value="Search" name="next"></td>
+</tr>
+</table>
+</center>
+<%= end_form_tag %>
+
+<% search_string = @params['form']['search_string'] %>
+
+<hr>
+<center>
+<h2>Search Results for "<%= search_string %>"</h2>
+</center>
+
+<%
+def escapeGetVars(list)
+    s = ''
+    for key, value in list
+	s += CGI.escape(key) + '=' + CGI.escape(value) + '&'
+    end
+    return s
+end
+
+%>
+
+<div style="border: 7px solid gray">
+<b>SunHerald.com Results:</b>
+<%
+    get_var_list = {
+	'qu' => search_string,
+	'find' => 'Search',
+	'webtag' => 'kr-biloxkatrina',
+	'ctx' => 'search',
+    }
+%>
+
+<center>
+<iframe width="98%" height="400px" 
+    src="<%= 'http://forums.sunherald.com/n/find/results.asp?' + escapeGetVars(get_var_list) %>">
+</iframe>
+</center>
+</div>
+
+<hr>

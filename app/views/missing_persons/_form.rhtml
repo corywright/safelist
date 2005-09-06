@@ -1,0 +1,18 @@
+
+<!--[form:person]-->
+<table>
+<tr>
+<tr>
+<%
+    form = @params['form']
+    if (form)
+	value = form['search_string']
+    else
+	value = ''
+    end
+%>
+    <th class="vertical">Name:</th>
+    <td><%= text_field 'form', 'search_string', :value => value %></td>
+</tr>
+</table>
+<!--[eoform:person]-->

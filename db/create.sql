@@ -74,5 +74,6 @@ CREATE TABLE volunteers(
     trained_by_red_cross boolean NOT NULL default 'f',
     email text not null default '',
     home_phone text not null default '',
-    mobile_phone text not null default ''
+    mobile_phone text not null default '',
+    affiliation text not null default ''
 );

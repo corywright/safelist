@@ -10,6 +10,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    @address = Address.find(@shelter.address_id)
   end
 
   def new

@@ -90,3 +90,18 @@ end
 	    'words' => search_string,
 	})
 %>
+
+<%= getIframe('katrina.com',
+      'http://www.websitetoolbox.com/tool/view/mb/search?',
+      {
+	  'keywords' => search_string,
+	  'todelete' => '29374', # missing family forum
+	  'searchin' => 'message',
+	  'replies' => 'atleast',
+	  'numreplies' => '0',
+	  'sort' => 'lastpost',
+	  'order' => 'desc',
+	  'username' => 'katrinacom',
+	  'action' => 'doSearch',
+      })
+%>

@@ -62,11 +62,13 @@ class RegisterController < ApplicationController
             end
             @family.pre_disaster_address = @address
             @family.save!
-            @shelter = Shelter.find(1)
             # Create people
+	    family_shelter_id = 0
             for person in session[:registration][:people]
                 @person = Person.new(person)
                 @person.family = @family
+		@shelter = Shelter.find(person[:shelter_id])
+		family_shelter_id = person[:shelter_id]
                 if person[:location_description].nil? ||
                  person[:location_description] == ""
                     @person.shelter = @shelter
@@ -87,7 +89,8 @@ class RegisterController < ApplicationController
         @family = Family.find(params[:id])
         @people = @family.people
         @address = @family.pre_disaster_address
-		@shelter = Shelter.find(1)
+        @person = @people[0]
+        @shelter = Shelter.find(@person.shelter_id)
         rescue 
             error_handler
     end

@@ -4,7 +4,7 @@
 <table>
 <tr>
 	<th class="vertical">Shelter</th>
-	<td><select name="shelter[id]">
+	<td><select name="person[shelter_id]">
 		<% @shelters.length.times do |z| %>
 		<% shelter = @shelters[z] %>
 			<option value="<%= shelter[:id] %>"><%= shelter[:name] %></option>

@@ -34,11 +34,14 @@ class SheltersController < ApplicationController
 
   def edit
     @shelter = Shelter.find(params[:id])
+    @address = Address.find(@shelter.address_id)
   end
 
   def update
     @shelter = Shelter.find(params[:id])
-    if @shelter.update_attributes(params[:shelter])
+    @address = Address.find(@shelter.address_id)
+    if @shelter.update_attributes(params[:shelter]) &&
+        @address.update_attributes(params[:address])
       flash[:notice] = 'Shelter was successfully updated.'
       redirect_to :action => 'show', :id => @shelter
     else

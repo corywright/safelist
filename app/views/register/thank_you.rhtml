@@ -1,23 +1,21 @@
-<h1>American Red Cross</h1>
-
-Family Last Name: <%= @people[0].last_name %><br>
 <table>
+<tr>
+	<th colspan="2" class="title">Family Last Name: <%= @people[0].last_name %></th>
+</tr>
 <tr>
 	<td><table>
 		<tr>
 			<th>Names</th>
 			<th>Age</th>
-			<th>Medical<br>Problem</th>
-			<th>Referred To Nurse</th>
+			<th>Medical<br>Problems</th>
 		</tr>
 		
 		<% for person in @people %>
             <% if !person.shelter.nil? %>
                 <tr>
                     <td><%= person.name %> (<%= person.person_type.name%>)</td>
-					<td><%= person.age %></td>
+					<td><%= distance_of_time_in_words_to_now(person.dob) %></td>
                     <td><%= person.medical_problems%></td>
-                    <td><%= person.referred_to_nurse? ? "Yes" : "No"%></td>
                 </tr>
             <% end %>
 		<% end %>
@@ -30,7 +28,6 @@ Family Last Name: <%= @people[0].last_name %><br>
                     <td><%= person.name %> (<%= person.person_type.name%>)</td>
 					<td><%= person.age %></td>
                     <td><%= person.medical_problems%></td>
-                    <td><%= person.referred_to_nurse? ? "Yes" : "No"%></td>
                 </tr>
             <% end %>
 		<% end %>

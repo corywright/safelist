@@ -5,7 +5,7 @@
 <tr>
     <th class="horizontal">&nbsp;</th>
     <th class="horizontal">Name</th>
-    <th class="horizontal">Age</th>
+    <th class="horizontal">DOB</th>
     <th class="horizontal">Type</th>
     <th class="horizontal">Medical Condition</th>
     <th class="horizontal">Location Description</th>
@@ -17,7 +17,7 @@
 			<%= link_to 'Edit' , {:action => "edit_person", :id =>x}, :class => 'textbutton' %>
         	<%= link_to 'Delete' , {:action => "destroy_person", :id =>x}, :class => 'textbuttonwarn', :confirm => 'Are you sure you want to DELETE this person? It cannot be undone.' %></td>
         <td><%= person[:first_name] %> <%= person[:last_name] %></td>
-        <td><%= person[:age] %></td>
+        <td>Load DOB</td>
         <td><%= if person[:person_type_id] == "1"
                     "Man"
                 elsif person[:person_type_id] == "2"
@@ -28,9 +28,7 @@
                     "Female Child"
                 end
             %></td>
-        <td><%= simple_format(person[:medical_problems])%><hr>
-            Referred To A Nurse? <%= person[:referred_to_nurse] == "true" ? "Yes" : "No" %>
-        </td>
+        <td><%= simple_format(person[:medical_problems])%></td>
         <td><%= simple_format(person[:location_description]) %></td>
     </tr> 
 <% end %>

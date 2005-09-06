@@ -3,21 +3,23 @@
 
 <%= start_form_tag :action => "search" %>
 
-<table style="background: #ddDDdd">
+<table>
 <tr>
 	<td> <%= render_partial 'form' %> </td>
 </tr>
 <tr>
-	<td align="center">
+	<td align="right">
 	<input type="submit" value="Search" name="next"></td>
 </tr>
 </table>
-
 <%= end_form_tag %>
 
 <% search_string = @params['form']['search_string'] %>
 
+<hr>
+<center>
 <h2>Search Results for "<%= search_string %>"</h2>
+</center>
 
 <%
 def escapeGetVars(list)
@@ -28,24 +30,46 @@ def escapeGetVars(list)
     return s
 end
 
+def getIframe(title, base, var_list)
+    url = base + escapeGetVars(var_list) 
+    s =<<eof 
+    <br>
+    <div style="border: 7px solid gray">
+	<b>#{title}:</b>
+	<center>
+	    <iframe width="98%" height="400px" src="#{url}">
+	    </iframe>
+	</center>
+    </div>
+eof
+    return s
+end
+
 %>
 
-<div style="border: 2px solid gray">
-<h3>SunHerald.com Results:</h3>
-<%
-    get_var_list = {
-	'qu' => search_string,
-	'find' => 'Search',
-	'webtag' => 'kr-biloxkatrina',
-	'ctx' => 'search',
-    }
+
+<%= getIframe('SunHerald.com Results', 
+	'http://forums.sunherald.com/n/find/results.asp?',
+	{
+	    'qu' => search_string,
+	    'find' => 'Search',
+	    'webtag' => 'kr-biloxkatrina',
+	    'ctx' => 'search',
+	})
 %>
 
-<center>
-<iframe width="98%" height="400px" 
-    src="<%= 'http://forums.sunherald.com/n/find/results.asp?' + escapeGetVars(get_var_list) %>">
-</iframe>
-</center>
-</div>
+<%= getIframe('NOKR (Next Of Kin Registry) Results', 
+	  'http://nokr.org/phpBB/search.php?mode=results&',
+	  { 'search_keywords' => search_string,
+	    'search_terms' => 'all',
+	    'search_fields' => 'all',
+	    'search_forum' => '-1',
+	    'search_cat' => '-1',
+	    'return_chars' => '25',
+	    'search_time' => '0', # all
+	    'sort_by' => '0', # post time
+	    'sort_dir' => 'DESC',
+	    'show_results' => 'topics',
+	  })
+%>
 
-<hr>

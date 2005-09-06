@@ -3,10 +3,22 @@
 <!--[form:person]-->
 <table>
 <tr>
+<th>Shelter</th>
+<td><select name="shelter[id]">
+<% @shelters.length.times do |z| %>
+<% shelter = @shelters[z] %>
+<option value="<%= shelter[:id] %>"><%= shelter[:name] %></option>
+<% end %>
+</select>
+</tr>
+<tr>
+<th>Kelly USA ID</th>
+<td><%= text_field 'person', 'tag_id' %></td>
+</tr>
+<tr>
 	<th class="vertical">First Name</th>
 	<td><%= text_field 'person', 'first_name' %></td>
 </tr>
-
 <tr>
 	<th class="vertical">Last Name</th>
 	<td><%= text_field 'person', 'last_name' %></td>

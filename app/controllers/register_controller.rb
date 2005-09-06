@@ -2,6 +2,7 @@ class RegisterController < ApplicationController
 
     def index
         setup
+        @shelters = Shelter.find(:all)
         @person = Person.new()
         rescue 
             error_handler

@@ -59,7 +59,6 @@ CREATE TABLE people(
     medical_problems text NOT NULL default '',
     ssn text NOT NULL default '',
     dob date NOT NULL default now(),
-    referred_to_nurse boolean NOT NULL default 'f',
     shelter_id int4,
     location_description text NOT NULL default '',
     FOREIGN KEY("family_id") REFERENCES "families" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,

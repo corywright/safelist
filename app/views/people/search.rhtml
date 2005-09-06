@@ -1,0 +1,25 @@
+<h2>Search By Tag ID</h2>
+
+<%= start_form_tag :action => "search_tag_id" %>
+<table>
+<tr>
+<td>
+Tag ID: <input type="text" name="tag_id" />
+</td>
+</tr>
+<tr>
+	<td align="right">
+	<input type="submit" value="Search By Tag ID" name="next"></td>
+</tr>
+</table>
+<%= end_form_tag %>
+
+<h2>Search By Name</h2>
+<%= start_form_tag :action => "search_name" %>
+<table>
+<tr><td>First Name: <input type="text" name="first_name" /></td></tr>
+<tr><td>Last Name: <input type="text" name="last_name" /></td></tr>
+<tr><td align="right"><input type="submit" value="Search By Name" name="next"></td></tr>
+</table>
+
+<%= end_form_tag %>

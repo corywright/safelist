@@ -19,6 +19,7 @@ class PeopleController < ApplicationController
   def edit
     @person = Person.find(params[:id])
     @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
+    @shelters = Shelter.find(:all)
     @shelter = Shelter.find(@person.shelter_id)
   end
 

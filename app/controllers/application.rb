@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 	def add_to_history
 	  session[:history] ||= []
- 	  session[:history].unshift ({"url" => @request.request_uri, "name" => self.controller_name + ":" + self.action_name})
+ 	  session[:history].unshift({"url" => @request.request_uri, "name" => self.controller_name + ":" + self.action_name})
 	  session[:history].pop while session[:history].length > 11
 	end
 

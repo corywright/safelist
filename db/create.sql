@@ -55,7 +55,6 @@ CREATE TABLE people(
     last_name text NOT NULL default '',
     family_id int4 NOT NULL,
     person_type_id int4 NOT NULL,
-    age int4 default(0) NOT NULL,
     medical_problems text NOT NULL default '',
     ssn text NOT NULL default '',
     dob date NOT NULL default now(),

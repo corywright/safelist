@@ -26,4 +26,7 @@ class Person < ActiveRecord::Base
         write_attribute(:checked_in, false);
      end
     end
+    def age
+      ((Date.today - dob)/365.0).floor
+    end
 end

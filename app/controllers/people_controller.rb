@@ -36,14 +36,15 @@ class PeopleController < ApplicationController
   end
 
   def search_tag_id
-    @person = Person.find_by_tag_id(params[:tag_id])
-    if @person.nil?
+    #@people = Person.find_by_tag_id(params[:tag_id])
+    @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id]] )
+    if @people.nil?
       flash[:notice] = "No one found by that tag id"
       redirect_to :action => "search"
     else
-      @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
-      @shelter = Shelter.find(@person.shelter_id)
-      render :action => 'show'
+#      @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
+#      @shelter = Shelter.find(@person.shelter_id)
+      render :action => 'results'
     end
   end
 

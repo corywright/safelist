@@ -33,4 +33,12 @@ class Person < ActiveRecord::Base
       ((Date.today - dob)/365.0).floor
     end
     
+    def tag_id
+      if self[:tag_id] == ''
+        @shelter = Shelter.find(self.shelter_id)
+        self[:tag_id] = @shelter.tag_id_prefix + self.id.to_s
+      end
+      return self[:tag_id]
+    end
+    
 end

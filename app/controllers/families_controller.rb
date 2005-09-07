@@ -1,4 +1,5 @@
 class FamiliesController < ApplicationController
+  paginate :people, :order_by => 'last_name, first_name', :per_page => 20
   def index
     list
     render :action => 'list'
@@ -9,7 +10,12 @@ class FamiliesController < ApplicationController
   end
 
   def show
-    @family = Family.find(params[:id])
+    @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
+    if @people.nil?
+      flash[:error] = 'No members of this family.'
+    else
+      render :action => 'members'
+    end
   end
 
   def new
@@ -41,7 +47,13 @@ class FamiliesController < ApplicationController
   end
 
   def destroy
-    Family.find(params[:id]).destroy
+    @person = Person.find(params[:id])
+    @person.family_id = nil
+    if @person.save
+      flash[:notice] = 'Family member removed.'
+    else
+      flash[:error] = 'Could not remove family member.'
+    end
     redirect_to :action => 'list'
   end
 end

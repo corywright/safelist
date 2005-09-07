@@ -23,7 +23,7 @@ class VolunteerController < ApplicationController
   end
 
   def list
-    @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 10
+    @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 20
   end
 
   def show

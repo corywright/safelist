@@ -11,7 +11,7 @@
 		</tr>
 		
 		<% for person in @people %>
-            <% if !person.shelter.nil? %>
+            <% if person.shelter.id > 1 %>
                 <tr>
                     <td><%= person.name %> (<%= person.person_type.name%>)</td>
 					<td><%= person.age %></td>
@@ -23,7 +23,7 @@
             <th colspan=4>Family NOT at the Facility</th>
         </tr>
 		<% for person in @people %>
-            <% if person.shelter.nil? %>
+            <% if person.shelter.id == 1 %>
                 <tr>
                     <td><%= person.name %> (<%= person.person_type.name%>)</td>
 					<td><%= person.age %></td>

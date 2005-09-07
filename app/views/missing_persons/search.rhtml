@@ -105,3 +105,16 @@ end
 	  'action' => 'doSearch',
       })
 %>
+
+<%= getIframe('Hurricane Katrina Survivors',
+    'http://www.hurricanekatrinasurvivors.com/forum/search.php?',
+    {
+        'search_keywords' => search_string,
+        'mode' => 'results',
+    }
+    )
+%>
+
+<%= getIframe('NowPublic.com',
+    'http://www.nowpublic.com/tags/' + CGI.escape(search_string), {} )
+%>

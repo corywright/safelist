@@ -1,9 +1,13 @@
-<h1>Editing volunteer</h1>
+<div class="header">
+<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Show Volunteer', {:action => 'show', :id => @volunteer}, :class => 'textbutton'  %>
+</div>
+
+<h2>Edit Volunteer</h2>
 
 <%= start_form_tag :action => 'update', :id => @volunteer %>
   <%= render_partial 'form' %>
   <%= submit_tag 'Save' %>
 <%= end_form_tag %>
 
-<%= link_to 'Show Volunteer', {:action => 'show', :id => @volunteer}, :class => 'textbutton'  %> |
-<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+

@@ -1,3 +1,7 @@
+<div class="header">
+<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+</div>
+
 <h2> Volunteer - <%=h @volunteer.first_name %> <%=h @volunteer.last_name %> </h2>
 
 <table>
@@ -43,4 +47,4 @@
 <%= link_to 'Edit', {:action => 'edit', :id => @volunteer}, :class => 'textbutton'  %>
 <%= link_to 'Delete', {:action => 'destroy', :id => @volunteer}, :class =>'textbuttonwarn', :confirm => 'Are you sure?' %>
 <br><br>
-<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+

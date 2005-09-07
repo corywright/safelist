@@ -1,3 +1,7 @@
+<div class="header">
+<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+</div>
+
 <h2>Add Volunteer</h2>
 
 <%= start_form_tag :action => 'create' %>
@@ -5,4 +9,4 @@
   <%= submit_tag "Add & Check-in" %>
 <%= end_form_tag %>
 
-<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+

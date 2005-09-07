@@ -90,21 +90,23 @@ class PeopleController < ApplicationController
     @event = Event.new
     @event.event_type = EventType.find(1) # default is checkin when there's no previous record
     # this is fucking ugly, but it's late, I'm tired.
-    if (@person.last_event.event_type == EventType.find(5))
-      @event.event_type = EventType.find(6)
-    end
-    if (@person.last_event.event_type == EventType.find(1))
-      if params[:perm]
-        @event.event_type = EventType.find(2) 
-      else
+    if (@person.last_event)
+      if (@person.last_event.event_type == EventType.find(5))
+        @event.event_type = EventType.find(6)
+      end
+      if (@person.last_event.event_type == EventType.find(1))
+        if params[:perm]
+          @event.event_type = EventType.find(2) 
+        else
+          @event.event_type = EventType.find(5)
+        end
+      end
+      if (@person.last_event.event_type == EventType.find(6))
         @event.event_type = EventType.find(5)
       end
-    end
-    if (@person.last_event.event_type == EventType.find(6))
-      @event.event_type = EventType.find(5)
-    end
-    if (@person.last_event.event_type == EventType.find(2))
-      @event.event_type = EventType.find(1)
+      if (@person.last_event.event_type == EventType.find(2))
+        @event.event_type = EventType.find(1)
+      end
     end
     @event.person_id = @person.id
     @event.event_time = Time.now

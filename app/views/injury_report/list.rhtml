@@ -10,6 +10,7 @@
   <% for column in InjuryReport.content_columns %>
     <th><%= column.human_name %></th>
   <% end %>
+        <th>Name</th>
   	<th></th>
   </tr>
   
@@ -20,6 +21,7 @@
 
     <td><%=h injury_report.send(column.name) %></td>
   <% end %>
+  <td><%= injury_report.person.name %></td>
     <td><%= link_to 'Show', {:action => 'show', :id => injury_report}, :class => 'textbutton'  %>
         <%= link_to 'Edit', {:action => 'edit', :id => injury_report}, :class => 'textbutton'  %>
         <%= link_to 'Delete', {:action => 'destroy', :id => injury_report}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>

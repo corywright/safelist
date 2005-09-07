@@ -2,6 +2,9 @@ class Person < ActiveRecord::Base
     belongs_to :family
     belongs_to :person_type
     belongs_to :shelter
+    has_many :injury_reports
+
+    validates_presence_of :first_name, :last_name
 
     def name
       first_name + " " + last_name
@@ -29,4 +32,5 @@ class Person < ActiveRecord::Base
     def age
       ((Date.today - dob)/365.0).floor
     end
+    
 end

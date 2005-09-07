@@ -50,7 +50,10 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     @event = Event.new
     if @person.checked_in
-      @event.event_type = EventType.find(2)
+      if params[:perm]
+        @event.event_type = EventType.find(2)
+      else
+        @event.event_type =
     else
       @event.event_type = EventType.find(1)
     end

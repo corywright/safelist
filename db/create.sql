@@ -60,6 +60,7 @@ CREATE TABLE people(
     dob date NOT NULL default now(),
     shelter_id int4,
     location_description text NOT NULL default '',
+    resume text NOT NULL default '',
     FOREIGN KEY("family_id") REFERENCES "families" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("person_type_id") REFERENCES "person_types" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 

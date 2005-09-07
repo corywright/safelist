@@ -55,6 +55,10 @@
 		Ph: <%=h @pre_disaster_address.phone %></td>
 </tr>
 <tr>
+	<th class="vertical"> Resume </th>
+	<td> <%=h @person.resume %> </td>
+</tr>
+<tr>
 	<td colspan="2" align="right"><%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %></td>
 </tr>
 </table>

@@ -47,6 +47,18 @@ end
 
 %>
 
+<%= getIframe('ICRC (International Committee of the Red Cross)',
+	'http://www.sasafelist.org/cgi-bin/htsearch?',
+	{
+	    'config' => 'htdig',
+	    'restrict' => '',
+	    'exclude' => '',
+	    'method' => 'and', # match all keywords
+	    'format' => 'builtin-long',
+	    'sort' => 'score',
+	    'words' => search_string,
+	})
+%>
 
 <%= getIframe('SunHerald.com Results', 
 	'http://forums.sunherald.com/n/find/results.asp?',

@@ -14,7 +14,7 @@
             <% if !person.shelter.nil? %>
                 <tr>
                     <td><%= person.name %> (<%= person.person_type.name%>)</td>
-					<td><%= distance_of_time_in_words_to_now(person.dob) %></td>
+					<td><%= person.age %></td>
                     <td><%= person.medical_problems%></td>
                 </tr>
             <% end %>
@@ -44,7 +44,6 @@
 		<tr><td colspan=2>
 		<%=@address.street%><br>
 		<%=@address.city%>,<%= @address.state%> <%= @address.zipcode %><br>
-		<%=@address.zipcode%>
 		</td>
 		</tr>
 		<tr>

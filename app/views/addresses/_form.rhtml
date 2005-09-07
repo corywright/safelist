@@ -1,22 +1,33 @@
 <%= error_messages_for 'address' %>
 
 <!--[form:address]-->
-<p><label for="address_street">Street</label><br/>
-<%= text_area 'address', 'street'  %></p>
+<table>
+<tr>
+	<th class="vertical">Street</th>
+	<td><%= text_area 'address', 'street'  %></td>
+</tr>
+<tr>
+	<th class="vertical">City</th>
+	<td><%= text_area 'address', 'city'  %></td>
+</tr>
+<tr>
+	<th class="vertical">State</th>
+	<td><%= text_area 'address', 'state'  %></td>
+</tr>
+<tr>
+	<th class="vertical">Zipcode</th>
+	<td><%= text_area 'address', 'zipcode'  %></td>
+</tr>
+<tr>
+	<th class="vertical">Country</th>
+	<td><%= text_area 'address', 'country'  %></td>
+</tr>
+<tr>
+	<th class="vertical">Phone</th>
+	<td><%= text_area 'address', 'phone'  %></td>
+</tr>
+</table>
 
-<p><label for="address_city">City</label><br/>
-<%= text_area 'address', 'city'  %></p>
 
-<p><label for="address_state">State</label><br/>
-<%= text_area 'address', 'state'  %></p>
-
-<p><label for="address_zipcode">Zipcode</label><br/>
-<%= text_area 'address', 'zipcode'  %></p>
-
-<p><label for="address_country">Country</label><br/>
-<%= text_area 'address', 'country'  %></p>
-
-<p><label for="address_phone">Phone</label><br/>
-<%= text_area 'address', 'phone'  %></p>
 <!--[eoform:address]-->
 

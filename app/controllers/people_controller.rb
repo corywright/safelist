@@ -46,5 +46,21 @@ class PeopleController < ApplicationController
       render :action => 'show'
     end
   end
-
+  def checkinout
+    @person = Person.find(params[:id])
+    @event = Event.new
+    if @person.checked_in
+      @event.event_type = EventType.find(2)
+    else
+      @event.event_type = EventType.find(1)
+    end
+    @event.person_id = @person.id
+    @event.event_time = Time.now
+    if @event.save
+      flash[:notice] = "#{@event.event_type.name} successful"
+      redirect_to :action => 'list'
+    else
+      flash[:error] = "#{@event.event_type.name} failed"
+    end
+  end
 end

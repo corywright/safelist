@@ -13,11 +13,16 @@ class Volunteer < ActiveRecord::Base
       Event.find_by_volunteer_id(self.id, :order => "event_time");
   end
   def checked_in
+    if self.last_check_in
       if (self.last_check_in > self.last_check_out)
       	write_attribute(:checked_in, true)
       else
-      	write_attribute(:checked_out, false)
+      	write_attribute(:checked_in, false)
       end
+    else
+	# never logged in
+    	write_attribute(:checked_in, false)
+    end
   end
   protected
     def validate

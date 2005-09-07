@@ -27,8 +27,8 @@
 	<td> <%=h volunteer.first_name %></td>
 	<td> <%=h volunteer.last_name %></td>
 	<td> <%=h volunteer.affiliation %></td>
-	<td> in </td>
-	<td> out </td>
+	<td> <%=h volunteer.last_check_in %></td>
+	<td> <%=h volunteer.last_check_out %></td>
 	<td> X hrs </td>
 	<td> <%=h volunteer.mobile_phone %></td>	
     <td><%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>

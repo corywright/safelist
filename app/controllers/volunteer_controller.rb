@@ -5,6 +5,21 @@ class VolunteerController < ApplicationController
   end
 
   def checkinout
+    @volunteer = Volunteer.find(params[:id])
+    @event = Event.new
+    if @volunteer.checked_in
+      @event.event_type = EventType.find(4)
+    else
+      @event.event_type = EventType.find(3)
+    end
+    @event.volunteer_id = @volunteer.id
+    @event.event_time = Time.now
+    if @event.save
+      flash[:notice] = "#{@event.event_type.name} successful"
+      redirect_to :action => 'list'
+    else
+      flash[:notice] = "#{@event.event_type.name} failed"
+    end
   end
 
   def list

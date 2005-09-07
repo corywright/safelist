@@ -13,7 +13,7 @@
         <th>Name</th>
   	<th></th>
   </tr>
-  
+<% set_counter :injury, @injury_report_pages.current.offset %>  
 <% for injury_report in @injury_reports %>
   <tr class="<%=h row_style :injury %>">
   	<th class="counter"> <%=h counter :injury %></th>

@@ -6,7 +6,7 @@
     <th><%= column.human_name %></th>
   <% end %>
   </tr>
-  
+<% set_counter :addresses, @address_pages.current.offset %>  
 <% for address in @addresses %>
   <tr>
   <% for column in Address.content_columns %>

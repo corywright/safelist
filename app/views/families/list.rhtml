@@ -13,7 +13,7 @@
   <% end %>
 	<th></th>  
 </tr>
-  
+<% set_counter :families, @family_pages.current.offset %>  
 <% for family in @families %>
   <trclass="<%=h row_style :families %>">
   	<th class="counter"> <%=h counter :families %></th>

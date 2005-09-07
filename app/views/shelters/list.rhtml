@@ -12,7 +12,7 @@
   <% end %>
   	<th class="horizontal" colspan="3"></th>
   </tr>
-  
+<% set_counter :shelters, @shelter_pages.current.offset %>  
 <% for shelter in @shelters %>
   <tr class="<%=h row_style :shelters %>">
 	<th class="counter"> <%=h counter :shelters %></th>  	

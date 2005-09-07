@@ -9,7 +9,7 @@
 	<th class="horizontal">Age</th>
 	<th class="horizontal"></th>
 </tr>
- 
+<% set_counter :people, @person_pages.current.offset %> 
 <% for person in @people %>
   <tr class="<%=h row_style :people %>">
 	<th class="counter"> <%=h counter :people %></th>  	

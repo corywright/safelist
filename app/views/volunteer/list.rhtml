@@ -19,7 +19,7 @@
 	<th class="horizontal">Cell</th>
     <th class="horizontal"></th>
   </tr>
-  
+<% set_counter :volunteers, @volunteer_pages.current.offset %>  
 <% for volunteer in @volunteers %>
   <tr class="<%=h row_style :volunteers %>">
   	<th class="counter"> <%=h counter :volunteers %></th>

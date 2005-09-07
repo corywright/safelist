@@ -49,7 +49,7 @@ class PeopleController < ApplicationController
 
   def search_name
     #@people = Person.find_by_last_name(params[:last_name])
-    @people = Person.find(:all, :conditions => [ "last_name like ?", params[:last_name]] )
+    @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]] )
     if @people.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'

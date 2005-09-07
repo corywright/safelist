@@ -18,7 +18,7 @@ class VolunteerController < ApplicationController
       flash[:notice] = "#{@event.event_type.name} successful"
       redirect_to :action => 'list'
     else
-      flash[:notice] = "#{@event.event_type.name} failed"
+      flash[:error] = "#{@event.event_type.name} failed"
     end
   end
 

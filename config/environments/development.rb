@@ -12,3 +12,5 @@ ActionController::Base.perform_caching             = false
 
 # The breakpoint server port that script/breakpointer connects to.
 BREAKPOINT_SERVER_PORT = 42531
+
+ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS[:prefix] = ENV['USER']

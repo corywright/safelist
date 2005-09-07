@@ -1,27 +1,30 @@
-<h1>Listing injury_reports</h1>
+<h2>Injury Report List</h2>
 
 <table>
   <tr>
+  	<th>#</th>
   <% for column in InjuryReport.content_columns %>
     <th><%= column.human_name %></th>
   <% end %>
+  	<th></th>
   </tr>
   
 <% for injury_report in @injury_reports %>
-  <tr>
+  <tr class="<%=h row_style :injury %>">
+  	<th class="counter"> <%=h counter :injury %></th>
   <% for column in InjuryReport.content_columns %>
+
     <td><%=h injury_report.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => injury_report %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => injury_report %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => injury_report}, :confirm => 'Are you sure?' %></td>
+    <td><%= link_to 'Show', {:action => 'show', :id => injury_report}, :class => 'textbutton'  %>
+        <%= link_to 'Edit', {:action => 'edit', :id => injury_report}, :class => 'textbutton'  %>
+        <%= link_to 'Delete', {:action => 'destroy', :id => injury_report}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @injury_report_pages.current.previous } if @injury_report_pages.current.previous %>
-<%= link_to 'Next page', { :page => @injury_report_pages.current.next } if @injury_report_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @injury_report_pages.current.previous }, :class =>'textbutton'  if @injury_report_pages.current.previous %>
+<%= link_to 'Next page', { :page => @injury_report_pages.current.next }, :class =>'textbutton'  if @injury_report_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New injury_report', :action => 'new' %>

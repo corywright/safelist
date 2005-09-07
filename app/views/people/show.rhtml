@@ -1,4 +1,11 @@
 <h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
+
+<p><%= link_to 'File Injury Report', 
+	{:controller => 'injury_report', 
+	 :action => 'new',
+	 :id => @person}, 
+	 :class => 'textbutton'  %></p>
+
 <table>
 <tr>
 	<th class="vertical"> First Name </th>

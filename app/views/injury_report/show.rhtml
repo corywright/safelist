@@ -1,8 +1,16 @@
-<% for column in InjuryReport.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @injury_report.send(column.name) %>
-</p>
-<% end %>
+<h2>Injury Report</h2>
 
-<%= link_to 'Edit', :action => 'edit', :id => @injury_report %> |
-<%= link_to 'Back', :action => 'list' %>
+<table>
+<tr>
+	<th class="vertical">Referred to nurse?</th>
+	<td><%= @injury_report.referred_to_nurse %></td>
+</tr>
+<tr>
+	<th class="vertical">Notes</th>
+	<td><%= @injury_report.report %></td>
+</tr>
+</table>
+
+
+<p><%= link_to 'Edit Report', {:action => 'edit', :id => @injury_report}, :class => 'textbutton'  %> 
+<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %></p>

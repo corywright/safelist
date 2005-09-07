@@ -1,13 +1,15 @@
 <html>
 <head>
-  <title>InjuryReport: <%= controller.action_name %></title>
+  <title>Injury Report: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'robotRepair' %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<% if flash[:notice] %>
+<div class="confirm"><%= flash[:notice] %></div>
+<% end %>
 
 <%= @content_for_layout %>
-
+<br>
 </body>
 </html>

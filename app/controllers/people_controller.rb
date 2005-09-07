@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+   model :person
+   paginate :people, :order_by => 'last_name, first_name', :per_page => 20
   def index
     list
     render :action => 'list'
@@ -20,6 +22,16 @@ class PeopleController < ApplicationController
     @shelter = Shelter.find(@person.shelter_id)
   end
 
+  def update
+   @person = Person.find(params[:id])
+   if @person.update_attributes(params[:person])
+     flash[:notice] = 'Citizen was successfully updated.'
+     redirect_to :action => 'show', :id => @person
+   else
+    render :action => 'edit'
+   end
+  end
+
   def search
   end
 
@@ -36,14 +48,15 @@ class PeopleController < ApplicationController
   end
 
   def search_name
-    @person = Person.find_by_last_name(params[:last_name])
-    if @person.nil?
+    #@people = Person.find_by_last_name(params[:last_name])
+    @people = Person.find(:all, :conditions => [ "last_name like ?", params[:last_name]] )
+    if @people.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'
     else
-      @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
-      @shelter = Shelter.find(@person.shelter_id)
-      render :action => 'show'
+      #@pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
+      #@shelter = Shelter.find(@person.shelter_id)
+      render :action => 'list'
     end
   end
   def checkinout

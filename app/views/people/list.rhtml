@@ -1,9 +1,14 @@
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'Register Person/Family', 
+	 {:controller => 'register', 
+	  :action => 'index'}, 
+	  :class => 'textbutton' %>
+</div>
+
 <h2> Citizen List</h1>
 
-<p>	<%= link_to 'Add Person/Family', 
-	 {:controller => 'register', 
-	  :action => 'new'}, 
-	  :class => 'textbutton'  %></p>
+
 <table>
 <tr>
 	<th class="horizontal">#</th>

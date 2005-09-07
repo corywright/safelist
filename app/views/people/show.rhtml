@@ -1,10 +1,13 @@
-<h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
-
-<p><%= link_to 'File Injury Report', 
+<div class="header">
+<%= link_to 'People List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'File Injury Report', 
 	{:controller => 'injury_report', 
 	 :action => 'new',
 	 :id => @person}, 
-	 :class => 'textbutton'  %></p>
+	 :class => 'textbutton'  %>
+</div>
+
+<h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
 
 <table>
 <tr>
@@ -56,5 +59,4 @@
 </tr>
 </table>
 
-<p> 
-<%= link_to 'People List', {:action => 'list'}, :class => 'textbutton'  %></p>
+

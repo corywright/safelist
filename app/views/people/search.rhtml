@@ -1,25 +1,27 @@
-<h2>Search By Tag ID</h2>
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+</div>
+
+<h2>Search by Tag ID</h2>
 
 <%= start_form_tag :action => "search_tag_id" %>
 <table>
 <tr>
-<td>
-Tag ID: <input type="text" name="tag_id" />
-</td>
-</tr>
-<tr>
-	<td align="right">
+	<th class="vertical"> Tag ID </th>
+	<td> <input type="text" name="tag_id" />
 	<input type="submit" value="Search By Tag ID" name="next"></td>
 </tr>
 </table>
 <%= end_form_tag %>
 
-<h2>Search By Name</h2>
+<h2>Search by Last Name</h2>
 <%= start_form_tag :action => "search_name" %>
 <table>
-<tr><td>First Name: <input type="text" name="first_name" /></td></tr>
-<tr><td>Last Name: <input type="text" name="last_name" /></td></tr>
-<tr><td align="right"><input type="submit" value="Search By Name" name="next"></td></tr>
+<tr>
+	<th class="vertical">Last Name</th>
+	<td><input type="text" name="last_name" />
+	<input type="submit" value="Search By Last Name" name="next"></td>
+</tr>
 </table>
 
 <%= end_form_tag %>

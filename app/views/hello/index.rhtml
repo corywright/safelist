@@ -8,7 +8,15 @@
 	<th class="subhead" colspan="2">Citizens</th>
 </tr>
 <tr>
-	<td><%= link_to 'Register New Family', 
+	<td><%= link_to 'Lookup a Citizen', 
+	     {:controller => 'people', 
+		  :action => 'search'}, 
+		  :class => 'textbutton'  %></td>
+	<td class="note"> <p>Lookup a Citizen -- find a citizen's record by ID or 
+	by last name</p></td>
+</tr>
+<tr>
+	<td><%= link_to 'Register Person/Family', 
 	     {:controller => 'register', 
 		  :action => 'index'}, 
 		  :class => 'textbutton'  %></td>
@@ -16,7 +24,7 @@
 	ID bracelet or number and is entering the facility</p></td>
 </tr>
 <tr>
-	<td><%= link_to 'Check-In Family/Person', 
+	<td><%= link_to 'Check-In Person/Family', 
 	     {:controller => '', 
 		  :action => ''}, 
 		  :class => 'textbutton'  %></td>
@@ -24,7 +32,7 @@
 	entering the facility</p> </td>
 </tr>
 <tr>
-	<td><%= link_to 'Check-Out Family/Person', 
+	<td><%= link_to 'Check-Out Person/Family', 
 		 {:controller => '', 
 		  :action => ''}, 
 		  :class => 'textbutton' %></td>
@@ -32,7 +40,7 @@
 	permanently leaving the facility</p> </td>
 </tr>
 <tr>
-	<td><%= link_to 'Issue a Temporary Leave', 
+	<td><%= link_to 'Issue Person Temporary Leave', 
 		 {:controller => '', 
 		  :action => ''}, 
 		  :class => 'textbutton'  %></td>
@@ -40,11 +48,8 @@
 	leaving the facility but plans to return</p> </td>
 </tr>
 <tr>
-	<td><%= link_to 'Record Injury Report', 
-	     {:controller => '', 
-		  :action => ''}, 
-		  :class => 'textbutton'  %></td>
-	<td class="note"> <p> Record Injury Report -- add a record of an injury in
+	<td>Record Injury Report</td>
+	<td class="note"> <p> add a record of an injury in
 	the facility </p> </td>
 </tr>
 <tr>
@@ -53,18 +58,26 @@
 		  :action => 'index'}, 
 		  :class => 'textbutton'  %></td>
 	<td class="note"> <p> Missing Person Search -- search multiple web sites for
-	a person </p> </td>
+	a missing person </p> </td>
 </tr>
 <tr>
 	<th class="subhead" colspan="2">Volunteers</th>
+</tr>
+<tr>
+	<td><%= link_to 'Add a Volunteer', 
+	     {:controller => 'volunteer', 
+		  :action => 'new'}, 
+		  :class => 'textbutton'  %></td>
+	<td class="note"> <p> Add a Volunteer -- add a volunteer </p> </td>
 </tr>
 <tr>
 	<td><%= link_to 'Check-In Volunteer', 
 	     {:controller => 'volunteer', 
 		  :action => 'list'}, 
 		  :class => 'textbutton'  %></td>
-	<td class="note"> <p> Check-In Volunteer -- Add a volunteer on Duty </p> </td>
+	<td class="note"> <p> Check-In Volunteer -- mark a volunteer on Duty </p> </td>
 </tr>
+
 <tr>
 	<td><%= link_to 'Check-Out Volunteer', 
 	     {:controller => '', 
@@ -82,6 +95,14 @@
 		  :class => 'textbutton'  %></td>
 	<td class="note"> <p> View Citizen Roster -- display the currrent list of
 	citizens registered in the facility </p> </td>
+</tr>
+<tr>
+	<td><%= link_to 'View Volunteer Roster', 
+	     {:controller => 'volunteer', 
+		  :action => 'list'}, 
+		  :class => 'textbutton'  %></td>
+	<td class="note"> <p> View Volunteer Roster -- display the currrent list of
+	volunteers on-duty in the facility </p> </td>
 </tr>
 </table>
 

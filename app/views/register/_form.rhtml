@@ -7,9 +7,11 @@
 	<td><select name="person[shelter_id]">
 		<% @shelters.length.times do |z| %>
 		<% shelter = @shelters[z] %>
-			<option value="<%= shelter[:id] %>"><%= shelter[:name] %></option>
+			<option value="<%= shelter[:id] %>" 
+			<%=(@person[:shelter_id] == shelter[:id])?'SELECTED':"" %>>
+			<%= shelter[:name] %></option>
 		<% end %>
-		</select>
+		</select></td>
 </tr>
 <tr>
 	<th class="vertical"> Red Cross ID </th>

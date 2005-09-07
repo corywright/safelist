@@ -25,6 +25,7 @@ class RegisterController < ApplicationController
         setup
         @person = Person.new(session[:registration][:people][params[:id].to_i])
         @id = params[:id]
+		@shelters = Shelter.find(:all)
         rescue 
             error_handler
     end

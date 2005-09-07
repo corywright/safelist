@@ -13,8 +13,8 @@
 	<th class="horizontal">First</th>
 	<th class="horizontal">Last</th>
 	<th class="horizontal"> Affiliation </th>
-	<th class="horizontal">Check-In</th>
-	<th class="horizontal">Check-Out</th>
+	<th class="horizontal">Last Check-In</th>
+	<th class="horizontal">Last Check-Out</th>
 	<th class="horizontal">Duration</th>
 	<th class="horizontal">Cell</th>
     <th class="horizontal"></th>
@@ -27,11 +27,26 @@
 	<td> <%=h volunteer.first_name %></td>
 	<td> <%=h volunteer.last_name %></td>
 	<td> <%=h volunteer.affiliation %></td>
-	<td> <%=h volunteer.last_check_in %></td>
-	<td> <%=h volunteer.last_check_out %></td>
-	<td> X hrs </td>
+	<td> <%=h volunteer.last_check_in.to_formatted_s(:db) %></td>
+	<td> <% if volunteer.last_check_out != nil %>
+			<%=h volunteer.last_check_out.to_formatted_s(:db) %>
+		 <% end %></td>
+	<td> 
+	<% if volunteer.last_check_out == nil or volunteer.last_check_out << volunteer.last_check_in %>
+		<%=h distance_of_time_in_words_to_now(volunteer.last_check_in)%>
+	<% else %>
+	 	-- 
+	<% end %>	
+	</td>
+
 	<td> <%=h volunteer.mobile_phone %></td>	
-    <td><%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>
+    <td>
+		<% if volunteer.last_check_out == nil or volunteer.last_check_out << volunteer.last_check_in
+			button
+		 %>
+		 
+		
+		<%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>
         <%= link_to 'Edit', {:action => 'edit', :id => volunteer}, :class => 'textbutton'  %></td>
   </tr>
 <% end %>

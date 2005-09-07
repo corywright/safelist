@@ -53,7 +53,7 @@ CREATE TABLE people(
     tag_id text NOT NULL default '',
     first_name text NOT NULL default '',
     last_name text NOT NULL default '',
-    family_id int4 NOT NULL,
+    family_id int4,
     person_type_id int4 NOT NULL,
     medical_problems text NOT NULL default '',
     ssn text NOT NULL default '',

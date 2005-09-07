@@ -1,14 +1,14 @@
 <h2>Registration Summary</h2>
 
 <p><%= link_to 'Add Another Person' , {:action => "index"}, :class => 'textbutton'  %></p>
-<table border = 1>
+<table>
 <tr>
     <th class="horizontal">&nbsp;</th>
     <th class="horizontal">Name</th>
     <th class="horizontal">DOB</th>
     <th class="horizontal">Type</th>
     <th class="horizontal">Medical Condition</th>
-    <th class="horizontal">Location Description</th>
+    <th class="horizontal">Location Notes</th>
 </tr>
 <%  @people.length.times do |x| %>
 <% person = @people[x] %>
@@ -37,38 +37,41 @@
 <%= start_form_tag :action => "submit" %>
 <table>
     <tr>
-		<th>Disclosure Consent</th>
+		<th class="vertical">Disclosure Consent</th>
         <td> <input type=checkbox name="disclosure_consent" value="t"> 
 		I authorize the release of the above information<br> concerning my whereabouts 
 		or general condition.<td>
     </tr>
 	<tr>
-		<th class="horizontal" colspan="2"><br><br>Pre-Disaster Address</th>
+		<th class="vertical">Pre-Disaster Address</th>
+		<td>
+			<table>
+		    <tr>
+		        <th>Telephone</th>
+		        <td><input type="text_field" name="address[phone]"></td>
+		    </tr>
+		    <tr>
+		        <th>Street</th>
+		        <td><input type="text_field" name="address[street]"></td>
+		    </tr>
+		    <tr>
+		        <th>City</th>
+		        <td><input type="text_field" name="address[city]"></td>
+		    </tr>
+		    <tr>
+		        <th>State</th>
+		        <td><input type="text_field" name="address[state]"></td>
+		    </tr>
+		    <tr>
+		        <th>Zip Code</th>
+		        <td><input type="text_field" name="address[zipcode]"></td>
+		    </tr>
+		    <tr>
+		        <th>Country</th>
+		        <td><input type="text_field" name="address[country]" value="USA"></td>
+		    </tr>
+			</table></td>
 	</tr>
-    <tr>
-        <th class="vertical">Telephone</th>
-        <td><input type="text_field" name="address[phone]"></td>
-    </tr>
-    <tr>
-        <th class="vertical">Street</th>
-        <td><input type="text_field" name="address[street]"></td>
-    </tr>
-    <tr>
-        <th class="vertical">City</th>
-        <td><input type="text_field" name="address[city]"></td>
-    </tr>
-    <tr>
-        <th class="vertical">State</th>
-        <td><input type="text_field" name="address[state]"></td>
-    </tr>
-    <tr>
-        <th class="vertical">Zip Code</th>
-        <td><input type="text_field" name="address[zipcode]"></td>
-    </tr>
-    <tr>
-        <th class="vertical">Country</th>
-        <td><input type="text_field" name="address[country]" value="USA"></td>
-    </tr>
 	<tr>
 		<td colspan="2" align="right"><input type="submit" value="Register & Check-In"></td>
 	</tr>	

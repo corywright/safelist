@@ -27,9 +27,9 @@
 	<td> <%=h volunteer.first_name %></td>
 	<td> <%=h volunteer.last_name %></td>
 	<td> <%=h volunteer.affiliation %></td>
-	<td> <%=h volunteer.last_check_in.to_formatted_s(:db) %></td>
+	<td> <%=h volunteer.last_check_in %></td>
 	<td> <% if volunteer.last_check_out != nil %>
-			<%=h volunteer.last_check_out.to_formatted_s(:db) %>
+			<%=h volunteer.last_check_out %>
 		 <% end %></td>
 	<td> 
 	<% if volunteer.checked_in %>

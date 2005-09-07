@@ -1,0 +1,30 @@
+<!--[list:person]--!>
+<table>
+<tr>
+	<th class="horizontal">#</th>
+	<th class="horizontal">Tag ID</th>
+	<th class="horizontal">First Name</th>
+	<th class="horizontal">Last Name</th>
+	<th class="horizontal">DOB</th>
+	<th class="horizontal">Age</th>
+	<th class="horizontal"></th>
+</tr>
+ 
+<% for person in @people %>
+  <tr class="<%=h row_style :people %>">
+	<th class="counter"> <%=h counter :people %></th>  	
+	<td> <%=h person.tag_id %> </td>
+	<td> <%=h person.first_name %> </td>
+	<td> <%=h person.last_name %> </td>
+	<td> <%=h person.dob %> </td>	
+	<td> <%=h person.age %> </td>	
+    <td><%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
+    	<%= link_to 'Edit', {:action => 'edit', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
+    	<%= link_to 'Remove from family', {:action => 'destroy', :id => person, :controller => 'families'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
+    	<%= link_to 'Delete', {:action => 'destroy', :id => person, :controller => 'people'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @person_pages.current.previous }, :class =>'textbutton'  if @person_pages.current.previous %>
+<%= link_to 'Next page', { :page => @person_pages.current.next }, :class =>'textbutton'  if @person_pages.current.next %> 

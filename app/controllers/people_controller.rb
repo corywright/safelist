@@ -36,7 +36,7 @@ class PeopleController < ApplicationController
   end
 
   def search_name
-    @person = Person.find_by_first_name_and_last_name(params[:first_name],params[:last_name])
+    @person = Person.find_by_last_name(params[:last_name])
     if @person.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'

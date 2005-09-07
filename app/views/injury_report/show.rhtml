@@ -1,3 +1,9 @@
+<div class="header">
+<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Edit Report', {:action => 'edit', :id => @injury_report}, :class => 'textbutton'  %> 
+
+</div>
+
 <h2>Injury Report</h2>
 
 <table>
@@ -12,5 +18,4 @@
 </table>
 
 
-<p><%= link_to 'Edit Report', {:action => 'edit', :id => @injury_report}, :class => 'textbutton'  %> 
-<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %></p>
+

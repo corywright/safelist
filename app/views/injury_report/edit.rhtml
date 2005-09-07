@@ -1,3 +1,9 @@
+<div class="header">
+<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'View Report', {:action => 'show', :id => @injury_report}, :class => 'textbutton'  %>
+
+</div>
+
 <h2>Edit Injury Report</h2>
 
 <%= start_form_tag :action => 'update', :id => @injury_report %>
@@ -5,5 +11,4 @@
   <%= submit_tag 'Save' %>
 <%= end_form_tag %>
 
-<%= link_to 'View Report', {:action => 'show', :id => @injury_report}, :class => 'textbutton'  %>
-<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %>
+

@@ -25,7 +25,4 @@ class Volunteer < ActiveRecord::Base
       errors.add("home_phone", "has invalid format") unless home_phone =~ /[0-9]*/
     end
 
-    def validate_on_update
-      errors.add_to_base("No changes have occurred") if unchanged_attributes?
-    end
 end

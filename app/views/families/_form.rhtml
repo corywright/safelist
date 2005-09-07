@@ -4,19 +4,7 @@
 <table>
 <tr>
 	<th class="horizontal">Disclosure consent</th>
-	<td><select id="family_disclosure_consent" 
-		 name="family[disclosure_consent]">
-		 	<option value="false" selected>False</option>
-			<option value="true">True</option>
-		</select></td>
-</tr>
-<tr>
-	<th class="horizontal">Shelter arrival on</th>
-	<td><%= date_select 'family', 'shelter_arrival_on'  %></td>
-</tr>
-<tr>
-	<th class="horizontal">Shelter departure at</th>
-	<td><%= datetime_select 'family', 'shelter_departure_at'  %></td>
+	<td><%= check_box 'family','disclosure_consent' %></td>
 </tr>
 </table>
 

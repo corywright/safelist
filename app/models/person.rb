@@ -7,7 +7,7 @@ class Person < ActiveRecord::Base
       first_name + " " + last_name
     end
     def last_check_in
-      @event = Event.find_by_person_id(self.id, 1, :order => "event_time DESC")
+      @event = Event.find_by_person_id_and_event_type_id(self.id, 1, :order => "event_time DESC")
       write_attribute(:last_check_in, @event.event_time) if @event
     end
     def last_check_out
@@ -15,18 +15,15 @@ class Person < ActiveRecord::Base
       write_attribute(:last_check_out, @event.event_time) if @event
     end
     def last_event
-      Event.find_by_person_id(self.id, :order => "event_time DESC");
+      @event = Event.find_by_person_id(self.id, :order => "event_time DESC");
+      return @event
     end
     def checked_in
-     if self.last_check_in
-      if (self.last_check_in > self.last_check_out)
-        write_attribute(:checked_in, true)
-      else
-        write_attribute(:checked_in, false)
-      end
+     @event = self.last_event
+     if @event.event_type == (1 || 6)
+     	write_attribute(:checked_in, true)
      else
-     	# never logged in
-        write_attribute(:checked_in, false)
+        write_attribute(:checked_in, false);
      end
     end
 end

@@ -14,7 +14,7 @@ class Volunteer < ActiveRecord::Base
   end
   def checked_in
     if self.last_check_in
-      if (self.last_check_in > self.last_check_out)
+      if (self.last_check_in.to_i > self.last_check_out.to_i)
       	write_attribute(:checked_in, true)
       else
       	write_attribute(:checked_in, false)

@@ -1,3 +1,5 @@
 class Address < ActiveRecord::Base
-    has_many :shelters
+    belongs_to :shelters
+    belongs_to :people
+    belongs_to :families
 end

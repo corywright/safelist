@@ -29,7 +29,11 @@ class PeopleController < ApplicationController
   end
 
   def create
+    @shelters = Shelter.find(:all)
     @person = Person.new(params[:person])
+    if (session[:history][2]["url"] =~ /families/)
+	@person.family_id = session[:lastfamily]
+    end
     if @person.save
       flash[:notice] = 'Citizen was successfully created.'
       redirect_to :action => 'list'

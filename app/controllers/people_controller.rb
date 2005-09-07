@@ -56,7 +56,7 @@ class PeopleController < ApplicationController
     else
       #@pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
       #@shelter = Shelter.find(@person.shelter_id)
-      render :action => 'list'
+      render :action => 'results'
     end
   end
   def checkinout

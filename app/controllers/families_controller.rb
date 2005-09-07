@@ -10,6 +10,8 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    session[:lastfamily] = params[:id]
+    @family = Family.find(params[:id])
     @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
     if @people.nil?
       flash[:error] = 'No members of this family.'
@@ -33,6 +35,7 @@ class FamiliesController < ApplicationController
   end
 
   def edit
+    session[:lastfamily] = params[:id]
     @family = Family.find(params[:id])
   end
 
@@ -54,6 +57,6 @@ class FamiliesController < ApplicationController
     else
       flash[:error] = 'Could not remove family member.'
     end
-    redirect_to :action => 'list'
+    redirect_to :action => 'show', :id => session[:lastfamily]
   end
 end

@@ -1,3 +1,14 @@
+<<<<<<< .mine
+<h1>Edit Family</h1>
+
+<%= start_form_tag :action => 'update', :id => @family %>
+  <%= render_partial 'form' %>
+  <%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @family %> |
+<%= link_to 'Back', :action => 'list' %>
+=======
 <div class="header">
 <%= link_to 'Family List', {:action => 'list'}, :class => 'textbutton'  %>
 <%= link_to 'View Family', {:action => 'show', :id => @family}, :class => 'textbutton'  %></div>
@@ -8,3 +19,4 @@
   <%= render_partial 'form' %>
   <%= submit_tag 'Save' %>
 <%= end_form_tag %>
+>>>>>>> .r121

@@ -11,4 +11,9 @@ psql safelist_development < data.addresses.sql
 psql safelist_development < data.shelters.sql
 psql safelist_development < data.event_types.sql
 
-psql safelist_test<create.sql
+# test data
+psql safelist_development < data.families.sql
+psql safelist_development < data.people.sql
+psql safelist_development < data.volunteers.sql
+
+psql safelist_test < create.sql

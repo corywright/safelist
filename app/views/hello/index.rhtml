@@ -30,30 +30,6 @@
 	bracelet/number and is entering the facility</p></td>
 </tr>
 <tr>
-	<td><%= link_to 'Check-In Person/Family', 
-	     {:controller => '', 
-		  :action => ''}, 
-		  :class => 'textbutton'  %></td>
-	<td class="note"> <p>Check-In Family/Person -- person has an ID and is 
-	entering the facility</p> </td>
-</tr>
-<tr>
-	<td><%= link_to 'Check-Out Person/Family', 
-		 {:controller => '', 
-		  :action => ''}, 
-		  :class => 'textbutton' %></td>
-	<td class="note"> <p>Check-Out Family/Person -- person has an ID and is 
-	permanently leaving the facility</p> </td>
-</tr>
-<tr>
-	<td><%= link_to 'Issue a Temporary Leave', 
-		 {:controller => '', 
-		  :action => ''}, 
-		  :class => 'textbutton'  %></td>
-	<td class="note"> <p>Issue a Temporary Leave -- person has an ID and is 
-	leaving the facility but plans to return</p> </td>
-</tr>
-<tr>
 	<td><%= link_to 'Missing Person Search', 
 	     {:controller => 'missing_persons', 
 		  :action => 'index'}, 
@@ -71,21 +47,6 @@
 		  :class => 'textbutton'  %></td>
 	<td class="note"> <p> Add a Volunteer -- add a new volunteer for the 
 	facility </p> </td>
-</tr>
-<tr>
-	<td><%= link_to 'Check-In Volunteer', 
-	     {:controller => 'volunteer', 
-		  :action => 'list'}, 
-		  :class => 'textbutton'  %></td>
-	<td class="note"> <p> Check-In Volunteer -- mark a volunteer on duty </p> </td>
-</tr>
-
-<tr>
-	<td><%= link_to 'Check-Out Volunteer', 
-	     {:controller => '', 
-		  :action => ''}, 
-		  :class => 'textbutton'  %></td>
-	<td class="note"> <p> Check-Out Volunteer -- mark that a volunteer is leaving </p> </td>
 </tr>
 <tr>
 	<th class="horizontal" colspan="2"> Reports </th>

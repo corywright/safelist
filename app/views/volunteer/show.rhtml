@@ -1,7 +1,12 @@
 <div class="header">
 <%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
-<%= link_to 'Check-In', {:action => 'checkinout', :id => @volunteer.id}, :class => 'textbutton'  %>
-<%= link_to 'Check-Out', {:action => 'checkinout', :id => @volunteer.id}, :class => 'textbutton'  %>
+<% if @volunteer.checked_in
+		   		button_text = 'Check-Out'
+			else
+				button_text = 'Check-In'
+			end
+		 %>
+		<%= link_to button_text, {:action => 'checkinout', :id => @volunteer}, :class => 'textbutton'  %> 
 </div>
 
 <h2> Volunteer - <%=h @volunteer.first_name %> <%=h @volunteer.last_name %> </h2>

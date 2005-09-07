@@ -125,3 +125,15 @@ end
         'mode' => 'search',
     })
 %>
+
+<%= getIframe('Katrina Finder',
+        'http://www.katrinafinder.us/searching_list.php?',
+
+    {
+        'refined' => 'R',
+        'last_name' => search_string,
+        'matchtype' => 'E',
+        'Submit' => 'Search'
+    })
+%>
+

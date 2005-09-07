@@ -33,12 +33,17 @@ class PeopleController < ApplicationController
     @person = Person.new(params[:person])
     if (session[:history][2]["url"] =~ /families/)
 	@person.family_id = session[:lastfamily]
+	added_to_family = 1
     end
     if @person.save
       flash[:notice] = 'Citizen was successfully created.'
-      redirect_to :action => 'list'
     else
-      render :action => 'new'
+      flash[:error] = 'Could not save Citizen.'
+    end
+    if added_to_family
+      redirect_to :action => 'show', :controller => 'families', :id => @person.family_id
+    else
+      redirect_to :action => 'list'
     end
   end
 

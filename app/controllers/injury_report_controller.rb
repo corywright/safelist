@@ -5,7 +5,7 @@ class InjuryReportController < ApplicationController
   end
 
   def list
-    @injury_report_pages, @injury_reports = paginate :injury_report, :per_page => 10
+    @injury_report_pages, @injury_reports = paginate :injury_report, :per_page => 20
   end
 
   def show

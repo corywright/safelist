@@ -304,10 +304,6 @@ div.header {
 	background-repeat: repeat-x;
 	color: #4A4D4A;
 	border: 1px solid #B0B3B0;
-	border-bottom: 2px solid #528AC6; 
-	font-family: verdana,arial,sans-serif;
-	font-weight: bold;
-	font-size: 1em;
 	padding: 2px;
 	width: auto;
 }

@@ -1,27 +1,36 @@
-<h1>Listing families</h1>
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'Add a Family', {:action => 'new'}, :class => 'textbutton'  %>
+</div>
+
+<h2>Family List</h2>
 
 <table>
-  <tr>
+<tr>
+  	<th>#</th>
   <% for column in Family.content_columns %>
     <th><%= column.human_name %></th>
   <% end %>
-  </tr>
+	<th></th>  
+</tr>
   
 <% for family in @families %>
-  <tr>
+  <trclass="<%=h row_style :families %>">
+  	<th class="counter"> <%=h counter :families %></th>
   <% for column in Family.content_columns %>
+
     <td><%=h family.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => family %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => family %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => family}, :confirm => 'Are you sure?' %></td>
+    <td><%= link_to 'Show', {:action => 'show', :id => family}, :class => 'textbutton'  %>
+    	<%= link_to 'Edit', {:action => 'edit', :id => family}, :class => 'textbutton'  %>
+    	<%= link_to 'Delete', {:action => 'destroy', :id => family}, :class =>'textbuttonwarn', :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @family_pages.current.previous } if @family_pages.current.previous %>
-<%= link_to 'Next page', { :page => @family_pages.current.next } if @family_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @family_pages.current.previous }, :class =>'textbutton'  if @family_pages.current.previous %>
+<%= link_to 'Next page', { :page => @family_pages.current.next }, :class =>'textbutton'  if @family_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New family', :action => 'new' %>
+

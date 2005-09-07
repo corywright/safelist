@@ -1,3 +1,7 @@
+<div class="header">
+<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %>
+</div>
+
 <h2>New Injury Report</h2>
 
 <%= start_form_tag :action => 'create' %>
@@ -5,4 +9,4 @@
   <%= submit_tag "Save" %>
 <%= end_form_tag %>
 
-<%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %>
+

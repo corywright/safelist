@@ -1,13 +1,24 @@
 <%= error_messages_for 'family' %>
 
 <!--[form:family]-->
-<p><label for="family_disclosure_consent">Disclosure consent</label><br/>
-<select id="family_disclosure_consent" name="family[disclosure_consent]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<table>
+<tr>
+	<th class="horizontal">Disclosure consent</th>
+	<td><select id="family_disclosure_consent" 
+		 name="family[disclosure_consent]">
+		 	<option value="false" selected>False</option>
+			<option value="true">True</option>
+		</select></td>
+</tr>
+<tr>
+	<th class="horizontal">Shelter arrival on</th>
+	<td><%= date_select 'family', 'shelter_arrival_on'  %></td>
+</tr>
+<tr>
+	<th class="horizontal">Shelter departure at</th>
+	<td><%= datetime_select 'family', 'shelter_departure_at'  %></td>
+</tr>
+</table>
 
-<p><label for="family_shelter_arrival_on">Shelter arrival on</label><br/>
-<%= date_select 'family', 'shelter_arrival_on'  %></p>
-
-<p><label for="family_shelter_departure_at">Shelter departure at</label><br/>
-<%= datetime_select 'family', 'shelter_departure_at'  %></p>
 <!--[eoform:family]-->
 

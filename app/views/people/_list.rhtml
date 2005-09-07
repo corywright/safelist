@@ -20,7 +20,11 @@
 	<td> <%=h person.age %> </td>	
     <td><%= link_to 'Show', {:action => 'show', :id => person}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person}, :class => 'textbutton'  %>
-    	<%= link_to 'Delete', {:action => 'destroy', :id => person}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>
+    	<%= link_to 'Delete', {:action => 'destroy', :id => person}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
+	<% if person.family_id %>
+    	  <%= link_to 'Family', {:action => 'show', :id => person.family_id, :controller => 'families'}, :class => 'textbutton'  %>
+	<% end %>
+	</td>
   </tr>
 <% end %>
 </table>

@@ -23,6 +23,21 @@ class PeopleController < ApplicationController
     @shelter = Shelter.find(@person.shelter_id)
   end
 
+  def new
+    @person = Person.new
+    @shelters = Shelter.find(:all)
+  end
+
+  def create
+    @person = Person.new(params[:person])
+    if @person.save
+      flash[:notice] = 'Citizen was successfully created.'
+      redirect_to :action => 'list'
+    else
+      render :action => 'new'
+    end
+  end
+
   def update
    @person = Person.find(params[:id])
    if @person.update_attributes(params[:person])

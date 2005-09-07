@@ -25,3 +25,9 @@
 </table>
 
 <%= end_form_tag %>
+
+<h2>View Citizen Roster</h2>
+<p><%= link_to 'View Citizen Roster', 
+	     {:controller => 'people', 
+		  :action => 'list'}, 
+		  :class => 'textbutton'  %></p>

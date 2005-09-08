@@ -57,7 +57,7 @@ end
 	<th class="vertical">Status</th>
 	<td>
 	<% if @person.checked_in %>
-	On-Site
+	<div class="confirm">On-Site</div>
 	<% else %>
 	<div class="errormsg">Off-Site</div>
 	<% end %>
@@ -82,9 +82,9 @@ end
 <tr>
 	<th class="vertical"> Shelter </th>
 	<td><% if @shelter.id == 1 %>
-		<div class="errormsg"> Unknown </div>
+		<div class="errormsg"> <%=h @shelter.name %> </div>
 		<% else %>
-		<%=h @shelter.name %>
+		<div class="confirm"><%=h @shelter.name %></div>
 		<% end %>
 		</td>
 </tr>

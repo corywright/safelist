@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
     @shelter = Shelter.find(@person.shelter_id)
     @events = Event.find_all_by_person_id(params[:id],
                                           :include => [:event_type, :shelter],
-                                          :order => "event_time")
+                                          :order => "event_time DESC")
   end
   
   def edit

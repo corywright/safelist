@@ -89,4 +89,25 @@ class FamiliesController < ApplicationController
     end
     redirect_to :action => 'show', :id => session[:lastfamily]
   end
+
+  def checkout
+    @people = Person.find_all_by_family_id(params[:id])
+    for @person in @people
+      if @person.checked_in
+        @person.toggle_in_or_out(params[:perm], session[:shelter_id])
+      end
+    end
+    redirect_to :action => 'show', :id => session[:lastfamily]
+  end
+
+  def checkin
+    @people = Person.find_all_by_family_id(params[:id])
+    for @person in @people
+      if !@person.checked_in
+        @person.toggle_in_or_out(params[:perm], session[:shelter_id])
+      end
+    end
+    redirect_to :action => 'show', :id => session[:lastfamily]
+  end
+
 end

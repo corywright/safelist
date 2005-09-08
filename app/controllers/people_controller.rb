@@ -99,6 +99,8 @@ class PeopleController < ApplicationController
     end
     if (session[:history][1]['name'] == 'people:show')
 	redirect_to :action => 'show', :id => @person.id
+    elsif (session[:history][1]['name'] == 'families:show')
+	redirect_to :action => 'show', :id => session[:lastfamily], :controller => 'families'
     else
     	redirect_to :action => 'list'
     end

@@ -117,9 +117,14 @@ class PeopleController < ApplicationController
     @event.event_time = Time.now
     if @event.save
       flash[:notice] = "#{@event.event_type.name} successful"
-      redirect_to :action => 'list'
     else
       flash[:error] = "#{@event.event_type.name} failed"
+    end
+    if (session[:history][1]['name'] == 'people:show')
+	redirect_to :action => 'show', :id => @person.id
+    else
+	flash[:notice] = session[:history][1]
+    	redirect_to :action => 'list'
     end
   end
 end

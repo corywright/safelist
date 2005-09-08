@@ -12,12 +12,17 @@
 	<td><%= @injury_report.person.name %></td>
 </tr>
 <tr>
+	<th class="vertical">Description</th>
+	<td><%= @injury_report.description %></td>
+</tr>
+<tr>
 	<th class="vertical">Referred to nurse?</th>
 	<td><%= @injury_report.referred_to_nurse %></td>
 </tr>
 <tr>
 	<th class="vertical">Notes</th>
-	<td><%= @injury_report.report %></td>
+	<td>
+<pre><%= @injury_report.report %></pre></td>
 </tr>
 </table>
 

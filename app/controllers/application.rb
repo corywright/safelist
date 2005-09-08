@@ -2,6 +2,7 @@
 # Likewise will all the methods added be available for all controllers.
 class ApplicationController < ActionController::Base
 	before_filter :add_to_history
+	before_filter :get_subdomain
 
 	def add_to_history
 	  session[:history] ||= []
@@ -9,6 +10,8 @@ class ApplicationController < ActionController::Base
 	  session[:history].pop while session[:history].length > 11
 	end
 
-
+	def get_subdomain
+	  session[:subdomains] = @request.subdomains
+	end
 
 end

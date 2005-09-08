@@ -22,6 +22,7 @@ class FamiliesController < ApplicationController
 
   def new
     @family = Family.new
+    @family.save
   end
 
   def create
@@ -32,6 +33,19 @@ class FamiliesController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def addmember
+    @family = Family.find(params[:id])
+    @shelters = Shelter.find(:all)
+    @person = Person.new(params[:person])
+    @person.family_id = @family.id
+    if @person.save
+      flash[:notice] = 'Citizen was successfully created.'
+    else
+      flash[:error] = 'Could not save Citizen.'
+    end
+    redirect_to :action => 'show', :id => @family.id
   end
 
   def edit

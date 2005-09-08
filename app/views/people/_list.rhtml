@@ -31,12 +31,12 @@
 	<td>
 	<% if person.checked_in %>
 		<%= link_to 'Check-Out', 
-			 {:action => 'checkout',
+			 {:action => 'checkinout',
 			 :id => person.id}, 
 			 :class => 'textbutton' %> |
 	<% else %>
 		<%= link_to 'Check-In&nbsp;&nbsp;', 
-			 {:action => 'checkin',
+			 {:action => 'checkinout',
 			 :id => person.id}, 
 			 :class => 'textbutton' %> |	
 	<% end %>

@@ -29,10 +29,9 @@
 	<td class="note"> <p> View Citizen Roster -- display the currrent list of
 	citizens registered in the facility </p> </td>
 </tr>
-<tr>
+<tr><%= link_to 'Home', '/', :class => 'textbutton'  %>
 	<td><%= link_to 'Missing Person Search', 
-	     {:controller => 'missing_persons', 
-		  :action => 'index'}, 
+	     'http://search.sasafelist.org/', 
 		  :class => 'textbutton'  %></td>
 	<td class="note"> <p> Missing Person Search -- search multiple web sites for
 	a missing person </p> </td>

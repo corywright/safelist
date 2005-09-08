@@ -70,7 +70,7 @@ end
 </tr>
 <tr>
 	<th class="vertical"> Medical Problems </th>
-	<td> <%=h @person.medical_problems %></td>
+	<td> <%=h simple_format(@person.medical_problems) %></td>
 </tr>
 <tr>
 	<th class="vertical"> Shelter </th>
@@ -84,7 +84,7 @@ end
 <tr>
 	<th class="vertical"> Location Notes </th>
 	<td>
-		<%=h @person.location_description %></td>
+		<%=h simple_format(@person.location_description) %></td>
 </tr>
 <tr>
 	<th class="vertical"> Pre-Disaster Address </th>

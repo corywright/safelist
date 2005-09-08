@@ -14,16 +14,19 @@
 <%= link_to 'Add Existing Citizen', {:action => 'search_to_add', :id => @family.id }, :class => 'textbutton' %> 
 <%= link_to 'Check-In Family', 
 	 {:controller => 'families', 
-	  :action => 'checkin'}, 
+	  :action => 'checkin',
+	  :id => @family.id}, 
 	  :class => 'textbutton' %>	
 <%= link_to 'Family Day Pass', 
 	 {:controller => 'families', 
-	  :action => 'checkin'}, 
+	  :action => 'checkin',
+	  :id => @family.id}, 
 	  :class => 'textbutton' %>	
 <%= link_to 'Check-Out Family Permanently', 
 	 {:controller => 'families', 
 	  :action => 'checkout',
-	  :perm => 'true'}, 
+	  :perm => 'true',
+	  :id => @family.id}, 
 	  :class => 'textbuttonwarn' %>		  
 <p>
 <!-- Feature needs added -->

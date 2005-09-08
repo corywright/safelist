@@ -65,7 +65,12 @@
 	<td> <%=h @person.resume %> </td>
 </tr>
 <tr>
-	<td colspan="2" align="right"><%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %></td>
+	<td colspan="2" align="right">
+	<% if @person.family_id %>
+	  <%= link_to 'Family', {:controller => 'families', :action => 'show', :id => @person.family_id}, :class => 'textbutton' %>
+	<% end %>
+	<%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %>
+	</td>
 </tr>
 </table>
 

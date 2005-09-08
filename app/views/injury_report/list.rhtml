@@ -6,20 +6,21 @@
 
 <table>
   <tr>
-  	<th>#</th>
-    <th>Name</th>
-  	<th>Referred to nurse?</th>
-	<th></th>
+  	<th class="horizontal">#</th>
+    <th class="horizontal">Name</th>
+	<th class="horizontal">Description</th>
+  	<th class="horizontal">Referred to nurse?</th>
+	<th class="horizontal"></th>
   </tr>
 <% set_counter :injury, @injury_report_pages.current.offset %>  
 <% for injury_report in @injury_reports %>
   <tr class="<%=h row_style :injury %>">
   	<th class="counter"> <%=h counter :injury %></th>
 	 <td><%= injury_report.person.name %></td>
+ 	 <td><%= injury_report.description %></td>
 	 <td><%= injury_report.referred_to_nurse %></td>
-	<td><%= link_to 'Show', {:action => 'show', :id => injury_report}, :class => 'textbutton'  %>
+	 <td><%= link_to 'Show', {:action => 'show', :id => injury_report}, :class => 'textbutton'  %>
         <%= link_to 'Edit', {:action => 'edit', :id => injury_report}, :class => 'textbutton'  %>
-        <%= link_to 'Delete', {:action => 'destroy', :id => injury_report}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
 		| <%= link_to 'View Person', {:controller => 'people', :action => 'show', :id => injury_report.person_id}, :class => 'textbutton'  %></td>
   </tr>
 <% end %>

@@ -6,4 +6,5 @@ class HelloController < ApplicationController
     @volunteers = Volunteer.count(["shelter_id = ?", session[:shelter_id] ])
     @shelter = Shelter.find(session[:shelter_id])
   end
+
 end

@@ -1,26 +1,41 @@
 <div class="header">
-<%= link_to 'People List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'View People List', {:action => 'list'}, :class => 'textbutton'  %>
+
+<% if @person.family_id %>
+  <%= link_to 'View Family', {:controller => 'families', :action => 'show', :id => @person.family_id}, :class => 'textbutton' %>
+<% end %>
 
 <% if @person.checked_in
-	button_text = 'Issue Day Pass'
+	button_text_check_in = 'Check-Out Permanently'
+	button_class = 'textbuttonwarn'
 else
-	button_text = 'Return from Day Pass'
+	button_text_check_in = 'Check-In Citizen'
+	button_class = 'textbutton'
 end
 %>
-<%= link_to button_text, {:action => 'checkinout', :id => @person}, :class => 'textbutton'  %> 
+<%= link_to button_text_check_in, 
+	 {:action => 'checkinout',
+	 :id => @person.id,
+	 :perm => 'true'}, 
+	 :class => button_class  %>
 
+<% if @person.checked_in
+	button_text_day_pass = 'Issue Day Pass'
+else
+	button_text_day_pass = 'Return from Day Pass'
+end
+%>
+<%= link_to button_text_day_pass, 
+	{:action => 'checkinout', 
+	 :id => @person}, 
+	 :class => 'textbutton' %> 
+	 
 <%= link_to 'File Injury Report', 
 	{:controller => 'injury_report', 
 	 :action => 'new',
 	 :id => @person}, 
 	 :class => 'textbutton'  %>
 
-<%= link_to 'Permanent Check-Out', 
-	 {:action => 'checkinout',
-	 :id => @person.id,
-	 :perm => 'true'}, 
-	 :class => 'textbutton'  %>
-	 
 	 
 </div>
 
@@ -39,7 +54,7 @@ end
 	<td> <%=h @person.last_name %></td>
 </tr>
 <tr>
-	<th>Status</th>
+	<th class="vertical">Status</th>
 	<td>
 	<% if @person.checked_in %>
 	On-Site
@@ -92,9 +107,6 @@ end
 </tr>
 <tr>
 	<td colspan="2" align="right">
-	<% if @person.family_id %>
-	  <%= link_to 'Family', {:controller => 'families', :action => 'show', :id => @person.family_id}, :class => 'textbutton' %>
-	<% end %>
 	<%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %>
 	</td>
 </tr>

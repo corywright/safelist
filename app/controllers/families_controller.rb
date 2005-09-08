@@ -12,9 +12,9 @@ class FamiliesController < ApplicationController
   def show
     session[:lastfamily] = params[:id]
     @family = Family.find(params[:id])
-    @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
+    @members = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
     @address = Address.find(@family.pre_disaster_address_id)
-    if @people.nil?
+    if @members.nil?
       flash[:error] = 'No members of this family.'
       render :action => 'members'
     else
@@ -113,7 +113,7 @@ class FamiliesController < ApplicationController
   def search_to_add
     session[:lastfamily] = params[:id]
     @family = Family.find(session[:lastfamily])
-    @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
+    @members = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
     if @people.nil?
       flash[:error] = 'No members of this family.'
     end
@@ -134,6 +134,7 @@ class FamiliesController < ApplicationController
 
   def search_tag_id
     @family = Family.find(session[:lastfamily])
+    @members = Person.find(:all, :conditions => [ "family_id = ?", @family.id] )
     @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id]] )
     if @people.nil?
       flash[:notice] = "No one found by that tag id"
@@ -145,6 +146,7 @@ class FamiliesController < ApplicationController
 
   def search_name
     @family = Family.find(session[:lastfamily])
+    @members = Person.find(:all, :conditions => [ "family_id = ?", @family.id] )
     @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]] )
     if @people.nil?
       flash[:notice] = "No one found by that name"

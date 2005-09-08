@@ -1,16 +1,36 @@
 <div class="header">
 <%= link_to 'People List', {:action => 'list'}, :class => 'textbutton'  %>
+
+<% if @person.checked_in
+	button_text = 'Issue Day Pass'
+else
+	button_text = 'Return from Day Pass'
+end
+%>
+<%= link_to button_text, {:action => 'checkinout', :id => @person}, :class => 'textbutton'  %> 
+
 <%= link_to 'File Injury Report', 
 	{:controller => 'injury_report', 
 	 :action => 'new',
 	 :id => @person}, 
 	 :class => 'textbutton'  %>
+
+<%= link_to 'Permanent Check-Out', 
+	 {:action => 'checkinout',
+	 :id => @person.id,
+	 :perm => 'true'}, 
+	 :class => 'textbutton'  %>
+	 
+	 
 </div>
 
 <h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
 
 <table>
 <tr>
+	<th class="vertical"> Tag ID </th>
+	<td> <%=h @person.tag_id %></td>
+</tr><tr>
 	<th class="vertical"> First Name </th>
 	<td> <%=h @person.first_name %></td>
 </tr>
@@ -19,8 +39,14 @@
 	<td> <%=h @person.last_name %></td>
 </tr>
 <tr>
-	<th class="vertical"> Tag ID </th>
-	<td> <%=h @person.tag_id %></td>
+	<th>Status</th>
+	<td>
+	<% if @person.checked_in %>
+	On-Site
+	<% else %>
+	<div class="errormsg">Off-Site</div>
+	<% end %>
+	</td>
 </tr>
 <tr>
 	<th class="vertical"> SSN </th>
@@ -40,12 +66,12 @@
 </tr>
 <tr>
 	<th> Shelter </th>
-	<th><% if @shelter.id > 0 %>
-		<div class="errormsg"> <%=h @shelter.name %> </div>
+	<td><% if @shelter.id == 1 %>
+		<div class="errormsg"> Unknown </div>
 		<% else %>
-		
+		<%=h @shelter.name %>
 		<% end %>
-		 </th>
+		</td>
 </tr>
 <tr>
 	<th class="vertical"> Location Notes </th>

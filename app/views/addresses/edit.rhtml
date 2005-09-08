@@ -1,9 +1,12 @@
+<div class="header">
+<%= link_to 'Address List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Show Address', {:action => 'show', :id => @address}, :class => 'textbutton'  %>
+</div>
+
 <h2>Edit an Address</h2>
 
 <%= start_form_tag :action => 'update', :id => @address %>
   <%= render_partial 'form' %>
-  <%= submit_tag 'Edit' %>
+  <%= submit_tag 'Save' %>
 <%= end_form_tag %>
 
-<%= link_to 'Show', :action => 'show', :id => @address %> |
-<%= link_to 'Back', :action => 'list' %>

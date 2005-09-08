@@ -1,26 +1,34 @@
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'Add an Address', {:action => 'new'}, :class => 'textbutton'  %>
+</div>
+
 <h2>Address List</h2>
 
 <table>
   <tr>
+  	<th class="horizontal">#</th>
   <% for column in Address.content_columns %>
-    <th><%= column.human_name %></th>
+    <th class="horizontal"><%= column.human_name %></th>
   <% end %>
+  	<th class="horizontal"></th>
   </tr>
 <% set_counter :addresses, @address_pages.current.offset %>  
 <% for address in @addresses %>
-  <tr>
+  <tr class="<%=h row_style :addresses %>">
+  		<th class="counter"> <%=h counter :addresses %></th>
   <% for column in Address.content_columns %>
     <td><%=h address.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => address %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => address %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => address}, :confirm => 'Are you sure?' %></td>
+    <td><%= link_to 'Show', {:action => 'show', :id => address}, :class => 'textbutton'  %>
+    	<%= link_to 'Edit', {:action => 'edit', :id => address}, :class => 'textbutton'  %>
+    	<%= link_to 'Destroy', {:action => 'destroy', :id => address}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>
 
-<% #= link_to 'Previous page', { :page => @address_pages.current.previous } if @address_pages.current.previous %>
-<% #= link_to 'Next page', { :page => @address_pages.current.next } if @address_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @address_pages.current.previous } if @address_pages.current.previous %>
+<%= link_to 'Next page', { :page => @address_pages.current.next } if @address_pages.current.next %> 
 <br />
 
-<%= link_to 'New address', :action => 'new' %>
+

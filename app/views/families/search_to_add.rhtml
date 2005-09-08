@@ -1,0 +1,31 @@
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+</div>
+
+<h2>Family Members</h2>
+<%= render_partial 'members' %>
+
+
+<h2>Search by Tag ID</h2>
+
+<%= start_form_tag :action => "search_tag_id" %>
+<table>
+<tr>
+	<th class="vertical"> Tag ID </th>
+	<td> <input type="text" name="tag_id" />
+	<input type="submit" value="Search By Tag ID" name="next"></td>
+</tr>
+</table>
+<%= end_form_tag %>
+
+<h2>Search by Last Name</h2>
+<%= start_form_tag :action => "search_name" %>
+<table>
+<tr>
+	<th class="vertical">Last Name</th>
+	<td><input type="text" name="last_name" />
+	<input type="submit" value="Search By Last Name" name="next"></td>
+</tr>
+</table>
+
+<%= end_form_tag %>

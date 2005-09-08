@@ -64,3 +64,12 @@
 </table>
 
 
+<table>
+<tr><th>When</th><th>Where</th><th>What</th></tr>
+<% for event in @events %>
+<tr>
+<td><%=h event.event_time %></td>
+<td><%=h event.shelter.name %></td>
+<td><%=h event.event_type.name %></td>
+</tr>
+<% end %>

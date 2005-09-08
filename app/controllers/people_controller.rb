@@ -14,6 +14,9 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
     @shelter = Shelter.find(@person.shelter_id)
+    @events = Event.find_all_by_person_id(params[:id],
+                                          :include => [:event_type, :shelter],
+                                          :order => "event_time")
   end
   
   def edit

@@ -37,6 +37,7 @@ class VolunteerController < ApplicationController
 
   def new
     @volunteer = Volunteer.new
+    @shelters = Shelter.find(:all)
   end
 
   def create
@@ -51,6 +52,7 @@ class VolunteerController < ApplicationController
 
   def edit
     @volunteer = Volunteer.find(params[:id])
+    @shelters = Shelter.find(:all)
   end
 
   def update

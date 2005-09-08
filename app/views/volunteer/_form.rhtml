@@ -40,9 +40,20 @@
 	<td><%= text_field 'volunteer','location' %></td>
 </tr>
 <tr>
-	<th class="vertical">role</th>
+	<th class="vertical">Role</th>
 	<td><%= text_field 'volunteer','role' %></td>
 </tr>
-
+<tr>
+	<th class="vertical">Shelter</th>
+	<td>
+	<select name="person[shelter_id]">
+	<% for shelter in @shelters %>
+            <option value="<%= shelter.id %>" 
+            <%=(@volunteer[:shelter_id] == shelter.id)?'SELECTED':"" %>>
+            <%= shelter.name %></option>
+        <% end %>
+        </select>
+	</td>
+</tr>
 </table>
 <!--[eoform:volunteer]-->

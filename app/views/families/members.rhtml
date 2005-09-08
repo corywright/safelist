@@ -11,6 +11,7 @@
 <%= render_partial 'members' %>
 <br />
 <%= link_to 'Add New Member', {:action => 'newmember' }, :class => 'textbutton' %> 
+<%= link_to 'Add Existing Citizen', {:action => 'search_to_add', :id => @family.id }, :class => 'textbutton' %> 
 <%= link_to 'Check-In Family', 
 	 {:controller => 'families', 
 	  :action => 'checkin'}, 

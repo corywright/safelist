@@ -110,4 +110,46 @@ class FamiliesController < ApplicationController
     redirect_to :action => 'show', :id => session[:lastfamily]
   end
 
+  def search_to_add
+    session[:lastfamily] = params[:id]
+    @family = Family.find(session[:lastfamily])
+    @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
+    if @people.nil?
+      flash[:error] = 'No members of this family.'
+    end
+    render :action => 'search_to_add'
+  end
+
+  def addexisting
+    @family = Family.find(session[:lastfamily])
+    @person = Person.find(params[:id])
+    @person.family_id = @family.id
+    if @person.save
+      flash[:notice] = 'Family member added.'
+    else
+      flash[:error] = 'Failed to add member.'
+    end
+    redirect_to :action => 'show', :id => @family.id
+  end
+
+  def search_tag_id
+    @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id]] )
+    if @people.nil?
+      flash[:notice] = "No one found by that tag id"
+      redirect_to :action => "search"
+    else
+      render :action => 'results'
+    end
+  end
+
+  def search_name
+    @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]] )
+    if @people.nil?
+      flash[:notice] = "No one found by that name"
+      redirect_to :action => 'search'
+    else
+      render :action => 'results'
+    end
+  end
+  
 end

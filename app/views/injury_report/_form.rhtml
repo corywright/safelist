@@ -3,6 +3,11 @@
 <%= hidden_field ('injury_report','person_id') %>
 <table>
 <tr>
+	<th class="vertical">Description</th>
+	<td><%= text_area 'injury_report', 'description'  %></td>
+	
+</tr>
+<tr>
 	<th class="vertical">Referred to nurse?</th>
 	<td><select id="injury_report_referred_to_nurse" name="injury_report[referred_to_nurse]">
 		<option value="false" selected>No</option>

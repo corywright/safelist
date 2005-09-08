@@ -21,16 +21,20 @@ class Person < ActiveRecord::Base
       @event = Event.find_by_person_id(self.id, :order => "event_time DESC");
       return @event
     end
+    
     def checked_in
      @event = self.last_event
      if (@event)
 	if @event.event_type == (1 || 6)
           write_attribute(:checked_in, true)
+	else
+	  write_attribute(:checked_in, false)
 	end
      else
-	write_attribute(:checked_in, false);
+	write_attribute(:checked_in, false)
      end
     end
+    
     def age
       ((Date.today - dob)/365.0).floor
     end

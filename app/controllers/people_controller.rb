@@ -99,9 +99,8 @@ class PeopleController < ApplicationController
         @event.event_type = EventType.find(6)
       end
       if (@person.last_event.event_type == EventType.find(1))
-        if session[:perm]
+        if params[:perm]
           @event.event_type = EventType.find(2) 
-	  session[:perm] = nil
         else
           @event.event_type = EventType.find(5)
         end

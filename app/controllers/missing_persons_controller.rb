@@ -1,4 +1,4 @@
-class MissingPersonsController < ApplicationController
+class MissingPersonsController < ActionController::Base
     def index
     end
 

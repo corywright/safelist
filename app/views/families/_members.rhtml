@@ -1,4 +1,4 @@
-<!--[list:person]--!>
+<!--[list:person]-->
 <table>
 <tr>
 	<th class="horizontal">#</th>
@@ -20,8 +20,9 @@
 	<td> <%=h person.age %> </td>	
     <td><%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
-    	<%= link_to 'Remove from family', {:action => 'destroy', :id => person, :controller => 'families'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
-    	<%= link_to 'Delete', {:action => 'destroy', :id => person, :controller => 'people'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %></td>
+    	<%= link_to 'Delete', {:action => 'destroy', :id => person, :controller => 'people'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
+    	| <%= link_to 'Remove from Family', {:action => 'destroy', :id => person, :controller => 'families'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
+	</td>
   </tr>
 <% end %>
 </table>

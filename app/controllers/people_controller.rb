@@ -88,6 +88,7 @@ class PeopleController < ApplicationController
   def checkinout
     @person = Person.find(params[:id])
     @event = Event.new
+    @event.shelter_id = session[:shelter_id]
     @event.event_type = EventType.find(1) # default is checkin when there's no previous record
     # this is fucking ugly, but it's late, I'm tired.
     if (@person.last_event)

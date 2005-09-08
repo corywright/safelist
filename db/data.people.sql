@@ -1,5 +1,5 @@
 INSERT INTO people (tag_id,first_name,last_name,dob,family_id,person_type_id,medical_problems,ssn,shelter_id,location_description,resume)
-VALUES ('12342', 'Will', 'Reese', '1997-01-01', 1, 1, 'Lots', '123-12-1234', 1, 'Here','DBA, Ruby, Rails');
+VALUES ('12342', 'Will', 'Reese', '1997-01-01', 1, 1, 'Lots', '123-12-1234', 2, 'Here','DBA, Ruby, Rails');
 INSERT INTO people (tag_id,first_name,last_name,dob,family_id,person_type_id,medical_problems,ssn,shelter_id,location_description,resume)
 VALUES ('', 'gene', 'reese', '1944-12-31', 1, 2, 'Lots again', '123-12-1234', 2, '??????','Linux, Windows');
 INSERT INTO people (tag_id,first_name,last_name,dob,family_id,person_type_id,medical_problems,ssn,shelter_id,location_description,resume)

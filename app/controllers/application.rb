@@ -2,7 +2,7 @@
 # Likewise will all the methods added be available for all controllers.
 class ApplicationController < ActionController::Base
 	before_filter :add_to_history
-	before_filter :get_subdomain
+	before_filter :get_shelter
 
 	def add_to_history
 	  session[:history] ||= []
@@ -10,8 +10,13 @@ class ApplicationController < ActionController::Base
 	  session[:history].pop while session[:history].length > 11
 	end
 
-	def get_subdomain
-	  session[:subdomains] = @request.subdomains
+	def get_shelter
+	  @shelter = Shelter.find_by_domain(@request.host)
+	  if @shelter
+	    session[:shelter_id] = @shelter.id
+	  else
+	    session[:shelter_id] = 1
+	  end
 	end
 
 end

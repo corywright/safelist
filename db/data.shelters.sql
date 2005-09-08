@@ -1,4 +1,4 @@
-insert into shelters (name,address_id,tag_id_prefix) values('Unknown',1,'U');
-insert into shelters (name,address_id,tag_id_prefix) values('Windsor World Shelter',2,'W');
-insert into shelters (name,address_id,tag_id_prefix) values('Levi Strauss',3,'L');
-insert into shelters (name,address_id,tag_id_prefix) values('Kelly USA',4,'K');
+insert into shelters (name,address_id,tag_id_prefix,domain) values('Unknown',1,'U','*');
+insert into shelters (name,address_id,tag_id_prefix,domain) values('Windsor World Shelter',2,'W','windsor.sasafelist.org');
+insert into shelters (name,address_id,tag_id_prefix,domain) values('Levi Strauss',3,'L','levi.sasafelist.org');
+insert into shelters (name,address_id,tag_id_prefix,domain) values('Kelly USA',4,'K','kelly.sasafelist.org');

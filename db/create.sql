@@ -35,6 +35,7 @@ CREATE TABLE shelters(
     name text NOT NULL UNIQUE,
     address_id int4 NOT NULL,
     tag_id_prefix text not null unique,
+    domain text not null unique,
     FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
 select drop_if_exists('families');

@@ -19,6 +19,7 @@
 <h2>Edit Family</h2>
 
 <%= start_form_tag :action => 'update', :id => @family %>
-  <%= render_partial 'form' %>
+  <%= render_partial 'addressform' %>
+  <%= render_partial 'familyform' %>
   <%= submit_tag 'Update' %>
 <%= end_form_tag %>

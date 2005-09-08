@@ -1,0 +1,51 @@
+<%= error_messages_for 'person' %>
+
+<!--[form:person]-->
+<table>
+<tr>
+	<th class="vertical">Shelter</th>
+	<td><select name="person[shelter_id]">
+		<% @shelters.length.times do |z| %>
+		<% shelter = @shelters[z] %>
+			<option value="<%= shelter[:id] %>" 
+			<%=(@person[:shelter_id] == shelter[:id])?'SELECTED':"" %>>
+			<%= shelter[:name] %></option>
+		<% end %>
+		</select></td>
+</tr>
+<tr>
+	<th class="vertical"> Red Cross ID </th>
+	<td><%= text_field 'person', 'tag_id' %></td>
+</tr>
+<tr>
+	<th class="vertical">First Name</th>
+	<td><%= text_field 'person', 'first_name' %></td>
+</tr>
+<tr>
+	<th class="vertical">Last Name</th>
+	<td><%= text_field 'person', 'last_name' %></td>
+</tr>
+<tr>
+	<th class="vertical">Date Of Birth</th>
+	<td><%= date_select'person','dob' ,:start_year => 1905 ,:end_year => 2005%></td>
+</tr>
+<tr>
+	<th class="vertical">SSN</th>
+	<td><%= text_field 'person','ssn' %></td>
+</tr>
+
+<tr>
+	<th class="vertical">Type</th>
+	<td><%= select("person","person_type_id",[["Man",1],["Woman",2],["Male Child",3],["Female Child",4]]) %></td>
+</tr>
+<tr>
+	<th class="vertical">Medical Problems</th>
+	<td><%= text_area ("person","medical_problems", "rows" => 5, "cols" => 30) %></td>
+</tr>
+<tr>
+	<th class="vertical">Location Description <br><br>
+    <p>If this family member is NOT<br> at this shelter.</p></th>
+	<td><%= text_area ("person", "location_description", "rows" => 5, "cols" => 30) %></td>
+</tr>
+</table>
+<!--[eoform:person]-->

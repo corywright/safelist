@@ -4,7 +4,12 @@
 <%= link_to 'Wiki', 'http://wiki.sasafelist.org', :class => 'textbutton'  %>
 </div>
 
-<div class="errormsg">DO NOT REGISTER PEOPLE WITH THIS SITE.</div>
+<div class="errormsg">**DO NOT REGISTER PEOPLE WITH THIS SITE**<br>
+If you are on the User Acceptance Team, enter data in this site and via:
+http://app.sasafelist.org/cgi-bin/add.cgi We will be comparing the datasets to 
+ensure information is captured correctly before we release the software into 
+production. To report errors or ask questions, email: help@sasafelist.org
+</div>
 
 <h2>SA Safelist</h2>
 
@@ -80,7 +85,21 @@
 	volunteers on-duty in the facility </p> </td>
 </tr>
 </table>
-
-Families: <%=h @families %> <br />
-Citizens: <%=h @people %> <br />
-Volunteers: <%=h @volunteers %> 
+<br>
+<table>
+<tr>
+	<th  class="horizontal" colspan="4">Totals</th>
+</tr>
+<tr>
+	<th class="vertical">Families</th>
+	<td><%=h @families %></td>
+</tr>
+<tr>
+	<th class="vertical">Citizens</th>
+	<td><%=h @people %></td>
+</tr>
+<tr>
+	<th class="vertical">Volunteers</th>
+	<td><%=h @volunteers %></td>
+</tr>
+</table>

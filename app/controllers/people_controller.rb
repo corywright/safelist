@@ -105,6 +105,11 @@ class PeopleController < ApplicationController
   end
   def destroy
     Person.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    if (session[:history][1]['name'] == 'families:show')
+       redirect_to :action => 'show', :controller => 'families', :id => session[:lastfamily]
+    else
+       flash[:notice] = session[:history][1]['name']
+       redirect_to :action => 'list'
+    end
   end
 end

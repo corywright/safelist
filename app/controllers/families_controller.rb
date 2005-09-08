@@ -13,6 +13,7 @@ class FamiliesController < ApplicationController
     session[:lastfamily] = params[:id]
     @family = Family.find(params[:id])
     @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
+    @address = Address.find(@family.pre_disaster_address_id)
     if @people.nil?
       flash[:error] = 'No members of this family.'
       render :action => 'members'
@@ -68,6 +69,8 @@ class FamiliesController < ApplicationController
 
   def update
     @family = Family.find(params[:id])
+    @address = Address.find(@family.pre_disaster_address_id)
+    @address.update_attributes(params[:address])
     if @family.update_attributes(params[:family])
       flash[:notice] = 'Family was successfully updated.'
       redirect_to :action => 'show', :id => @family

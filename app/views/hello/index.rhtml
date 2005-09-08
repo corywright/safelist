@@ -14,10 +14,7 @@ The system is currently targeted to go live at Windsor World after midnight on W
 
 <table>
 <tr>
-	<th class="horizontal" colspan="2"> Actions </th>
-</tr>
-<tr>
-	<th class="subhead" colspan="2">Citizens</th>
+	<th class="horizontal" colspan="2"> Citizens </th>
 </tr>
 <tr>
 	<td><%= link_to 'Search for a Citizen', 
@@ -52,6 +49,14 @@ The system is currently targeted to go live at Windsor World after midnight on W
 	entering the facility</p></td>
 </tr>
 <tr>
+	<td><%= link_to 'Add Person', 
+	     {:controller => 'people', 
+		  :action => 'new'}, 
+		  :class => 'textbutton'  %></td>
+	<td class="note"> <p>Register a New Person -- adding a single person 
+	entering the facility</p></td>
+</tr>
+<tr>
 	<td><%= link_to 'View Citizen Injury Reports', 
 	     {:controller => 'injury_report', 
 		  :action => 'list'}, 
@@ -60,7 +65,7 @@ The system is currently targeted to go live at Windsor World after midnight on W
 	the facility </p> </td>
 </tr>
 <tr>
-	<th class="subhead" colspan="2">Volunteers</th>
+	<th class="horizontal" colspan="2"> Volunteers </th>
 </tr>
 <tr>
 	<td><%= link_to 'Add a Volunteer', 

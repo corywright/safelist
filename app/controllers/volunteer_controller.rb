@@ -7,6 +7,7 @@ class VolunteerController < ApplicationController
   def checkinout
     @volunteer = Volunteer.find(params[:id])
     @event = Event.new
+    @event.shelter_id = session[:shelter_id]
     if @volunteer.checked_in
       @event.event_type = EventType.find(4)
     else

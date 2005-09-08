@@ -133,6 +133,7 @@ class FamiliesController < ApplicationController
   end
 
   def search_tag_id
+    @family = Family.find(session[:lastfamily])
     @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id]] )
     if @people.nil?
       flash[:notice] = "No one found by that tag id"
@@ -143,6 +144,7 @@ class FamiliesController < ApplicationController
   end
 
   def search_name
+    @family = Family.find(session[:lastfamily])
     @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]] )
     if @people.nil?
       flash[:notice] = "No one found by that name"

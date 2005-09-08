@@ -33,7 +33,8 @@
 		end
 		%>
 		<%= link_to button_text_check_in, 
-	     {:action => 'checkinout',
+	     {:controller => 'people',
+		  :action => 'checkinout',
 	      :id => person.id}, 
 	      :class => 'textbutton'  %> |
 		<%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>

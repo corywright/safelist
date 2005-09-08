@@ -15,6 +15,7 @@ class FamiliesController < ApplicationController
     @people = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
     if @people.nil?
       flash[:error] = 'No members of this family.'
+      render :action => 'members'
     else
       render :action => 'members'
     end
@@ -22,21 +23,33 @@ class FamiliesController < ApplicationController
 
   def new
     @family = Family.new
+    @address = Address.new
+    @address.save
+    @family.pre_disaster_address_id = @address.id
+    @shelters = Shelter.find(:all)
     @family.save
+    session[:lastfamily] = @family.id
+  end
+
+  def newmember
+    @family = Family.find(session[:lastfamily])
+    @shelters = Shelter.find(:all)
   end
 
   def create
-    @family = Family.new(params[:family])
+    @family = Family.find(params[:id])
+    @address = Address.find(@family.pre_disaster_address_id)
+    @address.update_attributes(params[:address])
+    @family.update_attributes(params[:family])
     if @family.save
-      flash[:notice] = 'Family was successfully created.'
-      redirect_to :action => 'list'
+      redirect_to :action => 'newmember', :id => @family.id
     else
       render :action => 'new'
     end
   end
 
-  def addmember
-    @family = Family.find(params[:id])
+  def createmember
+    @family = Family.find(session[:lastfamily])
     @shelters = Shelter.find(:all)
     @person = Person.new(params[:person])
     @person.family_id = @family.id

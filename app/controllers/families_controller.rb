@@ -2,7 +2,7 @@ class FamiliesController < ApplicationController
   paginate :people, :order_by => 'last_name, first_name', :per_page => 20
   def index
     list
-    render :action => 'list'
+    render :action => 'new'
   end
 
   def list

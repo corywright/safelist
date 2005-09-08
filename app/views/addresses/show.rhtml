@@ -1,8 +1,34 @@
-<% for column in Address.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @address.send(column.name) %>
-</p>
-<% end %>
+<div class="header">
+<%= link_to 'Address List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Edit Address', {:action => 'edit', :id => @address}, :class => 'textbutton'  %>
+</div>
 
-<%= link_to 'Edit', :action => 'edit', :id => @address %> |
-<%= link_to 'Back', :action => 'list' %>
+<h2> View Address </h2>
+
+<table>
+<tr>
+	<th class="vertical">Street</th>
+	<td><%= @address.street  %></td>
+</tr>
+<tr>
+	<th class="vertical">City</th>
+	<td><%= @address.city  %></td>
+</tr>
+<tr>
+	<th class="vertical">State</th>
+	<td><%= @address.state  %></td>
+</tr>
+<tr>
+	<th class="vertical">Zipcode</th>
+	<td><%= @address.zipcode  %></td>
+</tr>
+<tr>
+	<th class="vertical">Country</th>
+	<td><%= @address.country  %></td>
+</tr>
+<tr>
+	<th class="vertical">Phone</th>
+	<td><%= @address.phone  %></td>
+</tr>
+</table>
+

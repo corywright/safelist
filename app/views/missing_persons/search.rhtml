@@ -1,7 +1,7 @@
 <h2>Search for Missing Persons</h2>
 <%= javascript_include_tag "prototype" %>
 
-<%= start_form_tag :action => "search" %>
+<%= start_form_tag({ :action => "search" }, { :method => 'GET' }) %>
 
 <table>
 <tr>
@@ -14,11 +14,11 @@
 </table>
 <%= end_form_tag %>
 
-<% search_string = @params['form']['search_string'] %>
+<% search_string = @params['search_string'] %>
 
 <hr>
 <center>
-<h2>Search Results for "<%= search_string %>"</h2>
+<h2 style="text-transform: none">Search Results for "<%= search_string %>"</h2>
 </center>
 
 <%
@@ -26,6 +26,9 @@ def escapeGetVars(list)
     s = ''
     for key, value in list
 	s += CGI.escape(key) + '=' + CGI.escape(value) + '&'
+    end
+    if (s.length > 0)
+	s = s[0...-1] # chop off last "&"
     end
     return s
 end
@@ -92,75 +95,18 @@ end
 	  })
 %>
 
-<%= getIframe('Craigslist New Orleans Lost & Found',
-	'http://neworleans.craigslist.org/cgi-bin/search?',
-	{
-	    'areaID' => '31',
-	    'subAreaID' => '0',
-	    'query' => search_string,
-	    'cat' => 'laf', # lost & found,
-	})
+
+<h1>
+<%= 
+    @params['action'] = 'search2'
+    link_to("Click for More Search Results...",
+	@params)
 %>
-
-<%= getIframe('NOLA.com Missing Persons',
-	'http://www.nola.com/forums/searching/index.ssf?',
-	{
-	    'search' => 'search',
-	    'words' => search_string,
-	})
-%>
-
-<%= getIframe('katrina.com',
-      'http://www.websitetoolbox.com/tool/view/mb/search?',
-      {
-	  'keywords' => search_string,
-	  'todelete' => '29374', # missing family forum
-	  'searchin' => 'message',
-	  'replies' => 'atleast',
-	  'numreplies' => '0',
-	  'sort' => 'lastpost',
-	  'order' => 'desc',
-	  'username' => 'katrinacom',
-	  'action' => 'doSearch',
-      })
-%>
-
-<%= getIframe('Hurricane Katrina Survivors',
-    'http://www.hurricanekatrinasurvivors.com/forum/search.php?',
-    {
-        'search_keywords' => search_string,
-        'mode' => 'search',
-    })
-%>
-
-<%= getIframe('Katrina Finder',
-        'http://www.katrinafinder.us/searching_list.php?',
-
-    {
-        'refined' => 'R',
-        'last_name' => search_string,
-        'matchtype' => 'E',
-        'Submit' => 'Search'
-    })
-%>
-
-
-<%= getIframe('Katrina People Search',
-        'http://www.katrinapeoplesearch.com/infostore/peoplesearchnew.asp?',
-
-    {
-        'Mode' => 'DirectoryDisplay',
-        'DirectoryFieldDisplayOrder' => 'Last',
-        'Last' => search_string
-    })
-%>
-<%= getIframe('Katrina Survivor Search',
-        'http://www.katrina-survivor.com/searchbyname.php?',
-
-    {
-        'FirstName' => '',
-        'MiddleName' => '',
-        'LastName' => search_string
-    })
-%>
-
+</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

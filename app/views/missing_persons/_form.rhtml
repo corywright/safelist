@@ -2,16 +2,10 @@
 <!--[form:person]-->
 <table>
 <tr>
-<%
-    form = @params['form']
-    if (form)
-	value = form['search_string']
-    else
-	value = ''
-    end
-%>
     <th class="vertical">Name:</th>
-    <td><%= text_field 'form', 'search_string', :value => value %></td>
+    <td><input type="text" name="search_string" 
+               value="<%= @params['search_string'] %>">
+    </td>
 </tr>
 </table>
 <!--[eoform:person]-->

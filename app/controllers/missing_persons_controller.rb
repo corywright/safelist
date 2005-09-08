@@ -3,7 +3,13 @@ class MissingPersonsController < ActionController::Base
     end
 
     def search
-	if (@params['form'].nil?)
+	if (@params['search_string'].nil?)
+	    return redirect_to :action => 'index'
+	end
+    end
+
+    def search2
+	if (@params['search_string'].nil?)
 	    return redirect_to :action => 'index'
 	end
     end

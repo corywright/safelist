@@ -30,8 +30,8 @@
 	</tr>
 </table>
 
-<%= link_to 'Previous page', { :page => @shelter_pages.current.previous }, :class =>'textbutton'  if @shelter_pages.current.previous %>
-<%= link_to 'Next page', { :page => @shelter_pages.current.next }, :class =>'textbutton'  if @shelter_pages.current.next %> 
+<%= link_to '<< Previous', { :page => @shelter_pages.current.previous }, :class =>'textbutton'  if @shelter_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @shelter_pages.current.next }, :class =>'textbutton'  if @shelter_pages.current.next %> 
 
 <br />
 

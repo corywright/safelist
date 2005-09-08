@@ -7,6 +7,7 @@
 	<th class="horizontal">Last Name</th>
 	<th class="horizontal">DOB</th>
 	<th class="horizontal">Age</th>
+	<th class="horizontal">Status</th>
 	<th class="horizontal"></th>
 </tr>
  
@@ -17,8 +18,21 @@
 	<td> <%=h person.first_name %> </td>
 	<td> <%=h person.last_name %> </td>
 	<td> <%=h person.dob %> </td>	
-	<td> <%=h person.age %> </td>	
-    <td><%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
+	<td> <%=h person.age %> </td>
+	<td>
+	<% if person.checked_in %>
+	<div class="confirm"> On-Site</div>
+	<% else %>
+	<div class="errormsg">Off-Site</div>
+	<% end %></td>	
+	<td>
+		<% if person.checked_in
+		  button_text_check_in = 'Check-Out Citizen'
+		else
+		  button_text_check_in = 'Check-In Citizen&nbsp;&nbsp;'
+		end
+		%> |
+		<%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
     	<%= link_to 'Delete', {:action => 'destroy', :id => person, :controller => 'people'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
     	| <%= link_to 'Remove from Family', {:action => 'destroy', :id => person, :controller => 'families'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>

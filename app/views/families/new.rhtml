@@ -2,12 +2,13 @@
 <%= link_to 'Family View', {:action => 'show', :id => @family.id}, :class => 'textbutton'  %>
 </div>
 
-<h2>New Family</h2>
+<h2>Add a Family</h2>
 
-Please enter the family's pre-disaster address:
+<h3>Family's Pre-disaster Address & Consent</h3>
 <%= start_form_tag :action => 'create', :id => @family.id%>
   <%= render :partial => 'addressform' %>
   <%= render :partial => 'familyform' %>
+  <br>
   <%= submit_tag 'Next' %>
 <%= end_form_tag %>
 

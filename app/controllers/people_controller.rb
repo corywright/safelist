@@ -104,4 +104,8 @@ class PeopleController < ApplicationController
     	redirect_to :action => 'list'
     end
   end
+  def destroy
+    Person.find(params[:id]).destroy
+    redirect_to :action => 'list'
+  end
 end

@@ -2,10 +2,11 @@
 <%= link_to 'Family View', {:action => 'show', :id => @family.id}, :class => 'textbutton'  %>
 </div>
 
-<h2>New Family Member</h2>
+<h2>Add New Family Member</h2>
 
 <%= start_form_tag :action => 'createmember'%>
   <%= render_partial 'peopleform' %>
+  <br>
   <%= submit_tag 'Save' %>
 <%= end_form_tag %>
 

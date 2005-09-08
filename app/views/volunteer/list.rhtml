@@ -6,7 +6,6 @@
 <h2>Volunteers List</h2>
 
 <table>
-	
   <tr>
 	<th class="horizontal">#</th>
 	<th class="horizontal">ID #</th>	
@@ -33,7 +32,9 @@
 		 <% end %></td>
 	<td> 
 	<% if volunteer.checked_in %>
+		<div class="confirm"> 
 		<%=h distance_of_time_in_words_to_now(volunteer.last_check_in)%>
+		</div>
 	<% else %>
 	 	-- 
 	<% end %>	
@@ -44,7 +45,7 @@
 		<% if volunteer.checked_in
 		   		button_text = 'Check-Out'
 			else
-				button_text = 'Check-In'
+				button_text = 'Check-In&nbsp;&nbsp;'
 			end
 		 %>
 		<%= link_to button_text, {:action => 'checkinout', :id => volunteer}, :class => 'textbutton'  %> 

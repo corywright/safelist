@@ -20,7 +20,8 @@
 	<td> <%=h person.last_name %> </td>
 	<td> <%=h person.dob %> </td>	
 	<td> <%=h person.age %> </td>
-	<td>	<% if person.checked_in %>
+	<td>	
+	<% if person.checked_in %>
 	<div class="confirm"> On-Site</div>
 	<% else %>
 	<div class="errormsg">Off-Site</div>
@@ -28,16 +29,17 @@
 	<td> 
 	<%=h (person.last_event.nil?)? "-":person.last_event.event_type.name %> </td>	
 	<td>
-	<% if person.checked_in
-		button_text_check_in = 'Check-Out Citizen'
-	else
-		button_text_check_in = 'Check-In Citizen'
-	end
-	%>
-	<%= link_to button_text_check_in, 
-		 {:action => 'checkinout',
-		 :id => person.id}, 
-		 :class => 'textbutton'  %> | 
+	<% if person.checked_in %>
+		<%= link_to 'Check-Out', 
+			 {:action => 'checkout',
+			 :id => person.id}, 
+			 :class => 'textbutton' %> |
+	<% else %>
+		<%= link_to 'Check-In&nbsp;&nbsp;', 
+			 {:action => 'checkin',
+			 :id => person.id}, 
+			 :class => 'textbutton' %> |	
+	<% end %>
 		<%= link_to 'Show', {:action => 'show', :id => person}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person}, :class => 'textbutton'  %>
 	<% if person.family_id %>

@@ -39,12 +39,18 @@
 	<td> <%=h @person.medical_problems %></td>
 </tr>
 <tr>
-	<th class="vertical"> Current Location </th>
-	<td><%=h @shelter.name %>
-	<% if @person.location_description.length > 0 %>
-		<br><div class="errormsg"> MISSING PERSON <br>
-		<%=h @person.location_description %></div>
-	<% end %></td>
+	<th> Shelter </th>
+	<th><% if @shelter.id > 0 %>
+		<div class="errormsg"> <%=h @shelter.name %> </div>
+		<% else %>
+		
+		<% end %>
+		 </th>
+</tr>
+<tr>
+	<th class="vertical"> Location Notes </th>
+	<td>
+		<%=h @person.location_description %></td>
 </tr>
 <tr>
 	<th class="vertical"> Pre-Disaster Address </th>
@@ -63,13 +69,20 @@
 </tr>
 </table>
 
-
+<h2>Event Log</h2>
 <table>
-<tr><th>When</th><th>Where</th><th>What</th></tr>
-<% for event in @events %>
 <tr>
-<td><%=h event.event_time %></td>
-<td><%=h event.shelter.name %></td>
-<td><%=h event.event_type.name %></td>
+	<th>#</th>
+	<th class="horizontal">Date/Time</th>
+	<th class="horizontal">Event</th>
+	<th class="horizontal">Shelter</th>
+</tr>
+<% for event in @events %>
+<tr class="<%=h row_style :events %>">
+	<th class="counter"> <%=h counter :events %></th>
+	<td><%=h event.event_time %></td>
+	<td><%=h event.event_type.name %></td>
+	<td><%=h event.shelter.name %></td>
 </tr>
 <% end %>
+</table>

@@ -29,11 +29,7 @@
 	<td> 
 	<%=h (person.last_event.nil?)? "-":person.last_event.event_type.name %> </td>	
 	<td>
-	<% if !person.family_id %>
     	  <%= link_to 'Add to family', {:action => 'addexisting', :id => person.id, :controller => 'families'}, :class => 'textbutton' %>
-	<% else %>
-	  
-	<% end %>
 	</td>
   </tr>
 <% end %>

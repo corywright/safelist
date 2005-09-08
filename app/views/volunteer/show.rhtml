@@ -63,3 +63,20 @@
 <%= link_to 'Delete', {:action => 'destroy', :id => @volunteer}, :class =>'textbuttonwarn', :confirm => 'Are you sure?' %>
 <br><br>
 
+<h2>Event Log</h2>
+<table>
+<tr>
+	<th>#</th>
+	<th class="horizontal">Date/Time</th>
+	<th class="horizontal">Event</th>
+	<th class="horizontal">Shelter</th>
+</tr>
+<% for event in @events %>
+<tr class="<%=h row_style :events %>">
+	<th class="counter"> <%=h counter :events %></th>
+	<td><%=h event.event_time %></td>
+	<td><%=h event.event_type.name %></td>
+	<td><%=h event.shelter.name %></td>
+</tr>
+<% end %>
+</table>

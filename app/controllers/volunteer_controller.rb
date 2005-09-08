@@ -29,6 +29,10 @@ class VolunteerController < ApplicationController
 
   def show
     @volunteer = Volunteer.find(params[:id])
+    @events = Event.find_all_by_volunteer_id(params[:id],
+                                             :include => [:event_type, :shelter],
+                                             :order => "event_time")
+
   end
 
   def new

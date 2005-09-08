@@ -21,13 +21,12 @@ CREATE TABLE addresses(
     country text NOT NULL DEFAULT '' ,
     phone text NOT NULL DEFAULT '' 
 );
+
 select drop_if_exists('person_types');
 CREATE TABLE person_types(
     id serial PRIMARY KEY,
     name text NOT NULL UNIQUE
 );
-
-
 
 select drop_if_exists('shelters');
 CREATE TABLE shelters(
@@ -38,6 +37,7 @@ CREATE TABLE shelters(
     domain text not null unique,
     FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
+
 select drop_if_exists('families');
 CREATE TABLE families(
     id serial PRIMARY KEY,
@@ -47,6 +47,7 @@ CREATE TABLE families(
     FOREIGN KEY("pre_disaster_address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("post_disaster_address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
+
 select drop_if_exists('people');
 CREATE TABLE people(
     id serial PRIMARY KEY,
@@ -65,6 +66,7 @@ CREATE TABLE people(
     FOREIGN KEY("person_type_id") REFERENCES "person_types" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
+
 select drop_if_exists('volunteers');
 CREATE TABLE volunteers(
     id serial PRIMARY KEY,
@@ -81,11 +83,13 @@ CREATE TABLE volunteers(
     shelter_id int4,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
+
 select drop_if_exists('event_types');
 CREATE TABLE event_types(
     id serial PRIMARY KEY,
     name text NOT NULL UNIQUE
 );
+
 select drop_if_exists('events');
 CREATE TABLE events(
     id serial PRIMARY KEY,
@@ -100,10 +104,12 @@ CREATE TABLE events(
     FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
 );
+
 select drop_if_exists('injury_reports');
 CREATE TABLE injury_reports(
     id serial PRIMARY KEY,
     person_id int4 not null,
+    description text NOT NULL default '',
     report text NOT NULL default '',
     referred_to_nurse boolean not null default 'f',
     FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE

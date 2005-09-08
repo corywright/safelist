@@ -47,6 +47,13 @@ end
 
 %>
 
+<%= getIframe('Yahoo Katrina Missing Person Search',
+	'http://boards.news.yahoo.com/boards/bin/search?',
+	{
+	    'p' => search_string,
+	})
+%>
+
 <%= getIframe('ICRC (International Committee of the Red Cross)',
 	'http://www.sasafelist.org/cgi-bin/htsearch?',
 	{

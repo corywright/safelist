@@ -1,5 +1,9 @@
 <div class="header">
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'Search for a Citizen', 
+	     {:controller => 'people', 
+		  :action => 'search'}, 
+		  :class => 'textbutton'  %>
 <%= link_to 'Add a New Family', 
 	 {:controller => 'families', 
 	  :action => 'new'}, 

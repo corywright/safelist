@@ -46,7 +46,7 @@
 <tr>
 	<th class="vertical">Shelter</th>
 	<td>
-	<select name="person[shelter_id]">
+	<select name="volunteer[shelter_id]">
 	<% for shelter in @shelters %>
             <option value="<%= shelter.id %>" 
             <%=(@volunteer[:shelter_id] == shelter.id)?'SELECTED':"" %>>

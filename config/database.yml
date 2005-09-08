@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   database: safelist_development
   host: localhost
-  username: wreese
+  username: cwright
   password: 
 
 # Warning: The database defined as 'test' will be erased and
@@ -12,12 +12,12 @@ test:
   adapter: postgresql
   database: safelist_test
   host: localhost
-  username: wreese
+  username: cwright
   password:
 
 production:
   adapter: postgresql
   database: safelist_production
   host: localhost
-  username: wreese
+  username: cwright
   password: 

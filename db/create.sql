@@ -75,7 +75,11 @@ CREATE TABLE volunteers(
     email text not null default '',
     home_phone text not null default '',
     mobile_phone text not null default '',
-    affiliation text not null default ''
+    affiliation text not null default '',
+    location text not null default '',
+    role text not null default '',
+    shelter_id int4,
+    FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
 select drop_if_exists('event_types');
 CREATE TABLE event_types(

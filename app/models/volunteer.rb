@@ -1,5 +1,6 @@
 class Volunteer < ActiveRecord::Base
   has_many :events
+  belongs_to :shelter
  
   def last_check_in
       @event = Event.find_by_volunteer_id_and_event_type_id(self.id, 3, :order => "event_time DESC")

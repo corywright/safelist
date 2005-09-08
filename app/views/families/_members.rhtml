@@ -31,7 +31,11 @@
 		else
 		  button_text_check_in = 'Check-In Citizen&nbsp;&nbsp;'
 		end
-		%> |
+		%>
+		<%= link_to button_text_check_in, 
+	     {:action => 'checkinout',
+	      :id => person.id}, 
+	      :class => 'textbutton'  %> |
 		<%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
     	<%= link_to 'Delete', {:action => 'destroy', :id => person, :controller => 'people'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>

@@ -23,10 +23,12 @@ class Person < ActiveRecord::Base
     end
     def checked_in
      @event = self.last_event
-     if @event.event_type == (1 || 6)
-     	write_attribute(:checked_in, true)
+     if (@event)
+	if @event.event_type == (1 || 6)
+          write_attribute(:checked_in, true)
+	end
      else
-        write_attribute(:checked_in, false);
+	write_attribute(:checked_in, false);
      end
     end
     def age

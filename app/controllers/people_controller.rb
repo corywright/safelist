@@ -98,17 +98,16 @@ class PeopleController < ApplicationController
       if (@person.last_event.event_type == EventType.find(5))
         @event.event_type = EventType.find(6)
       end
-      if (@person.last_event.event_type == EventType.find(1))
-        if params[:perm]
-	  breakpointer
+      if (@person.last_event.event_type == EventType.find(1) || @person.last_event.event_type == EventType.find(6))
+        if params[:perm] == 'true'
           @event.event_type = EventType.find(2) 
         else
           @event.event_type = EventType.find(5)
         end
       end
-      if (@person.last_event.event_type == EventType.find(6))
-        @event.event_type = EventType.find(5)
-      end
+#      if (@person.last_event.event_type == EventType.find(6))
+#        @event.event_type = EventType.find(5)
+#      end
       if (@person.last_event.event_type == EventType.find(2))
         @event.event_type = EventType.find(1)
       end

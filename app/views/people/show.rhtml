@@ -6,29 +6,15 @@
 <% end %>
 
 <% if @person.checked_in
-	button_text_check_in = 'Check-Out Permanently'
-	button_class = 'textbuttonwarn'
+	button_text_check_in = 'Check-Out Citizen'
 else
 	button_text_check_in = 'Check-In Citizen'
-	button_class = 'textbutton'
 end
 %>
 <%= link_to button_text_check_in, 
 	 {:action => 'checkinout',
-	 :id => @person.id,
-	 :perm => 'true'}, 
-	 :class => button_class  %>
-
-<% if @person.checked_in
-	button_text_day_pass = 'Issue Day Pass'
-else
-	button_text_day_pass = 'Return from Day Pass'
-end
-%>
-<%= link_to button_text_day_pass, 
-	{:action => 'checkinout', 
-	 :id => @person}, 
-	 :class => 'textbutton' %> 
+	 :id => @person.id}, 
+	 :class => 'textbutton'  %>
 	 
 <%= link_to 'File Injury Report', 
 	{:controller => 'injury_report', 
@@ -36,6 +22,13 @@ end
 	 :id => @person}, 
 	 :class => 'textbutton'  %>
 
+<% if @person.checked_in %>
+<%= link_to 'Leave Permanently', 
+	 {:action => 'checkinout',
+	 :id => @person.id,
+	 :perm => 'true'}, 
+	 :class => 'textbuttonwarn'  %>
+<% end %>
 	 
 </div>
 

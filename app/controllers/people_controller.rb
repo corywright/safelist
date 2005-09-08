@@ -100,7 +100,6 @@ class PeopleController < ApplicationController
     if (session[:history][1]['name'] == 'people:show')
 	redirect_to :action => 'show', :id => @person.id
     else
-	flash[:notice] = session[:history][1]
     	redirect_to :action => 'list'
     end
   end

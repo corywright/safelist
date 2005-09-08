@@ -91,31 +91,8 @@ class PeopleController < ApplicationController
   end
   def checkinout
     @person = Person.find(params[:id])
-    @event = Event.new
-    @event.shelter_id = session[:shelter_id]
-    @event.event_type = EventType.find(1) # default is checkin when there's no previous record
-    # this is fucking ugly, but it's late, I'm tired.
-    if (@person.last_event)
-      if (@person.last_event.event_type == EventType.find(5))
-        @event.event_type = EventType.find(6)
-      end
-      if (@person.last_event.event_type == EventType.find(1) || @person.last_event.event_type == EventType.find(6))
-        if params[:perm] == 'true'
-          @event.event_type = EventType.find(2) 
-        else
-          @event.event_type = EventType.find(5)
-        end
-      end
-#      if (@person.last_event.event_type == EventType.find(6))
-#        @event.event_type = EventType.find(5)
-#      end
-      if (@person.last_event.event_type == EventType.find(2))
-        @event.event_type = EventType.find(1)
-      end
-    end
-    @event.person_id = @person.id
-    @event.event_time = Time.now
-    if @event.save
+    @event = @person.toggle_in_or_out(params[:perm], session[:shelter_id])
+    if @event
       flash[:notice] = "#{@event.event_type.name} successful"
     else
       flash[:error] = "#{@event.event_type.name} failed"

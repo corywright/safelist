@@ -35,5 +35,5 @@
 <% end %>
 </table>
 <br>
-<%= link_to '<< Previous', { :page => @person_pages.current.previous }, :class =>'textbutton'  if @person_pages.current.previous %>
-<%= link_to 'Next >>', { :page => @person_pages.current.next }, :class =>'textbutton'  if @person_pages.current.next %> 
+<%= link_to '<< Previous', { :page => @person_pages.current.previous, :last_name=> @params[:last_name] }, :class =>'textbutton'  if @person_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @person_pages.current.next, :last_name=> @params[:last_name]}, :class =>'textbutton'  if @person_pages.current.next %> 

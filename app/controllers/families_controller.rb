@@ -147,7 +147,7 @@ class FamiliesController < ApplicationController
   def search_name
     @family = Family.find(session[:lastfamily])
     @members = Person.find(:all, :conditions => [ "family_id = ?", @family.id] )
-    @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]] )
+    @person_pages, @people = paginate_collection Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]] ), :page => @params[:page]
     if @people.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'

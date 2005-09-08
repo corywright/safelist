@@ -100,6 +100,7 @@ class PeopleController < ApplicationController
       end
       if (@person.last_event.event_type == EventType.find(1))
         if params[:perm]
+	  breakpointer
           @event.event_type = EventType.find(2) 
         else
           @event.event_type = EventType.find(5)

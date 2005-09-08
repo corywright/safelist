@@ -25,7 +25,7 @@ class Person < ActiveRecord::Base
     def checked_in
      @event = self.last_event
      if (@event)
-	if @event.event_type == 1 || 6
+	if @event.event_type.id == 1 || @event.event_type.id == 6
           write_attribute(:checked_in, true)
 	else
 	  write_attribute(:checked_in, false)

@@ -41,8 +41,6 @@ select drop_if_exists('families');
 CREATE TABLE families(
     id serial PRIMARY KEY,
     disclosure_consent boolean default 'f',
-    shelter_arrival_on date default now(),
-    shelter_departure_at timestamptz default now(),
     pre_disaster_address_id int4 NOT NULL,
     post_disaster_address_id int4,
     FOREIGN KEY("pre_disaster_address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE ,

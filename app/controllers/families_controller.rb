@@ -81,7 +81,7 @@ class FamiliesController < ApplicationController
 
   def destroy
     @person = Person.find(params[:id])
-    @person.family_id = nil
+    @person.family_id = 0
     if @person.save
       flash[:notice] = 'Family member removed.'
     else

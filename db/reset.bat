@@ -10,6 +10,7 @@ pause
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.addresses.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.shelters.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.event_types.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.family0.sql
 
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.families.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.people.sql

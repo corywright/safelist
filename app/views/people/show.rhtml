@@ -1,7 +1,7 @@
 <div class="header">
 <%= link_to 'View People List', {:action => 'list'}, :class => 'textbutton'  %>
 
-<% if @person.family_id %>
+<% if @person.family_id != 0 %>
   <%= link_to 'View Family', {:controller => 'families', :action => 'show', :id => @person.family_id}, :class => 'textbutton' %>
 <% end %>
 

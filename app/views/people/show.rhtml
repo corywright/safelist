@@ -57,6 +57,10 @@ end
 	</td>
 </tr>
 <tr>
+	<th class="vertical"> Gender </th>
+	<td> <%=h @person.person_type.name %></td>
+</tr>
+<tr>
 	<th class="vertical"> SSN </th>
 	<td> <%=h @person.ssn %></td>
 </tr>
@@ -70,7 +74,7 @@ end
 </tr>
 <tr>
 	<th class="vertical"> Medical Problems </th>
-	<td> <%=h simple_format(@person.medical_problems) %></td>
+	<td> <%= simple_format(@person.medical_problems) %></td>
 </tr>
 <tr>
 	<th class="vertical"> Shelter </th>
@@ -84,7 +88,7 @@ end
 <tr>
 	<th class="vertical"> Location Notes </th>
 	<td>
-		<%=h simple_format(@person.location_description) %></td>
+		<%= simple_format(@person.location_description) %></td>
 </tr>
 <tr>
 	<th class="vertical"> Pre-Disaster Address </th>

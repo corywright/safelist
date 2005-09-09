@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(params[:id])
+    @person = Person.find(params[:id], :include => :person_type)
     @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
     @shelter = Shelter.find(@person.shelter_id)
     @events = Event.find_all_by_person_id(params[:id],

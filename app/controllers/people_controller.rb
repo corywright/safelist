@@ -101,7 +101,7 @@ class PeopleController < ApplicationController
     else
       flash[:error] = "#{@event.event_type.name} failed"
     end
-    if (session[:history][1]['name'] == 'people:show')
+    if (session[:history][1]['name'] == 'people:show' || session[:history][1]['name'] == "people:list")
 	redirect_to :action => 'show', :id => @person.id
     elsif (session[:history][1]['name'] == 'families:show')
 	redirect_to :action => 'show', :id => session[:lastfamily], :controller => 'families'

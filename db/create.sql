@@ -19,7 +19,8 @@ CREATE TABLE addresses(
     state text NOT NULL DEFAULT '' ,
     zipcode text NOT NULL DEFAULT '' ,
     country text NOT NULL DEFAULT '' ,
-    phone text NOT NULL DEFAULT '' 
+    phone text NOT NULL DEFAULT '', 
+    fax text NOT NULL DEFAULT '' 
 );
 
 select drop_if_exists('person_types');

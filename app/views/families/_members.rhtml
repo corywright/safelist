@@ -39,7 +39,6 @@
 	      :class => 'textbutton'  %> |
 		<%= link_to 'Show', {:action => 'show', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person, :controller => 'people'}, :class => 'textbutton'  %>
-    	<%= link_to 'Delete', {:action => 'destroy', :id => person, :controller => 'people'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
     	| <%= link_to 'Remove from Family', {:action => 'destroy', :id => person, :controller => 'families'}, :class =>'textbuttonwarn' , :confirm => 'Are you sure?' %>
 	</td>
   </tr>

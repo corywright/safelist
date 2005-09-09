@@ -103,6 +103,14 @@ end
 	<td> <%=h @person.resume %> </td>
 </tr>
 <tr>
+	<th class="vertical"> FEMA Registration Number </th>
+	<td> <%=h @person.fema_reg_id %> </td>
+</tr>
+<tr>
+	<th class="vertical"> Bracelet/Debit ID </th>
+	<td> <%=h @person.debit_id %> </td>
+</tr>
+<tr>
 	<td colspan="2" align="right">
 	<%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %>
 	</td>

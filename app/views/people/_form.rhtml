@@ -33,10 +33,21 @@
 	<th class="vertical">SSN</th>
 	<td><%= text_field 'person','ssn' %></td>
 </tr>
-
 <tr>
 	<th class="vertical">Type</th>
 	<td><%= select("person","person_type_id",[["Man",1],["Woman",2]]) %></td>
+</tr>
+<tr>
+	<th class="vertical">Resume</th>
+	<td><%= text_field 'person','resume' %></td>
+</tr>
+<tr>
+	<th class="vertical">FEMA Registration ID</th>
+	<td><%= text_field 'person','fema_reg_id' %></td>
+</tr>
+<tr>
+	<th class="vertical">Bracelet/Debit ID</th>
+	<td><%= text_field 'person','debit_id' %></td>
 </tr>
 <tr>
 	<th class="vertical">Medical Problems</th>

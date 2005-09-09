@@ -20,6 +20,10 @@ class PeopleController < ApplicationController
 					  :limit => 20)
   end
   
+  def printlist
+    @people = Person.find(:all, :include => :shelter, :order => "last_name, first_name")
+  end
+
   def edit
     @person = Person.find(params[:id])
     @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)

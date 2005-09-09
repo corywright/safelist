@@ -11,7 +11,59 @@
 </div>
 
 <h2> Citizen Search Results</h1>
-<%= render_partial 'list' %>
+
+<!--[list:person]-->
+<table>
+<tr>
+	<th class="horizontal">#</th>
+	<th class="horizontal">Tag ID</th>
+	<th class="horizontal">First Name</th>
+	<th class="horizontal">Last Name</th>
+	<th class="horizontal">DOB</th>
+	<th class="horizontal">Age</th>
+	<th class="horizontal">Status</th>
+	<th class="horizontal">Last Event</th>
+	<th class="horizontal"></th>
+</tr>
+<% set_counter :people, @person_pages.current.offset %> 
+<% for person in @people %>
+  <tr class="<%=h row_style :people %>">
+	<th class="counter"> <%=h counter :people %></th>  	
+	<td> <%=h person.tag_id %> </td>
+	<td> <%=h person.first_name %> </td>
+	<td> <%=h person.last_name %> </td>
+	<td> <%=h person.dob %> </td>	
+	<td> <%=h person.age %> </td>
+	<td>	
+	<% if person.checked_in %>
+	<div class="confirm"> On-Site</div>
+	<% else %>
+	<div class="errormsg">Off-Site</div>
+	<% end %></td>
+	<td> 
+	<%=h (person.last_event.nil?)? "-":person.last_event.event_type.name %> </td>	
+	<td>
+	<% if person.checked_in %>
+		<%= link_to 'Check-Out', 
+			 {:action => 'checkinout',
+			 :id => person.id}, 
+			 :class => 'textbutton' %> |
+	<% else %>
+		<%= link_to 'Check-In&nbsp;&nbsp;', 
+			 {:action => 'checkinout',
+			 :id => person.id}, 
+			 :class => 'textbutton' %> |	
+	<% end %>
+		<%= link_to 'Show', {:action => 'show', :id => person}, :class => 'textbutton'  %>
+    	<%= link_to 'Edit', {:action => 'edit', :id => person}, :class => 'textbutton'  %>
+	<% if person.family_id %>
+    	  | <%= link_to 'View Family', {:action => 'show', :id => person.family_id, :controller => 'families'}, :class => 'textbutton'  %>
+	<% end %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
 <br />
 
 <p>

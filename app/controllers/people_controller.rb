@@ -7,7 +7,7 @@ class PeopleController < ApplicationController
   end
 
   def list
-    @person_pages, @people = paginate :people, :per_page => 20, :order_by => 'last_name, first_name'
+    @person_pages, @people = paginate :people, :per_page => 30, :order_by => 'last_name, first_name'
   end
 
   def show

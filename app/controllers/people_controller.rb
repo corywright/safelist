@@ -8,6 +8,11 @@ class PeopleController < ApplicationController
 
   def list
     @person_pages, @people = paginate :people, :per_page => 30, :order_by => 'last_name, first_name'
+    @shelter_map = {}
+    @shelters = Shelter.find(:all)
+    for shelter in @shelters
+      @shelter_map[shelter.id] = shelter.name
+    end
   end
 
   def show
@@ -70,20 +75,21 @@ class PeopleController < ApplicationController
   end
 
   def search_tag_id
-    #@people = Person.find_by_tag_id(params[:tag_id])
-    @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id].strip] )
+    @people = Person.find(:all, 
+                          :conditions => [ "tag_id = ?", params[:tag_id].strip],
+                          :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that tag id"
       redirect_to :action => "search"
     else
-#      @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
-#      @shelter = Shelter.find(@person.shelter_id)
       render :action => 'results'
     end
   end
 
   def search_fema_reg_id
-    @people = Person.find(:all, :conditions => [ "fema_reg_id = ?", params[:fema_reg_id].strip] )
+    @people = Person.find(:all, 
+                          :conditions => [ "fema_reg_id = ?", params[:fema_reg_id].strip],
+                          :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that FEMA Registration ID"
       redirect_to :action => "search"
@@ -94,7 +100,9 @@ class PeopleController < ApplicationController
 
   # badge_id is the debit_id/bracelet_id
   def search_fema_bracelet_id
-    @people = Person.find(:all, :conditions => [ "debit_id = ?", params[:fema_bracelet_id].strip] )
+    @people = Person.find(:all, 
+                          :conditions => [ "debit_id = ?", params[:fema_bracelet_id].strip],
+                          :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that FEMA Bracelet ID"
       redirect_to :action => "search"
@@ -104,16 +112,13 @@ class PeopleController < ApplicationController
   end
 
   def search_name
-    #@people = Person.find_by_last_name(params[:last_name])
     @people = Person.find(:all, 
                           :conditions => [ "last_name ilike ?", params[:last_name].strip+'%'],
-                          :order => 'last_name, first_name')
+                          :order => 'last_name, first_name', :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'
     else
-      #@pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
-      #@shelter = Shelter.find(@person.shelter_id)
       render :action => 'results'
     end
   end

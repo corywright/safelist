@@ -22,6 +22,7 @@
 	<th class="horizontal">DOB</th>
 	<th class="horizontal">SSN</th>
 	<th class="horizontal">Status</th>
+	<th class="horizontal">Shelter</th>
 	<th class="horizontal">FEMA Reg ID</th>
 	<th class="horizontal"></th>
 </tr>
@@ -40,6 +41,7 @@
 	<% else %>
 	<div class="errormsg">Off-Site</div>
 	<% end %></td>
+	<td><%=h person.shelter.name %></td>
 	<td> 
 	<%=h person.fema_reg_id %> </td>	
 	<td>

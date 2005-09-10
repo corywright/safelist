@@ -10,7 +10,8 @@
 	<th class="horizontal">#</th>
 	<th class="horizontal">First</th>
 	<th class="horizontal">Last</th>
-	<th class="horizontal"> Affiliation </th>
+	<th class="horizontal">Affiliation</th>
+	<th class="horizontal">Badge</th>
 	<th class="horizontal">Last Check-In</th>
 	<th class="horizontal">Last Check-Out</th>
 	<th class="horizontal">Duration</th>
@@ -24,9 +25,10 @@
 	<td> <%=h volunteer.first_name %></td>
 	<td> <%=h volunteer.last_name %></td>
 	<td> <%=h volunteer.affiliation %></td>
-	<td> <%=h volunteer.last_check_in %></td>
+	<td> <%=h volunteer.badge_id %></td>
+	<td> <%=h (volunteer.last_check_in.nil?) ? '' : volunteer.last_check_in.strftime("%a, %b %d %Y - %I:%M %p") %></td>
 	<td> <% if volunteer.last_check_out != nil %>
-			<%=h volunteer.last_check_out %>
+			<%=h volunteer.last_check_out.strftime("%a, %b %d %Y - %I:%M %p") %>
 		 <% end %></td>
 	<td> 
 	<% if volunteer.checked_in %>

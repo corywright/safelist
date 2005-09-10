@@ -84,6 +84,7 @@ CREATE TABLE volunteers(
     location text not null default '',
     role text not null default '',
     shelter_id int4,
+    badge_id text default '',
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
 

@@ -7,7 +7,7 @@ class PeopleController < ApplicationController
   end
 
   def list
-    @person_pages, @people = paginate :people, :per_page => 20
+    @person_pages, @people = paginate :people, :per_page => 20, :order_by => 'last_name, first_name'
   end
 
   def show
@@ -70,7 +70,7 @@ class PeopleController < ApplicationController
 
   def search_tag_id
     #@people = Person.find_by_tag_id(params[:tag_id])
-    @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id]] )
+    @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id].strip] )
     if @people.nil?
       flash[:notice] = "No one found by that tag id"
       redirect_to :action => "search"
@@ -83,7 +83,7 @@ class PeopleController < ApplicationController
 
   def search_name
     #@people = Person.find_by_last_name(params[:last_name])
-    @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name]+'%'] )
+    @people = Person.find(:all, :conditions => [ "last_name ilike ?", params[:last_name].strip+'%'] )
     if @people.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'

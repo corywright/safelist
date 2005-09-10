@@ -81,6 +81,27 @@ class PeopleController < ApplicationController
     end
   end
 
+  def search_fema_reg_id
+    @people = Person.find(:all, :conditions => [ "fema_reg_id = ?", params[:fema_reg_id].strip] )
+    if @people.nil?
+      flash[:notice] = "No one found by that FEMA Registration ID"
+      redirect_to :action => "search"
+    else
+      render :action => 'results'
+    end
+  end
+
+  # badge_id is the debit_id/bracelet_id
+  def search_fema_bracelet_id
+    @people = Person.find(:all, :conditions => [ "debit_id = ?", params[:fema_bracelet_id].strip] )
+    if @people.nil?
+      flash[:notice] = "No one found by that FEMA Bracelet ID"
+      redirect_to :action => "search"
+    else
+      render :action => 'results'
+    end
+  end
+
   def search_name
     #@people = Person.find_by_last_name(params[:last_name])
     @people = Person.find(:all, 

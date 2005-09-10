@@ -26,6 +26,30 @@
 
 <%= end_form_tag %>
 
+<h2>Search by FEMA Registration ID</h2>
+
+<%= start_form_tag :action => "search_fema_reg_id" %>
+<table>
+<tr>
+	<th class="vertical"> Tag ID </th>
+	<td> <input type="text" name="fema_reg_id" />
+	<input type="submit" value="Search By Tag ID" name="next"></td>
+</tr>
+</table>
+<%= end_form_tag %>
+
+<h2>Search by FEMA Bracelet ID</h2>
+
+<%= start_form_tag :action => "search_fema_bracelet_id" %>
+<table>
+<tr>
+	<th class="vertical"> Tag ID </th>
+	<td> <input type="text" name="fema_bracelet_id" />
+	<input type="submit" value="Search By Tag ID" name="next"></td>
+</tr>
+</table>
+<%= end_form_tag %>
+
 <h2>View Citizen Roster</h2>
 <p><%= link_to 'View Citizen Roster', 
 	     {:controller => 'people', 

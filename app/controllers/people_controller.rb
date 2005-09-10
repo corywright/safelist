@@ -75,8 +75,8 @@ class PeopleController < ApplicationController
   end
 
   def search_tag_id
-    @people = Person.find(:all, 
-                          :conditions => [ "tag_id = ?", params[:tag_id].strip],
+    @people = Person.find(:all,
+                          :conditions => [ "tag_id ilike ?", params[:tag_id].strip+'%'],
                           :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that tag id"
@@ -88,7 +88,7 @@ class PeopleController < ApplicationController
 
   def search_fema_reg_id
     @people = Person.find(:all, 
-                          :conditions => [ "fema_reg_id = ?", params[:fema_reg_id].strip],
+                          :conditions => [ "fema_reg_id ilike ?", params[:fema_reg_id].strip+'%'],
                           :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that FEMA Registration ID"
@@ -101,7 +101,7 @@ class PeopleController < ApplicationController
   # badge_id is the debit_id/bracelet_id
   def search_fema_bracelet_id
     @people = Person.find(:all, 
-                          :conditions => [ "debit_id = ?", params[:fema_bracelet_id].strip],
+                          :conditions => [ "debit_id ilike ?", params[:fema_bracelet_id].strip+'%'],
                           :include => :shelter)
     if @people.nil?
       flash[:notice] = "No one found by that FEMA Bracelet ID"

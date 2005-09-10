@@ -20,6 +20,7 @@
 	<th class="horizontal">First Name</th>
 	<th class="horizontal">Last Name</th>
 	<th class="horizontal">DOB</th>
+	<th class="horizontal">SSN</th>
 	<th class="horizontal">Status</th>
 	<th class="horizontal">FEMA Reg ID</th>
 	<th class="horizontal"></th>
@@ -31,7 +32,8 @@
 	<td> <%=h person.tag_id %> </td>
 	<td> <%=h person.first_name %> </td>
 	<td> <%=h person.last_name %> </td>
-	<td> <%=h person.dob %> </td>	
+	<td> <%=h person.dob %> </td>
+	<td> <%=h person.ssn %> </td>
 	<td>	
 	<% if person.checked_in %>
 	<div class="confirm"> On-Site</div>

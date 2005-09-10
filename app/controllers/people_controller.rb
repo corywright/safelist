@@ -66,6 +66,7 @@ class PeopleController < ApplicationController
   end
 
   def search
+    @shelters = Shelter.find(:all)
   end
 
   def search_tag_id

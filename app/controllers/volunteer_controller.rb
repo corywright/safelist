@@ -1,5 +1,5 @@
 class VolunteerController < ApplicationController
-  paginate :volunteers, :order_by => 'last_name, first_name', :per_page => 20
+  paginate :volunteers, :order_by => 'last_name, first_name', :per_page => 40, :order_by => "last_name"
   def index
     list
     render :action => 'list'
@@ -25,7 +25,7 @@ class VolunteerController < ApplicationController
   end
 
   def list
-    @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 20
+    @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 30, :order_by => "last_name"
   end
 
   def show

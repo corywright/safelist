@@ -56,7 +56,7 @@
 	<% end %>
 		<%= link_to 'Show', {:action => 'show', :id => person}, :class => 'textbutton'  %>
     	<%= link_to 'Edit', {:action => 'edit', :id => person}, :class => 'textbutton'  %>
-	<% if person.family_id %>
+	<% if person.family_id != 0 %>
     	  | <%= link_to 'View Family', {:action => 'show', :id => person.family_id, :controller => 'families'}, :class => 'textbutton'  %>
 	<% end %>
 	</td>

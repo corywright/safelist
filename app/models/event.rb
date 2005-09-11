@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
 	belongs_to :volunteers
 	belongs_to :people
         belongs_to :shelter
+	serialize :notes
 
 	def dl_number
 	  [@dl_number, @badge_id] = self.notes

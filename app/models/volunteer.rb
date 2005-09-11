@@ -2,9 +2,6 @@ class Volunteer < ActiveRecord::Base
   has_many :events
   belongs_to :shelter
 
-  serialize :notes
-  # so we can store ruby objs in the notes field
- 
   def name
       first_name + " " + last_name
   end

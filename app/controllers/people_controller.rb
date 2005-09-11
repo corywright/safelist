@@ -118,12 +118,17 @@ class PeopleController < ApplicationController
 
   def search_name
     if params[:first_name] != ""
+      if params[:first_name].length < 1
+        flash[:notice] = 'Search string must be at least 1 character.'
+        redirect_to :action => 'search' and return
+      else
         @people = Person.find(:all, 
-                          :conditions => [ "first_name ilike ?", params[:first_name].strip ],
+                          :conditions => [ "first_name ilike ?", params[:first_name].strip + '%'],
                           :order => 'last_name, first_name', :include => :shelter)
+      end
     else
-      if params[:last_name].length < 2
-        flash[:notice] = 'Search string must be at least 2 characters.'
+      if params[:last_name].length < 1
+        flash[:notice] = 'Search string must be at least 1 character.'
         redirect_to :action => 'search' and return
       else
         @people = Person.find(:all, 

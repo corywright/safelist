@@ -8,6 +8,7 @@
 	<th class="horizontal">DOB</th>
 	<th class="horizontal">Age</th>
 	<th class="horizontal">Status</th>
+	<th class="horizontal">Shelter</th>
 	<th class="horizontal"></th>
 </tr>
  
@@ -25,6 +26,7 @@
 	<% else %>
 	<div class="errormsg">Off-Site</div>
 	<% end %></td>	
+	<td><%=h person.shelter.name %></td>
 	<td>
 		<% if person.checked_in
 		  button_text_check_in = 'Check-Out Citizen'

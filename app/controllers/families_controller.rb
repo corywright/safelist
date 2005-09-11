@@ -12,7 +12,8 @@ class FamiliesController < ApplicationController
   def show
     session[:lastfamily] = params[:id]
     @family = Family.find(params[:id])
-    @members = Person.find(:all, :conditions => [ "family_id = ?", params[:id]] )
+    @members = Person.find(:all, :conditions => [ "family_id = ?", params[:id]], 
+                           :include => :shelter )
     @address = Address.find(@family.pre_disaster_address_id)
     if @members.nil?
       flash[:error] = 'No members of this family.'

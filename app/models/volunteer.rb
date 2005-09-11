@@ -1,7 +1,14 @@
 class Volunteer < ActiveRecord::Base
   has_many :events
   belongs_to :shelter
+
+  serialize :notes
+  # so we can store ruby objs in the notes field
  
+  def name
+      first_name + " " + last_name
+  end
+
   def last_check_in
       @event = Event.find_by_volunteer_id_and_event_type_id(self.id, 3, :order => "event_time DESC")
       write_attribute(:last_check_in, @event.event_time) if @event

@@ -16,12 +16,18 @@ class VolunteerController < ApplicationController
     end
     @event.volunteer_id = @volunteer.id
     @event.event_time = Time.now
+    @event.notes = [ params[:badge_id], params[:dl_number] ]
     if @event.save
       flash[:notice] = "#{@event.event_type.name} successful"
       redirect_to :action => 'list'
     else
       flash[:error] = "#{@event.event_type.name} failed"
     end
+  end
+
+  def checkin_notes
+    @volunteer = Volunteer.find(params[:id], :include => :shelter)
+    @shelters = Shelter.find(:all)
   end
 
   def list

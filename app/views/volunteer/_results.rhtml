@@ -1,0 +1,49 @@
+<table>
+  <tr>
+	<th class="horizontal">#</th>
+	<th class="horizontal">First</th>
+	<th class="horizontal">Last</th>
+	<th class="horizontal">Affiliation</th>
+	<th class="horizontal">Badge</th>
+	<th class="horizontal">Last Check-In</th>
+	<th class="horizontal">Last Check-Out</th>
+	<th class="horizontal">Duration</th>
+	<th class="horizontal">Cell</th>
+	<th class="horizontal"></th>
+  </tr>
+<% set_counter :volunteers, @volunteer_pages.current.offset %>  
+<% for volunteer in @volunteers %>
+  <tr class="<%=h row_style :volunteers %>">
+  	<th class="counter"> <%=h counter :volunteers %></th>
+	<td> <%=h volunteer.first_name %></td>
+	<td> <%=h volunteer.last_name %></td>
+	<td> <%=h volunteer.affiliation %></td>
+	<td> <%=h volunteer.badge_id %></td>
+	<td> <%=h (volunteer.last_check_in.nil?) ? '' : volunteer.last_check_in.strftime("%a, %b %d %Y - %I:%M %p") %></td>
+	<td> <% if volunteer.last_check_out != nil %>
+			<%=h volunteer.last_check_out.strftime("%a, %b %d %Y - %I:%M %p") %>
+		 <% end %></td>
+	<td> 
+	<% if volunteer.checked_in %>
+		<div class="confirm"> 
+		<%=h distance_of_time_in_words_to_now(volunteer.last_check_in)%>
+		</div>
+	<% else %>
+	 	-- 
+	<% end %>	
+	</td>
+	<td> <%=h volunteer.mobile_phone %></td>	
+    <td>
+	<% button_text =  volunteer.checked_in ? 'Check-Out' : 'Check-In&nbsp;&nbsp;' -%>
+	<%= link_to 'Show', {:action => 'show', :id => volunteer}, :class => 'textbutton'  %>
+        <%= link_to 'Edit', {:action => 'edit', :id => volunteer}, :class => 'textbutton'  %>
+	<%= link_to button_text, {:action => 'checkinout', :id => volunteer}, :class => 'textbutton' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br>
+<%= link_to '<< Previous', { :page => @volunteer_pages.current.previous }, :class =>'textbutton' if @volunteer_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @volunteer_pages.current.next }, :class =>'textbutton' if @volunteer_pages.current.next %> 
+
+<br />

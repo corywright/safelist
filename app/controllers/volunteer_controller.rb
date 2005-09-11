@@ -73,7 +73,7 @@ class VolunteerController < ApplicationController
   end
 
   def destroy
-    Volunteer.find(params[:id]).destroy
+#    Volunteer.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 

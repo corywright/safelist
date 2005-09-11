@@ -83,8 +83,8 @@ class VolunteerController < ApplicationController
                           :conditions => [ "first_name ilike ?", params[:first_name].strip],
                           :order => 'last_name, first_name', :include => :shelter)
     else
-      if params[:last_name].length < 4
-        flash[:notice] = 'Search string must be at least 4 characters.'
+      if params[:last_name].length < 2
+        flash[:notice] = 'Search string must be at least 2 characters.'
         redirect_to :action => 'search' and return
       else
         @volunteers = Volunteer.find(:all,

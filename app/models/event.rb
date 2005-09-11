@@ -4,14 +4,13 @@ class Event < ActiveRecord::Base
 	belongs_to :people
         belongs_to :shelter
 	serialize :notes
+	# so we can store ruby objs in the notes field
 
 	def dl_number
-	  [@dl_number, @badge_id] = self.notes
-	  write_attribute('dl_number', @dl_number);
+	  write_attribute(:dl_number, self.notes[0]) if self.notes[0];
 	end 
 	def badge_id
-	  [@dl_number, @badge_id] = self.notes
-	  write_attribute('badge_id', @badge_id);
+	  write_attribute(:badge_id, self.notes[1]) if self.notes[1];
 	end 
 end
 

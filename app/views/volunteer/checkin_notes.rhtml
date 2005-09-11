@@ -1,0 +1,39 @@
+<div class="header">
+<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Show Volunteer', {:action => 'show', :id => @volunteer}, :class => 'textbutton'  %>
+</div>
+
+<h2>Check-in Volunteer: <%= @volunteer.name %></h2>
+
+<%= start_form_tag :action => 'checkinout', :id => @volunteer %>
+
+<%= error_messages_for 'volunteer' %>
+
+<!--[form:volunteer]-->
+<table>
+<tr>
+	<th class="vertical">Shelter</th>
+	<td>
+	<select name="volunteer[shelter_id]">
+	<% for shelter in @shelters %>
+            <option value="<%= shelter.id %>" 
+            <%=(@volunteer[:shelter_id] == shelter.id)?'SELECTED':"" %>>
+            <%= shelter.name %></option>
+        <% end %>
+        </select>
+	</td>
+</tr>
+<tr>
+	<th class="vertical">Badge ID</th>
+	<td><input type="text" name="badge_id" /></td>
+</tr>
+<tr>
+	<th class="vertical">DL number</th>
+	<td><input type="text" name="dl_number" /></td>
+</tr>
+</table>
+<!--[eoform:volunteer]-->
+  <%= submit_tag 'Save' %>
+<%= end_form_tag %>
+
+

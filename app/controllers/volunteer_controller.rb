@@ -16,7 +16,10 @@ class VolunteerController < ApplicationController
     end
     @event.volunteer_id = @volunteer.id
     @event.event_time = Time.now
-    @event.notes = [params[:dl_number], params[:badge_id]]
+    @tmp = Hash.new
+    @tmp[:dl_number] = params[:dl_number]
+    @tmp[:badge_id] = params[:badge_id]
+    @event.notes = @tmp
     if @event.save
       flash[:notice] = "#{@event.event_type.name} successful"
       redirect_to :action => 'list'

@@ -7,10 +7,10 @@ class Event < ActiveRecord::Base
 	# so we can store ruby objs in the notes field
 
 	def dl_number
-	  write_attribute(:dl_number, self.notes[0]) if self.notes[0];
+	  write_attribute(:dl_number, self.notes[:dl_number]) if self.notes[:dl_number];
 	end 
 	def badge_id
-	  write_attribute(:badge_id, self.notes[1]) if self.notes[1];
+	  write_attribute(:badge_id, self.notes[:badge_id]) if self.notes[:badge_id];
 	end 
 end
 

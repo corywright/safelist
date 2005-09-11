@@ -9,7 +9,7 @@ class PeopleController < ApplicationController
   def list
     @order = 'last_name ASC'
     if (params[:sort] && params[:order])
-      @order = params[:sort] + ' ' + params[:order]
+      @order = params[:sort].strip + ' ' + params[:order].strip
     end
     @person_pages, @people = paginate :people, :per_page => 30, :order_by => @order
 
@@ -122,7 +122,7 @@ class PeopleController < ApplicationController
                           :conditions => [ "first_name ilike ?", params[:first_name].strip ],
                           :order => 'last_name, first_name', :include => :shelter)
     else
-      if params[:last_name].length < 4
+      if params[:last_name].length < 2
         flash[:notice] = 'Search string must be at least 4 characters.'
         redirect_to :action => 'search' and return
       else

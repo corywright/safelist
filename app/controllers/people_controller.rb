@@ -7,7 +7,12 @@ class PeopleController < ApplicationController
   end
 
   def list
-    @person_pages, @people = paginate :people, :per_page => 30, :order_by => 'last_name, first_name'
+    @order = 'last_name ASC'
+    if (params[:sort] && params[:order])
+      @order = params[:sort] + ' ' + params[:order]
+    end
+    @person_pages, @people = paginate :people, :per_page => 30, :order_by => @order
+
     @shelter_map = {}
     @shelters = Shelter.find(:all)
     for shelter in @shelters

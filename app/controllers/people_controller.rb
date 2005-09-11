@@ -118,14 +118,9 @@ class PeopleController < ApplicationController
 
   def search_name
     if params[:first_name] != ""
-      if params[:last_name].length < 4
-        flash[:notice] = 'Search string must be at least 4 characters.'
-        redirect_to :action => 'search' and return
-      else
         @people = Person.find(:all, 
-                          :conditions => [ "first_name ilike ?", params[:first_name].strip + '%'],
+                          :conditions => [ "first_name ilike ?", params[:first_name].strip ],
                           :order => 'last_name, first_name', :include => :shelter)
-      end
     else
       if params[:last_name].length < 4
         flash[:notice] = 'Search string must be at least 4 characters.'

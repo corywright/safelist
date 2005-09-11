@@ -112,9 +112,15 @@ class PeopleController < ApplicationController
   end
 
   def search_name
-    @people = Person.find(:all, 
+    if params[:first_name] 
+      @people = Person.find(:all, 
+                          :conditions => [ "first_name ilike ?", params[:first_name].strip+'%'],
+                          :order => 'last_name, first_name', :include => :shelter)
+    else
+      @people = Person.find(:all, 
                           :conditions => [ "last_name ilike ?", params[:last_name].strip+'%'],
                           :order => 'last_name, first_name', :include => :shelter)
+    end
     if @people.nil?
       flash[:notice] = "No one found by that name"
       redirect_to :action => 'search'

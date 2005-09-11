@@ -3,6 +3,11 @@
 <%= link_to 'Add a Volunteer', {:action => 'new'}, :class => 'textbutton'  %>
 </div>
 
+<%= start_form_tag :action => "search_name" %>
+<%= text_field 'search', 'name' %>
+<%= submit_tag 'Search' %>
+<%= end_form_tag %>
+
 <h2>Volunteers List</h2>
 
 <%= render_partial 'results' %>

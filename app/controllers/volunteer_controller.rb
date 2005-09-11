@@ -47,6 +47,7 @@ class VolunteerController < ApplicationController
 
   def new
     @volunteer = Volunteer.new
+    @volunteer.shelter_id = session[:shelter_id]
     @shelters = Shelter.find(:all)
   end
 
@@ -81,30 +82,31 @@ class VolunteerController < ApplicationController
   end
 
   def search_name
-    if params[:first_name] != ""
-      if params[:first_name].length < 1
-        flash[:notice] = 'Search string must be at least 1 character.'
-        redirect_to :action => 'search' and return
-      else
-        @volunteers = Volunteer.find(:all,
-                          :conditions => [ "first_name ilike ?", params[:first_name].strip],
-                          :order => 'last_name, first_name', :include => :shelter)
-      end
+    search_name = params[:search][:name].strip
+    if search_name.length < 1
+      flash[:notice] = 'Search string must be at least 1 character.'
+      redirect_to :action => 'list' and return
     else
-      if params[:last_name].length < 1
-        flash[:notice] = 'Search string must be at least 1 character.'
-        redirect_to :action => 'search' and return
-      else
-        @volunteers = Volunteer.find(:all,
-                          :conditions => [ "last_name ilike ?", params[:last_name].strip + '%'],
-                          :order => 'last_name, first_name', :include => :shelter)
-      end
+      search_name = search_name + '%'
+      @volunteers = Volunteer.find(:all,
+                                   :conditions => [ 
+                                     "first_name ilike ? or last_name ilike ?", 
+                                     search_name, 
+                                     search_name
+                                   ],
+                                   :order => 'last_name, first_name', 
+                                   :include => :shelter)
     end
     if @volunteers.nil?
       flash[:notice] = "No one found by that name"
-      redirect_to :action => 'search'
+      redirect_to :action => 'list'
     else
-      render :action => 'results'
+      # if there is only one, show that person's information
+      if @volunteers.length == 1
+        redirect_to :action => 'show', :id => @volunteers[0].id
+      else
+        render :action => 'results'
+      end
     end
   end
 

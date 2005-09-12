@@ -9,6 +9,12 @@
 <% if flash[:notice] %>
 <div class="confirm"><%= flash[:notice] %></div>
 <% end %>
+<% if flash[:warning] %>
+<div class="note"><%= flash[:warning] %></div>
+<% end %>
+<% if flash[:error] %>
+<div class="errormsg"><%= flash[:error] %></div>
+<% end %>
 
 <%= @content_for_layout %>
 <br>

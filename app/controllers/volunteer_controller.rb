@@ -12,16 +12,21 @@ class VolunteerController < ApplicationController
 
   def checkinout
     @volunteer = Volunteer.find(params[:id])
+
     @event = Event.new
     @event.shelter_id = session[:shelter_id]
     if @volunteer.checked_in
       @event.event_type = EventType.find(4)
+      @volunteer.badge_id = ''
     else
       @event.event_type = EventType.find(3)
+      @event.notes = "Badge ID: " + params[:volunteer][:badge_id]
+      @volunteer.badge_id = params[:volunteer][:badge_id]
+      @volunteer.dl_number = params[:volunteer][:dl_number]
     end
+    @volunteer.save
     @event.volunteer_id = @volunteer.id
     @event.event_time = Time.now
-    @event.notes = params[:badge_id]
     if @event.save
       flash[:notice] = "#{@event.event_type.name} successful"
       redirect_to :action => 'list'

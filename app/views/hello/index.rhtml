@@ -62,7 +62,8 @@
 <tr>
 	<td><%= link_to 'View Volunteer Roster', 
 	     {:controller => 'volunteer', 
-		  :action => 'list'}, 
+		  :action => 'list',
+		  :shelter_id => @session[:shelter_id]}, 
 		  :class => 'textbutton'  %></td>
 	<td class="note"> <p> View Volunteer Roster -- display the currrent list of
 	volunteers on-duty in the facility, search by last name or add a new volunteer </p> </td>

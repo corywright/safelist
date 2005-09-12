@@ -1,11 +1,9 @@
-COPY event_types(id, name) FROM stdin;
-1	Citizen Check In
-2	Citizen Check Out
-3	Volunteer Check In
-4	Volunteer Check Out
-5	Citizen Temporary Leave 
-6	Citizen Return
-7	Created Injury Report
-8	Referred to Nurse
-9	Injury Resolved
-\.
+insert into event_types (name) values ('Citizen Check In');
+insert into event_types (name) values ('Citizen Check Out');
+insert into event_types (name) values ('Volunteer Check In');
+insert into event_types (name) values ('Volunteer Check Out');
+insert into event_types (name) values ('Citizen Temporary Leave ');
+insert into event_types (name) values ('Citizen Return');
+insert into event_types (name) values ('Created Injury Report');
+insert into event_types (name) values ('Referred to Nurse');
+insert into event_types (name) values ('Injury Resolved');

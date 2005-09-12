@@ -1,5 +1,3 @@
-COPY person_types(id, name) FROM stdin;
-1	Man
-2	Woman
-5	Unknown
-\.
+insert into person_types (name) values ('Man');
+insert into person_types (name) values ('Woman');
+insert into person_types (name) values ('Unknown');

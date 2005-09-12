@@ -129,13 +129,17 @@ select drop_if_exists('organizations');
 create table organizations (
   id serial not null primary key,
   nonprofit boolean not null default 'f',
-  organization_type_id integer not null references organization_types (id)
+  organization_type_id integer not null references organization_types (id),
+  radio_channel text not null default ''
 );
 select drop_if_exists('departments');
 create table departments (
   id serial not null primary key,
   organization_id integer not null references organizations (id),
-  name text not null default ''
+  name text not null default '',
+  services text not null default '',
+  operating_hours text not null default '',
+  operating_requirements text not null default ''  
 );
 
 select drop_if_exists('organization_members');
@@ -146,5 +150,8 @@ create table organization_members (
   first_name text not null default '',
   last_name text not null default '',
   phone text not null default '',
-  email text not null default ''
+  email text not null default '',
+  availability text not null default '',
+  title text not null default '',
+  role text not null default ''
 );

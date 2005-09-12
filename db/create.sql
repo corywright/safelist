@@ -128,6 +128,7 @@ create table organization_types (
 select drop_if_exists('organizations');
 create table organizations (
   id serial not null primary key,
+  name text not null default '',
   address_id int4 NOT NULL,
   nonprofit boolean not null default 'f',
   organization_type_id integer not null references organization_types (id),

@@ -25,12 +25,20 @@ CREATE TABLE addresses(
     phone text NOT NULL DEFAULT '', 
     fax text NOT NULL DEFAULT '' 
 );
+create index addresses_street on addresses (street);
+create index addresses_city on addresses (city);
+create index addresses_state on addresses (state);
+create index addresses_zipcode on addresses (zipcode);
+create index addresses_country on addresses (country);
+create index addresses_phone on addresses (phone);
+create index addresses_fax on addresses (fax);
 
 select drop_if_exists('person_types');
 CREATE TABLE person_types(
     id serial PRIMARY KEY,
     name text NOT NULL UNIQUE
 );
+create index person_types_name on person_types (name);
 
 select drop_if_exists('shelters');
 CREATE TABLE shelters(
@@ -41,6 +49,10 @@ CREATE TABLE shelters(
     domain text not null unique,
     FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
+create index shelters_name on shelters (name);
+create index shelters_address_id on shelters (address_id);
+create index shelters_tag_id_prefix on shelters (tag_id_prefix);
+create index shelters_domain on shelters (domain);
 
 select drop_if_exists('families');
 CREATE TABLE families(
@@ -51,6 +63,9 @@ CREATE TABLE families(
     FOREIGN KEY("pre_disaster_address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("post_disaster_address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
+create index families_disclosure_consent on families (disclosure_consent);
+create index families_pre_disaster_address_id on families (pre_disaster_address_id);
+create index families_post_disaster_address_id on families (post_disaster_address_id);
 
 select drop_if_exists('people');
 CREATE TABLE people(
@@ -72,6 +87,19 @@ CREATE TABLE people(
     FOREIGN KEY("person_type_id") REFERENCES "person_types" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
+create index people_tag_id on people (tag_id);
+create index people_first_name on people (first_name);
+create index people_last_name on people (last_name);
+create index people_family_id on people (family_id);
+create index people_person_type_id on people (person_type_id);
+create index people_medical_problems on people (medical_problems);
+create index people_ssn on people (ssn);
+create index people_dob on people (dob);
+create index people_shelter_id on people (shelter_id);
+create index people_location_description on people (location_description);
+create index people_resume on people (resume);
+create index people_fema_reg_id on people (fema_reg_id);
+create index people_debit_id on people (debit_id);
 
 select drop_if_exists('volunteers');
 CREATE TABLE volunteers(
@@ -91,12 +119,26 @@ CREATE TABLE volunteers(
     dl_number text default '',
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
+create index volunteers_first_name on volunteers (first_name);
+create index volunteers_last_name on volunteers (last_name);
+create index volunteers_dob on volunteers (dob);
+create index volunteers_trained_by_red_cross on volunteers (trained_by_red_cross);
+create index volunteers_email on volunteers (email);
+create index volunteers_home_phone on volunteers (home_phone);
+create index volunteers_mobile_phone on volunteers (mobile_phone);
+create index volunteers_affiliation on volunteers (affiliation);
+create index volunteers_location on volunteers (location);
+create index volunteers_role on volunteers (role);
+create index volunteers_shelter_id on volunteers (shelter_id);
+create index volunteers_badge_id on volunteers (badge_id);
+create index volunteers_dl_number on volunteers (dl_number);
 
 select drop_if_exists('event_types');
 CREATE TABLE event_types(
     id serial PRIMARY KEY,
     name text NOT NULL UNIQUE
 );
+create index event_types_name on event_types (name);
 
 select drop_if_exists('events');
 CREATE TABLE events(
@@ -112,6 +154,12 @@ CREATE TABLE events(
     FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
 );
+create index events_event_time on events (event_time);
+create index events_event_type_id on events (event_type_id);
+create index events_person_id on events (person_id);
+create index events_volunteer_id on events (volunteer_id);
+create index events_shelter_id on events (shelter_id);
+create index events_notes on events (notes);
 
 select drop_if_exists('injury_reports');
 CREATE TABLE injury_reports(
@@ -122,12 +170,17 @@ CREATE TABLE injury_reports(
     referred_to_nurse boolean not null default 'f',
     FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE
 );
+create index injury_reports_person_id on injury_reports (person_id);
+create index injury_reports_description on injury_reports (description);
+create index injury_reports_report on injury_reports (report);
+create index injury_reports_referred_to_nurse on injury_reports (referred_to_nurse);
 
 select drop_if_exists('organization_types');
 create table organization_types (
   id serial not null primary key,
   name text not null default ''
 );
+create index organization_types_name on organization_types (name);
 
 select drop_if_exists('organizations');
 create table organizations (
@@ -139,6 +192,12 @@ create table organizations (
   radio_channel text not null default '',
   FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
+create index organizations_name on organizations (name);
+create index organizations_address_id on organizations (address_id);
+create index organizations_nonprofit on organizations (nonprofit);
+create index organizations_organization_type_id on organizations (organization_type_id);
+create index organizations_radio_channel on organizations (radio_channel);
+
 select drop_if_exists('departments');
 create table departments (
   id serial not null primary key,
@@ -148,6 +207,11 @@ create table departments (
   operating_hours text not null default '',
   operating_requirements text not null default ''  
 );
+create index departments_organization_id on departments (organization_id);
+create index departments_name on departments (name);
+create index departments_services on departments (services);
+create index departments_operating_hours on departments (operating_hours);
+create index departments_operating_requirements on departments (operating_requirements);
 
 select drop_if_exists('organization_members');
 create table organization_members (
@@ -162,3 +226,12 @@ create table organization_members (
   title text not null default '',
   role text not null default ''
 );
+create index organization_members_department_id on organization_members (department_id);
+create index organization_members_organization_id on organization_members (organization_id);
+create index organization_members_first_name on organization_members (first_name);
+create index organization_members_last_name on organization_members (last_name);
+create index organization_members_phone on organization_members (phone);
+create index organization_members_email on organization_members (email);
+create index organization_members_availability on organization_members (availability);
+create index organization_members_title on organization_members (title);
+create index organization_members_role on organization_members (role);

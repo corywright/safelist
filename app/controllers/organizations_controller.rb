@@ -4,6 +4,8 @@
 #
 
 class OrganizationsController < ApplicationController
+  paginate :organizations, :order_by => 'name', :per_page => 50
+  paginate :departments, :order_by => 'name', :per_page => 50
   def index
     list
     render :action => 'list'

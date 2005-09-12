@@ -1,0 +1,28 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+<h2>Departments</h2>
+
+<table>
+  <tr>
+  <% for column in Department.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for department in @departments%>
+  <tr>
+  <% for column in Department.content_columns %>
+    <td><%=h department.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => department %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => department %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @department_pages.current.previous } if @department_pages.current.previous %>
+<%= link_to 'Next page', { :page => @department_pages.current.next } if @department_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New department ', :action => 'new', :controller => 'departments' %>

@@ -1,3 +1,6 @@
+-- This file is part of the SafeList shelter management software.
+-- Copyright 2005, Rackspace Managed Hosting
+
 CREATE OR REPLACE FUNCTION drop_if_exists (text) RETURNS INTEGER AS '
 DECLARE
     tbl_name ALIAS FOR $1;

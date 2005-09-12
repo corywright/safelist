@@ -5,11 +5,20 @@ class DepartmentsController < ApplicationController
   end
 
   def list
-    @department_pages, @departments = paginate :department, :per_page => 10
+    if @params[:id]
+      @organization = Organization.find(params[:id])
+      session[:last_organization] = @organization.id
+      @department_pages, @departments = paginate_collection Department.find_all_by_organization_id(params[:id]), :per_page => 20
+    else
+      @department_pages, @departments = paginate_collection Department.find(:all), :per_page => 20
+    end
+
   end
 
   def show
     @department = Department.find(params[:id])
+    @organization = Organization.find(@department.organization_id)
+    session[:last_organization] = @organization.id
   end
 
   def new
@@ -18,6 +27,7 @@ class DepartmentsController < ApplicationController
 
   def create
     @department = Department.new(params[:department])
+    @department.organization_id = session[:last_organization]
     if @department.save
       flash[:notice] = 'Department was successfully created.'
       redirect_to :action => 'list'
@@ -28,6 +38,8 @@ class DepartmentsController < ApplicationController
 
   def edit
     @department = Department.find(params[:id])
+    @organization = Organization.find(@department.organization_id)
+    session[:last_organization] = @organization.id
   end
 
   def update
@@ -36,12 +48,12 @@ class DepartmentsController < ApplicationController
       flash[:notice] = 'Department was successfully updated.'
       redirect_to :action => 'show', :id => @department
     else
-      render :action => 'edit'
+      render :action => 'edit', :id => params[:id]
     end
   end
 
-  def destroy
-    Department.find(params[:id]).destroy
-    redirect_to :action => 'list'
-  end
+#  def destroy
+#    Department.find(params[:id]).destroy
+#    redirect_to :action => 'list'
+#  end
 end

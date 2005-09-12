@@ -14,8 +14,8 @@
   <% for column in Department.content_columns %>
     <td><%=h department.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => department %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => department %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => department, :controller => 'departments' %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => department, :controller => 'departments' %></td>
   </tr>
 <% end %>
 </table>

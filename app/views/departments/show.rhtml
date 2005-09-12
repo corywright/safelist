@@ -1,3 +1,4 @@
+<h2><%=h @organization.name -%>: department: <%=h @department.name %></h2>
 <% for column in Department.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @department.send(column.name) %>
@@ -5,4 +6,4 @@
 <% end %>
 
 <%= link_to 'Edit', :action => 'edit', :id => @department %> |
-<%= link_to 'Back', :action => 'list' %>
+<%= link_to 'Back', :action => 'list', :id => session[:last_organization] %>

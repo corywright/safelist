@@ -1,4 +1,8 @@
-<h1>Listing departments</h1>
+<% if @organization %>
+  <h1><%=h @organization.name -%>: Departments</h1>
+<% else %>
+  <h1>All Departments</h1>
+<% end %>
 
 <table>
   <tr>
@@ -14,7 +18,6 @@
   <% end %>
     <td><%= link_to 'Show', :action => 'show', :id => department %></td>
     <td><%= link_to 'Edit', :action => 'edit', :id => department %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => department}, :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>

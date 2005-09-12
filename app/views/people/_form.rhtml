@@ -14,7 +14,7 @@
 		</select></td>
 </tr>
 <tr>
-	<th class="vertical"> Red Cross ID </th>
+	<th class="vertical"> Tag ID </th>
 	<td><%= text_field 'person', 'tag_id' %></td>
 </tr>
 <tr>
@@ -54,8 +54,8 @@
 	<td><%= text_area ("person","medical_problems", "rows" => 5, "cols" => 30) %></td>
 </tr>
 <tr>
-	<th class="vertical">Location Description <br><br>
-    <p>If this family member is NOT<br> at this shelter.</p></th>
+	<th class="vertical">Location Notes <br><br>
+    <p>	Building, section, cot, hospital,<br> last know whereabouts, etc </p></th>
 	<td><%= text_area ("person", "location_description", "rows" => 5, "cols" => 30) %></td>
 </tr>
 </table>

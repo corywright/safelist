@@ -5,5 +5,8 @@
 </p>
 <% end %>
 
+<h3>Department Members</h3>
+<%= render_partial 'members' %>
+
 <%= link_to 'Edit', :action => 'edit', :id => @department %> |
 <%= link_to 'Back', :action => 'list', :id => session[:last_organization] %>

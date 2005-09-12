@@ -18,6 +18,7 @@ class DepartmentsController < ApplicationController
   def show
     @department = Department.find(params[:id])
     @organization = Organization.find(@department.organization_id)
+    @organization_members_pages, @organization_members = paginate_collection @organization.organization_members, :page => @params[:page]
     session[:last_organization] = @organization.id
   end
 

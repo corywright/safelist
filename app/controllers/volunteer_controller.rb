@@ -30,6 +30,10 @@ class VolunteerController < ApplicationController
     @shelters = Shelter.find(:all)
   end
 
+  def printlist
+    @volunteers = Volunteer.find(:all, :include => :shelter, :order => "last_name, first_name")
+  end
+
   def list
     @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 30, :order_by => "last_name"
   end

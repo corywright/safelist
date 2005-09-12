@@ -1,0 +1,30 @@
+
+<h2> Volunteer List</h2>
+<table>
+<% set_counter :people, @volunteer_pages.current.offset %> 
+<% for volunteer in @volunteers %>
+  <% rowcount = counter :people %>
+  <% if rowcount % 50 == 0 %>
+  <tr>
+	<th class="horizontal">#</th>
+	<th class="horizontal">First Name</th>
+	<th class="horizontal">Last Name</th>
+	<th class="horizontal">DOB</th>
+	<th class="horizontal">Shelter</th>
+	<th class="horizontal">Red Cross Trained</th>
+	<th class="horizontal">Cell Number</th>
+  </tr>
+  <% end %>
+
+  <tr class="<%=h row_style :people %>">
+	<th> <%=h rowcount %></th>  	
+	<td> <%=h volunteer.first_name %> </td>
+	<td> <%=h volunteer.last_name %> </td>
+	<td> <%=h volunteer.dob %> </td>	
+	<td> <%=h volunteer.shelter.name %> </td>
+	<td> <%=h (volunteer.trained_by_red_cross) ? "Yes" : "No" %> </td>
+	<td> <%=h volunteer.mobile_phone %> </td>
+  </tr>
+<% end %>
+</table>
+<br />

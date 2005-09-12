@@ -80,11 +80,19 @@ class PeopleController < ApplicationController
   end
 
   def search_tag_id
+    search_tag_id = params[:tag_id].strip
     @people = Person.find(:all,
-                          :conditions => [ "tag_id ilike ?", params[:tag_id].strip+'%'],
+                          :conditions => [ "tag_id ilike ?", search_tag_id+'%'],
                           :include => :shelter)
-    if @people.nil?
-      flash[:notice] = "No one found by that tag id"
+
+    # if we don't find a tag_id, try our tmp ids
+    if @people.empty? and /^[A-Za-z]+/.match(search_tag_id)
+      search_tag_id = search_tag_id[1..search_tag_id.length].to_i
+      @people = Person.find(:all, :conditions => [ "people.id = ?", search_tag_id], :include => :shelter)
+    end
+
+    if @people.empty?
+      flash[:warning] = "No one found by that tag id"
       redirect_to :action => "search"
     else
       render :action => 'results'
@@ -95,8 +103,8 @@ class PeopleController < ApplicationController
     @people = Person.find(:all, 
                           :conditions => [ "fema_reg_id ilike ?", params[:fema_reg_id].strip+'%'],
                           :include => :shelter)
-    if @people.nil?
-      flash[:notice] = "No one found by that FEMA Registration ID"
+    if @people.empty?
+      flash[:warning] = "No one found by that FEMA Registration ID"
       redirect_to :action => "search"
     else
       render :action => 'results'
@@ -108,8 +116,8 @@ class PeopleController < ApplicationController
     @people = Person.find(:all, 
                           :conditions => [ "debit_id ilike ?", params[:fema_bracelet_id].strip+'%'],
                           :include => :shelter)
-    if @people.nil?
-      flash[:notice] = "No one found by that FEMA Bracelet ID"
+    if @people.empty?
+      flash[:warning] = "No one found by that FEMA Bracelet ID"
       redirect_to :action => "search"
     else
       render :action => 'results'
@@ -119,7 +127,7 @@ class PeopleController < ApplicationController
   def search_name
     if params[:first_name] != ""
       if params[:first_name].length < 1
-        flash[:notice] = 'Search string must be at least 1 character.'
+        flash[:warning] = 'Search string must be at least 1 character.'
         redirect_to :action => 'search' and return
       else
 	if params[:shelter_id]
@@ -132,7 +140,7 @@ class PeopleController < ApplicationController
       end
     else
       if params[:last_name].length < 1
-        flash[:notice] = 'Search string must be at least 1 character.'
+        flash[:warning] = 'Search string must be at least 1 character.'
         redirect_to :action => 'search' and return
       else
 	if params[:shelter_id]
@@ -144,13 +152,14 @@ class PeopleController < ApplicationController
         end
       end
     end
-    if @people.nil?
-      flash[:notice] = "No one found by that name"
+    if @people.empty?
+      flash[:warning] = "No one found by that name"
       redirect_to :action => 'search'
     else
       render :action => 'results'
     end
   end
+
   def checkinout
     @person = Person.find(params[:id])
     @event = @person.toggle_in_or_out(params[:perm], session[:shelter_id])

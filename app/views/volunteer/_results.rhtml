@@ -12,7 +12,8 @@
 	<th class="horizontal"></th>
   </tr>
 <% set_counter :volunteers, @volunteer_pages.current.offset %>  
-<% for volunteer in @volunteers %>
+<% unless @volunteers.nil? %>
+ <% for volunteer in @volunteers %>
   <tr class="<%=h row_style :volunteers %>">
   	<th class="counter"> <%=h counter :volunteers %></th>
 	<td> <%=h volunteer.first_name %></td>
@@ -40,10 +41,12 @@
 	<%= link_to button_text, {:action => 'checkinout', :id => volunteer}, :class => 'textbutton' %>
     </td>
   </tr>
+ <% end %>
 <% end %>
 </table>
 <br>
-<%= link_to '<< Previous', { :page => @volunteer_pages.current.previous }, :class =>'textbutton' if @volunteer_pages.current.previous %>
-<%= link_to 'Next >>', { :page => @volunteer_pages.current.next }, :class =>'textbutton' if @volunteer_pages.current.next %> 
+<% @params.delete('page') %>
+<%= link_to '<< Previous', { :page => @volunteer_pages.current.previous, :params => @params }, :class =>'textbutton' if @volunteer_pages.current.previous %>
 
+<%= link_to('Next >>', { :page => @volunteer_pages.current.next, :params => @params }, :class =>'textbutton') if @volunteer_pages.current.next %> 
 <br />

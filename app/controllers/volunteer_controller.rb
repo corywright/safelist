@@ -83,7 +83,7 @@ class VolunteerController < ApplicationController
   end
 
   def search_name
-    search_name = params[:search][:name].strip
+    search_name = params[:name].strip
     if search_name.length < 1
       flash[:notice] = 'Search string must be at least 1 character.'
       redirect_to :action => 'list' and return

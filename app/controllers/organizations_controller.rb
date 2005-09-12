@@ -18,11 +18,15 @@ class OrganizationsController < ApplicationController
   end
 
   def new
+    @organization_types = OrganizationType.find(:all)
     @organization = Organization.new
   end
 
   def create
     @organization = Organization.new(params[:organization])
+    @address = Address.new(params[:address])
+    @address.save
+    @organization.address_id = @address.id
     if @organization.save
       flash[:notice] = 'Organization was successfully created.'
       redirect_to :action => 'list'
@@ -32,7 +36,9 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
+    @organization_types = OrganizationType.find(:all)
     @organization = Organization.find(params[:id])
+    @address = Address.find(@organization.address_id);
   end
 
   def update

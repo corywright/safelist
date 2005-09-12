@@ -125,17 +125,18 @@ class PeopleController < ApplicationController
   end
 
   def search_name
+    @shelters = Shelter.find(:all)
     if params[:first_name]
       if params[:first_name].length < 1
         flash[:warning] = 'Search string must be at least 1 character.'
         redirect_to :action => 'search' and return
       else
 	if params[:shelter_id]
-	   @people_pages, @people = paginate_collection Person.find(:all, :conditions => [ "shelter_id = ? and first_name ilike ?", params[:shelter_id], params[:first_name].strip + '%'], :order => 'last_name, first_name', :include => :shelter), :page =>@params[:page]
+	   @person_pages, @people = paginate_collection Person.find(:all, :conditions => [ "shelter_id = ? and first_name ilike ?", params[:shelter_id], params[:first_name].strip + '%'], :order => 'last_name, first_name', :include => :shelter), :page =>@params[:page]
         else
-          @people = Person.find(:all, 
+          @person_pages, @people = paginate_collection Person.find(:all, 
                           :conditions => [ "first_name ilike ?", params[:first_name].strip + '%'],
-                          :order => 'last_name, first_name', :include => :shelter)
+                          :order => 'last_name, first_name', :include => :shelter), :page => @params[:page]
 	end
       end
     else
@@ -144,11 +145,11 @@ class PeopleController < ApplicationController
         redirect_to :action => 'search' and return
       else
 	if params[:shelter_id]
-	   @people_pages, @people = paginate_collection Person.find(:all, :conditions => [ "shelter_id = ? and last_name ilike ?", params[:shelter_id], params[:last_name].strip + '%'],:order => 'last_name, first_name', :include => :shelter), :page =>@params[:page]
+	   @person_pages, @people = paginate_collection Person.find(:all, :conditions => [ "shelter_id = ? and last_name ilike ?", params[:shelter_id], params[:last_name].strip + '%'],:order => 'last_name, first_name', :include => :shelter), :page =>@params[:page]
         else
-          @people = Person.find(:all, 
+          @person_pages, @people = paginate_collection Person.find(:all, 
                           :conditions => [ "last_name ilike ?", params[:last_name].strip + '%'],
-                          :order => 'last_name, first_name', :include => :shelter)
+                          :order => 'last_name, first_name', :include => :shelter), :page => @params[:page]
         end
       end
     end

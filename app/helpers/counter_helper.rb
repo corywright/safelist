@@ -1,3 +1,8 @@
+#
+# This file is part of the SafeList shelter management software.
+# Copyright 2005, Rackspace Managed Hosting
+#
+
 module CounterHelper
     attr :helper_interation_counters
 	def set_counter(label, value)

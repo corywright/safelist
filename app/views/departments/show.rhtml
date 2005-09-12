@@ -1,8 +1,0 @@
-<% for column in Departments.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @departments.send(column.name) %>
-</p>
-<% end %>
-
-<%= link_to 'Edit', :action => 'edit', :id => @departments %> |
-<%= link_to 'Back', :action => 'list' %>

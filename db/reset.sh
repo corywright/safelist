@@ -18,5 +18,6 @@ psql safelist_development < data.people.sql
 psql safelist_development < data.volunteers.sql
 psql safelist_development < data.events.sql
 psql safelist_development < data.injury_reports.sql
+psql safelist_development < data.organization_types.sql
 
 psql safelist_test < create.sql

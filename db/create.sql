@@ -118,3 +118,33 @@ CREATE TABLE injury_reports(
     referred_to_nurse boolean not null default 'f',
     FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+select drop_if_exists('organization_types');
+create table organization_types (
+  id serial not null primary key,
+  name text not null default ''
+);
+
+select drop_if_exists('organizations');
+create table organizations (
+  id serial not null primary key,
+  nonprofit boolean not null default 'f',
+  organization_type_id integer not null references organization_types (id)
+);
+select drop_if_exists('departments');
+create table departments (
+  id serial not null primary key,
+  organization_id integer not null references organizations (id),
+  name text not null default ''
+);
+
+select drop_if_exists('organization_members');
+create table organization_members (
+  id serial not null primary key,
+  department_id integer references departments (id),
+  organization_id integer references organizations (id),
+  first_name text not null default '',
+  last_name text not null default '',
+  phone text not null default '',
+  email text not null default ''
+);

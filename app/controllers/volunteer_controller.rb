@@ -94,7 +94,10 @@ class VolunteerController < ApplicationController
       redirect_to :action => 'list' and return
     else
       search_name = search_name + '%'
-      @volunteers = Volunteer.find(:all,
+      if params[:shelter_id]
+        @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all, :conditions => [ "shelter_id = ? and (first_name ilike ? or last_name ilike ?)", params[:shelter_id], search_name, search_name ], :order_by => 'last_name' ), :page => @params[:page]
+      else
+        @volunteers = Volunteer.find(:all,
                                    :conditions => [ 
                                      "first_name ilike ? or last_name ilike ?", 
                                      search_name, 
@@ -102,6 +105,7 @@ class VolunteerController < ApplicationController
                                    ],
                                    :order => 'last_name, first_name', 
                                    :include => :shelter)
+      end
     end
     if @volunteers.nil?
       flash[:notice] = "No one found by that name"

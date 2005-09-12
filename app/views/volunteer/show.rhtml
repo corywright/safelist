@@ -25,6 +25,36 @@
 	<td><%=h @volunteer.last_name %></td>
 </tr>
 <tr>
+	<th class="vertical">Badge ID</th>
+	<td><%=h @volunteer.badge_id %></td>
+</tr>
+<tr>
+	<th class="vertical">Shelter</th>
+	<td><%=h @volunteer.shelter.name %></td>
+</tr>
+<tr>
+	<th class="vertical">Location</th>
+	<td><%=h @volunteer.location %></td>
+</tr>
+<tr>
+	<th class="vertical">Role</th>
+	<td><%=h @volunteer.role %></td>
+</tr>
+<tr>
+	<th class="vertical">Status</th>
+	<td><% if @volunteer.checked_in %>
+			<div class="confirm"> 
+			<%=h distance_of_time_in_words_to_now(@volunteer.last_check_in)%>
+			</div>
+		<% else %>
+		 	<% if @volunteer.last_check_out != nil %>
+				<div class="errormsg"> Off-Site </div>
+			<% else %>
+			Never Checked-in
+			<% end %>	
+		<% end %></td>
+</tr>
+<tr>
 	<th class="vertical">Affiliation</th>
 	<td><%=h @volunteer.affiliation %></td>
 </tr>
@@ -48,23 +78,6 @@
 	<th class="vertical">Trained by Red Cross</th>
 	<td><%=h @volunteer.trained_by_red_cross %></td>
 </tr>
-<tr>
-	<th class="vertical">Location</th>
-	<td><%=h @volunteer.location %></td>
-</tr>
-<tr>
-	<th class="vertical">Role</th>
-	<td><%=h @volunteer.role %></td>
-</tr>
-<tr>
-	<th class="vertical">Shelter</th>
-	<td><%=h @volunteer.shelter.name %></td>
-</tr>
-<tr>
-	<th class="vertical">Badge ID</th>
-	<td><%=h @volunteer.badge_id %></td>
-</tr>
-
 </table>
 <br />
 

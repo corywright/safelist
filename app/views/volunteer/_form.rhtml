@@ -11,6 +11,30 @@
 	<td><%= text_field 'volunteer', 'last_name' %></td>
 </tr>
 <tr>
+	<th class="vertical">Badge ID</th>
+	<td><%= text_field 'volunteer','badge_id' %></td>
+</tr>
+<tr>
+	<th class="vertical">Shelter</th>
+	<td>
+	<select name="volunteer[shelter_id]">
+	<% for shelter in @shelters %>
+            <option value="<%= shelter.id %>" 
+            <%=(@volunteer[:shelter_id] == shelter.id)?'SELECTED':"" %>>
+            <%= shelter.name %></option>
+        <% end %>
+        </select>
+	</td>
+</tr>
+<tr>
+	<th class="vertical">Location</th>
+	<td><%= text_field 'volunteer','location' %></td>
+</tr>
+<tr>
+	<th class="vertical">Role</th>
+	<td><%= text_field 'volunteer','role' %></td>
+</tr>
+<tr>
 	<th class="vertical">Date Of Birth</th>
 	<td><%= date_select'volunteer','dob' ,:start_year => 1905 ,:end_year => 2005%></td>
 </tr>
@@ -35,29 +59,6 @@
 	<th class="vertical">Affiliation</th>
 	<td><%= text_field 'volunteer','affiliation' %></td>
 </tr>
-<tr>
-	<th class="vertical">Location</th>
-	<td><%= text_field 'volunteer','location' %></td>
-</tr>
-<tr>
-	<th class="vertical">Role</th>
-	<td><%= text_field 'volunteer','role' %></td>
-</tr>
-<tr>
-	<th class="vertical">Shelter</th>
-	<td>
-	<select name="volunteer[shelter_id]">
-	<% for shelter in @shelters %>
-            <option value="<%= shelter.id %>" 
-            <%=(@volunteer[:shelter_id] == shelter.id)?'SELECTED':"" %>>
-            <%= shelter.name %></option>
-        <% end %>
-        </select>
-	</td>
-</tr>
-<tr>
-	<th class="vertical">Badge ID</th>
-	<td><%= text_field 'volunteer','badge_id' %></td>
-</tr>
 </table>
 <!--[eoform:volunteer]-->
+<br>

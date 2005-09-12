@@ -8,7 +8,6 @@
 <%= start_form_tag :action => 'checkinout', :id => @volunteer %>
 
 <%= error_messages_for 'volunteer' %>
-
 <!--[form:volunteer]-->
 <table>
 <tr>
@@ -25,11 +24,11 @@
 </tr>
 <tr>
 	<th class="vertical">Badge ID</th>
-	<td><input type="text" name="badge_id" /></td>
+	<td><%= text_field 'volunteer', 'badge_id' %></td>
 </tr>
 <tr>
-	<th class="vertical">DL number</th>
-	<td><input type="text" name="dl_number" /></td>
+	<th class="vertical">Driver's License Number</th>
+	<td><%= text_field 'volunteer', 'dl_number' %></td>
 </tr>
 </table>
 <!--[eoform:volunteer]-->

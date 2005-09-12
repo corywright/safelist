@@ -14,17 +14,18 @@ class OrganizationMembersController < ApplicationController
   end
 
   def show
-    @organization_members = OrganizationMembers.find(params[:id])
+    @organization_members = OrganizationMember.find(params[:id])
   end
 
   def new
-    @organization_members = OrganizationMembers.new
+    @organization_member = OrganizationMember.new
   end
 
   def create
-    @organization_members = OrganizationMembers.new(params[:organization_members])
-    if @organization_members.save
-      flash[:notice] = 'OrganizationMembers was successfully created.'
+    @organization_member = OrganizationMember.new(params[:organization_member])
+    @organization_member.organization_id = session[:last_organization]
+    if @organization_member.save
+      flash[:notice] = 'OrganizationMember was successfully created.'
       redirect_to :action => 'list'
     else
       render :action => 'new'
@@ -32,13 +33,13 @@ class OrganizationMembersController < ApplicationController
   end
 
   def edit
-    @organization_members = OrganizationMembers.find(params[:id])
+    @organization_members = OrganizationMember.find(params[:id])
   end
 
   def update
-    @organization_members = OrganizationMembers.find(params[:id])
+    @organization_members = OrganizationMember.find(params[:id])
     if @organization_members.update_attributes(params[:organization_members])
-      flash[:notice] = 'OrganizationMembers was successfully updated.'
+      flash[:notice] = 'OrganizationMember was successfully updated.'
       redirect_to :action => 'show', :id => @organization_members
     else
       render :action => 'edit'
@@ -65,7 +66,7 @@ class OrganizationMembersController < ApplicationController
 
 
   def destroy
-    OrganizationMembers.find(params[:id]).destroy
+    OrganizationMember.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 end

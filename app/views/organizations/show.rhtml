@@ -10,6 +10,7 @@
 
 &nbsp;<%= link_to 'Show All Members', :action => 'list', :controller => 'organization_members', :id => @organization.id %>
 
+<%= render_partial 'members' %>
 <%= render_partial 'address' %>
 
 <%= link_to 'Edit', :action => 'edit', :id => @organization %> |

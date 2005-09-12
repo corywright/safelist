@@ -20,9 +20,6 @@
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @department_pages.current.previous } if @department_pages.current.previous %>
-<%= link_to 'Next page', { :page => @department_pages.current.next } if @department_pages.current.next %> 
-
 <br />
 
 <%= link_to 'New department ', :action => 'new', :controller => 'departments' %>

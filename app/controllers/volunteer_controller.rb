@@ -97,18 +97,18 @@ class VolunteerController < ApplicationController
       if params[:shelter_id]
         @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all, :conditions => [ "shelter_id = ? and (first_name ilike ? or last_name ilike ?)", params[:shelter_id], search_name, search_name ], :order_by => 'last_name' ), :page => @params[:page]
       else
-        @volunteers = Volunteer.find(:all,
+        @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all,
                                    :conditions => [ 
                                      "first_name ilike ? or last_name ilike ?", 
                                      search_name, 
                                      search_name
                                    ],
                                    :order => 'last_name, first_name', 
-                                   :include => :shelter)
+                                   :include => :shelter), :page => @params[:page]
       end
     end
-    if @volunteers.nil?
-      flash[:notice] = "No one found by that name"
+    if @volunteers.empty?
+      flash[:warning] = "No one found by that name"
       redirect_to :action => 'list'
     else
       # if there is only one, show that person's information

@@ -57,20 +57,12 @@
 	<th class="horizontal" colspan="2"> Volunteers </th>
 </tr>
 <tr>
-	<td><%= link_to 'Add a Volunteer', 
-	     {:controller => 'volunteer', 
-		  :action => 'new'}, 
-		  :class => 'textbutton'  %></td>
-	<td class="note"> <p> Add a Volunteer -- add a new volunteer for the 
-	facility </p> </td>
-</tr>
-<tr>
 	<td><%= link_to 'View Volunteer Roster', 
 	     {:controller => 'volunteer', 
 		  :action => 'list'}, 
 		  :class => 'textbutton'  %></td>
 	<td class="note"> <p> View Volunteer Roster -- display the currrent list of
-	volunteers on-duty in the facility and search by last name </p> </td>
+	volunteers on-duty in the facility, search by last name or add a new volunteer </p> </td>
 </tr>
 </table>
 <br>

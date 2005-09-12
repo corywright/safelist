@@ -1,3 +1,8 @@
+#
+# This file is part of the SafeList shelter management software.
+# Copyright 2005, Rackspace Managed Hosting
+#
+
 class Person < ActiveRecord::Base
     belongs_to :family
     belongs_to :person_type

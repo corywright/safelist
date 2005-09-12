@@ -2,26 +2,26 @@
 
 <table>
   <tr>
-  <% for column in Organizations.content_columns %>
+  <% for column in Organization.content_columns %>
     <th><%= column.human_name %></th>
   <% end %>
   </tr>
   
-<% for organizations in @organizations %>
+<% for organization in @organizations %>
   <tr>
-  <% for column in Organizations.content_columns %>
-    <td><%=h organizations.send(column.name) %></td>
+  <% for column in Organization.content_columns %>
+    <td><%=h organization.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => organizations %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => organizations %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => organizations}, :confirm => 'Are you sure?' %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => organization %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => organization %></td>
+    <td><%= link_to 'Destroy', {:action => 'destroy', :id => organization}, :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @organizations_pages.current.previous } if @organizations_pages.current.previous %>
-<%= link_to 'Next page', { :page => @organizations_pages.current.next } if @organizations_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @organization_pages.current.previous } if @organization_pages.current.previous %>
+<%= link_to 'Next page', { :page => @organization_pages.current.next } if @organization_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New organizations', :action => 'new' %>
+<%= link_to 'New organization', :action => 'new' %>

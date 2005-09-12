@@ -1,8 +1,8 @@
-<% for column in Organizations.content_columns %>
+<% for column in Organization.content_columns %>
 <p>
-  <b><%= column.human_name %>:</b> <%=h @organizations.send(column.name) %>
+  <b><%= column.human_name %>:</b> <%=h @organization.send(column.name) %>
 </p>
 <% end %>
 
-<%= link_to 'Edit', :action => 'edit', :id => @organizations %> |
+<%= link_to 'Edit', :action => 'edit', :id => @organization %> |
 <%= link_to 'Back', :action => 'list' %>

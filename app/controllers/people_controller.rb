@@ -125,7 +125,7 @@ class PeopleController < ApplicationController
   end
 
   def search_name
-    if params[:first_name] != ""
+    if params[:first_name]
       if params[:first_name].length < 1
         flash[:warning] = 'Search string must be at least 1 character.'
         redirect_to :action => 'search' and return

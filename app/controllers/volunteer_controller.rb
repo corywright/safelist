@@ -1,3 +1,8 @@
+#
+# This file is part of the SafeList shelter management software.
+# Copyright 2005, Rackspace Managed Hosting
+#
+
 class VolunteerController < ApplicationController
   paginate :volunteers, :order_by => 'last_name, first_name', :per_page => 40, :order_by => "last_name"
   def index

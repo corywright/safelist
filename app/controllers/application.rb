@@ -1,3 +1,8 @@
+#
+# This file is part of the SafeList shelter management software.
+# Copyright 2005, Rackspace Managed Hosting
+#
+
 # The filters added to this controller will be run for all controllers in the application.
 # Likewise will all the methods added be available for all controllers.
 class ApplicationController < ActionController::Base

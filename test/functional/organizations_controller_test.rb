@@ -34,8 +34,8 @@ class OrganizationsControllerTest < Test::Unit::TestCase
     assert_response :success
     assert_template 'show'
 
-    assert_not_nil assigns(:organizations)
-    assert assigns(:organizations).valid?
+    assert_not_nil assigns(:organization)
+    assert assigns(:organization).valid?
   end
 
   def test_new
@@ -44,18 +44,18 @@ class OrganizationsControllerTest < Test::Unit::TestCase
     assert_response :success
     assert_template 'new'
 
-    assert_not_nil assigns(:organizations)
+    assert_not_nil assigns(:organization)
   end
 
   def test_create
-    num_organizations = Organizations.count
+    num_organizations = Organization.count
 
-    post :create, :organizations => {}
+    post :create, :organization => {}
 
     assert_response :redirect
     assert_redirected_to :action => 'list'
 
-    assert_equal num_organizations + 1, Organizations.count
+    assert_equal num_organizations + 1, Organization.count
   end
 
   def test_edit
@@ -64,8 +64,8 @@ class OrganizationsControllerTest < Test::Unit::TestCase
     assert_response :success
     assert_template 'edit'
 
-    assert_not_nil assigns(:organizations)
-    assert assigns(:organizations).valid?
+    assert_not_nil assigns(:organization)
+    assert assigns(:organization).valid?
   end
 
   def test_update
@@ -75,14 +75,14 @@ class OrganizationsControllerTest < Test::Unit::TestCase
   end
 
   def test_destroy
-    assert_not_nil Organizations.find(1)
+    assert_not_nil Organization.find(1)
 
     post :destroy, :id => 1
     assert_response :redirect
     assert_redirected_to :action => 'list'
 
     assert_raise(ActiveRecord::RecordNotFound) {
-      Organizations.find(1)
+      Organization.find(1)
     }
   end
 end

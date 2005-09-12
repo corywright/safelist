@@ -45,6 +45,25 @@ class OrganizationMembersController < ApplicationController
     end
   end
 
+ def update2
+    @departments = Department.find(:all)
+    @organization = Organization.find(params[:id])
+    if @organization.update_attributes(params[:organization])
+      # this is one sweet block of code.
+      @organization.departments.clear
+      for department in @departments
+        if (@params[department.name])
+          @organization.departments<<(department)
+        end
+      end
+      flash[:notice] = 'Organization was successfully updated.'
+      redirect_to :action => 'show', :id => @organization
+    else
+      render :action => 'edit'
+    end
+  end
+
+
   def destroy
     OrganizationMembers.find(params[:id]).destroy
     redirect_to :action => 'list'

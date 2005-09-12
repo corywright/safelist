@@ -4,7 +4,7 @@
 
 <%= start_form_tag :action => 'update', :id => @organization %>
     <%= render_partial 'form' %>
-      <%= render_partial 'address' %>
+    <%= render_partial 'address' %>
         <select name="organization[organization_type_id]">
 	  <%= options_from_collection_for_select(@organization_types, "id", "name", @organization.organization_type_id) %>
 	    </select>

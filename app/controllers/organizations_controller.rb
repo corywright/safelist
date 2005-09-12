@@ -14,7 +14,9 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+    @departments = Department.find(:all)
     @organization = Organization.find(params[:id])
+    @address = Address.find(@organization.address_id);
   end
 
   def new
@@ -36,6 +38,7 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
+    @departments = Department.find(:all)
     @organization_types = OrganizationType.find(:all)
     @organization = Organization.find(params[:id])
     @address = Address.find(@organization.address_id);
@@ -51,8 +54,8 @@ class OrganizationsController < ApplicationController
     end
   end
 
-  def destroy
-    Organization.find(params[:id]).destroy
-    redirect_to :action => 'list'
-  end
+#  def destroy
+#    Organization.find(params[:id]).destroy
+#    redirect_to :action => 'list'
+#  end
 end

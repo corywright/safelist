@@ -5,6 +5,7 @@
   <b><%= column.human_name %>:</b> <%=h @organization.send(column.name) %>
 </p>
 <% end %>
+<%= render_partial 'address' %>
 
 <%= link_to 'Edit', :action => 'edit', :id => @organization %> |
 <%= link_to 'Back', :action => 'list' %>

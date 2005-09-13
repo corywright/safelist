@@ -1,7 +1,12 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 <div class="header">
-<%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'View Volunteer List', 
+	     {:controller => 'volunteer', 
+		  :action => 'list',
+		  :shelter_id => @session[:shelter_id],
+		  :checked_in => 't'}, 
+		  :class => 'textbutton'  %>
 <% button_text =  @volunteer.checked_in ? 'Check-Out' : 'Check-In&nbsp;&nbsp;' -%>
 <% button_action =  @volunteer.checked_in ? 'checkinout' : 'checkin_notes' -%>
 <%= link_to button_text, {:action => button_action, :id => @volunteer}, :class => 'textbutton'  %> 

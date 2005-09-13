@@ -27,7 +27,11 @@ class OrganizationMembersController < ApplicationController
     @organization_member.organization_id = session[:last_organization]
     if @organization_member.save
       flash[:notice] = 'OrganizationMember was successfully created.'
-      redirect_to :action => 'list'
+      if session[:history][2]['name'] == 'organizations:show'
+        redirect_to :action => 'show', :id => session[:last_organization], :controller => 'organizations'
+      else
+        redirect_to :action => 'list'
+      end
     else
       render :action => 'new'
     end

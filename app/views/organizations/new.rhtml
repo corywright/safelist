@@ -8,12 +8,27 @@
 <h2>Add an Organization</h2>
 
 <%= start_form_tag :action => 'create' %>
-  <%= render_partial 'form' %>
-  <%= render_partial 'address' %>
-  <select name="organization[organization_type_id]">
-  <%= options_from_collection_for_select(@organization_types, "id", "name") %>
-  </select>
-  <%= submit_tag "Save" %>
+<table>
+<tr>
+	<th>General</th>
+	<td> <%= render_partial 'form' %></td>
+</tr>
+<tr>
+	<th>Address</th>
+	<td><%= render_partial 'address' %></td>
+</tr>
+<tr>
+	<th>Type</th>
+	<td>
+	<select name="organization[organization_type_id]">
+  		<%= options_from_collection_for_select(@organization_types, "id", "name") %>
+  	</select></td>
+</tr>
+<tr>
+	<td colspan="2"><%= submit_tag "Save" %></td>
+</tr>
+</table>
+<br>  
 <%= end_form_tag %>
 
 

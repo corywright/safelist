@@ -2,13 +2,9 @@
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 <div class="header">
 <%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
-<% if @volunteer.checked_in
-		   		button_text = 'Check-Out'
-			else
-				button_text = 'Check-In'
-			end
-		 %>
-		<%= link_to button_text, {:action => 'checkinout', :id => @volunteer}, :class => 'textbutton'  %> 
+<% button_text =  @volunteer.checked_in ? 'Check-Out' : 'Check-In&nbsp;&nbsp;' -%>
+<% button_action =  @volunteer.checked_in ? 'checkinout' : 'checkin_notes' -%>
+<%= link_to button_text, {:action => button_action, :id => @volunteer}, :class => 'textbutton'  %> 
 </div>
 
 <h2> Volunteer - <%=h @volunteer.first_name %> <%=h @volunteer.last_name %> </h2>

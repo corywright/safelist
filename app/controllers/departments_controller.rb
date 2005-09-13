@@ -36,7 +36,11 @@ class DepartmentsController < ApplicationController
     @department.organization_id = session[:last_organization]
     if @department.save
       flash[:notice] = 'Department was successfully created.'
-      redirect_to :action => 'list'
+      if session[:history][2]['name'] == 'organizations:show'
+        redirect_to :action => 'show', :id => session[:last_organization], :controller => 'organizations'
+      else
+        redirect_to :action => 'list', :id => session[:last_organization]
+      end
     else
       render :action => 'new'
     end

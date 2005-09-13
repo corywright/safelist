@@ -1,9 +1,8 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 
-<div class="header">
 <%= link_to 'Add New Member', {:action => 'new', :controller => 'organization_members'}, :class => 'textbutton'  %>
-</div>
+<br /><br />
 
 <table>
   <tr>
@@ -24,6 +23,6 @@
 </table>
 
 <%= link_to '<< Previous', { :page => @organization_members_pages.current.previous }, :class =>'textbutton'  if @organization_members_pages.current.previous %>
-<%= link_to 'Next page', { :page => @organization_members_pages.current.next } if @organization_members_pages.current.next %> 
+<%= link_to 'Next page', { :page => @organization_members_pages.current.next }, :class =>'textbutton'  if @organization_members_pages.current.next %> 
 
 

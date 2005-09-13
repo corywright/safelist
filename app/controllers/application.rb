@@ -63,15 +63,15 @@ class ApplicationController < ActionController::Base
   def get_auth_data 
     user, pass = '', '' 
     # extract authorisation credentials 
-    if request.env.has_key? 'X-HTTP_AUTHORIZATION' 
+    if ENV['X-HTTP_AUTHORIZATION']
       # try to get it where mod_rewrite might have put it 
-      authdata = request.env['X-HTTP_AUTHORIZATION'].to_s.split 
-    elsif request.env.has_key? 'Authorization' 
+      authdata = ENV['X-HTTP_AUTHORIZATION'].to_s.split 
+    elsif ENV['Authorization']
       # for Apace/mod_fastcgi with -pass-header Authorization 
-      authdata = request.env['Authorization'].to_s.split 
-    elsif request.env.has_key? 'HTTP_AUTHORIZATION' 
+      authdata = ENV['Authorization'].to_s.split 
+    elsif ENV['HTTP_AUTHORIZATION']
       # this is the regular location 
-      authdata = request.env['HTTP_AUTHORIZATION'].to_s.split  
+      authdata = ENV['HTTP_AUTHORIZATION'].to_s.split  
     end 
 
     # at the moment we only support basic authentication 

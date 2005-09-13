@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
 	$CITIZEN_INJURYRESOLVED = 9
 	$MEMBER_CHECKIN = 10
 	$MEMBER_CHECKOUT = 11
-	$ORG_PENDING = 11
-	$ORG_ACCEPTED = 12
-	$ORG_REJECTED = 13
+	$ORG_PENDING = 1
+	$ORG_ACCEPTED = 2
+	$ORG_REJECTED = 3
 end

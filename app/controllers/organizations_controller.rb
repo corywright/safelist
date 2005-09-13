@@ -32,6 +32,7 @@ class OrganizationsController < ApplicationController
     @address = Address.new(params[:address])
     @address.save
     @organization.address_id = @address.id
+    @organization.organization_status_id = $ORG_PENDING
     if @organization.save
       flash[:notice] = 'Organization was successfully created.'
       redirect_to :action => 'list'

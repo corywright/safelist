@@ -44,7 +44,7 @@ class OrganizationMembersController < ApplicationController
 
   def edit
     @departments = Department.find(:all)
-    @organization_members = OrganizationMember.find(params[:id])
+    @organization_member = OrganizationMember.find(params[:id])
   end
 
   def update

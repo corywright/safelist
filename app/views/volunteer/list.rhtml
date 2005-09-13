@@ -5,6 +5,7 @@
 <%= link_to 'Add a Volunteer', {:action => 'new'}, :class => 'textbutton'  %>
 </div>
 <div class="window"> View: 
+		<%= link_to 'All', {:controller => 'volunteer', :action => 'list'}, :class => 'textbutton' %>
 <% @shelters.length.times do |z| %>
 	<% shelter = @shelters[z] %>
 		<%= link_to shelter.name, 

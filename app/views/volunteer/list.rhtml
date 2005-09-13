@@ -4,11 +4,11 @@
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
 <%= link_to 'Add a Volunteer', {:action => 'new'}, :class => 'textbutton'  %>
 </div>
-<div class="window"> View: 
+<div class="window">&nbsp;&nbsp;
 		<%= link_to 'All', {:controller => 'volunteer', :action => 'list'}, :class => 'textbutton' %>
-		<%= link_to 'All (Checked In)', {:controller => 'volunteer', :action => 'list', :checked_in => 't'}, :class => 'textbutton' %>
-		<%= link_to 'Shelter', {:controller => 'volunteer', :action => 'list', :shelter_id => session[:shelter_id]}, :class => 'textbutton' %>
-		<%= link_to 'Shelter (Checked In)', {:controller => 'volunteer', :action => 'list', :shelter_id => session[:shelter_id], :checked_in => 't'}, :class => 'textbutton' %>
+		<%= link_to 'All: Checked-In', {:controller => 'volunteer', :action => 'list', :checked_in => 't'}, :class => 'textbutton' %>
+		<%= link_to 'This Shelter', {:controller => 'volunteer', :action => 'list', :shelter_id => session[:shelter_id]}, :class => 'textbutton' %>
+		<%= link_to 'This Shelter: Checked-In', {:controller => 'volunteer', :action => 'list', :shelter_id => session[:shelter_id], :checked_in => 't'}, :class => 'textbutton' %>
 </div>
 <br>
 <%= start_form_tag :action => "search_name" %>

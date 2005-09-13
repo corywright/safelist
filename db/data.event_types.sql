@@ -7,3 +7,5 @@ insert into event_types (name) values ('Citizen Return');
 insert into event_types (name) values ('Created Injury Report');
 insert into event_types (name) values ('Referred to Nurse');
 insert into event_types (name) values ('Injury Resolved');
+insert into event_types (name) values ('Organization Member Check In');
+insert into event_types (name) values ('Organization Member Check Out');

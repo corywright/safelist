@@ -149,12 +149,14 @@ CREATE TABLE events(
     event_type_id int4 not null,
     person_id int4,
     volunteer_id int4,
+    organization_member_id int4,
     shelter_id int4,
     notes text not null default '',
     FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("volunteer_id") REFERENCES "volunteers" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
+    FOREIGN KEY("organization_member_id") REFERENCES "organization_members" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
 );
 create index events_event_time on events (event_time);
 create index events_event_type_id on events (event_type_id);
@@ -226,6 +228,7 @@ create table organization_members (
   email text not null default '',
   availability text not null default '',
   title text not null default '',
+  checked_in boolean default 'f',
   role text not null default ''
 );
 create index organization_members_department_id on organization_members (department_id);

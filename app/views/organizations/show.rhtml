@@ -2,17 +2,27 @@
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 
 <div class="header">
-<%= link_to 'Organization List', :action => 'list' %>
-<%= link_to 'Edit Organization', :action => 'edit', :id => @organization %>
+<%= link_to 'Organization List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Edit Organization', {:action => 'edit', :id => @organization}, :class => 'textbutton'  %>
 </div>
 
 
 <h2>Organization: <%= @organization.name %><h2>
-<% for column in Organization.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @organization.send(column.name) %>
-</p>
-<% end %>
+
+<table>
+<tr>
+	<th class="vertical">Name</th>
+	<td><%=h @organization.name %></td>
+</tr>
+<tr>
+	<th class="vertical">Non-profit?</th>
+	<td><%=h @organization.nonprofit %></td>	
+</tr>
+<tr>
+	<th class="vertical">Radio Channel</th>
+	<td><%=h @organization.radio_channel %></td>	
+</tr>
+</table>
 <%= render_partial 'departments' %>
 <%= render_partial 'members' %>
 <%= render_partial 'address' %>

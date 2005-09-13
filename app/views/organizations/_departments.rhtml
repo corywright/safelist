@@ -1,5 +1,9 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
+
+<%= link_to 'Add a Department ', {:action => 'new', :controller => 'departments'}, :class => 'textbutton'  %>
+<br>
+
 <h2>Departments</h2>
 
 <table>
@@ -22,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New department ', :action => 'new', :controller => 'departments' %>
+

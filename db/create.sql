@@ -246,15 +246,89 @@ CREATE TABLE events(
     FOREIGN KEY("organization_member_id") REFERENCES "organization_members" ("id") ON UPDATE CASCADE ON DELETE CASCADE, 
     FOREIGN KEY("organization_id") REFERENCES "organizations" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
 );
-select drop_if_exists('users');
-CREATE TABLE users(
-	id serial PRIMARY KEY,
-	username text not null,
-	passwd text not null
-);
 create index events_event_time on events (event_time);
 create index events_event_type_id on events (event_type_id);
 create index events_person_id on events (person_id);
 create index events_volunteer_id on events (volunteer_id);
 create index events_shelter_id on events (shelter_id);
 create index events_notes on events (notes);
+
+select drop_if_exists('users');
+CREATE TABLE users(
+	id serial PRIMARY KEY,
+	username text not null,
+	passwd text not null
+);
+
+select drop_if_exists('notes');
+create table notes (
+    id serial not null primary key,
+    created_time timestamp default now(),
+    body text default ''
+);
+create index notes_created_time on notes (created_time);
+
+select drop_if_exists('notes_volunteers');
+create table notes_volunteers (
+    note_id integer not null references notes (id),
+    volunteer_id integer not null references volunteers (id)
+);
+create index notes_volunteers_note_id on notes_volunteers (note_id);
+create index notes_volunteers_volunteer_id on notes_volunteers (volunteer_id);
+
+select drop_if_exists('notes_people');
+create table notes_people (
+    note_id integer not null references notes (id),
+    person_id integer not null references people (id)
+);
+create index notes_people_note_id on notes_people (note_id);
+create index notes_people_person_id on notes_people (person_id);
+
+select drop_if_exists('notes_organization_members');
+create table notes_organization_members (
+    note_id integer not null references notes (id),
+    organization_member_id integer not null references organization_members (id)
+);
+create index notes_organization_members_note_id on notes_organization_members (note_id);
+create index notes_organization_members_person_id on notes_organization_members (organization_member_id);
+
+select drop_if_exists('notes_families');
+create table notes_families (
+    note_id integer not null references notes (id),
+    family_id integer not null references families (id)
+);
+create index notes_families_note_id on notes_families (note_id);
+create index notes_families_family_id on notes_families (family_id);
+
+select drop_if_exists('notes_shelters');
+create table notes_shelters (
+    note_id integer not null references notes (id),
+    shelter_id integer not null references shelters (id)
+);
+create index notes_shelters_note_id on notes_shelters (note_id);
+create index notes_shelters_shelter_id on notes_shelters (shelter_id);
+
+select drop_if_exists('notes_organizations');
+create table notes_organizations (
+    note_id integer not null references notes (id),
+    organization_id integer not null references organizations (id)
+);
+create index notes_organizations_note_id on notes_organizations (note_id);
+create index notes_organizations_organization_id on notes_organizations (organization_id);
+
+select drop_if_exists('notes_departments');
+create table notes_departments (
+    note_id integer not null references notes (id),
+    department_id integer not null references departments (id)
+);
+create index notes_departments_note_id on notes_departments (note_id);
+create index notes_departments_department_id on notes_departments (department_id);
+
+select drop_if_exists('notes_injury_reports');
+create table notes_injury_reports (
+    note_id integer not null references notes (id),
+    injury_report_id integer not null references injury_reports (id)
+);
+create index notes_injury_reports_note_id on notes_injury_reports (note_id);
+create index notes_injury_reports_injury_report_id on notes_injury_reports (injury_report_id);
+

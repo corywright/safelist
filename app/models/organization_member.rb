@@ -6,6 +6,7 @@
 class OrganizationMember < ActiveRecord::Base
 	belongs_to :organization
 	belongs_to :department
+    has_and_belongs_to_many :notes
 
   def last_check_in
       @event = Event.find_by_organization_member_id_and_event_type_id(self.id, 10, :order => "event_time DESC")

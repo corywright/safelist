@@ -1,0 +1,10 @@
+<%= error_messages_for 'note' %>
+
+<!--[form:note]-->
+<p><label for="note_created_time">Created time</label><br/>
+<%= datetime_select 'note', 'created_time'  %></p>
+
+<p><label for="note_body">Body</label><br/>
+<%= text_area 'note', 'body'  %></p>
+<!--[eoform:note]-->
+

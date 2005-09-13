@@ -6,6 +6,7 @@
 class Volunteer < ActiveRecord::Base
   has_many :events
   belongs_to :shelter
+  has_and_belongs_to_many :notes
 
   def name
       first_name + " " + last_name

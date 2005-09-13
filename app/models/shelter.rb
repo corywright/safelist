@@ -5,4 +5,5 @@
 
 class Shelter < ActiveRecord::Base
     belongs_to :address, :class_name =>'Address'
+    has_and_belongs_to_many :notes
 end

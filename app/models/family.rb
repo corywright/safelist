@@ -11,4 +11,5 @@ class Family < ActiveRecord::Base
     belongs_to :post_disaster_address,
                :class_name => "Address",
                :foreign_key => "post_disaster_address_id"
+    has_and_belongs_to_many :notes
 end

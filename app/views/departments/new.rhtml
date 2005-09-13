@@ -2,7 +2,7 @@
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 
 <div class="header">
-<%= link_to 'Department List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Department List', {:action => 'list', :id => session[:last_organization] }, :class => 'textbutton'  %>
 </div>
 
 <h2>Add a Department</h2>

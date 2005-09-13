@@ -89,7 +89,7 @@ create index organization_members_title on organization_members (title);
 create index organization_members_role on organization_members (role);
 
 -- add the new event types
-select setval('event_types_id_seq',10);
+select setval('event_types_id_seq',9);
 insert into event_types (name) values ('Organization Member Check In');
 insert into event_types (name) values ('Organization Member Check Out');
 

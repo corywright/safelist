@@ -246,6 +246,12 @@ CREATE TABLE events(
     FOREIGN KEY("organization_member_id") REFERENCES "organization_members" ("id") ON UPDATE CASCADE ON DELETE CASCADE, 
     FOREIGN KEY("organization_id") REFERENCES "organizations" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
 );
+select drop_if_exists('users');
+CREATE TABLE users(
+	id serial PRIMARY KEY,
+	username text not null,
+	passwd text not null
+);
 create index events_event_time on events (event_time);
 create index events_event_type_id on events (event_type_id);
 create index events_person_id on events (person_id);

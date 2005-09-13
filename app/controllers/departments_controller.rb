@@ -17,8 +17,13 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
+    session[:last_department] = @department.id
     @organization = Organization.find(@department.organization_id)
-    @organization_members_pages, @organization_members = paginate_collection @organization.organization_members, :page => @params[:page]
+    @members = OrganizationMember.find_all_by_department_id(@department.id)
+    if @members.nil?
+      @members = []
+    end
+    @organization_members_pages, @organization_members = paginate_collection @members, :page => @params[:page]
     session[:last_organization] = @organization.id
   end
 
@@ -39,12 +44,14 @@ class DepartmentsController < ApplicationController
 
   def edit
     @department = Department.find(params[:id])
+    session[:last_department] = @department.id
     @organization = Organization.find(@department.organization_id)
     session[:last_organization] = @organization.id
   end
 
   def update
     @department = Department.find(params[:id])
+    session[:last_department] = @department.id
     if @department.update_attributes(params[:department])
       flash[:notice] = 'Department was successfully updated.'
       redirect_to :action => 'show', :id => @department

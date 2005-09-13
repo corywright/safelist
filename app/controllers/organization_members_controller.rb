@@ -18,6 +18,7 @@ class OrganizationMembersController < ApplicationController
   end
 
   def new
+    @departments = Department.find(:all)
     @organization_member = OrganizationMember.new
   end
 
@@ -33,37 +34,19 @@ class OrganizationMembersController < ApplicationController
   end
 
   def edit
+    @departments = Department.find(:all)
     @organization_members = OrganizationMember.find(params[:id])
   end
 
   def update
-    @organization_members = OrganizationMember.find(params[:id])
-    if @organization_members.update_attributes(params[:organization_members])
+    @organization_member = OrganizationMember.find(params[:id])
+    if @organization_member.update_attributes(params[:organization_member])
       flash[:notice] = 'OrganizationMember was successfully updated.'
-      redirect_to :action => 'show', :id => @organization_members
+      redirect_to :action => 'show', :id => @organization_member
     else
       render :action => 'edit'
     end
   end
-
- def update2
-    @departments = Department.find(:all)
-    @organization = Organization.find(params[:id])
-    if @organization.update_attributes(params[:organization])
-      # this is one sweet block of code.
-      @organization.departments.clear
-      for department in @departments
-        if (@params[department.name])
-          @organization.departments<<(department)
-        end
-      end
-      flash[:notice] = 'Organization was successfully updated.'
-      redirect_to :action => 'show', :id => @organization
-    else
-      render :action => 'edit'
-    end
-  end
-
 
   def destroy
     OrganizationMember.find(params[:id]).destroy

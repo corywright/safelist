@@ -23,5 +23,12 @@
 
 <p><label for="organization_member_role">Role</label><br/>
 <%= text_field 'organization_member', 'role'  %></p>
+
+<p><label for="organization_member_role">Department</label><br/>
+<select>
+<option value="">None</option>
+<%= options_from_collection_for_select(@departments, "id", "name") %>
+</select>
+</p>
 <!--[eoform:organization_member]-->
 

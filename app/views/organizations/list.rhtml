@@ -1,28 +1,37 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>Listing organizations</h1>
+
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'Add an Organization', {:action => 'new'}, :class => 'textbutton'  %>
+</div>
+
+<h2>Organization List</h2>
 
 <table>
   <tr>
+	<th class="horizontal">#</th>
   <% for column in Organization.content_columns %>
-    <th><%= column.human_name %></th>
+    <th  class="horizontal"><%= column.human_name %></th>
   <% end %>
+  	<th class="horizontal"></th>
   </tr>
-  
+<% set_counter :volunteers, @organization_pages.current.offset %> 
 <% for organization in @organizations %>
-  <tr>
+  <tr class="<%=h row_style :organizations %>">
+  		<th class="counter"> <%=h counter :people %></th>
   <% for column in Organization.content_columns %>
     <td><%=h organization.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => organization %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => organization %></td>
+    <td><%= link_to 'Show', {:action => 'show', :id => organization}, :class => 'textbutton'  %>
+        <%= link_to 'Edit', {:action => 'edit', :id => organization}, :class => 'textbutton'  %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @organization_pages.current.previous } if @organization_pages.current.previous %>
-<%= link_to 'Next page', { :page => @organization_pages.current.next } if @organization_pages.current.next %> 
+<%= link_to '<< Previous', { :page => @organization_pages.current.previous }, :class =>'textbutton'  if @organization_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @organization_pages.current.next }, :class =>'textbutton'  if @organization_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New organization', :action => 'new' %>
+

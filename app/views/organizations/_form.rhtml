@@ -3,12 +3,24 @@
 <%= error_messages_for 'organization' %>
 
 <!--[form:organization]-->
-<p><label for="organization_nonprofit">Nonprofit</label><br/>
-<select id="organization_nonprofit" name="organization[nonprofit]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<table>
+<tr>
+	<th class="vertical">Name</th>
+	<td><%= text_field 'organization', 'name'  %></td>
+</tr>
+<tr>
+	<th class="vertical">Nonprofit?</th>
+	<td>
+	  <select id="organization_nonprofit" name="organization[nonprofit]">
+	    <option value="false" selected>False</option>
+		<option value="true">True</option>
+	  </select></td>
+</tr>
+<tr>
+	<th class="vertical">Radio channel</th>
+	<td><%= text_field 'organization', 'radio_channel'  %></td>
+</tr>
+</table>
 
-<p><label for="organization_radio_channel">Radio channel</label><br/>
-<%= text_field 'organization', 'radio_channel'  %></p>
-<p><label for="organization_name">Name</label><br/>
-<%= text_field 'organization', 'name'  %></p>
 <!--[eoform:organization]-->
 

@@ -1,16 +1,28 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>Editing organization</h1>
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'Organization List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Show', {:action => 'show', :id => @organization}, :class => 'textbutton'  %>
+</div>
+
+<h2>Editing organization</h2>
 
 <%= start_form_tag :action => 'update', :id => @organization %>
     <%= render_partial 'form' %>
+	<table>
+	<tr>
+		<th class="vertical">Type</th>
+      <td><select name="organization[organization_type_id]">
+	  <%= options_from_collection_for_select(
+	    @organization_types, 
+		"id", 
+		"name", 
+		@organization.organization_type_id) %>
+	    </select></td>
+	</tr>
+	</table>
     <%= render_partial 'address' %>
-        <select name="organization[organization_type_id]">
-	  <%= options_from_collection_for_select(@organization_types, "id", "name", @organization.organization_type_id) %>
-	    </select>
-
   <%= submit_tag 'Edit' %>
 <%= end_form_tag %>
-
-<%= link_to 'Show', :action => 'show', :id => @organization %> |
-<%= link_to 'Back', :action => 'list' %>
+<br>

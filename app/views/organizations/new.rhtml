@@ -1,6 +1,11 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>New organization</h1>
+
+<div class="header">
+<%= link_to 'Organization List', {:action => 'list'}, :class => 'textbutton'  %>
+</div>
+
+<h2>Add an Organization</h2>
 
 <%= start_form_tag :action => 'create' %>
   <%= render_partial 'form' %>
@@ -8,7 +13,7 @@
   <select name="organization[organization_type_id]">
   <%= options_from_collection_for_select(@organization_types, "id", "name") %>
   </select>
-  <%= submit_tag "Create" %>
+  <%= submit_tag "Save" %>
 <%= end_form_tag %>
 
-<%= link_to 'Back', :action => 'list' %>
+

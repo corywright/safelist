@@ -1,6 +1,13 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>Organization: <%= @organization.name %><h1>
+
+<div class="header">
+<%= link_to 'Organization List', :action => 'list' %>
+<%= link_to 'Edit Organization', :action => 'edit', :id => @organization %>
+</div>
+
+
+<h2>Organization: <%= @organization.name %><h2>
 <% for column in Organization.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @organization.send(column.name) %>
@@ -10,5 +17,4 @@
 <%= render_partial 'members' %>
 <%= render_partial 'address' %>
 
-<%= link_to 'Edit', :action => 'edit', :id => @organization %> |
-<%= link_to 'Back', :action => 'list' %>
+

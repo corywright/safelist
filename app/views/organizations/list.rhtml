@@ -14,6 +14,7 @@
   <% for column in Organization.content_columns %>
     <th  class="horizontal"><%= column.human_name %></th>
   <% end %>
+  	<th class="horizontal">Status</th>
   	<th class="horizontal"></th>
   </tr>
 <% set_counter :volunteers, @organization_pages.current.offset %> 
@@ -23,6 +24,7 @@
   <% for column in Organization.content_columns %>
     <td><%=h organization.send(column.name) %></td>
   <% end %>
+    <td><%=h organization.organization_status.name %></td>
     <td><%= link_to 'Show', {:action => 'show', :id => organization}, :class => 'textbutton'  %>
         <%= link_to 'Edit', {:action => 'edit', :id => organization}, :class => 'textbutton'  %></td>
   </tr>

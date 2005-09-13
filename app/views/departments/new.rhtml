@@ -1,8 +1,16 @@
-<h1>New department</h1>
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+
+<div class="header">
+<%= link_to 'Department List', {:action => 'list'}, :class => 'textbutton'  %>
+</div>
+
+<h2>Add a Department</h2>
 
 <%= start_form_tag :action => 'create' %>
   <%= render_partial 'form' %>
-  <%= submit_tag "Create" %>
+  <br>
+  <%= submit_tag "Save" %>
 <%= end_form_tag %>
 
-<%= link_to 'Back', :action => 'list' %>
+

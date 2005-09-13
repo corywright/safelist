@@ -1,16 +1,28 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+
 <%= error_messages_for 'department' %>
 
 <!--[form:department]-->
-<p><label for="department_name">Name</label><br/>
-<%= text_field 'department', 'name'  %></p>
 
-<p><label for="department_services">Services</label><br/>
-<%= text_field 'department', 'services'  %></p>
+<table>
+<tr>
+	<th class="vertical">Name</th>
+	<td><%= text_field 'department', 'name'  %></td>
+</tr>
+<tr>
+	<th class="vertical">Services </th>
+	<td><%= text_field 'department', 'services'  %> </td>
+</tr>
+<tr>
+	<th class="vertical">Operating Hours </th>
+	<td><%= text_field 'department', 'operating_hours'  %> </td>
+</tr>
+<tr>
+	<th class="vertical">Operating requirements </th>
+	<td><%= text_field 'department', 'operating_requirements'  %> </td>
+</tr>
+</table>
 
-<p><label for="department_operating_hours">Operating hours</label><br/>
-<%= text_field 'department', 'operating_hours'  %></p>
-
-<p><label for="department_operating_requirements">Operating requirements</label><br/>
-<%= text_field 'department', 'operating_requirements'  %></p>
 <!--[eoform:department]-->
 

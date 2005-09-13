@@ -1,12 +1,26 @@
-<h2><%=h @organization.name -%>: department: <%=h @department.name %></h2>
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+
+<div class="header">
+<%= link_to 'View Organiztion', :action => 'list', :id => session[:last_organization] %>
+<%= link_to 'Edit', :action => 'edit', :id => @department %>
+</div>
+
+<h2><%=h @organization.name -%>: Department: <%=h @department.name %></h2>
+
+<table>
+<tr>
+	<th class="horizontal">#</th>
+</tr>
 <% for column in Department.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @department.send(column.name) %>
-</p>
+<tr>
+  <th class="vertical"> <%= column.human_name %> </th>
+  <td><%=h @department.send(column.name) %></td>
+</tr>
 <% end %>
+</table>
 
 <h3>Department Members</h3>
 <%= render_partial 'members' %>
 
-<%= link_to 'Edit', :action => 'edit', :id => @department %> |
-<%= link_to 'Back', :action => 'list', :id => session[:last_organization] %>
+

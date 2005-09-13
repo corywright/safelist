@@ -1,9 +1,18 @@
-<h1>Editing department</h1>
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+
+<div class="header">
+<%= link_to 'View Organization', {:action => 'list', :id => session[:last_organization]}, :class => 'textbutton'  %>
+<%= link_to 'View Department', {:action => 'show', :id => @department}, :class => 'textbutton'  %> |
+</div>
+
+<h2>Edit Department</h2>
 
 <%= start_form_tag :action => 'update', :id => @department %>
   <%= render_partial 'form' %>
+  <br>
   <%= submit_tag 'Edit' %>
 <%= end_form_tag %>
 
-<%= link_to 'Show', :action => 'show', :id => @department %> |
-<%= link_to 'Back', :action => 'list', :id => session[:last_organization] %>
+
+

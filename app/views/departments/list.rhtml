@@ -1,13 +1,20 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+
+<div class="header">
+<%= link_to 'Add a Department', {:action => 'new'}, :class => 'textbutton'  %>
+</div>
+
 <% if @organization %>
-  <h1><%=h @organization.name -%>: Departments</h1>
+  <h2><%=h @organization.name -%>: Departments</h2>
 <% else %>
-  <h1>All Departments</h1>
+  <h2>All Departments</h2>
 <% end %>
 
 <table>
   <tr>
   <% for column in Department.content_columns %>
-    <th><%= column.human_name %></th>
+    <th class="horizontal"><%= column.human_name %></th>
   <% end %>
   </tr>
   
@@ -21,10 +28,10 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to 'Previous page', { :page => @department_pages.current.previous } if @department_pages.current.previous %>
-<%= link_to 'Next page', { :page => @department_pages.current.next } if @department_pages.current.next %> 
+<br><br>
+<%= link_to '<< Previous', { :page => @department_pages.current.previous }, :class =>'textbutton'  if @department_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @department_pages.current.next }, :class =>'textbutton'  if @department_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New department', :action => 'new' %>
+

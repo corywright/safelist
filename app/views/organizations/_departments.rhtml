@@ -2,19 +2,20 @@
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 
 <table>
-  <tr>
+<tr>
+	<th class="horizontal">#</th>
   <% for column in Department.content_columns %>
-    <th><%= column.human_name %></th>
+    <th class="horizontal"><%= column.human_name %></th>
   <% end %>
-  </tr>
+</tr>
   
 <% for department in @departments%>
   <tr>
   <% for column in Department.content_columns %>
     <td><%=h department.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => department, :controller => 'departments' %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => department, :controller => 'departments' %></td>
+    <td><%= link_to 'Show', {:action => 'show', :id => department, :controller => 'departments'}, :class => 'textbutton'  %>
+    	<%= link_to 'Edit', {:action => 'edit', :id => department, :controller => 'departments'}, :class => 'textbutton'  %></td>
   </tr>
 <% end %>
 </table>

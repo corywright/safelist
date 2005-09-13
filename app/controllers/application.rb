@@ -16,11 +16,13 @@ class ApplicationController < ActionController::Base
 	end
 
 	def get_shelter
-	  @shelter = Shelter.find_by_domain(@request.host)
-	  if @shelter
-	    session[:shelter_id] = @shelter.id
-	  else
-	    session[:shelter_id] = 1
+	  if !session[:shelter_id]
+	    @shelter = Shelter.find_by_domain(@request.host)
+	    if @shelter
+	      session[:shelter_id] = @shelter.id
+	    else
+	      session[:shelter_id] = 1
+	    end
 	  end
 	end
 

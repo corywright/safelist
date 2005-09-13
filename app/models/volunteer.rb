@@ -22,18 +22,18 @@ class Volunteer < ActiveRecord::Base
   def last_event
       Event.find_by_volunteer_id(self.id, :order => "event_time DESC");
   end
-  def checked_in
-    if self.last_check_in
-      if (self.last_check_in.to_i > self.last_check_out.to_i)
-      	write_attribute(:checked_in, true)
-      else
-      	write_attribute(:checked_in, false)
-      end
-    else
-	# never logged in
-    	write_attribute(:checked_in, false)
-    end
-  end
+  #def checked_in
+  #  if self.last_check_in
+  #    if (self.last_check_in.to_i > self.last_check_out.to_i)
+  #    	write_attribute(:checked_in, true)
+  #    else
+  #    	write_attribute(:checked_in, false)
+  #    end
+  #  else
+  #	# never logged in
+  #  	write_attribute(:checked_in, false)
+  #  end
+  #end
   protected
     def validate
       errors.add_on_empty %w( first_name last_name )

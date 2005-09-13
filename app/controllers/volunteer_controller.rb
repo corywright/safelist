@@ -18,11 +18,13 @@ class VolunteerController < ApplicationController
     if @volunteer.checked_in
       @event.event_type = EventType.find(4)
       @volunteer.badge_id = ''
+      @volunteer.checked_in = false
     else
       @event.event_type = EventType.find(3)
       @event.notes = "Badge ID: " + params[:volunteer][:badge_id]
       @volunteer.badge_id = params[:volunteer][:badge_id]
       @volunteer.dl_number = params[:volunteer][:dl_number]
+      @volunteer.checked_in = true
     end
     @volunteer.save
     @event.volunteer_id = @volunteer.id
@@ -46,9 +48,15 @@ class VolunteerController < ApplicationController
 
   def list
     @shelters = Shelter.find(:all)
-    if params[:shelter_id]
+    if params[:shelter_id] and params[:checked_in]
+      @current_shelter = Shelter.find(params[:shelter_id])
+      @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all, :conditions => [ "shelter_id = ? and checked_in = ?", params[:shelter_id],params[:checked_in] ], :order_by => 'last_name' ), :page => @params[:page]
+    elsif params[:shelter_id]
       @current_shelter = Shelter.find(params[:shelter_id])
       @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all, :conditions => [ "shelter_id = ?", params[:shelter_id] ], :order_by => 'last_name' ), :page => @params[:page]
+    elsif params[:checked_in]
+      @checked_in = true
+      @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all, :conditions => [ "checked_in = ?",params[:checked_in] ], :order_by => 'last_name' ), :page => @params[:page]
     else
       @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 30, :order_by => "last_name"
     end

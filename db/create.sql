@@ -117,6 +117,7 @@ CREATE TABLE volunteers(
     shelter_id int4,
     badge_id text default '',
     dl_number text default '',
+    checked_in boolean default 'f',
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
 );
 create index volunteers_first_name on volunteers (first_name);
@@ -132,6 +133,7 @@ create index volunteers_role on volunteers (role);
 create index volunteers_shelter_id on volunteers (shelter_id);
 create index volunteers_badge_id on volunteers (badge_id);
 create index volunteers_dl_number on volunteers (dl_number);
+create index volunteers_checked_in on volunteers (checked_in);
 
 select drop_if_exists('event_types');
 CREATE TABLE event_types(

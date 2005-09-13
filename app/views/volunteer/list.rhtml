@@ -6,14 +6,9 @@
 </div>
 <div class="window"> View: 
 		<%= link_to 'All', {:controller => 'volunteer', :action => 'list'}, :class => 'textbutton' %>
-<% @shelters.length.times do |z| %>
-	<% shelter = @shelters[z] %>
-		<%= link_to shelter.name, 
-	     {:controller => 'volunteer', 
-		  :action => 'list',
-		  :shelter_id => shelter.id}, 
-		  :class => 'textbutton' %>
-<% end %>
+		<%= link_to 'All (Checked In)', {:controller => 'volunteer', :action => 'list', :checked_in => 't'}, :class => 'textbutton' %>
+		<%= link_to 'Shelter', {:controller => 'volunteer', :action => 'list', :shelter_id => session[:shelter_id]}, :class => 'textbutton' %>
+		<%= link_to 'Shelter (Checked In)', {:controller => 'volunteer', :action => 'list', :shelter_id => session[:shelter_id], :checked_in => 't'}, :class => 'textbutton' %>
 </div>
 <br>
 <%= start_form_tag :action => "search_name" %>
@@ -29,6 +24,6 @@
 </table>
 <%= end_form_tag %>
 
-<h2> Volunteers List  (<%= (@current_shelter.nil?) ? 'All' : @current_shelter.name %>) </h2>
+<h2> Volunteers List  (<%= (@current_shelter.nil?) ? 'All' : @current_shelter.name %><%= (params[:checked_in].nil?) ? '' : ' - Checked In'%>) </h2>
 
 <%= render_partial 'results' %>

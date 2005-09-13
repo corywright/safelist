@@ -12,11 +12,11 @@ class Volunteer < ActiveRecord::Base
   end
 
   def last_check_in
-      @event = Event.find_by_volunteer_id_and_event_type_id(self.id, 3, :order => "event_time DESC")
+      @event = Event.find_by_volunteer_id_and_event_type_id(self.id, $VOLUNTEER_CHECKIN, :order => "event_time DESC")
       write_attribute(:last_check_in, @event.event_time) if @event
   end
   def last_check_out
-      @event = Event.find_by_volunteer_id_and_event_type_id(self.id, 4, :order => "event_time DESC")
+      @event = Event.find_by_volunteer_id_and_event_type_id(self.id, $VOLUNTEER_CHECKOUT, :order => "event_time DESC")
       write_attribute(:last_check_out, @event.event_time) if @event
   end
   def last_event

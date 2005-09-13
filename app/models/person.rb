@@ -15,11 +15,11 @@ class Person < ActiveRecord::Base
       first_name + " " + last_name
     end
     def last_check_in
-      @event = Event.find_by_person_id_and_event_type_id(self.id, 1, :order => "event_time DESC")
+      @event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_CHECKIN, :order => "event_time DESC")
       write_attribute(:last_check_in, @event.event_time) if @event
     end
     def last_check_out
-      @event = Event.find_by_person_id_and_event_type_id(self.id, 2, :order => "event_time DESC")
+      @event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_CHECKOUT, :order => "event_time DESC")
       write_attribute(:last_check_out, @event.event_time) if @event
     end
     def last_event
@@ -55,24 +55,24 @@ class Person < ActiveRecord::Base
     @person = Person.find(self.id)
     @event = Event.new
     @event.shelter_id = shelter_id
-    @event.event_type = EventType.find(1) # default is checkin when there's no previous record
+    @event.event_type = EventType.find($CITIZEN_CHECKIN) # default is checkin when there's no previous record
     # this is fucking ugly, but it's late, I'm tired.
     if (@person.last_event)
-      if (@person.last_event.event_type == EventType.find(5))
-        @event.event_type = EventType.find(6)
+      if (@person.last_event.event_type == EventType.find($CITIZEN_TEMPOUT))
+        @event.event_type = EventType.find($CITIZEN_TEMPRETURN)
       end
-      if (@person.last_event.event_type == EventType.find(1) || @person.last_event.event_type == EventType.find(6))
+      if (@person.last_event.event_type == EventType.find($CITIZEN_CHECKIN) || @person.last_event.event_type == EventType.find($CITIZEN_TEMPRETURN))
         if perm == 'true'
-          @event.event_type = EventType.find(2)
+          @event.event_type = EventType.find($CITIZEN_CHECKOUT)
         else
-          @event.event_type = EventType.find(5)
+          @event.event_type = EventType.find($CITIZEN_TEMPOUT)
         end
       end
 #      if (@person.last_event.event_type == EventType.find(6))
 #        @event.event_type = EventType.find(5)
 #      end
-      if (@person.last_event.event_type == EventType.find(2))
-        @event.event_type = EventType.find(1)
+      if (@person.last_event.event_type == EventType.find($CITIZEN_CHECKOUT))
+        @event.event_type = EventType.find($CITIZEN_CHECKIN)
       end
     end
     @event.person_id = @person.id

@@ -35,22 +35,18 @@ class ApplicationController < ActionController::Base
 	  return [pages, slice]
 	end
 
-	def app_event_types
-	  @tmp = Hash.new
-	  @tmp[:citizen_checkin] = 1
-	  @tmp[:citizen_checkout] = 2
-	  @tmp[:volunteer_checkin] = 3
-	  @tmp[:volunteer_checkout] = 4
-	  @tmp[:citizen_tempout] = 5
-	  @tmp[:citizen_tempreturn] = 6
-	  @tmp[:citizen_injuryreport] = 7
-	  @tmp[:citizen_nurse] = 8
-	  @tmp[:citizen_injuryresolved] = 9
-	  @tmp[:member_checkin] = 10
-	  @tmp[:member_checkout] = 11
-	  @tmp[:org_pending] = 11
-	  @tmp[:org_accepted] = 12
-	  @tmp[:org_rejected] = 13
-	  return @tmp
-	end
+	$CITIZEN_CHECKIN = 1
+	$CITIZEN_CHECKOUT = 2
+	$VOLUNTEER_CHECKIN = 3
+	$VOLUNTEER_CHECKOUT = 4
+	$CITIZEN_TEMPOUT = 5
+	$CITIZEN_TEMPRETURN = 6
+	$CITIZEN_INJURYREPORT = 7
+	$CITIZEN_NURSE = 8
+	$CITIZEN_INJURYRESOLVED = 9
+	$MEMBER_CHECKIN = 10
+	$MEMBER_CHECKOUT = 11
+	$ORG_PENDING = 11
+	$ORG_ACCEPTED = 12
+	$ORG_REJECTED = 13
 end

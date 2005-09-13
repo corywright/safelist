@@ -16,11 +16,11 @@ class VolunteerController < ApplicationController
     @event = Event.new
     @event.shelter_id = session[:shelter_id]
     if @volunteer.checked_in
-      @event.event_type = EventType.find(4)
+      @event.event_type = EventType.find($VOLUNTEER_CHECKOUT)
       @volunteer.badge_id = ''
       @volunteer.checked_in = false
     else
-      @event.event_type = EventType.find(3)
+      @event.event_type = EventType.find($VOLUNTEER_CHECKIN)
       @event.notes = "Badge ID: " + params[:volunteer][:badge_id]
       @volunteer.badge_id = params[:volunteer][:badge_id]
       @volunteer.dl_number = params[:volunteer][:dl_number]

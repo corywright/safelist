@@ -67,9 +67,9 @@ class OrganizationMembersController < ApplicationController
     @event = Event.new
     @event.shelter_id = session[:shelter_id]
     if @organization_member.checked_in
-      @event.event_type = EventType.find(11)
+      @event.event_type = EventType.find($MEMBER_CHECKOUT)
     else
-      @event.event_type = EventType.find(10)
+      @event.event_type = EventType.find($MEMBER_CHECKIN)
     end
     @event.organization_member_id = @organization_member.id
     @event.event_time = Time.now

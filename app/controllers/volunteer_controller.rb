@@ -47,6 +47,7 @@ class VolunteerController < ApplicationController
   def list
     @shelters = Shelter.find(:all)
     if params[:shelter_id]
+      @current_shelter = Shelter.find(params[:shelter_id])
       @volunteer_pages, @volunteers = paginate_collection Volunteer.find(:all, :conditions => [ "shelter_id = ?", params[:shelter_id] ], :order_by => 'last_name' ), :page => @params[:page]
     else
       @volunteer_pages, @volunteers = paginate :volunteer, :per_page => 30, :order_by => "last_name"

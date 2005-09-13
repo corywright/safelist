@@ -28,6 +28,6 @@
 </table>
 <%= end_form_tag %>
 
-<h2> Volunteers List</h2>
+<h2> Volunteers List  (<%= (@current_shelter.nil?) ? 'All' : @current_shelter.name %>) </h2>
 
 <%= render_partial 'results' %>

@@ -1,11 +1,18 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>Listing organization_members</h1>
+
+<div class="header">
+<%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'View Organizations', {:controller => 'organizations', :action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'Add Organization Member', {:action => 'new'}, :class => 'textbutton'  %>
+</div>
+
+<h2>Listing Organization Members</h2>
 
 <table>
   <tr>
   <% for column in OrganizationMember.content_columns %>
-    <th><%= column.human_name %></th>
+    <th class="horizontal"><%= column.human_name %></th>
   <% end %>
   </tr>
   
@@ -21,9 +28,9 @@
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @organization_members_pages.current.previous } if @organization_members_pages.current.previous %>
-<%= link_to 'Next page', { :page => @organization_members_pages.current.next } if @organization_members_pages.current.next %> 
+<%= link_to '<< Previous', { :page => @organization_members_pages.current.previous }, :class =>'textbutton'  if @organization_members_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @organization_members_pages.current.next }, :class =>'textbutton'  if @organization_members_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New organization_members', :action => 'new' %>
+

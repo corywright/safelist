@@ -3,32 +3,43 @@
 <%= error_messages_for 'organization_member' %>
 
 <!--[form:organization_member]-->
-<p><label for="organization_member_first_name">First name</label><br/>
-<%= text_field 'organization_member', 'first_name'  %></p>
+<table>
+<tr>
+	<th>First Name </th>
+	<td><%= text_field 'organization_member', 'first_name'  %> </td>
+</tr>
+<tr>
+	<th>Last Name </th>
+	<td><%= text_field 'organization_member', 'last_name'  %> </td>
+</tr>
+<tr>
+	<th>Phone </th>
+	<td><%= text_field 'organization_member', 'phone'  %> </td>
+</tr>
+<tr>
+	<th>Email </th>
+	<td><%= text_field 'organization_member', 'email'  %> </td>
+</tr>
+<tr>
+	<th>Availability </th>
+	<td><%= text_field 'organization_member', 'availability'  %> </td>
+</tr>
+<tr>
+	<th>Title </th>
+	<td><%= text_field 'organization_member', 'title'  %> </td>
+</tr>
+<tr>
+	<th>Role </th>
+	<td><%= text_field 'organization_member', 'role'  %> </td>
+</tr>
+<tr>
+	<th>Department </th>
+	<td><select name="department_id">
+		<option value="">None</option>
+		<%= options_from_collection_for_select(@departments, "id", "name") %>
+		</select> </td>
+</tr>
+</table>
 
-<p><label for="organization_member_last_name">Last name</label><br/>
-<%= text_field 'organization_member', 'last_name'  %></p>
-
-<p><label for="organization_member_phone">Phone</label><br/>
-<%= text_field 'organization_member', 'phone'  %></p>
-
-<p><label for="organization_member_email">Email</label><br/>
-<%= text_field 'organization_member', 'email'  %></p>
-
-<p><label for="organization_member_availability">Availability</label><br/>
-<%= text_field 'organization_member', 'availability'  %></p>
-
-<p><label for="organization_member_title">Title</label><br/>
-<%= text_field 'organization_member', 'title'  %></p>
-
-<p><label for="organization_member_role">Role</label><br/>
-<%= text_field 'organization_member', 'role'  %></p>
-
-<p><label for="organization_member_role">Department</label><br/>
-<select name="department_id">
-<option value="">None</option>
-<%= options_from_collection_for_select(@departments, "id", "name") %>
-</select>
-</p>
 <!--[eoform:organization_member]-->
 

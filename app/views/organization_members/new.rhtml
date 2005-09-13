@@ -1,10 +1,16 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>New organization_members</h1>
+
+<div class="header">
+<%= link_to 'View Organization Members', {:action => 'list'}, :class => 'textbutton'  %>
+</div>
+
+<h2>Add Organization Members</h2>
 
 <%= start_form_tag :action => 'create' %>
   <%= render_partial 'form' %>
-  <%= submit_tag "Create" %>
+  <br /><br />
+  <%= submit_tag "Save" %>
 <%= end_form_tag %>
 
-<%= link_to 'Back', :action => 'list' %>
+

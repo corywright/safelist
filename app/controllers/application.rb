@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
 
     # at the moment we only support basic authentication 
     if authdata and authdata[0] == 'Basic' 
-	  logger.warn("Authdata = " + authdata)
+	  logger.warn("Authdata = " + Base64.decode64(authdata[1]))
       user, pass = Base64.decode64(authdata[1]).split(':')[0..1] 
     end 
     return [user, pass] 

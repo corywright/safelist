@@ -4,22 +4,22 @@
 #
 
 class OrganizationsController < ApplicationController
-  paginate :organizations, :order_by => 'name', :per_page => 50
-  paginate :departments, :order_by => 'name', :per_page => 50
+  paginate :organizations, :order_by => 'name', :per_page => 30
+  paginate :departments, :order_by => 'name', :per_page => 30
   def index
     list
     render :action => 'list'
   end
 
   def list
-    @organization_pages, @organizations = paginate :organization, :per_page => 10
+    @organization_pages, @organizations = paginate_collection Organization.find(:all, :include => :organization_status), :page => params[:page]
   end
 
   def show
     @departments = Department.find(:all)
     @organization = Organization.find(params[:id])
     session[:last_organization] = @organization.id
-    @organization_members_pages, @organization_members = paginate_collection OrganizationMember.find(:all, :conditions => ['organization_members.organization_id = ?', @organization.id], :include => :department), :page => @params[:page]
+    @organization_members_pages, @organization_members = paginate_collection OrganizationMember.find(:all, :conditions => ['organization_members.organization_id = ?', @organization.id], :include => :department, :include => :organization_status), :page => @params[:page]
     @address = Address.find(@organization.address_id);
   end
 

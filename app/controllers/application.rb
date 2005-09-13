@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def get_shelter
-	  if !session[:shelter_id]
+#	  if !session[:shelter_id]
 		@user = get_auth_name
 	    @shelter = Shelter.find_by_domain(@user)
 	    if @shelter
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 	    else
 	      session[:shelter_id] = 1
 	    end
-	  end
+#	  end
 	end
 
 	def paginate_collection(collection, options = {})

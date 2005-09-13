@@ -1,6 +1,7 @@
+begin;
 -- add and update volunteer checked_in
 alter table volunteers add checked_in boolean;
-alter table volunteers alter checked_in set default = 'f';
+alter table volunteers alter checked_in set default 'f';
 update volunteers set checked_in = 'f';
 update volunteers set checked_in = 't' where id in (
     select id from (
@@ -34,6 +35,7 @@ create index organization_statuses_name on organization_statuses (name);
 create table organizations (
   id serial not null primary key,
   name text not null default '',
+  emergency_instructions text not null default '',
   address_id int4 NOT NULL,
   nonprofit boolean not null default 'f',
   organization_type_id integer not null references organization_types (id),
@@ -42,9 +44,11 @@ create table organizations (
   FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
 create index organizations_name on organizations (name);
+create index organizations_emergency_instructions on organizations (emergency_instructions);
 create index organizations_address_id on organizations (address_id);
 create index organizations_nonprofit on organizations (nonprofit);
 create index organizations_organization_type_id on organizations (organization_type_id);
+create index organizations_organization_status_id on organizations (organization_status_id);
 create index organizations_radio_channel on organizations (radio_channel);
 
 create table departments (
@@ -85,12 +89,13 @@ create index organization_members_title on organization_members (title);
 create index organization_members_role on organization_members (role);
 
 -- add the new event types
+select setval('event_types_id_seq',10);
 insert into event_types (name) values ('Organization Member Check In');
 insert into event_types (name) values ('Organization Member Check Out');
 
 -- add the new columns to the event table
 alter table events add organization_member_id integer references organization_members (id);
-alter table events add organization_member_id integer references organizations (id);
+alter table events add organization_id integer references organizations (id);
 
 -- add the org types
 insert into organization_types (name) values ('Volunteer');
@@ -101,3 +106,4 @@ insert into organization_types (name) values ('Staff');
 insert into organization_statuses (name) values ('Pending');
 insert into organization_statuses (name) values ('Approved');
 insert into organization_statuses (name) values ('Rejected');
+commit;

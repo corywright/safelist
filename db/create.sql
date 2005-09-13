@@ -169,6 +169,7 @@ create table organizations (
   address_id int4 NOT NULL,
   nonprofit boolean not null default 'f',
   organization_type_id integer not null references organization_types (id),
+  organization_status_id integer not null references organization_statuses (id),
   radio_channel text not null default '',
   FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
@@ -176,6 +177,7 @@ create index organizations_name on organizations (name);
 create index organizations_address_id on organizations (address_id);
 create index organizations_nonprofit on organizations (nonprofit);
 create index organizations_organization_type_id on organizations (organization_type_id);
+create index organizations_organization_status_id on organizations (organization_status_id);
 create index organizations_radio_channel on organizations (radio_channel);
 
 select drop_if_exists('departments');

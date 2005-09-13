@@ -18,6 +18,7 @@ class OrganizationsController < ApplicationController
   def show
     @departments = Department.find(:all)
     @organization = Organization.find(params[:id])
+    session[:last_organization] = @organization.id
     @organization_members_pages, @organization_members = paginate_collection OrganizationMember.find(:all, :conditions => ['organization_members.organization_id = ?', @organization.id], :include => :department), :page => @params[:page]
     @address = Address.find(@organization.address_id);
   end
@@ -45,11 +46,13 @@ class OrganizationsController < ApplicationController
     @departments = Department.find(:all)
     @organization_types = OrganizationType.find(:all)
     @organization = Organization.find(params[:id])
+    session[:last_organization] = @organization.id
     @address = Address.find(@organization.address_id);
   end
 
   def update
     @organization = Organization.find(params[:id])
+    session[:last_organization] = @organization.id
     if @organization.update_attributes(params[:organization])
       flash[:notice] = 'Organization was successfully updated.'
       redirect_to :action => 'show', :id => @organization

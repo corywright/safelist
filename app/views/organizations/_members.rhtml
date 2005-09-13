@@ -9,6 +9,7 @@
   <% for column in OrganizationMember.content_columns %>
     <th class="horizontal"><%= column.human_name %></th>
   <% end %>
+    <th class="horizontal">Department</th>
   </tr>
   
 <% for organization_members in @organization_members %>
@@ -16,6 +17,7 @@
   <% for column in OrganizationMember.content_columns %>
     <td><%=h organization_members.send(column.name) %></td>
   <% end %>
+	<td><%=h organization_members.department.name if organization_members.department %></td>
     <td><%= link_to 'Show', {:action => 'show', :controller => 'organization_members', :id => organization_members}, :class => 'textbutton'  %></td>
     <td><%= link_to 'Edit', {:action => 'edit', :controller => 'organization_members', :id => organization_members}, :class => 'textbutton'  %></td>
   </tr>

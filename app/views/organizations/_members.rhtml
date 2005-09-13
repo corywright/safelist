@@ -17,8 +17,8 @@
   <% for column in OrganizationMember.content_columns %>
     <td><%=h organization_members.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => organization_members %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => organization_members %></td>
+    <td><%= link_to 'Show', {:action => 'show', :id => organization_members}, :class => 'textbutton'  %></td>
+    <td><%= link_to 'Edit', {:action => 'edit', :id => organization_members}, :class => 'textbutton'  %></td>
   </tr>
 <% end %>
 </table>

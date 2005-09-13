@@ -98,4 +98,6 @@ insert into organization_types (name) values ('Contractor');
 insert into organization_types (name) values ('Staff');
 
 -- add the org statuses
---insert into organization_status (name) values ('test');
+insert into organization_statuses (name) values ('Pending');
+insert into organization_statuses (name) values ('Approved');
+insert into organization_statuses (name) values ('Rejected');

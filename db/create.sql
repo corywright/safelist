@@ -156,6 +156,12 @@ create table organization_types (
 );
 create index organization_types_name on organization_types (name);
 
+create table organization_statuses (
+  id serial not null primary key,
+  name text not null default ''
+);
+create index organization_statuses_name on organization_statuses (name);
+
 select drop_if_exists('organizations');
 create table organizations (
   id serial not null primary key,

@@ -1,0 +1,26 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+<table>
+  <tr>
+  <% for column in OrganizationMember.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for organization_members in @organization_members %>
+  <tr>
+  <% for column in OrganizationMember.content_columns %>
+    <td><%=h organization_members.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => organization_members %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => organization_members %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @organization_members_pages.current.previous } if @organization_members_pages.current.previous %>
+<%= link_to 'Next page', { :page => @organization_members_pages.current.next } if @organization_members_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New Member', :action => 'new', :controller => 'organization_members' %>

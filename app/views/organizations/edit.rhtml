@@ -3,7 +3,7 @@
 <div class="header">
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
 <%= link_to 'Organization List', {:action => 'list'}, :class => 'textbutton'  %>
-<%= link_to 'Show', {:action => 'show', :id => @organization}, :class => 'textbutton'  %>
+<%= link_to 'View Organization', {:action => 'show', :id => @organization}, :class => 'textbutton'  %>
 </div>
 
 <h2>Editing organization</h2>
@@ -23,6 +23,7 @@
 	</tr>
 	</table>
     <%= render_partial 'address' %>
-  <%= submit_tag 'Edit' %>
+	<br>
+  <%= submit_tag 'Save' %>
 <%= end_form_tag %>
 <br>

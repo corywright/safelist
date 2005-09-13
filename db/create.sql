@@ -135,36 +135,6 @@ create index volunteers_badge_id on volunteers (badge_id);
 create index volunteers_dl_number on volunteers (dl_number);
 create index volunteers_checked_in on volunteers (checked_in);
 
-select drop_if_exists('event_types');
-CREATE TABLE event_types(
-    id serial PRIMARY KEY,
-    name text NOT NULL UNIQUE
-);
-create index event_types_name on event_types (name);
-
-select drop_if_exists('events');
-CREATE TABLE events(
-    id serial PRIMARY KEY,
-    event_time timestamp NOT NULL default now(),
-    event_type_id int4 not null,
-    person_id int4,
-    volunteer_id int4,
-    organization_member_id int4,
-    shelter_id int4,
-    notes text not null default '',
-    FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
-    FOREIGN KEY("volunteer_id") REFERENCES "volunteers" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
-    FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY("organization_member_id") REFERENCES "organization_members" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
-);
-create index events_event_time on events (event_time);
-create index events_event_type_id on events (event_type_id);
-create index events_person_id on events (person_id);
-create index events_volunteer_id on events (volunteer_id);
-create index events_shelter_id on events (shelter_id);
-create index events_notes on events (notes);
-
 select drop_if_exists('injury_reports');
 CREATE TABLE injury_reports(
     id serial PRIMARY KEY,
@@ -240,3 +210,35 @@ create index organization_members_email on organization_members (email);
 create index organization_members_availability on organization_members (availability);
 create index organization_members_title on organization_members (title);
 create index organization_members_role on organization_members (role);
+
+select drop_if_exists('event_types');
+CREATE TABLE event_types(
+    id serial PRIMARY KEY,
+    name text NOT NULL UNIQUE
+);
+create index event_types_name on event_types (name);
+
+select drop_if_exists('events');
+CREATE TABLE events(
+    id serial PRIMARY KEY,
+    event_time timestamp NOT NULL default now(),
+    event_type_id int4 not null,
+    person_id int4,
+    volunteer_id int4,
+    organization_member_id int4,
+    organization_id int4,
+    shelter_id int4,
+    notes text not null default '',
+    FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
+    FOREIGN KEY("volunteer_id") REFERENCES "volunteers" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
+    FOREIGN KEY("event_type_id") REFERENCES "event_types" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY("organization_member_id") REFERENCES "organization_members" ("id") ON UPDATE CASCADE ON DELETE CASCADE, 
+    FOREIGN KEY("organization_id") REFERENCES "organizations" ("id") ON UPDATE CASCADE ON DELETE CASCADE 
+);
+create index events_event_time on events (event_time);
+create index events_event_type_id on events (event_type_id);
+create index events_person_id on events (person_id);
+create index events_volunteer_id on events (volunteer_id);
+create index events_shelter_id on events (shelter_id);
+create index events_notes on events (notes);

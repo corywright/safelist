@@ -21,6 +21,4 @@
 <%= link_to 'Previous page', { :page => @organization_members_pages.current.previous } if @organization_members_pages.current.previous %>
 <%= link_to 'Next page', { :page => @organization_members_pages.current.next } if @organization_members_pages.current.next %> 
 
-<br />
-
-<%= link_to 'New Member', :action => 'new', :controller => 'organization_members' %>
+<%= link_to 'Add New Member', {:action => 'new', :controller => 'organization_members'}, :class => 'textbutton'  %>

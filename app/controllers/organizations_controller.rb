@@ -19,7 +19,7 @@ class OrganizationsController < ApplicationController
     @departments = Department.find(:all)
     @organization = Organization.find(params[:id])
     session[:last_organization] = @organization.id
-    @organization_members_pages, @organization_members = paginate_collection OrganizationMember.find(:all, :conditions => ['organization_members.organization_id = ?', @organization.id], :include => :department, :include => :organization_status), :page => @params[:page]
+    @organization_members_pages, @organization_members = paginate_collection OrganizationMember.find(:all, :conditions => ['organization_members.organization_id = ?', @organization.id], :include => :department), :page => @params[:page]
     @address = Address.find(@organization.address_id);
   end
 

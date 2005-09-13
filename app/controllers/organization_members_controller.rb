@@ -18,7 +18,11 @@ class OrganizationMembersController < ApplicationController
   end
 
   def new
-    @departments = Department.find(:all)
+    if session[:last_organization]
+      @departments = Department.find_all_by_organization_id(session[:last_organization])
+    else
+      @departments = Department.find(:all)
+    end
     @organization_member = OrganizationMember.new
   end
 

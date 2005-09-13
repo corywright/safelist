@@ -9,3 +9,6 @@ insert into event_types (name) values ('Referred to Nurse');
 insert into event_types (name) values ('Injury Resolved');
 insert into event_types (name) values ('Organization Member Check In');
 insert into event_types (name) values ('Organization Member Check Out');
+insert into event_types (name) values ('Organization Pending');
+insert into event_types (name) values ('Organization Approval');
+insert into event_types (name) values ('Organization Rejected');

@@ -1,11 +1,11 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>Editing organization_members</h1>
+<h1>Editing organization_member</h1>
 
-<%= start_form_tag :action => 'update', :id => @organization_members %>
+<%= start_form_tag :action => 'update', :id => @organization_member %>
   <%= render_partial 'form' %>
   <%= submit_tag 'Edit' %>
 <%= end_form_tag %>
 
-<%= link_to 'Show', :action => 'show', :id => @organization_members %> |
+<%= link_to 'Show', :action => 'show', :id => @organization_member %> |
 <%= link_to 'Back', :action => 'list' %>

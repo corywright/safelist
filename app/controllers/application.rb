@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def paginate_collection(collection, options = {})
-	  default_options = {:per_page => 20, :page => 1}
+	  default_options = {:per_page => 30, :page => 1}
 	  options = default_options.merge options
 
 	  pages = Paginator.new self, collection.size, options[:per_page], options[:page]

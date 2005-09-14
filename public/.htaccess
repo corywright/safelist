@@ -1,9 +1,9 @@
 # Authentication Options
-AuthType Basic
-AuthUserFile /etc/apache2/htpasswd-data.sasafelist.org
-AuthGroupFile /dev/null
-AuthName "S.A. SafeList"
-require valid-user
+#AuthType Basic
+#AuthUserFile /etc/apache2/htpasswd-data.sasafelist.org
+#AuthGroupFile /dev/null
+#AuthName "S.A. SafeList"
+#require valid-user
 
 # General Apache options
 AddHandler fastcgi-script .fcgi

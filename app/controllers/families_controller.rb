@@ -170,5 +170,6 @@ class FamiliesController < ApplicationController
 	else
 		@people = []
     end
+	render :action => 'search_ajax', :layout => false
   end
 end

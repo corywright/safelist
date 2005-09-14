@@ -253,13 +253,6 @@ create index events_volunteer_id on events (volunteer_id);
 create index events_shelter_id on events (shelter_id);
 create index events_notes on events (notes);
 
-select drop_if_exists('users');
-CREATE TABLE users(
-	id serial PRIMARY KEY,
-	username text not null,
-	password text not null
-);
-
 select drop_if_exists('notes');
 create table notes (
     id serial not null primary key,
@@ -338,4 +331,6 @@ CREATE TABLE "users" (
      "login" VARCHAR(80),
      "password" VARCHAR,
      PRIMARY KEY("id")
-) WITH OIDS;
+);
+create index users_login on users (login);
+create index users_password on users (password);

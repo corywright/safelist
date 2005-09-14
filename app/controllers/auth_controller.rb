@@ -1,5 +1,5 @@
 class AuthController < ApplicationController
-  layout  'scaffold'
+  layout  'auth'
 
   def login
     case @request.method

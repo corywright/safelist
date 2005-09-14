@@ -5,7 +5,25 @@ class NotesController < ApplicationController
   end
 
   def list
-    @note_pages, @notes = paginate :note, :per_page => 10
+    if params[:volunteer_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :volunteers, :conditions => [ "volunteers.id = ?", params[:volunteer_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:department_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :departments, :conditions => [ "departments.id = ?", params[:department_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:organization_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :organizations, :conditions => [ "organizations.id = ?", params[:organization_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:organization_member_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :organization_members, :conditions => [ "organization_members.id = ?", params[:organization_member_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:person_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :people, :conditions => [ "people.id = ?", params[:person_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:shelter_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :shelters, :conditions => [ "shelters.id = ?", params[:shelter_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:family_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :families, :conditions => [ "families.id = ?", params[:family_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    elsif params[:injury_report_id]
+      @note_pages, @notes = paginate_collection Note.find(:all, :include => :injury_reports, :conditions => [ "injury_reports.id = ?", params[:injury_report_id]], :order_by => 'note.created_time desc' ), :page => @params[:page]
+    else
+      @note_pages, @notes = paginate :note, :per_page => 30
+    end
   end
 
   def show

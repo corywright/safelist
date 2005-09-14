@@ -330,7 +330,9 @@ CREATE TABLE "users" (
      "id" SERIAL NOT NULL UNIQUE,
      "login" VARCHAR(80),
      "password" VARCHAR,
-     PRIMARY KEY("id")
+	 shelter_id int4 not null default 1,
+     PRIMARY KEY("id"),
+	 FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE
 );
 create index users_login on users (login);
 create index users_password on users (password);

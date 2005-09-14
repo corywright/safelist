@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
 	def get_shelter
 	  if !session[:shelter_id]
-	    @shelter = Shelter.find_by_domain(@request.subdomains)
+	    @shelter = Shelter.find(session[:user].shelter_id) if session[:user]
 	    if @shelter
 	      session[:shelter_id] = @shelter.id
 	    else

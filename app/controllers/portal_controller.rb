@@ -4,6 +4,7 @@
 #
 
 class PortalController < ApplicationController
+    before_filter :login_required
   def index
     @shelter = Shelter.find(session[:shelter_id], :include => :address)
   end

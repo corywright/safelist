@@ -4,6 +4,7 @@
 #
 
 class MissingPersonsController < ActionController::Base
+	  before_filter :login_required
     def index
     end
 

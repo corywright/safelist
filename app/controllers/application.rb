@@ -8,6 +8,8 @@
 require_dependency "login_system" 
 
 class ApplicationController < ActionController::Base
+	include LoginSystem
+	model :user
 	#before_filter :authorize
 	before_filter :add_to_history
 	before_filter :get_shelter

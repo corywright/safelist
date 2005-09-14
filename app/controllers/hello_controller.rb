@@ -4,6 +4,7 @@
 #
 
 class HelloController < ApplicationController
+    before_filter :login_required
   def index
     @families = Family.count_by_sql("select count(distinct f.id) from families f join people p on(f.id=p.family_id) " +
                                     "where p.shelter_id=" + session[:shelter_id].to_s)

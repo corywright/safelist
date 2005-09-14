@@ -4,6 +4,7 @@
 #
 
 class OrganizationsController < ApplicationController
+    before_filter :login_required
   paginate :organizations, :order_by => 'name', :per_page => 30
   paginate :departments, :order_by => 'name', :per_page => 30
   def index

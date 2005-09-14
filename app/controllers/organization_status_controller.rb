@@ -4,6 +4,7 @@
 #
 
 class OrganizationStatusController< ApplicationController
+    before_filter :login_required
   def approve
   	@organization = Organization.find(params[:id])
 	@organization.organization_status_id = $ORG_APPROVED

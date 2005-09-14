@@ -4,7 +4,7 @@
 #
 
 class RegisterController < ApplicationController
-
+  before_filter :login_required
     def index
         setup
         @shelters = Shelter.find(:all)

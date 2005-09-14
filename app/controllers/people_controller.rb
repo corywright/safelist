@@ -4,6 +4,7 @@
 #
 
 class PeopleController < ApplicationController
+     before_filter :login_required
    model :person
    paginate :people, :order_by => 'last_name, first_name', :per_page => 30
   def index

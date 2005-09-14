@@ -335,7 +335,6 @@ div.help {
 	margin: 0px;
 	width: 30px;
 	display: inline;
-	
 }
 
 div.title {
@@ -494,7 +493,7 @@ p,
 li {
 	color: #4A4D4A;
 	font-family: verdana,arial,sans-serif;
-	font-size: 1em;
+	font-size: 0.8em;
 	margin-bottom: 0.5em;
 	margin-top: 0.25em;
 	margin-left: 0.2em;
@@ -561,6 +560,7 @@ th {
 	background-image: url(../images/bg_20_silver.png);
 	background-repeat: repeat-x;
 	background-position: bottom;	
+	background-color: #ffffff;
 	color: #4A4D4A;
 	border: 1px solid #B0B3B0;
 	font-family: verdana,arial,sans-serif;	

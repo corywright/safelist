@@ -6,7 +6,7 @@
 # The filters added to this controller will be run for all controllers in the application.
 # Likewise will all the methods added be available for all controllers.
 class ApplicationController < ActionController::Base
-	before_filter :authorize
+	#before_filter :authorize
 	before_filter :add_to_history
 	before_filter :get_shelter
 
@@ -63,20 +63,19 @@ class ApplicationController < ActionController::Base
   def get_auth_data 
     user, pass = '', '' 
     # extract authorisation credentials 
-    if headers.has_key? 'X-HTTP_AUTHORIZATION'
+    if request.env.has_key? 'X-HTTP_AUTHORIZATION' 
       # try to get it where mod_rewrite might have put it 
-      authdata = headers['X-HTTP_AUTHORIZATION'].to_s.split 
-    elsif headers.has_key? 'Authorization'
+      authdata = request.env['X-HTTP_AUTHORIZATION'].to_s.split 
+    elsif request.env.has_key? 'Authorization' 
       # for Apace/mod_fastcgi with -pass-header Authorization 
-      authdata = headers['Authorization'].to_s.split 
-    elsif headers.has_key? 'HTTP_AUTHORIZATION'
+      authdata = request.env['Authorization'].to_s.split 
+    elsif request.env.has_key? 'HTTP_AUTHORIZATION' 
       # this is the regular location 
-      authdata = headers['HTTP_AUTHORIZATION'].to_s.split  
+      authdata = request.env['HTTP_AUTHORIZATION'].to_s.split  
     end 
 
     # at the moment we only support basic authentication 
     if authdata and authdata[0] == 'Basic' 
-	  logger.warn("Authdata = " + Base64.decode64(authdata[1]))
       user, pass = Base64.decode64(authdata[1]).split(':')[0..1] 
     end 
     return [user, pass] 

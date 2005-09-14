@@ -257,7 +257,7 @@ select drop_if_exists('users');
 CREATE TABLE users(
 	id serial PRIMARY KEY,
 	username text not null,
-	passwd text not null
+	password text not null
 );
 
 select drop_if_exists('notes');

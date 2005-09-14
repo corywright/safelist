@@ -24,4 +24,13 @@
 
 <br />
 
-<%= link_to 'New note', :action => 'new' %>
+<% if params[:volunteer_id] %><%= link_to 'New Volunteer Note', :action => 'new', :volunteer_id => params[:volunteer_id] %>
+<% elsif params[:department_id] %><%= link_to 'New Department Note', :action => 'new', :department_id => params[:department_id] %>
+<% elsif params[:organization_id] %><%= link_to 'New Organization Note', :action => 'new', :organization_id => params[:organization_id] %>
+<% elsif params[:organization_member_id] %><%= link_to 'New Organization Member Note', :action => 'new', :organization_member_id => params[:organization_member_id] %>
+<% elsif params[:person_id] %><%= link_to 'New Person Note', :action => 'new', :person_id => params[:person_id] %>
+<% elsif params[:shelter_id] %><%= link_to 'New Shelter Note', :action => 'new', :shelter_id => params[:shelter_id] %>
+<% elsif params[:family_id] %><%= link_to 'New Family Note', :action => 'new', :family_id => params[:family_id] %>
+<% elsif params[:injury_report_id] %><%= link_to 'New Injury Report Note', :action => 'new', :injury_report_id => params[:injury_report_id] %>
+<% else %><%= link_to 'New note', :action => 'new' %>
+<% end %>

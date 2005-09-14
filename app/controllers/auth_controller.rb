@@ -5,7 +5,7 @@ class AuthController < ApplicationController
     case @request.method
       when :post
       if @session[:user] = User.authenticate(@params[:user_login], @params[:user_password])
-
+	    @session[:shelter_id] = @session[:user].shelter_id
         flash['notice']  = "Login successful"
         redirect_to :controller => 'hello'
       else
@@ -15,6 +15,10 @@ class AuthController < ApplicationController
       end
     end
   end
+  
+  def show_info
+  end
+
   
 #  def signup
 #    @user = User.new(@params[:user])

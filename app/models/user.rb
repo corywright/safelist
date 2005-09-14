@@ -1,7 +1,7 @@
 
 # this model expects a certain database layout and its based on the name/login pattern. 
 class User < ActiveRecord::Base
-
+  belongs_to :shelter
   # Please change the salt to something else, 
   # Every application should use a different one 
 

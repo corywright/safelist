@@ -10,25 +10,12 @@ require_dependency "login_system"
 class ApplicationController < ActionController::Base
 	include LoginSystem
 	model :user
-	#before_filter :authorize
 	before_filter :add_to_history
-	before_filter :get_shelter
 
 	def add_to_history
 	  session[:history] ||= []
  	  session[:history].unshift({"url" => @request.request_uri, "name" => self.controller_name + ":" + self.action_name})
 	  session[:history].pop while session[:history].length > 11
-	end
-
-	def get_shelter
-	  if !session[:shelter_id]
-	    @shelter = Shelter.find(session[:user].shelter_id) if session[:user]
-	    if @shelter
-	      session[:shelter_id] = @shelter.id
-	    else
-	      session[:shelter_id] = 1
-	    end
-	  end
 	end
 
 	def paginate_collection(collection, options = {})

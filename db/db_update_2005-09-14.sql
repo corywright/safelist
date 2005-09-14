@@ -63,13 +63,22 @@ create index injury_reports_notes_note_id on injury_reports_notes (note_id);
 create index injury_reports_notes_injury_report_id on injury_reports_notes (injury_report_id);
 
 CREATE TABLE "users" (
-     "id" SERIAL NOT NULL UNIQUE,
-     "login" VARCHAR(80),
-     "password" VARCHAR,
-     PRIMARY KEY("id")
+     "id" SERIAL NOT NULL UNIQUE primary key,
+     "login" text,
+     "password" text,
+     shelter_id int4 not null default 1,
+     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE
 );
 create index users_login on users (login);
 create index users_password on users (password);
+create index users_shelter_id on users (shelter_id);
+
+INSERT INTO users (login, password, shelter_id) VALUES ('windsor', 'windsor', 2);
+INSERT INTO users (login, password, shelter_id) VALUES ('levi', 'levi', 3);
+INSERT INTO users (login, password, shelter_id) VALUES ('freeman', 'freeman', 5);
+INSERT INTO users (login, password, shelter_id) VALUES ('rackspace', 'rackspace', 1);
+INSERT INTO users (login, password, shelter_id) VALUES ('kelly171', 'kelly171', 4);
+INSERT INTO users (login, password, shelter_id) VALUES ('kelly1536', 'kelly1536', 6);
 
 rollback;
 --commit;

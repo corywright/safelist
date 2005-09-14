@@ -327,12 +327,12 @@ create index injury_reports_notes_injury_report_id on injury_reports_notes (inju
 
 select drop_if_exists('users');
 CREATE TABLE "users" (
-     "id" SERIAL NOT NULL UNIQUE,
-     "login" VARCHAR(80),
-     "password" VARCHAR,
-	 shelter_id int4 not null default 1,
-     PRIMARY KEY("id"),
-	 FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE
+     "id" SERIAL NOT NULL UNIQUE primary key,
+     "login" text,
+     "password" text,
+     shelter_id int4 not null default 1,
+     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE ON DELETE CASCADE
 );
 create index users_login on users (login);
 create index users_password on users (password);
+create index users_shelter_id on users (shelter_id);

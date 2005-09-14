@@ -1,12 +1,18 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 <div class="header">
+<%= javascript_include_tag  :defaults %> 
 <%= link_to 'Family View', {:action => 'show', :id => @family.id}, :class => 'textbutton'  %>
 </div>
 
+<div id="results"></div>
 <h2>Add New Family Member</h2>
-
-<%= start_form_tag :action => 'createmember'%>
+<form action="/families/createmember" method="post" id="person">
+<%= observe_form(:person,
+                 :frequency => 2.0,
+                 :update => :results,
+				 :with => "Form.serialize('person')",
+                 :url => { :action => :search_ajax }) %>
   <%= render_partial 'peopleform' %>
   <br>
   <%= submit_tag 'Save' %>

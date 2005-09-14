@@ -162,4 +162,13 @@ class FamiliesController < ApplicationController
     end
   end
   
+  def search_ajax
+    if @params[:person][:last_name].length > 2 && @params[:person][:first_name].length > 1
+	    @people = Person.find(:all, :conditions => [ "last_name ilike ? and first_name ilike ?", params[:person][:last_name].strip + '%', params[:person][:first_name].strip + '%'], :limit => 5 )
+	elsif @params[:person][:tag_id].length >= 4
+	    @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:person][:tag_id].strip ], :limit => 5 )
+	else
+		@people = []
+    end
+  end
 end

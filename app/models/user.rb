@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   # Please change the salt to something else, 
   # Every application should use a different one 
-  @@salt = 'change-me'
+  @@salt = 'safelistsalt'
   cattr_accessor :salt
 
   # Authenticate a user. 

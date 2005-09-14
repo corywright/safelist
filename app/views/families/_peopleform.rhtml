@@ -14,6 +14,8 @@
 			<%= shelter[:name] %></option>
 		<% end %>
 		</select></td>
+	<th class="vertical" rowspan="3">Medical Problems</th>
+	<td rowspan="3"><%= text_area ("person","medical_problems", "rows" => 5, "cols" => 30) %></td>
 </tr>
 <tr>
 	<th class="vertical"> Red Cross ID </th>
@@ -26,6 +28,9 @@
 <tr>
 	<th class="vertical">Last Name</th>
 	<td><%= text_field 'person', 'last_name' %></td>
+	<th class="vertical" rowspan="3">Location Notes <br><br>
+    <p>Location, Cot, etc or <br> last know whereabouts</p></th>
+	<td rowspan="3"><%= text_area ("person", "location_description", "rows" => 5, "cols" => 30) %></td>
 </tr>
 <tr>
 	<th class="vertical">Date Of Birth</th>
@@ -39,15 +44,6 @@
 <tr>
 	<th class="vertical">Type</th>
 	<td><%= select("person","person_type_id",[["Man",1],["Woman",2]]) %></td>
-</tr>
-<tr>
-	<th class="vertical">Medical Problems</th>
-	<td><%= text_area ("person","medical_problems", "rows" => 5, "cols" => 30) %></td>
-</tr>
-<tr>
-	<th class="vertical">Location Notes <br><br>
-    <p>Location, Cot, etc or <br> last know whereabouts</p></th>
-	<td><%= text_area ("person", "location_description", "rows" => 5, "cols" => 30) %></td>
 </tr>
 </table>
 <!--[eoform:person]-->

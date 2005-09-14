@@ -1,18 +1,14 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
-<h1>Edit Family</h1>
 
-<%= start_form_tag :action => 'update', :id => @family %>
-  <%= render_partial 'form' %>
-  <%= submit_tag 'Edit' %>
-<%= end_form_tag %>
-
-<%= link_to 'Show', :action => 'show', :id => @family %> |
-<%= link_to 'Back', :action => 'list' %>
-=======
 <div class="header">
 <%= link_to 'Family List', {:action => 'list'}, :class => 'textbutton'  %>
-<%= link_to 'View Family', {:action => 'show', :id => @family}, :class => 'textbutton'  %></div>
+<%= link_to 'View Family', {:action => 'show', :id => @family}, :class => 'textbutton'  %>
+<div align="right" class="help">
+	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeList<%= controller.controller_name.capitalize %><%= controller.action_name.capitalize %>"
+	 class="textbuttonhelp" target="_help"> HELP </a></div>
+</div>
+</div>
 
 <h2>Edit Family</h2>
 

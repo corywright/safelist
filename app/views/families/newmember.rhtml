@@ -3,6 +3,10 @@
 <div class="header">
 <%= javascript_include_tag  :defaults %> 
 <%= link_to 'Family View', {:action => 'show', :id => @family.id}, :class => 'textbutton'  %>
+<div align="right" class="help">
+	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeList<%= controller.controller_name.capitalize %><%= controller.action_name.capitalize %>"
+	 class="textbuttonhelp" target="_help"> HELP </a></div>
+</div>
 </div>
 
 <div id="results"></div>

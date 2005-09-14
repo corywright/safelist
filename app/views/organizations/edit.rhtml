@@ -4,6 +4,10 @@
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
 <%= link_to 'Organization List', {:action => 'list'}, :class => 'textbutton'  %>
 <%= link_to 'View Organization', {:action => 'show', :id => @organization}, :class => 'textbutton'  %>
+<div align="right" class="help">
+	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeList<%= controller.controller_name.capitalize %><%= controller.action_name.capitalize %>"
+	 class="textbuttonhelp" target="_help"> HELP </a></div>
+</div>
 </div>
 
 <h2>Editing organization</h2>

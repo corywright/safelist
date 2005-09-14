@@ -332,3 +332,10 @@ create table injury_reports_notes (
 create index injury_reports_notes_note_id on injury_reports_notes (note_id);
 create index injury_reports_notes_injury_report_id on injury_reports_notes (injury_report_id);
 
+select drop_if_exists('users');
+CREATE TABLE "users" (
+     "id" SERIAL NOT NULL UNIQUE,
+     "login" VARCHAR(80),
+     "password" VARCHAR,
+     PRIMARY KEY("id")
+) WITH OIDS;

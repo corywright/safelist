@@ -9,7 +9,7 @@
 <h2>Add New Family Member</h2>
 <form action="/families/createmember" method="post" id="person">
 <%= observe_form(:person,
-                 :frequency => 2.0,
+                 :frequency => 1.2,
                  :update => :results,
 				 :with => "Form.serialize('person')",
                  :url => { :action => :search_ajax }) %>

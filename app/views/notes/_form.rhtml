@@ -1,9 +1,14 @@
 <%= error_messages_for 'note' %>
 
 <!--[form:note]-->
-<p><label for="note_created_time">Created time</label><br/>
-<%= datetime_select 'note', 'created_time'  %></p>
-
+<% if @volunteer %><%= hidden_field ('volunteer','id')  %><% end %>
+<% if @department %><%= hidden_field ('department','id') %><% end %>
+<% if @organization %><%= hidden_field ('organization','id') %><% end %>
+<% if @organization_member %><%= hidden_field ('organization_member','id') %><% end %>
+<% if @person %><%= hidden_field ('person','id') %><% end %>
+<% if @family %><%= hidden_field ('family','id') %><% end %>
+<% if @shelter %><%= hidden_field ('shelter','id') %><% end %>
+<% if @injury_report %><%= hidden_field ('injury_report','id') %><% end %>
 <p><label for="note_body">Body</label><br/>
 <%= text_area 'note', 'body'  %></p>
 <!--[eoform:note]-->

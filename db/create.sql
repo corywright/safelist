@@ -292,13 +292,13 @@ create table notes_organization_members (
 create index notes_organization_members_note_id on notes_organization_members (note_id);
 create index notes_organization_members_person_id on notes_organization_members (organization_member_id);
 
-select drop_if_exists('notes_families');
-create table notes_families (
+select drop_if_exists('families_notes');
+create table families_notes (
     note_id integer not null references notes (id),
     family_id integer not null references families (id)
 );
-create index notes_families_note_id on notes_families (note_id);
-create index notes_families_family_id on notes_families (family_id);
+create index families_notes_note_id on families_notes (note_id);
+create index families_notes_family_id on families_notes (family_id);
 
 select drop_if_exists('notes_shelters');
 create table notes_shelters (
@@ -316,19 +316,19 @@ create table notes_organizations (
 create index notes_organizations_note_id on notes_organizations (note_id);
 create index notes_organizations_organization_id on notes_organizations (organization_id);
 
-select drop_if_exists('notes_departments');
-create table notes_departments (
+select drop_if_exists('departments_notes');
+create table departments_notes (
     note_id integer not null references notes (id),
     department_id integer not null references departments (id)
 );
-create index notes_departments_note_id on notes_departments (note_id);
-create index notes_departments_department_id on notes_departments (department_id);
+create index departments_notes_note_id on departments_notes (note_id);
+create index departments_notes_department_id on departments_notes (department_id);
 
-select drop_if_exists('notes_injury_reports');
-create table notes_injury_reports (
+select drop_if_exists('injury_reports_notes');
+create table injury_reports_notes (
     note_id integer not null references notes (id),
     injury_report_id integer not null references injury_reports (id)
 );
-create index notes_injury_reports_note_id on notes_injury_reports (note_id);
-create index notes_injury_reports_injury_report_id on notes_injury_reports (injury_report_id);
+create index injury_reports_notes_note_id on injury_reports_notes (note_id);
+create index injury_reports_notes_injury_report_id on injury_reports_notes (injury_report_id);
 

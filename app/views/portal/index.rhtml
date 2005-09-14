@@ -1,5 +1,6 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
+
 <div class="header">
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
 <%= link_to 'Blog', 'http://www.sasafelist.org', :class => 'textbutton'  %>
@@ -10,6 +11,8 @@
 	 class="textbuttonhelp" target="_help"> HELP </a></div>
 </div>
 </div>
+<p></p>
+
 <div align="center">
 <table>
   <tr>
@@ -21,12 +24,9 @@
   </tr>
   <tr>
     <td valign="top" width="50%">
-		<a href="/" class='textbutton'>Shelter Check-In (Safe List)</a>
-		<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeListSafeListHelp" class='textbutton'>Safe List Help</a>
+		<a href="/" class='textbutton'>Shelter Check-In/Out (Safe List)</a>
 		<br>
 	  	<a href="/portal/information" class='textbutton'>Area Information</a><br>
-	  	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeListSafeListHelp" class='textbutton'>
-			Help for the Safe List Software</a><br>
 		<a href="/portal/faq" class='textbutton'>FAQ List</a><br>
 	  	<a href="/portal/westernunion" class='textbutton'>Western Union Numbers</a><br>
 <pre>
@@ -55,59 +55,74 @@
 </tr>
   <tr>
     <td valign="top">
-<pre>
-<b>Windsor Park Information Center</b>   <a href="http://www.sasafelist.org/messaging/submit.php?center=windsor" class='textbutton'>Send Message</a>
-210-653-4783 (Main)
-210-257-5861 (Communication Center - Supervisor Desk)
-210-257-9721 (Communication Center - Station 4)
-210-257-9701 (Communication Center - Station 7)
-210-257-9712 (Communication Center - Station 13)
-
-
-<b>Kelly USA Missing Persons</b>   <a href="http://www.sasafelist.org/messaging/submit.php?center=kelly" class='textbutton'>Send Message</a>
-210-216-5785
-210-630-4985
-210-630-4986
-210-925-7951
-
-<b>Levi Strauss</b>   <a href="http://www.sasafelist.org/messaging/submit.php?center=levi" class='textbutton'>Send Message</a>
-210-216-2988
-
-
-<b>Freeman Coliseum</b>   <a href="http://www.sasafelist.org/messaging/submit.php?center=freeman" class='textbutton'>Send Message</a>
-210-226-1177
-
-</pre>
+	<p></p>
+		<table>
+		<tr>
+			<th class="vertical">Windsor Communication Center <br><br>
+				<a href="http://www.sasafelist.org/messaging/submit.php?center=windsor" 
+			 	 class='textbutton'>Send Message</a> </th>
+			<td>210-653-4783 (Main)<br>
+			210-257-9721 (Station 4)<br>
+			210-257-9701 (Station 7)<br>
+			210-257-9712 (Station 13)<br>
+			</td>
+		</tr>
+		<tr class="evenrow">
+			<th class="vertical">Kelly USA Missing Persons <br><br>
+			<a href="http://www.sasafelist.org/messaging/submit.php?center=kelly" class='textbutton'>Send Message</a>
+		</th>
+			<td>210-216-5785 <br>
+				210-630-4985 <br>
+				210-630-4986 <br>
+				210-925-7951 <br> </td>
+		</tr>
+		<tr>
+			<th class="vertical">Levi Strauss <br><br>
+			<a href="http://www.sasafelist.org/messaging/submit.php?center=levi" class='textbutton'>Send Message</a></th>
+			<td>210-216-2988 </td>
+		</tr>
+		<tr class="evenrow">
+			<th class="vertical">Freeman Coliseum <br><br> 
+			<a href="http://www.sasafelist.org/messaging/submit.php?center=freeman" class='textbutton'>Send Message</a></th>
+			<td>210-226-1177 </td>
+		</tr>
+		</table>
     </td>
     <td valign="top">
-<pre>
-<b>Houston Astrodome</b>
-832-667-3629
-832-667-3181
-
-<b>George R. Brown Convention Center,
-Houston Red Cross</b>
-713-209-2000
-
-<b>Austin Convention Center</b>
-512-404-4000
-512-974-1110
-
-<b>Beaumont - Ford Park</b>
-409-951-5400
-409-862-1644
-
-<b>Dallas </b> 
- Reunion Arena
- 214-800-3080
- 
- Convention Center
- 214-939-2700
-
-<b>Northwestern University Shelter 
-for Nacogdoches Louisiana</b>
-318-357-5870
-</pre>
+		<table>
+		<tr>
+			<th class="vertical">Houston Astrodome </th>
+			<td>832-667-3629 <br>
+				832-667-3181 </td>
+		</tr>
+		<tr>
+			<th class="vertical">George R. Brown Convention Center, Houston Red Cross </th>
+			<td>713-209-2000 </td>
+		</tr>
+		<tr>
+			<th class="vertical">Austin Convention Center </th>
+			<td> 512-404-4000 <br>
+				512-974-1110</td>
+		</tr>
+		<tr>
+			<th class="vertical">Beaumont - Ford Park </th>
+			<td>409-951-5400 <br>
+				409-862-1644 </td>
+		</tr>
+		<tr>
+			<th class="vertical"> Dallas - Reunion Arena</th>
+			<td> 214-800-3080 </td>
+		</tr>
+		<tr>
+			<th class="vertical">Dallas - Convention Center </th>
+			<td>  214-939-2700</td>
+		</tr>
+		<tr>
+			<th class="vertical"> Northwestern University Shelter 
+		for Nacogdoches Louisiana</th>
+			<td>318-357-5870 </td>
+		</tr>
+		</table>	
     </td>
   </tr>
   <tr>
@@ -115,11 +130,16 @@ for Nacogdoches Louisiana</b>
   </tr>
   <tr>
     <td colspan="2">
-<pre>
-<b>Louisiana SPCA Search & Rescue</b>   <b>National Humane Society</b>
-225-647-0712                            1-800-486-2631 (1-800-HUMANE1)
-
-</pre>
+		<table>
+		<tr>
+			<th class="vertical">Louisiana SPCA Search & Rescue </th>
+			<td> 225-647-0712</td>
+		</tr>
+		<tr>
+			<th class="vertical">National Humane Society </th>
+			<td>1-800-486-2631 (1-800-HUMANE1) </td>
+		</tr>
+		</table>
     </td>
   </tr>
   <tr>

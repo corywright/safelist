@@ -16,10 +16,15 @@ pause
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.families.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.people.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.volunteers.sql
-"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.events.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.injury_reports.sql
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.organization_types.sql
-"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.organization_statuses.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.organization_status.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.organizations.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.departments.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.organization_members.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.events.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.notes.sql
+"C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_development "delmendo" -f data.users.sql
 
 "C:\Program Files\PostgreSQL\8.0\bin\psql.exe"  -h localhost -p 5432 safelist_test "delmendo" -f create.sql
 

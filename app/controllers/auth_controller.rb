@@ -7,7 +7,7 @@ class AuthController < ApplicationController
       if @session[:user] = User.authenticate(@params[:user_login], @params[:user_password])
 	    @session[:shelter_id] = @session[:user].shelter_id
         flash['notice']  = "Login successful"
-        redirect_to :controller => 'hello'
+        redirect_back_or_default :controller => 'hello'
       else
         flash.now['notice']  = "Login unsuccessful"
 

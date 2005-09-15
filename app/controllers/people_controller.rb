@@ -37,7 +37,15 @@ class PeopleController < ApplicationController
   end
   
   def printlist
-    @people = Person.find(:all, :include => :shelter, :order => "last_name, first_name")
+    condition_list = []
+    if params[:id]
+      @shelter = Shelter.find(params[:id])
+      @condition_list = ["shelter_id = ?", @shelter.id]
+    end
+    @people = Person.find(:all, 
+                          :conditions => @condition_list,
+                          :include => :shelter, 
+                          :order => "last_name, first_name")
   end
 
   def edit

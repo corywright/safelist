@@ -79,7 +79,25 @@ class NotesController < ApplicationController
     end
     if @note.save
       flash[:notice] = 'Note was successfully created.'
-      redirect_to :action => 'list'
+      if params[:volunteer]
+        redirect_to :action => 'list', :volunteer_id => params[:volunteer][:id]
+      elsif params[:department]
+        redirect_to :action => 'list', :department_id => params[:department][:id]
+      elsif params[:organization]
+        redirect_to :action => 'list', :organization_id => params[:organization][:id]
+      elsif params[:organization_member]
+        redirect_to :action => 'list', :organization_member_id => params[:organization_member][:id]
+      elsif params[:person]
+        redirect_to :action => 'list', :person_id => params[:person][:id]
+      elsif params[:shelter]
+        redirect_to :action => 'list', :shelter_id => params[:shelter][:id]
+      elsif params[:family]
+        redirect_to :action => 'list', :family_id => params[:family][:id]
+      elsif params[:injury_report]
+        redirect_to :action => 'list', :injury_report_id => params[:injury_report][:id]
+      else
+        redirect_to :action => 'list'
+      end
     else
       render :action => 'new'
     end

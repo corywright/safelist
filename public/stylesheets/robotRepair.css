@@ -160,6 +160,7 @@ a.textbutton {
 	background-image: url(../images/bg_20_green_light.png);
 	background-repeat: repeat-x;
 	background-position: bottom;
+	background-color: #fff;
 	border: 1px solid #6EB83C;
 	color: #464646;
 	font: 10pt Verdana,sans-serif;
@@ -194,9 +195,10 @@ a.textbutton:active {
 }
 
 a.textbuttonhelp {
-	background-image: url(../images/bg_20_orange.png);
+	background-image: url(../images/bg_20_orange_light.png);
 	background-repeat: repeat-x;
 	background-position: bottom;
+	background-color: #fff;
 	border: 1px solid #FFA500;
 	color: #464646;
 	font: 10pt Verdana,sans-serif;
@@ -219,7 +221,7 @@ a.textbuttonhelp:visited {
 }
 
 a.textbuttonhelp:hover {
-	background-image: url(../images/bg_20_silver.png);
+	background-image: url(../images/bg_20_orange.png);
 	background-repeat: repeat-x;
 	color: #4A4D4A;
 	text-decoration: none;
@@ -270,6 +272,7 @@ a.textbutton_hi:active {
 a.textbuttonwarn {
 	background-image: url(../images/bg_20_red_light.png);
 	background-repeat: repeat-x;
+	background-color: #fff;
 	border: 1px solid #C85064;
 	color: #2F4F4F;
 	font: 10pt Verdana,sans-serif;

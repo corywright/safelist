@@ -1,10 +1,12 @@
 begin;
 create table notes (
     id serial not null primary key,
-    created_time timestamp default now(),
+    created_at timestamp default now(),
+    subject text default '',
     body text default ''
 );
 create index notes_created_time on notes (created_time);
+create index notes_subject on notes (subject);
 
 create table notes_volunteers (
     note_id integer not null references notes (id),

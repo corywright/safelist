@@ -256,10 +256,12 @@ create index events_notes on events (notes);
 select drop_if_exists('notes');
 create table notes (
     id serial not null primary key,
-    created_time timestamp default now(),
+    created_at timestamp default now(),
+    subject text default '',
     body text default ''
 );
-create index notes_created_time on notes (created_time);
+create index notes_created_at on notes (created_at);
+create index notes_subject on notes (subject);
 
 select drop_if_exists('notes_volunteers');
 create table notes_volunteers (

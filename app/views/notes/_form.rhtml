@@ -9,7 +9,9 @@
 <% if @family %><%= hidden_field ('family','id') %><% end %>
 <% if @shelter %><%= hidden_field ('shelter','id') %><% end %>
 <% if @injury_report %><%= hidden_field ('injury_report','id') %><% end %>
+<p><label for="note_subject">Subject</label><br/>
+<%= text_field 'note', 'subject', :size => 80  %></p>
 <p><label for="note_body">Body</label><br/>
-<%= text_area 'note', 'body'  %></p>
+<%= text_area 'note', 'body', :cols => 80  %></p>
 <!--[eoform:note]-->
 

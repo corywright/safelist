@@ -1,6 +1,16 @@
 <% # This file is part of the SafeList shelter management software. -%>
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 <div class="header">
+<% if params[:volunteer_id] %><%= link_to 'Show Volunteer', {:controller => 'volunteer', :action => 'show', :id => params[:volunteer_id]}, :class => 'textbutton' %>
+<% elsif params[:department_id] %><%= link_to 'Show Department', {:controller => 'departments', :action => 'show', :id => params[:department_id]}, :class => 'textbutton' %>
+<% elsif params[:organization_id] %><%= link_to 'Show Organization', {:controller => 'organizations', :action => 'show', :id => params[:organization_id]}, :class => 'textbutton' %>
+<% elsif params[:organization_member_id] %><%= link_to 'Show Organization Member', {:controller => 'organization_members', :action => 'show', :id => params[:organization_member_id]}, :class => 'textbutton' %>
+<% elsif params[:person_id] %><%= link_to 'Show Person', {:controller => 'people', :action => 'show', :id => params[:person_id]}, :class => 'textbutton' %>
+<% elsif params[:shelter_id] %><%= link_to 'Show Shelter', {:controller => 'shelters', :action => 'show', :id => params[:shelter_id]}, :class => 'textbutton' %>
+<% elsif params[:family_id] %><%= link_to 'Show Family', {:controller => 'families', :action => 'show', :id => params[:family_id]}, :class => 'textbutton' %>
+<% elsif params[:injury_report_id] %><%= link_to 'Show Injury Report', {:controller => 'injury_report', :action => 'show', :id => params[:injury_report_id]}, :class => 'textbutton' %>
+<% else %><%= link_to 'All Notes', {:action => 'list'}, :class => 'textbutton' %>
+<% end %>
 <div align="right" class="help">
 	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeList<%= controller.controller_name.capitalize %><%= controller.action_name.capitalize %>"
 	 class="textbuttonhelp" target="_help"> HELP </a></div>
@@ -12,18 +22,28 @@
 <table>
   <tr>
   <% for column in Note.content_columns %>
-    <th><%= column.human_name %></th>
+    <th class="horizontal"><%= column.human_name %></th>
   <% end %>
   </tr>
   
+<% set_counter :notes, @note_pages.current.offset %>  
 <% for note in @notes %>
-  <tr>
+  <tr class"<%=h row_style :notes%>">
   <% for column in Note.content_columns %>
     <td><%=h note.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => note %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => note %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => note}, :class =>'textbutton' , :confirm => 'Are you sure?' %></td>
+    <td>
+    <% if params[:volunteer_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :volunteer_id => params[:volunteer_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:department_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :department_id => params[:department_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:organization_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :organization_id => params[:organization_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:organization_member_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :organization_member_id => params[:organization_member_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:person_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :person_id => params[:person_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:shelter_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :shelter_id => params[:shelter_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:family_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :family_id => params[:family_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% elsif params[:injury_report_id] %><%= link_to 'Destroy', {:action => 'destroy', :id => note, :injury_report_id => params[:injury_report_id]}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% else %><%= link_to 'Destroy', {:action => 'destroy', :id => note}, :class =>'textbutton' , :confirm => 'Are you sure?' %>
+    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
@@ -33,13 +53,13 @@
 
 <br />
 
-<% if params[:volunteer_id] %><%= link_to 'New Volunteer Note', :action => 'new', :volunteer_id => params[:volunteer_id] %>
-<% elsif params[:department_id] %><%= link_to 'New Department Note', :action => 'new', :department_id => params[:department_id] %>
-<% elsif params[:organization_id] %><%= link_to 'New Organization Note', :action => 'new', :organization_id => params[:organization_id] %>
-<% elsif params[:organization_member_id] %><%= link_to 'New Organization Member Note', :action => 'new', :organization_member_id => params[:organization_member_id] %>
-<% elsif params[:person_id] %><%= link_to 'New Person Note', :action => 'new', :person_id => params[:person_id] %>
-<% elsif params[:shelter_id] %><%= link_to 'New Shelter Note', :action => 'new', :shelter_id => params[:shelter_id] %>
-<% elsif params[:family_id] %><%= link_to 'New Family Note', :action => 'new', :family_id => params[:family_id] %>
-<% elsif params[:injury_report_id] %><%= link_to 'New Injury Report Note', :action => 'new', :injury_report_id => params[:injury_report_id] %>
-<% else %><%= link_to 'New note', :action => 'new' %>
+<% if params[:volunteer_id] %><%= link_to 'New Volunteer Note', {:action => 'new', :volunteer_id => params[:volunteer_id]}, :class => 'textbutton' %>
+<% elsif params[:department_id] %><%= link_to 'New Department Note', {:action => 'new', :department_id => params[:department_id]}, :class => 'textbutton' %>
+<% elsif params[:organization_id] %><%= link_to 'New Organization Note', {:action => 'new', :organization_id => params[:organization_id]}, :class => 'textbutton' %>
+<% elsif params[:organization_member_id] %><%= link_to 'New Organization Member Note', {:action => 'new', :organization_member_id => params[:organization_member_id]}, :class => 'textbutton' %>
+<% elsif params[:person_id] %><%= link_to 'New Person Note', {:action => 'new', :person_id => params[:person_id]}, :class => 'textbutton' %>
+<% elsif params[:shelter_id] %><%= link_to 'New Shelter Note', {:action => 'new', :shelter_id => params[:shelter_id]}, :class => 'textbutton' %>
+<% elsif params[:family_id] %><%= link_to 'New Family Note', {:action => 'new', :family_id => params[:family_id]}, :class => 'textbutton' %>
+<% elsif params[:injury_report_id] %><%= link_to 'New Injury Report Note', {:action => 'new', :injury_report_id => params[:injury_report_id]}, :class => 'textbutton' %>
+<% else %><%= link_to 'New note', {:action => 'new'}, :class => 'textbutton' %>
 <% end %>

@@ -77,6 +77,7 @@ class NotesController < ApplicationController
       @injury_report = InjuryReport.find(params[:injury_report][:id])
       @note.injury_reports.push @injury_report
     end
+    @note.created_time = Time.now
     if @note.save
       flash[:notice] = 'Note was successfully created.'
       if params[:volunteer]
@@ -118,7 +119,25 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    Note.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    flash[:notice] = 'Note was successfully removed.' if Note.find(params[:id]).destroy
+    if params[:volunteer_id]
+      redirect_to :action => 'list', :volunteer_id => params[:volunteer_id]
+    elsif params[:department_id]
+      redirect_to :action => 'list', :department_id => params[:department_id]
+    elsif params[:organization_id]
+      redirect_to :action => 'list', :organization_id => params[:organization_id]
+    elsif params[:organization_member_id]
+      redirect_to :action => 'list', :organization_member_id => params[:organization_member_id]
+    elsif params[:person_id]
+      redirect_to :action => 'list', :person_id => params[:person_id]
+    elsif params[:shelter_id]
+      redirect_to :action => 'list', :shelter_id => params[:shelter_id]
+    elsif params[:family_id]
+      redirect_to :action => 'list', :family_id => params[:family_id]
+    elsif params[:injury_report_id]
+      redirect_to :action => 'list', :injury_report_id => params[:injury_report_id]
+    else
+      redirect_to :action => 'list'
+    end
   end
 end

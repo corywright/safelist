@@ -26,15 +26,24 @@
 	<th class="vertical">Radio Channel</th>
 	<td><%=h @organization.radio_channel %></td>	
 </tr>
-</table>
-
+</table> <br>
+<%= link_to 'Create Organization Note',
+         {:controller => 'notes',
+          :action => 'new',
+          :organization_id => @organization.id},
+          :class => 'textbutton' %>
+<%= link_to 'View Organization Notes',
+         {:controller => 'notes',
+          :action => 'list',
+          :organization_id => @organization.id},
+          :class => 'textbutton' %>
 <br>
 
 <h2>Departments</h2>
 
 <%= render_partial 'departments' %>
 
-<br><br>
+<br>
 
 <h2>Members</h2>
 <%= render_partial 'members' %>

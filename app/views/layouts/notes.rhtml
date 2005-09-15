@@ -1,13 +1,25 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
 <html>
 <head>
   <title>Notes: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'robotRepair' %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<% if flash[:notice] %>
+<div class="confirm"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:warning] %>
+<div class="note"><%= flash[:warning] %></div>
+<% end %>
+<% if flash[:error] %>
+<div class="errormsg"><%= flash[:error] %></div>
+<% end %>
 
 <%= @content_for_layout %>
 
+<div align="right"><a href="http://www.rackspace.com/?sasafelist.org" target='_new">
+<img src="/images/rackspace_logo.gif" width="85" height="25" alt="Powered by Rackspace" border="0"></a></div>
 </body>
 </html>

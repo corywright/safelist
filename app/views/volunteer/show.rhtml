@@ -10,6 +10,16 @@
 <% button_text =  @volunteer.checked_in ? 'Check-Out' : 'Check-In&nbsp;&nbsp;' -%>
 <% button_action =  @volunteer.checked_in ? 'checkinout' : 'checkin_notes' -%>
 <%= link_to button_text, {:action => button_action, :id => @volunteer}, :class => 'textbutton'  %> 
+<%= link_to 'Create Volunteer Note',
+         {:controller => 'notes',
+          :action => 'new',
+          :volunteer_id => @volunteer.id},
+          :class => 'textbutton' %>
+<%= link_to 'View Volunteer Notes',
+         {:controller => 'notes',
+          :action => 'list',
+          :volunteer_id => @volunteer.id},
+          :class => 'textbutton' %>
 </div>
 
 <h2> Volunteer - <%=h @volunteer.first_name %> <%=h @volunteer.last_name %> </h2>

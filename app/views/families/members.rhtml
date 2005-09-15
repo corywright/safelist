@@ -6,6 +6,16 @@
 	 {:controller => 'families', 
 	  :action => 'new'}, 
 	  :class => 'textbutton' %>
+<%= link_to 'Create Family Note',
+         {:controller => 'notes',
+          :action => 'new',
+          :family_id => @family.id},
+          :class => 'textbutton' %>
+<%= link_to 'View Family Notes',
+         {:controller => 'notes',
+          :action => 'list',
+          :family_id => @family.id},
+          :class => 'textbutton' %>
 <div align="right" class="help">
 	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeList<%= controller.controller_name.capitalize %><%= controller.action_name.capitalize %>"
 	 class="textbuttonhelp" target="_help"> HELP </a></div>

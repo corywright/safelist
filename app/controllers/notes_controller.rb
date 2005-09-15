@@ -77,7 +77,6 @@ class NotesController < ApplicationController
       @injury_report = InjuryReport.find(params[:injury_report][:id])
       @note.injury_reports.push @injury_report
     end
-    #@note.created_at = Time.now
     if @note.save
       flash[:notice] = 'Note was successfully created.'
       if params[:volunteer]

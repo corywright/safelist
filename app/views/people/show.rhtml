@@ -135,19 +135,22 @@ end
 </table>
 
 <h2>Event Log</h2>
-<table>
-<tr>
-	<th>#</th>
-	<th class="horizontal">Date/Time</th>
-	<th class="horizontal">Event</th>
-	<th class="horizontal">Shelter</th>
-</tr>
-<% for event in @events %>
-<tr class="<%=h row_style :events %>">
-	<th class="counter"> <%=h counter :events %></th>
-	<td><%=h event.event_time %></td>
-	<td><%=h event.event_type.name %></td>
-	<td><%=h event.shelter.name %></td>
-</tr>
+<% unless @events.nitems == 0 %>
+    <table>
+    <tr>
+    	<th>#</th>
+    	<th class="horizontal">Date/Time</th>
+    	<th class="horizontal">Event</th>
+    	<th class="horizontal">Shelter</th>
+    </tr>
+    <% for event in @events %>
+    <tr class="<%=h row_style :events %>">
+    	<th class="counter"> <%=h counter :events %></th>
+    	<td><%=h event.event_time %></td>
+    	<td><%=h event.event_type.name %></td>
+    	<td><%=h event.shelter.name %></td>
+    </tr>
+    <% end %>
+    </table>
+<% else %><p>There are not any events for this person<p>
 <% end %>
-</table>

@@ -3,6 +3,10 @@
 <div class="header">
 <%= link_to 'Volunteer List', {:action => 'list'}, :class => 'textbutton'  %>
 <%= link_to 'Show Volunteer', {:action => 'show', :id => @volunteer}, :class => 'textbutton'  %>
+<div align="right" class="help">
+	<a href="http://www.sasafelist.org/kwiki/index.cgi?VolunteerCheckinNotes"
+	 class="textbuttonhelp"> HELP </a></div>
+</div>
 </div>
 
 <h2>Check-in Volunteer: <%= @volunteer.name %></h2>
@@ -28,10 +32,10 @@
 	<th class="vertical">Badge ID</th>
 	<td><%= text_field 'volunteer', 'badge_id' %></td>
 </tr>
-<tr>
+<!-- <tr>
 	<th class="vertical">Driver's License Number</th>
 	<td><%= text_field 'volunteer', 'dl_number' %></td>
-</tr>
+</tr> -->
 </table>
 <!--[eoform:volunteer]-->
 <br>

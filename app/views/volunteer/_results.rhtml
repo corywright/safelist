@@ -6,8 +6,7 @@
 <table>
   <tr>
 	<th class="horizontal">#</th>
-	<th class="horizontal">First</th>
-	<th class="horizontal">Last</th>
+	<th class="horizontal">Name</th>
 	<th class="horizontal">Badge</th>
 	<th class="horizontal">Shelter/Location</th>
 	<th class="horizontal">Last Check-In</th>
@@ -20,8 +19,7 @@
  <% for volunteer in @volunteers %>
   <tr class="<%=h row_style :volunteers %>">
   	<th class="counter"> <%=h counter :volunteers %></th>
-	<td> <%=h volunteer.first_name %></td>
-	<td> <%=h volunteer.last_name %></td>
+	<td> <%=h volunteer.first_name %> <%=h volunteer.last_name %></td>
 	<td> <%=h volunteer.badge_id %></td>
 	<td><%=h volunteer.shelter.name %> - <%=h volunteer.location %></td>
 	<td> <%=h (volunteer.last_check_in.nil?) ? '' : volunteer.last_check_in.strftime("%a, %b %d %Y - %I:%M %p") %></td>

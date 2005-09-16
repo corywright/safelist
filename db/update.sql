@@ -82,13 +82,13 @@ INSERT INTO users (login, password, shelter_id) VALUES ('rackspace', 'rackspace'
 INSERT INTO users (login, password, shelter_id) VALUES ('kelly171', 'kelly171', 4);
 INSERT INTO users (login, password, shelter_id) VALUES ('kelly1536', 'kelly1536', 6);
 
---CREATE TABLE "pictures" (
---    "id" SERIAL NOT NULL UNIQUE primary key,
---    "image" text,
---    person_id integer,
---    FOREIGN KEY("person_id") REFERENCES "person" ("id") ON UPDATE CASCADE ON DELETE CASCADE
---);
---create index pictures_person_id on pictures (person_id);
+CREATE TABLE "pictures" (
+    "id" SERIAL NOT NULL UNIQUE primary key,
+    "image" text,
+    person_id integer,
+    FOREIGN KEY("person_id") REFERENCES "person" ("id");
+);
+create index pictures_person_id on pictures (person_id);
 
 rollback;
 --commit;

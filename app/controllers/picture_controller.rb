@@ -16,13 +16,18 @@ class PictureController < ApplicationController
 			  redirect_to :action => 'new'
 			end
 		else
-			#error handling?
+			redirect_to :action => 'new'
 		end
 	end
 
 	def show_image
 		@picture = Picture.find_by_person_id(@params['id'])
 		send_data @picture.image, :filename => @picture.id, :type => "image/jpeg", :disposition => "inline"
+	end
+
+	def preview
+		@person = Person.find(params[:id])
+
 	end
 
 # everything below is for testing only

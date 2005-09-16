@@ -49,7 +49,10 @@ end
 </div>
 
 <h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
-
+<% if @person.picture %>
+<img src="/picture/show_image/<%= @person.id %>">
+<% end %>
+<%= link_to 'New Picture', {:controller => 'picture', :action => 'preview', :id => @person.id}, :class => 'textbutton' %>
 <table>
 <tr>
 	<th class="vertical"> Tag ID </th>

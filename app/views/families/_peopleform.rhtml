@@ -18,7 +18,7 @@
 	<td rowspan="3"><%= text_area ("person","medical_problems", "rows" => 5, "cols" => 30) %></td>
 </tr>
 <tr>
-	<th class="vertical"> Red Cross ID </th>
+	<th class="vertical"> Tag ID </th>
 	<td><%= text_field 'person', 'tag_id' %></td>
 </tr>
 <tr>
@@ -42,8 +42,8 @@
 </tr>
 
 <tr>
-	<th class="vertical">Type</th>
-	<td><%= select("person","person_type_id",[["Man",1],["Woman",2]]) %></td>
+	<th class="vertical">Gender</th>
+	<td><%= select("person","person_type_id",[["Male",1],["Female",2]]) %></td>
 </tr>
 </table>
 <!--[eoform:person]-->

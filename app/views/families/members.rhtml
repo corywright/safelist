@@ -52,8 +52,11 @@
 <h2>Edit Family's Pre-Disaster Address</h2>
 
 <%= start_form_tag :action => 'update', :id => @family %>
+<table>
   <%= render_partial 'addressform' %>
   <%= render_partial 'familyform' %>
-  <br>
-  <%= submit_tag 'Update' %>
+<tr>
+	<td colspan="2" align="right"><%= submit_tag 'Update' %></td>
+</tr>
+</table><br>
 <%= end_form_tag %>

@@ -19,6 +19,7 @@ sub do_snapshot {
 	my $q = $self->query();
 	my $id = $q->param("id");
 	my $url = $q->param("url");
+	my $host = $q->param("host");
 	my $file = &get_picture;
 	#TODO: handle failures from get_pic
 	
@@ -31,7 +32,7 @@ sub do_snapshot {
 						file	=> [$file],
                        ]);
 	#TODO: handle errors here, too.	
-	return Dumper($res);	
+	print redirect("http://$host/person/show/$id");
 }
 
 sub get_picture {

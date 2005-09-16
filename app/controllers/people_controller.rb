@@ -39,9 +39,16 @@ class PeopleController < ApplicationController
   def printlist
     condition_list = []
     if params[:id]
-      @shelter = Shelter.find(params[:id])
-      @condition_list = ["shelter_id = ?", @shelter.id]
+      @use_shelter = params[:id]
+    else
+      if session[:shelter_id]
+        @use_shelter = session[:shelter_id]
+      else
+        @use_shelter = 1
+      end
     end
+    @shelter = Shelter.find(@use_shelter)
+    @condition_list = ["shelter_id = ?", @shelter.id]
     @people = Person.find(:all, 
                           :conditions => @condition_list,
                           :include => :shelter, 

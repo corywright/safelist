@@ -29,10 +29,14 @@ sub do_snapshot {
 	my $res = $ua->request(POST $url,
        Content_Type => 'form-data',
        Content      => [ 
+						id	=> $id,
 						file	=> [$file],
                        ]);
 	#TODO: handle errors here, too.	
-	print redirect("http://$host/person/show/$id");
+	print $q->redirect("http://$host/people/show/$id");
+#	print "Content-type: text/html\n\n";
+#	print "file is $file\n";
+#	print Dumper($res);
 }
 
 sub get_picture {

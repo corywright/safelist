@@ -2,8 +2,7 @@ class Picture < ActiveRecord::Base
 	has_one	:person
 
 	def image
-		thispic = self.class.find(self.id)
-		decoded = Base64.decode64(thispic[:image])
+		decoded = Base64.decode64(self[:image])
 		write_attribute('image', decoded)
 	end
 

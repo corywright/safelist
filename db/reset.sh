@@ -25,5 +25,6 @@ psql -U cwright safelist_development < data.departments.sql
 psql -U cwright safelist_development < data.organization_members.sql
 psql -U cwright safelist_development < data.notes.sql
 psql -U cwright safelist_development < data.users.sql
+psql -U cwright safelist_development < data.pictures.sql
 
 psql -U cwright safelist_test < create.sql

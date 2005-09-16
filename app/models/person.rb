@@ -8,6 +8,7 @@ class Person < ActiveRecord::Base
     belongs_to :person_type
     belongs_to :shelter
     has_many :injury_reports
+	has_one :picture
     has_and_belongs_to_many :notes
 
     validates_presence_of :first_name, :last_name

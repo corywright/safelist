@@ -1,0 +1,9 @@
+<h1>Picture Preview</h1>
+<img src="http://<%= @person.shelter.camera_host %>/test.jpg" />
+<form action="http://<%= @person.shelter.camera_host %>/cgi-bin/snap.pl" enctype="multipart/form-data" method="post">
+  <%= hidden_field_tag 'id', @person.id %>
+  <%= hidden_field_tag 'url', "http://" + @request.host_with_port + '/picture/upload_receive' %>
+  <%= hidden_field_tag 'host', @request.host_with_port %>
+  <%= submit_tag "Take Picture" %> <%= link_to 'Refresh', :controller => 'picture', :action => 'preview', :id => @person.id %>
+<%= end_form_tag %>
+

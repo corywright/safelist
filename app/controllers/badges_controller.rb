@@ -3,73 +3,82 @@ class BadgesController < ApplicationController
   require 'fpdf'
 
   def pdf
-    send_data gen_pdf, :filename => "something.pdf", :type => "application/pdf"
+    #send_data gen_pdf_print, :filename => "something.pdf", :type => "application/pdf"
+    send_data gen_pdf_badge, :filename => "something.pdf", :type => "application/pdf"
   end
 
   private
-  def gen_pdf
-    
-    # card dimensions
-    image_x = 10
-    image_y = 35
-    image_w = 35
-    image_h = 40
-    card_w = 80
-    card_h = 50
+  def gen_pdf_badge
+
+    # dimensions and params
+    margin = 0.5
+    huge_font = 16
+    large_font = 12
+    med_font = 8
+    small_font = 4
+    image_x = margin + 0.2
+    image_y = margin + 0.5
+    image_w = 1.25
+    image_h = 1.5
+    card_w = 3.5
+    card_h = 2.25
 
     @person = Person.find(params[:id])
   
-    pdf = FPDF.new
+    pdf = FPDF.new('P','in')
+    pdf.SetTopMargin(margin)
+    pdf.SetLeftMargin(margin)
+    pdf.SetRightMargin(margin)
     pdf.AddPage
     pdf.SetFont('Arial','B',16)
 
     # front of card
-    pdf.SetFontSize(12)
-    pdf.SetTextColor(155,155,155)
-    pdf.Text(5,29,'FRONT')
-    pdf.SetTextColor(0,0,0)
-    pdf.Rect(5,30,card_w,card_h)
+    pdf.SetFillColor(220,220,220) # light grey
+    pdf.Rect(margin,margin,card_w,card_h,'DF')
+    pdf.SetFontSize(huge_font)
+    pdf.SetTextColor(0,0,255) # blue
+    pdf.Text(margin + 0.3,margin + 0.3,'City of San Antonio, Texas')
+    pdf.SetTextColor(0,0,0) # black
+    pdf.SetFontSize(large_font)
+    pdf.SetFillColor(255,255,255) # white
     
     # put image here...
     #pdf.Image(file,x,y,w,h,'jpg')
-    pdf.Rect(image_x,image_y,image_w,image_h)
+    pdf.Rect(image_x,image_y,image_w,image_h,'DF')
 
     # card field titles
-    pdf.SetFontSize(4)
-    pdf.Text(50,35,'NAME')
-    pdf.Text(50,50,'ID NUMBER')
-    pdf.Text(50,60,'FACILITY')
-    pdf.Text(50,70,'SIGNATURE')
+    pdf.SetFontSize(small_font)
+    pdf.Text(image_x + image_w + 0.2,image_y + 0.1,'NAME')
+    pdf.Text(image_x + image_w + 0.2,image_y + 0.6,'ID NUMBER')
+    pdf.Text(image_x + image_w + 0.2,image_y + 0.9,'FACILITY')
+    pdf.Text(image_x + image_w + 0.2,image_y + 1.2,'SIGNATURE')
 
     # person data
-    pdf.SetFontSize(12)
-    pdf.Text(50,40,@person.first_name.capitalize)
-    pdf.Text(50,45,@person.last_name.capitalize)
-    pdf.Text(50,55,@person.tag_id)
-    pdf.SetTextColor(255,0,0)
-    #pdf.Text(50,65,@person.shelter.name.upcase)
-    pdf.Text(50,65,'WINDSOR')
+    pdf.SetFontSize(large_font)
+    pdf.Text(image_x + image_w + 0.2,image_y + 0.3,@person.first_name.capitalize)
+    pdf.Text(image_x + image_w + 0.2,image_y + 0.5,@person.last_name.capitalize)
+    pdf.Text(image_x + image_w + 0.2,image_y + 0.8,@person.tag_id)
+    pdf.SetTextColor(255,0,0) # red
+    #pdf.Text(image_x + image_w + 0.25,image_y + 1.5,@person.shelter.name.upcase)
+    pdf.Text(image_x + image_w + 0.2,image_y + 1.1,'WINDSOR')
 
 
     # back of card
-    indention = 10
-    start_position = 100
-    pdf.SetFontSize(12)
-    pdf.SetTextColor(155,155,155)
-    pdf.Text(indention - 5,start_position - 1,'BACK')
-    pdf.SetTextColor(0,0,0)
-    pdf.Rect(indention - 5,start_position,card_w,card_h)
-    pdf.SetFontSize(12)
-    pdf.SetFontSize(8)
-    pdf.Text(indention,start_position += 5,'ASSOCIATED FAMILY MEMBERS AT SAME FACILITY')
-    pdf.SetFontSize(4)
-    pdf.Text(indention,start_position += 5,'NAME / ID NUMBER')
-    pdf.SetFontSize(8)
+    pdf.SetFillColor(220,220,220) # light grey
+    pdf.Rect(margin+card_w,margin,card_w,card_h,'DF')
+    pdf.SetFontSize(med_font)
+    pdf.SetTextColor(0,0,0) # black
+    pdf.Text(margin + card_w + 0.3, margin + 0.3,'ASSOCIATED FAMILY MEMBERS AT SAME FACILITY')
+    pdf.SetFontSize(small_font)
+    pdf.Text(margin + card_w + 0.3, margin + 0.5,'NAME / ID NUMBER')
+    start_position = margin + 0.5
+    pdf.SetFontSize(med_font)
     @person.family.people.each do |member|
-      pdf.Text(indention,start_position += 5,"#{member.first_name.capitalize} #{member.last_name.capitalize} / #{member.tag_id}")
+      pdf.Text(margin + card_w + 0.3,start_position += 0.2,"#{member.first_name.capitalize} #{member.last_name.capitalize} / #{member.tag_id}")
     end
     
     # generate the doc
     pdf.Output
   end
+
 end

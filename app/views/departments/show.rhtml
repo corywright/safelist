@@ -4,7 +4,7 @@
 <div class="header">
 <%= link_to 'View Organiztion', {:action => 'list', :id => session[:last_organization]}, :class => 'textbutton'  %>
 <%= link_to 'Edit', {:action => 'edit', :id => @department}, :class => 'textbutton'  %>
-<%= link_to 'Create Department Note',
+<%= link_to 'Add Department Note',
          {:controller => 'notes',
           :action => 'new',
           :department_id => @department.id},

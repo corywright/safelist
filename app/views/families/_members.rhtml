@@ -31,9 +31,9 @@
 	<td><%=h person.shelter.name %></td>
 	<td>
 		<% if person.checked_in
-		  button_text_check_in = 'Check-Out Citizen'
+		  button_text_check_in = 'Check-Out'
 		else
-		  button_text_check_in = 'Check-In Citizen&nbsp;&nbsp;'
+		  button_text_check_in = 'Check-In&nbsp;&nbsp;'
 		end
 		%>
 		<%= link_to button_text_check_in, 

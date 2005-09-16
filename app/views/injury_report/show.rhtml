@@ -3,7 +3,7 @@
 <div class="header">
 <%= link_to 'Injury Report List', {:action => 'list'}, :class => 'textbutton'  %>
 <%= link_to 'Edit Report', {:action => 'edit', :id => @injury_report}, :class => 'textbutton'  %> 
-<%= link_to 'Create Injury Report Note',
+<%= link_to 'Add Injury Report Note',
          {:controller => 'notes',
           :action => 'new',
           :injury_report_id => @injury_report.id},

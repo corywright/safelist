@@ -2,7 +2,7 @@
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 <div class="header">
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
-<%= link_to 'Add a New Family', 
+<%= link_to 'Add New Family', 
 	 {:controller => 'families', 
 	  :action => 'new'}, 
 	  :class => 'textbutton' %>
@@ -22,12 +22,12 @@
           :action => 'checkin',
           :id => @family.id},
           :class => 'textbutton' %>
-<%= link_to 'Family Day Pass',
+<%= link_to 'Temp Check-out Family',
          {:controller => 'families',
           :action => 'checkout',
           :id => @family.id},
           :class => 'textbutton' %>
-<%= link_to 'Check-Out Family Permanently',
+<%= link_to 'Family Permanent Leave',
          {:controller => 'families',
           :action => 'checkout',
           :perm => 'true',

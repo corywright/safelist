@@ -14,8 +14,9 @@ class BadgesController < ApplicationController
     margin = 0.5
     huge_font = 16
     large_font = 12
-    med_font = 8
-    small_font = 4
+    medium_font = 8
+    small_font = 6
+    tiny_font = 4
     image_x = margin + 0.2
     image_y = margin + 0.5
     image_w = 1.25
@@ -47,7 +48,7 @@ class BadgesController < ApplicationController
     pdf.Rect(image_x,image_y,image_w,image_h,'DF')
 
     # card field titles
-    pdf.SetFontSize(small_font)
+    pdf.SetFontSize(tiny_font)
     pdf.Text(image_x + image_w + 0.2,image_y + 0.1,'NAME')
     pdf.Text(image_x + image_w + 0.2,image_y + 0.6,'ID NUMBER')
     pdf.Text(image_x + image_w + 0.2,image_y + 0.9,'FACILITY')
@@ -64,17 +65,40 @@ class BadgesController < ApplicationController
 
 
     # back of card
+    people = @person.family.people
     pdf.SetFillColor(220,220,220) # light grey
     pdf.Rect(margin+card_w,margin,card_w,card_h,'DF')
-    pdf.SetFontSize(med_font)
+    pdf.SetFontSize(medium_font)
     pdf.SetTextColor(0,0,0) # black
     pdf.Text(margin + card_w + 0.3, margin + 0.3,'ASSOCIATED FAMILY MEMBERS AT SAME FACILITY')
-    pdf.SetFontSize(small_font)
+    pdf.SetFontSize(tiny_font)
     pdf.Text(margin + card_w + 0.3, margin + 0.5,'NAME / ID NUMBER')
     start_position = margin + 0.5
-    pdf.SetFontSize(med_font)
-    @person.family.people.each do |member|
-      pdf.Text(margin + card_w + 0.3,start_position += 0.2,"#{member.first_name.capitalize} #{member.last_name.capitalize} / #{member.tag_id}")
+    indention = margin + card_w + 0.3
+    case people.nitems 
+      when 0..8: 
+        spacing = 0.2
+	font_size = medium_font
+      when 8..16:
+        spacing = 0.1
+	font_size = medium_font
+      when 16..30:
+        spacing = 0.1
+	font_size = small_font
+      else
+        spacing = 0.1
+	font_size = tiny_font
+    end
+    pdf.SetFontSize(font_size)
+    people.each do |member|
+      if start_position + spacing > 2.6
+        (people.nitems > 30) ? indention += 1 : indention += 1.5
+	start_position = margin + 0.5
+        pdf.SetFontSize(tiny_font)
+        pdf.Text(indention, margin + 0.5,'NAME / ID NUMBER')
+        pdf.SetFontSize(font_size)
+      end
+      pdf.Text(indention,start_position += spacing,"#{member.first_name.capitalize} #{member.last_name.capitalize} / #{member.tag_id}")
     end
     
     # generate the doc

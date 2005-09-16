@@ -338,3 +338,12 @@ CREATE TABLE "users" (
 create index users_login on users (login);
 create index users_password on users (password);
 create index users_shelter_id on users (shelter_id);
+
+select drop_if_exists('pictures');
+CREATE TABLE "pictures" (
+	"id" SERIAL NOT NULL UNIQUE primary key,
+	"image" text,
+	person_id integer,
+	FOREIGN KEY("person_id") REFERENCES "people" ("id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+create index pictures_person_id on pictures (person_id);

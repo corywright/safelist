@@ -1,0 +1,8 @@
+<h1>New picture</h1>
+
+<%= form_tag({:action=>'upload_receive'}, :multipart => true)%>
+  <%= render_partial 'form' %>
+  <%= submit_tag "Create" %>
+<%= end_form_tag %>
+
+<%= link_to 'Back', :action => 'list' %>

@@ -52,7 +52,12 @@ end
 <% if @person.picture %>
 <img src="/picture/show_image/<%= @person.id %>">
 <% end %>
-<%= link_to 'New Picture', {:controller => 'picture', :action => 'preview', :id => @person.id}, :class => 'textbutton' %>
+<%= form_tag({:action=>'upload_receive', :controller => 'picture'}, :multipart => true)%>
+<input type="file" name="file" />
+<input type="hidden" name="id" value="<%= @person.id %>" />
+<%= submit_tag 'Upload Picture' %>
+<%= end_form_tag %> 
+
 <table>
 <tr>
 	<th class="vertical"> Tag ID </th>

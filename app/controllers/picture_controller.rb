@@ -11,13 +11,11 @@ class PictureController < ApplicationController
 			@picture.person_id = @person.id
 			if @picture.save
 			  redirect_to :controller => 'people', :action => 'show', :id => @person.id
-			else
-			  flash[:error] = "Upload failed."
-			  redirect_to :action => 'new'
 			end
-		else
-			redirect_to :action => 'new'
-		end
+	    else
+			  flash[:error] = "Upload failed."
+			  redirect_back_or_default :controller => 'people', :action => 'show', :id => @person.id
+	    end
 	end
 
 	def show_image

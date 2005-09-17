@@ -57,126 +57,129 @@ end
 <table>
 <tr>
 	<td>
-<table>
-<tr>
-	<th class="vertical"> Tag ID </th>
-	<td> <%=h @person.tag_id %></td>
-</tr><tr>
-	<th class="vertical"> First Name </th>
-	<td> <%=h @person.first_name %></td>
-</tr>
-<tr>
-	<th class="vertical"> Last Name </th>
-	<td> <%=h @person.last_name %></td>
-</tr>
-<tr>
-	<th class="vertical">Status</th>
-	<td>
-	<% if @person.checked_in %>
-	<div class="confirm">On-Site</div>
-	<% else %>
-	<div class="errormsg">Off-Site</div>
-	<% end %>
+		<table>
+		<tr>
+			<th class="vertical"> Tag ID </th>
+			<td> <%=h @person.tag_id %></td>
+		</tr><tr>
+			<th class="vertical"> First Name </th>
+			<td> <%=h @person.first_name %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> Last Name </th>
+			<td> <%=h @person.last_name %></td>
+		</tr>
+		<tr>
+			<th class="vertical">Status</th>
+			<td>
+			<% if @person.checked_in %>
+			<div class="confirm">On-Site</div>
+			<% else %>
+			<div class="errormsg">Off-Site</div>
+			<% end %>
+			</td>
+		</tr>
+		<tr>
+			<th class="vertical"> Gender </th>
+			<td> <%=h @person.person_type.name %></td>
+		</tr>
+		<tr>
+			<th class="vertical">Ethnicity</th>
+			<td><%=h @person.ethnicity.name %>
+			</td>
+		</tr>
+		<tr>
+			<th class="vertical"> SSN </th>
+			<td> <%=h @person.ssn %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> DOB </th>
+			<td> <%=h @person.dob %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> Age </th>
+			<td> <%=h @person.age %> </td>
+		</tr>
+		<tr>
+			<th class="vertical"> Driver's License State </th>
+			<td> <%=h @person.drivers_license_state %> </td>
+		</tr>
+		<tr>
+			<th class="vertical"> Driver's License Number </th>
+			<td> <%=h @person.drivers_license_number %> </td>
+		</tr>
+		<tr>
+			<th class="vertical"> Medical Problems </th>
+			<td> <%= simple_format(@person.medical_problems) %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> Shelter </th>
+			<td><% if @shelter.id == 1 %>
+				<div class="errormsg"> <%=h @shelter.name %> </div>
+				<% else %>
+				<div class="confirm"><%=h @shelter.name %></div>
+				<% end %>
+				</td>
+		</tr>
+		<tr>
+			<th class="vertical"> Location Notes<br>
+			<p>Building, section, cot, hospital,<br> last know whereabouts, etc</p> </th>
+			<td>
+				<%= simple_format(@person.location_description) %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> Pre-Disaster Address </th>
+			<td><%=h  @pre_disaster_address.street %><br>
+				<%=h @pre_disaster_address.city %>, <%=h @pre_disaster_address.state %>
+				<%=h @pre_disaster_address.zipcode %>
+				<%=h @pre_disaster_address.country %><br>
+				Ph: <%=h @pre_disaster_address.phone %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> Job Skills </th>
+			<td> <%=h @person.resume %> </td>
+		</tr>
+		<tr>
+			<th class="vertical"> FEMA Registration Number </th>
+			<td> <%=h @person.fema_reg_id %> </td>
+		</tr>
+		<tr>
+			<th class="vertical"> Bracelet/Debit ID </th>
+			<td> <%=h @person.debit_id %> </td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right">
+			<%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %>
+			</td>
+		</tr>
+		</table>
 	</td>
-</tr>
-<tr>
-	<th class="vertical"> Gender </th>
-	<td> <%=h @person.person_type.name %></td>
-</tr>
-<tr>
-	<th class="vertical">Ethnicity</th>
-	<td><%=h @person.ethnicity.name %>
-	</td>
-</tr>
-<tr>
-	<th class="vertical"> SSN </th>
-	<td> <%=h @person.ssn %></td>
-</tr>
-<tr>
-	<th class="vertical"> DOB </th>
-	<td> <%=h @person.dob %></td>
-</tr>
-<tr>
-	<th class="vertical"> Age </th>
-	<td> <%=h @person.age %> </td>
-</tr>
-<tr>
-	<th class="vertical"> Driver's License State </th>
-	<td> <%=h @person.drivers_license_state %> </td>
-</tr>
-<tr>
-	<th class="vertical"> Driver's License Number </th>
-	<td> <%=h @person.drivers_license_number %> </td>
-</tr>
-<tr>
-	<th class="vertical"> Medical Problems </th>
-	<td> <%= simple_format(@person.medical_problems) %></td>
-</tr>
-<tr>
-	<th class="vertical"> Shelter </th>
-	<td><% if @shelter.id == 1 %>
-		<div class="errormsg"> <%=h @shelter.name %> </div>
-		<% else %>
-		<div class="confirm"><%=h @shelter.name %></div>
-		<% end %>
-		</td>
-</tr>
-<tr>
-	<th class="vertical"> Location Notes<br>
-	<p>Building, section, cot, hospital,<br> last know whereabouts, etc</p> </th>
-	<td>
-		<%= simple_format(@person.location_description) %></td>
-</tr>
-<tr>
-	<th class="vertical"> Pre-Disaster Address </th>
-	<td><%=h  @pre_disaster_address.street %><br>
-		<%=h @pre_disaster_address.city %>, <%=h @pre_disaster_address.state %>
-		<%=h @pre_disaster_address.zipcode %>
-		<%=h @pre_disaster_address.country %><br>
-		Ph: <%=h @pre_disaster_address.phone %></td>
-</tr>
-<tr>
-	<th class="vertical"> Job Skills </th>
-	<td> <%=h @person.resume %> </td>
-</tr>
-<tr>
-	<th class="vertical"> FEMA Registration Number </th>
-	<td> <%=h @person.fema_reg_id %> </td>
-</tr>
-<tr>
-	<th class="vertical"> Bracelet/Debit ID </th>
-	<td> <%=h @person.debit_id %> </td>
-</tr>
-<tr>
-	<td colspan="2" align="right">
-	<%= link_to 'Edit', {:action => 'edit', :id => @person}, :class => 'textbutton'  %>
-	</td>
-</tr>
-</table>
-
-<h2>Event Log</h2>
-<% unless @events.nitems == 0 %>
-    <table>
-    <tr>
-    	<th>#</th>
-    	<th class="horizontal">Date/Time</th>
-    	<th class="horizontal">Event</th>
-    	<th class="horizontal">Shelter</th>
-    </tr>
-    <% for event in @events %>
-    <tr class="<%=h row_style :events %>">
-    	<th class="counter"> <%=h counter :events %></th>
-    	<td><%=h event.event_time %></td>
-    	<td><%=h event.event_type.name %></td>
-    	<td><%=h event.shelter.name %></td>
-    </tr>
-    <% end %>
-    </table>
-<% else %><p>There are not any events for this person<p>
-<% end %>
-</td>
 	<td><% if @person.picture %>
-<img src="/picture/show_image/<%= @person.id %>">
-<% end %></td>
+			<img src="/picture/show_image/<%= @person.id %>">
+		<% end %></td>
+</tr>
+<tr>
+	<td colspan="2">
+		<h2>Event Log</h2>
+		<% unless @events.nitems == 0 %>
+		    <table>
+		    <tr>
+		    	<th>#</th>
+		    	<th class="horizontal">Date/Time</th>
+		    	<th class="horizontal">Event</th>
+		    	<th class="horizontal">Shelter</th>
+		    </tr>
+		    <% for event in @events %>
+		    <tr class="<%=h row_style :events %>">
+		    	<th class="counter"> <%=h counter :events %></th>
+		    	<td><%=h event.event_time %></td>
+		    	<td><%=h event.event_type.name %></td>
+		    	<td><%=h event.shelter.name %></td>
+		    </tr>
+		    <% end %>
+		    </table>
+		<% else %><p>There are not any events for this person<p>
+		<% end %>	
+	</td>
 </tr>
 </table>

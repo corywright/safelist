@@ -47,7 +47,6 @@ CREATE TABLE shelters(
     address_id int4 NOT NULL,
     tag_id_prefix text not null unique,
     domain text not null unique,
-	camera_host text not null,
     FOREIGN KEY("address_id") REFERENCES "addresses" ("id") ON UPDATE CASCADE 
 );
 create index shelters_name on shelters (name);

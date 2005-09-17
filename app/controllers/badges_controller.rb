@@ -17,8 +17,8 @@ class BadgesController < ApplicationController
     medium_font = 8
     small_font = 6
     tiny_font = 4
-    image_x = margin + 0.2
-    image_y = margin + 0.75
+    image_x = margin + 0.1
+    image_y = margin + 0.65
     #image_w = 1.25
     #image_h = 1.5
     aspect_ratio = 352 / 288.0
@@ -53,19 +53,27 @@ class BadgesController < ApplicationController
 
     # card field titles
     pdf.SetFontSize(tiny_font)
-    pdf.Text(image_x + image_w + 0.2,image_y + 0.1,'NAME')
-    pdf.Text(image_x + image_w + 0.2,image_y + 0.6,'ID NUMBER')
-    pdf.Text(image_x + image_w + 0.2,image_y + 0.9,'FACILITY')
-    pdf.Text(image_x + image_w + 0.2,image_y + 1.2,'SIGNATURE')
+    pdf.Text(image_x + image_w + 0.1,image_y + 0.1,'NAME')
+    pdf.Text(image_x + image_w + 0.1,image_y + 0.6,'ID NUMBER')
+    pdf.Text(image_x + image_w + 0.1,image_y + 0.9,'FACILITY')
+    #pdf.Text(image_x + image_w + 0.2,image_y + 1.2,'SIGNATURE')
+    pdf.SetDrawColor(155,155,155) # light grey
+    pdf.SetLineWidth(0.00001)
+    pdf.Line(margin + 0.2,margin + card_h - 0.1,margin + card_w - 0.2, margin + card_h - 0.1)
+    pdf.Text(image_x + image_w + 0.1,image_y + 1.2,'SIGNATURE')
+    pdf.SetFontSize(huge_font)
+    pdf.SetFont('Arial')
+    pdf.Text(margin + 0.2,margin + card_h - 0.15,'X')
+    pdf.SetFont('Arial','B',16)
 
     # person data
     pdf.SetFontSize(large_font)
-    pdf.Text(image_x + image_w + 0.2,image_y + 0.3,@person.first_name.capitalize)
-    pdf.Text(image_x + image_w + 0.2,image_y + 0.5,@person.last_name.capitalize)
-    pdf.Text(image_x + image_w + 0.2,image_y + 0.8,@person.tag_id)
+    pdf.Text(image_x + image_w + 0.1,image_y + 0.3,@person.first_name.capitalize)
+    pdf.Text(image_x + image_w + 0.1,image_y + 0.5,@person.last_name.capitalize)
+    pdf.Text(image_x + image_w + 0.1,image_y + 0.8,@person.tag_id)
     pdf.SetTextColor(255,0,0) # red
-    #pdf.Text(image_x + image_w + 0.25,image_y + 1.5,@person.shelter.name.upcase)
-    pdf.Text(image_x + image_w + 0.2,image_y + 1.1,'WINDSOR')
+    pdf.Text(image_x + image_w + 0.1,image_y + 1.1,@person.shelter.name.upcase)
+    #pdf.Text(image_x + image_w + 0.1,image_y + 1.1,'WINDSOR')
 
 
     # back of card
@@ -75,7 +83,7 @@ class BadgesController < ApplicationController
     pdf.Image('./public/images/card_back_300dpi.jpg',margin+card_w + 0.1,margin,card_w,card_h)
     pdf.SetFontSize(medium_font)
     pdf.SetTextColor(0,0,0) # black
-    pdf.Text(margin + card_w + 0.3, margin + 0.3,'ASSOCIATED FAMILY MEMBERS AT SAME FACILITY')
+    pdf.Text(margin + card_w + 0.4, margin + 0.3,'ASSOCIATED FAMILY MEMBERS AT SAME FACILITY')
     pdf.SetFontSize(tiny_font)
     pdf.Text(margin + card_w + 0.3, margin + 0.5,'NAME / ID NUMBER')
     start_position = margin + 0.5
@@ -84,10 +92,10 @@ class BadgesController < ApplicationController
       when 0..8: 
         spacing = 0.2
 	font_size = medium_font
-      when 8..16:
+      when 9..16:
         spacing = 0.1
 	font_size = medium_font
-      when 16..30:
+      when 17..30:
         spacing = 0.1
 	font_size = small_font
       else
@@ -96,7 +104,7 @@ class BadgesController < ApplicationController
     end
     pdf.SetFontSize(font_size)
     people.each do |member|
-      if start_position + spacing > 2.6
+      if start_position + spacing > 2.8
         (people.nitems > 30) ? indention += 1 : indention += 1.5
 	start_position = margin + 0.5
         pdf.SetFontSize(tiny_font)

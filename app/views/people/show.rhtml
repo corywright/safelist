@@ -49,15 +49,14 @@ end
 </div>
 
 <h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
-<% if @person.picture %>
-<img src="/picture/show_image/<%= @person.id %>">
-<% end %>
 <%= form_tag({:action=>'upload_receive', :controller => 'picture'}, :multipart => true)%>
 <input type="file" name="file" />
 <input type="hidden" name="id" value="<%= @person.id %>" />
 <%= submit_tag 'Upload Picture' %>
 <%= end_form_tag %> 
-
+<table>
+<tr>
+	<td>
 <table>
 <tr>
 	<th class="vertical"> Tag ID </th>
@@ -175,3 +174,9 @@ end
     </table>
 <% else %><p>There are not any events for this person<p>
 <% end %>
+</td>
+	<td><% if @person.picture %>
+<img src="/picture/show_image/<%= @person.id %>">
+<% end %></td>
+</tr>
+</table>

@@ -1,0 +1,10 @@
+insert into ethnicities (name) values ('Unknown');
+insert into ethnicities (name) values ('Asian');
+insert into ethnicities (name) values ('Black / African');
+insert into ethnicities (name) values ('East Indian');
+insert into ethnicities (name) values ('Hispanic / Latino');
+insert into ethnicities (name) values ('Middle Eastern');
+insert into ethnicities (name) values ('Native American');
+insert into ethnicities (name) values ('Pacific Islander');
+insert into ethnicities (name) values ('White / Caucasion');
+insert into ethnicities (name) values ('Other');

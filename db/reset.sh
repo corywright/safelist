@@ -14,6 +14,7 @@ psql -U cwright safelist_development < data.family0.sql
 
 # test data
 psql -U cwright safelist_development < data.families.sql
+psql -U cwright safelist_development < data.ethnicities.sql
 psql -U cwright safelist_development < data.people.sql
 psql -U cwright safelist_development < data.volunteers.sql
 psql -U cwright safelist_development < data.events.sql

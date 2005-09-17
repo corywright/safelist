@@ -32,5 +32,4 @@ alter table people alter column drivers_license_number set default '';
 update people set drivers_license_number = '';
 alter table people alter column drivers_license_number set not null;
 
---commit;
-rollback;
+commit;

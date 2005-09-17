@@ -198,7 +198,7 @@ class BadgesController < ApplicationController
       pdf.SetFont('Arial','B',16)
 
       # person data
-      if person.first_name.length > 25 or person.last_name.length > 25 then
+      if person.first_name.length > 15 or person.last_name.length > 15 then
         pdf.SetFontSize(medium_font)
         pdf.Text(image_x + image_w + 0.1,image_y + 0.3,person.first_name)
         pdf.Text(image_x + image_w + 0.1,image_y + 0.4,person.last_name)
@@ -250,7 +250,7 @@ class BadgesController < ApplicationController
           pdf.Text(indention, top_margin + 0.5,'NAME / ID NUMBER')
           pdf.SetFontSize(font_size)
         end
-	if (member.first_name.length > 20) then
+	if (member.first_name.length > 20 or member.last_name.length  > 20) then
           pdf.Text(indention,start_position += spacing,"#{member.first_name}")
           pdf.Text(indention,start_position += spacing,"#{member.last_name} / #{member.tag_id}")
 	else

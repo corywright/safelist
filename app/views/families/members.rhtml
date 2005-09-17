@@ -62,8 +62,11 @@
 <table>
   <%= render_partial 'addressform' %>
   <%= render_partial 'familyform' %>
-<tr>
-	<td colspan="2" align="right"><%= submit_tag 'Update' %></td>
-</tr>
 </table><br>
+<h2>Edit Family's Post-Disaster Address</h2>
+
+<table>
+  <%= render_partial 'postaddressform' %>
+</table><br>
+	<%= submit_tag 'Update' %>
 <%= end_form_tag %>

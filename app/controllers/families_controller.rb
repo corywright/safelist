@@ -21,6 +21,11 @@ class FamiliesController < ApplicationController
     @members = Person.find(:all, :conditions => [ "family_id = ?", params[:id]], 
                            :include => :shelter )
     @address = Address.find(@family.pre_disaster_address_id)
+	if @family.post_disaster_address
+	  @postaddress = @family.post_disaster_address
+	else
+	  @postaddress = Address.new
+	end
     if @members.nil?
       flash[:error] = 'No members of this family.'
       render :action => 'members'
@@ -77,7 +82,14 @@ class FamiliesController < ApplicationController
   def update
     @family = Family.find(params[:id])
     @address = Address.find(@family.pre_disaster_address_id)
+	if @family.post_disaster_address
+	  @postaddress = @family.post_disaster_address
+	else
+	  @postaddress = Address.new
+	end
     @address.update_attributes(params[:address])
+	@postaddress.update_attributes(params[:postaddress])
+	@family.post_disaster_address_id = @postaddress.id
     if @family.update_attributes(params[:family])
       flash[:notice] = 'Family was successfully updated.'
       redirect_to :action => 'show', :id => @family

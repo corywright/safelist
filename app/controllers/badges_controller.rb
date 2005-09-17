@@ -67,12 +67,20 @@ class BadgesController < ApplicationController
     pdf.SetFont('Arial','B',16)
 
     # person data
-    pdf.SetFontSize(large_font)
-    pdf.Text(image_x + image_w + 0.1,image_y + 0.3,@person.first_name.capitalize)
-    pdf.Text(image_x + image_w + 0.1,image_y + 0.5,@person.last_name.capitalize)
+    if @person.first_name.length > 25 or @person.last_name.length > 25 then
+      pdf.SetFontSize(medium_font)
+      pdf.Text(image_x + image_w + 0.1,image_y + 0.3,@person.first_name)
+      pdf.Text(image_x + image_w + 0.1,image_y + 0.4,@person.last_name)
+    else
+      pdf.SetFontSize(large_font)
+      pdf.Text(image_x + image_w + 0.1,image_y + 0.3,@person.first_name)
+      pdf.Text(image_x + image_w + 0.1,image_y + 0.5,@person.last_name)
+    end
+    (@person.tag_id.length > 20) ? pdf.SetFontSize(medium_font) : pdf.SetFontSize(large_font)
     pdf.Text(image_x + image_w + 0.1,image_y + 0.8,@person.tag_id)
     pdf.SetTextColor(255,0,0) # red
-    pdf.Text(image_x + image_w + 0.1,image_y + 1.1,@person.shelter.name.upcase)
+    (@person.shelter.name.length > 20) ? pdf.SetFontSize(medium_font) : pdf.SetFontSize(large_font)
+    pdf.Text(image_x + image_w + 0.1,image_y + 1.1,@person.shelter.name)
     #pdf.Text(image_x + image_w + 0.1,image_y + 1.1,'WINDSOR')
 
 

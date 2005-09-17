@@ -18,11 +18,14 @@ class BadgesController < ApplicationController
     small_font = 6
     tiny_font = 4
     image_x = margin + 0.2
-    image_y = margin + 0.5
-    image_w = 1.25
-    image_h = 1.5
-    card_w = 3.5
-    card_h = 2.25
+    image_y = margin + 0.75
+    #image_w = 1.25
+    #image_h = 1.5
+    aspect_ratio = 352 / 288.0
+    image_h = 1.25
+    image_w = image_h * aspect_ratio
+    card_w = 3.5 + 0.1
+    card_h = 2.25 + 0.1
 
     @person = Person.find(params[:id])
   
@@ -34,17 +37,18 @@ class BadgesController < ApplicationController
     pdf.SetFont('Arial','B',16)
 
     # front of card
-    pdf.SetFillColor(220,220,220) # light grey
-    pdf.Rect(margin,margin,card_w,card_h,'DF')
+    #pdf.SetFillColor(220,220,220) # light grey
+    #pdf.Rect(margin,margin,card_w,card_h,'DF')
+    pdf.Image('./public/images/card_front_300dpi.jpg',margin,margin,card_w,card_h)
     pdf.SetFontSize(huge_font)
-    pdf.SetTextColor(0,0,255) # blue
-    pdf.Text(margin + 0.3,margin + 0.3,'City of San Antonio, Texas')
+    pdf.SetTextColor(0,0,0) # black
+    pdf.Text(margin + 0.2,margin + 0.35,'San Antonio, Texas')
     pdf.SetTextColor(0,0,0) # black
     pdf.SetFontSize(large_font)
-    pdf.SetFillColor(255,255,255) # white
+    #pdf.SetFillColor(255,255,255) # white
     
     # put image here...
-    #pdf.Image(file,x,y,w,h,'jpg')
+    #pdf.Image('/tmp/test.jpg',image_x,image_y,image_w,image_h)
     pdf.Rect(image_x,image_y,image_w,image_h,'DF')
 
     # card field titles
@@ -66,8 +70,9 @@ class BadgesController < ApplicationController
 
     # back of card
     people = @person.family.people
-    pdf.SetFillColor(220,220,220) # light grey
-    pdf.Rect(margin+card_w,margin,card_w,card_h,'DF')
+    #pdf.SetFillColor(220,220,220) # light grey
+    #pdf.Rect(margin+card_w,margin,card_w,card_h,'DF')
+    pdf.Image('./public/images/card_back_300dpi.jpg',margin+card_w + 0.1,margin,card_w,card_h)
     pdf.SetFontSize(medium_font)
     pdf.SetTextColor(0,0,0) # black
     pdf.Text(margin + card_w + 0.3, margin + 0.3,'ASSOCIATED FAMILY MEMBERS AT SAME FACILITY')

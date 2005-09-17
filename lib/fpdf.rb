@@ -1297,6 +1297,7 @@ class FPDF
     end
     
     def parsejpg(file)
+        data = ''
         # Extract info from a JPEG file
         a=extractjpginfo(file)
         raise "Missing or incorrect JPEG file: #{file}" if a.nil?

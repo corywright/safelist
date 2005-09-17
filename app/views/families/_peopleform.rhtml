@@ -44,5 +44,11 @@
 	<th class="vertical">Gender</th>
 	<td><%= select("person","person_type_id",[["Male",1],["Female",2]]) %></td>
 </tr>
+<tr>
+	<th class="vertical">Ethnicity</th>
+	<td><%= @ethnicities = Ethnicity.find_all()
+	        collection_select("person","ethnicity_id",@ethnicities, :id, :name) %>
+	</td>
+</tr>
 
 <!--[eoform:person]-->

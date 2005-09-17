@@ -7,6 +7,7 @@ class Person < ActiveRecord::Base
     belongs_to :family
     belongs_to :person_type
     belongs_to :shelter
+    belongs_to :ethnicity
     has_many :injury_reports
 	has_one :picture
     has_and_belongs_to_many :notes

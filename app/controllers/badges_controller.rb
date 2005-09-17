@@ -119,7 +119,7 @@ class BadgesController < ApplicationController
         pdf.Text(indention, margin + 0.5,'NAME / ID NUMBER')
         pdf.SetFontSize(font_size)
       end
-      pdf.Text(indention,start_position += spacing,"#{member.first_name.capitalize} #{member.last_name.capitalize} / #{member.tag_id}")
+      pdf.Text(indention,start_position += spacing,"#{member.first_name} #{member.last_name} / #{member.tag_id}")
     end
     
     # generate the doc

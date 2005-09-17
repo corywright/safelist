@@ -18,13 +18,17 @@ that all family members are listed and all their info is correct.</p></div>
 <div id="results"></div>
 <h2>Add New Family Member</h2>
 <form action="/families/createmember" method="post" id="person">
+
 <%= observe_form(:person,
-                 :frequency => 1.2,
+                 :frequency => 1,
                  :update => :results,
 				 :with => "Form.serialize('person')",
                  :url => { :action => :search_ajax }) %>
+<table>
   <%= render_partial 'peopleform' %>
-  <br>
-  <%= submit_tag 'Save' %>
+<tr>
+	<td colspan="4" align="right">  <%= submit_tag 'Save' %></td>
+</tr>
+</table>
 <%= end_form_tag %>
 

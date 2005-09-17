@@ -3,7 +3,6 @@
 <%= error_messages_for 'family' %>
 
 <!--[form:person]-->
-<table>
 <tr>
 	<th class="vertical">Shelter</th>
 	<td><select name="person[shelter_id]">
@@ -45,5 +44,5 @@
 	<th class="vertical">Gender</th>
 	<td><%= select("person","person_type_id",[["Male",1],["Female",2]]) %></td>
 </tr>
-</table>
+
 <!--[eoform:person]-->

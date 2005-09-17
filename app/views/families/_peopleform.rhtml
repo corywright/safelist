@@ -50,5 +50,13 @@
 	        collection_select("person","ethnicity_id",@ethnicities, :id, :name) %>
 	</td>
 </tr>
+<tr>
+	<th class="vertical"> Driver's License State </th>
+	<td> <%= text_field 'person','drivers_license_state' %> </td>
+</tr>
+<tr>
+	<th class="vertical"> Driver's License Number </th>
+	<td> <%= text_field 'person','drivers_license_number' %> </td>
+</tr>
 
 <!--[eoform:person]-->

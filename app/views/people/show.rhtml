@@ -102,6 +102,14 @@ end
 	<td> <%=h @person.age %> </td>
 </tr>
 <tr>
+	<th class="vertical"> Driver's License State </th>
+	<td> <%=h @person.drivers_license_state %> </td>
+</tr>
+<tr>
+	<th class="vertical"> Driver's License Number </th>
+	<td> <%=h @person.drivers_license_number %> </td>
+</tr>
+<tr>
 	<th class="vertical"> Medical Problems </th>
 	<td> <%= simple_format(@person.medical_problems) %></td>
 </tr>

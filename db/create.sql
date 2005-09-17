@@ -67,6 +67,13 @@ create index families_disclosure_consent on families (disclosure_consent);
 create index families_pre_disaster_address_id on families (pre_disaster_address_id);
 create index families_post_disaster_address_id on families (post_disaster_address_id);
 
+select drop_if_exists('ethnicities');
+create table ethnicities (
+    id serial primary key,
+    name text not null default ''
+);
+create index ethnicities_name on ethnicities (name);
+
 select drop_if_exists('people');
 CREATE TABLE people(
     id serial PRIMARY KEY,
@@ -83,6 +90,9 @@ CREATE TABLE people(
     resume text NOT NULL default '',
     fema_reg_id text default '',
     debit_id text default '',
+    ethnicity_id integer references ethnicities (id) not null default 1,
+    drivers_license_state text not null default '',
+    drivers_license_number text not null default '',
     FOREIGN KEY("family_id") REFERENCES "families" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("person_type_id") REFERENCES "person_types" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 
@@ -100,6 +110,7 @@ create index people_location_description on people (location_description);
 create index people_resume on people (resume);
 create index people_fema_reg_id on people (fema_reg_id);
 create index people_debit_id on people (debit_id);
+create index people_ethnicity_id on people (ethnicity_id);
 
 select drop_if_exists('volunteers');
 CREATE TABLE volunteers(

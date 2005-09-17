@@ -18,10 +18,16 @@ class Person < ActiveRecord::Base
     end
 
 	def first_name
-	  write_attribute('first_name', self[:first_name].downcase.capitalize)
+	  tmp = []
+	  self[:first_name].split.each { |b| tmp.push(b.downcase.capitalize) }
+	  name = tmp.join(' ')
+	  write_attribute('first_name', name)
 	end
 	def last_name
-	  write_attribute('last_name', self[:last_name].downcase.capitalize)
+	  tmp = []
+	  self[:last_name].split.each { |b| tmp.push(b.downcase.capitalize) }
+	  name = tmp.join(' ')
+	  write_attribute('last_name', name)
 	end
 	
     def last_check_in

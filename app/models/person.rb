@@ -16,6 +16,14 @@ class Person < ActiveRecord::Base
     def name
       first_name + " " + last_name
     end
+
+	def first_name
+	  write_attribute('first_name', self[:first_name].downcase.capitalize)
+	end
+	def last_name
+	  write_attribute('last_name', self[:last_name].downcase.capitalize)
+	end
+	
     def last_check_in
       @event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_CHECKIN, :order => "event_time DESC")
       write_attribute(:last_check_in, @event.event_time) if @event

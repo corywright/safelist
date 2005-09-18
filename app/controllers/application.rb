@@ -45,6 +45,7 @@ class ApplicationController < ActionController::Base
 	$EVENT_ORG_REJECTED = 14
 	$EVENT_ORG_ACTIVE = 15
 	$EVENT_ORG_INACTIVE = 16
+	$PICTURE_ADDED = 17
 	$ORG_PENDING = 1
 	$ORG_APPROVED = 2
 	$ORG_REJECTED = 3

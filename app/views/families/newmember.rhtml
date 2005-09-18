@@ -27,6 +27,7 @@ that all family members are listed and all their info is correct.</p></div>
 <table>
   <%= render_partial 'peopleform' %>
 <tr>
+	<td colspan="4" align="right"> Check-In? <%= check_box_tag('check_in', '1', true) %></td>
 	<td colspan="4" align="right">  <%= submit_tag 'Save' %></td>
 </tr>
 </table>

@@ -72,6 +72,9 @@ class FamiliesController < ApplicationController
     @person = Person.new(params[:person])
     @person.family_id = @family.id
     if @person.save
+	  if params[:check_in]
+		@person.toggle_in_or_out(params[:perm], session[:shelter_id])
+	  end
       flash[:notice] = 'Citizen was successfully created.'
     else
       flash[:error] = 'Could not save Citizen.'

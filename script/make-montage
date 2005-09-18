@@ -1,0 +1,33 @@
+#!/usr/bin/ruby1.8
+RAILS_ENV = 'production'
+require File.dirname(__FILE__) + '/../config/environment'
+
+require 'RMagick'
+
+if RAILS_ENV == 'production'
+    print "This is a production environment, are you sure you want to continue? "
+    answer = gets
+    if !answer[/y/i]
+        print "Aborting.\n"
+        exit
+    else
+        print 'Continuing...\n'
+    end
+end
+
+@pictures = Picture.find(:all)
+imagelist = Magick::ImageList.new
+print "Loading pictures"
+for @pic in @pictures
+	imagelist.from_blob(@pic.image)	
+	print "."
+end
+print "\nGenerating montage..."
+
+montagelist = imagelist.montage { 
+	self.background_color = 'white'
+	self.geometry = '88x72x10x10'
+	self.tile = '10x2000'
+	}
+montagelist.write('../pubclic/images/montage.png')
+print "done.\nNow go to http://localhost:3000/images/montage.png\n"

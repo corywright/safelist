@@ -33,10 +33,6 @@
 	<td><%= date_select'person','dob' ,:start_year => 1905 ,:end_year => 2005%></td>
 </tr>
 <tr>
-	<th class="vertical">SSN</th>
-	<td><%= text_field 'person','ssn' %></td>
-</tr>
-<tr>
 	<th class="vertical">Gender</th>
 	<td><%= select("person","person_type_id",[["Male",1],["Female",2]]) %></td>
 </tr>
@@ -53,6 +49,10 @@
 <tr>
 	<th class="vertical"> Driver's License Number </th>
 	<td> <%= text_field 'person','drivers_license_number' %> </td>
+</tr>
+<tr>
+	<th class="vertical">SSN</th>
+	<td><%= text_field 'person','ssn' %></td>
 </tr>
 <tr>
 	<th class="vertical">Job Skills</th>

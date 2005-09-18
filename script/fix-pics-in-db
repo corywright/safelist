@@ -3,7 +3,7 @@ RAILS_ENV = 'production'
 require File.dirname(__FILE__) + '/../config/environment'
 
 if RAILS_ENV == 'production'
-	print "This is a production environent, are you sure you want to continue? "
+	print "This is a production environment, are you sure you want to continue? "
 	answer = gets
 	if !answer[/y/i]
 		print "Aborting.\n"

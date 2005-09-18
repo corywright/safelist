@@ -2,6 +2,17 @@
 RAILS_ENV = 'production'
 require File.dirname(__FILE__) + '/../config/environment'
 
+if RAILS_ENV == 'production'
+	print "This is a production environent, are you sure you want to continue? "
+	answer = gets
+	if !answer[/y/i]
+		print "Aborting.\n"
+		exit
+	else
+		print 'Continuing...\n'
+	end
+end
+
 @pictures = Picture.find(:all, :conditions => ['id >= 187'])
 for @pic in @pictures
 	@pic.fix_rotation

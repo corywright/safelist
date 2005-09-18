@@ -55,6 +55,12 @@
 	<td><%= text_field 'person','ssn' %></td>
 </tr>
 <tr>
+	<th class="vertical">Badge Status</th>
+	<td><%= @badge_status = BadgeStatus.find_all()
+	        collection_select("person","badge_status_id",@badge_status, :id, :name) %>
+	</td>
+</tr>
+<tr>
 	<th class="vertical">Job Skills</th>
 	<td><%= text_field 'person','resume' %></td>
 </tr>

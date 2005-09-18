@@ -109,6 +109,11 @@ end
 			<td> <%=h @person.ssn %></td>
 		</tr>
 		<tr>
+			<th class="vertical">Badge Status</th>
+			<td><%=h @person.badge_status.name %>
+			</td>
+		</tr>
+		<tr>
 			<th class="vertical"> Medical Problems </th>
 			<td> <%= simple_format(@person.medical_problems) %></td>
 		</tr>

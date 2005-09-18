@@ -13,10 +13,15 @@
 <%= start_form_tag :action => 'create', :id => @family.id%>
   <table>
   <tr>
-	<th class="title" colspan="2"> Family's Pre-disaster Address & Consent </th>
+	<th class="title" colspan="2"> Family's Pre-disaster Address</th>
 </tr>
 
   <%= render :partial => 'addressform' %>
+  <tr>
+	<th class="title" colspan="2"> Family's Post-disaster Address & Consent </th>
+</tr>
+  
+  <%= render :partial => 'postaddressform' %>
   <%= render :partial => 'familyform' %>
   </table>
   <br>

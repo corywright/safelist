@@ -38,7 +38,10 @@ class FamiliesController < ApplicationController
     @family = Family.new
     @address = Address.new
     @address.save
+	@postaddress = Address.new
+	@postaddress.save
     @family.pre_disaster_address_id = @address.id
+    @family.post_disaster_address_id = @postaddress.id
     @shelters = Shelter.find(:all)
     @family.save
     session[:lastfamily] = @family.id
@@ -53,6 +56,8 @@ class FamiliesController < ApplicationController
     @family = Family.find(params[:id])
     @address = Address.find(@family.pre_disaster_address_id)
     @address.update_attributes(params[:address])
+	@postaddress = Address.find(@family.post_disaster_address_id)
+    @postaddress.update_attributes(params[:postaddress])
     @family.update_attributes(params[:family])
     if @family.save
       redirect_to :action => 'newmember', :id => @family.id

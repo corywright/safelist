@@ -1,0 +1,7 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+<% for picture in @pictures %>
+<a href="/people/show/<%= picture.person_id %>"><img src="/picture/show_thumb/<%= picture.person_id %>"></a>
+<% end %>
+<%= link_to('Next >>', { :page => @picture_pages.current.next, :params => @params }, :class =>'textbutton') if @picture_pages.current.next %>
+

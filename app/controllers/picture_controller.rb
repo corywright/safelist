@@ -39,4 +39,13 @@ class PictureController < ApplicationController
 		@picture = Picture.new
 	end
 
+	def gallery
+		@picture_pages, @pictures = paginate_collection Picture.find(:all), :page => @params[:page], :per_page => 50
+	end
+
+	def show_thumb
+		@picture = Picture.find_by_person_id(@params['id'])
+		send_data @picture.thumbnail, :filename => @picture.id, :type => "image/jpeg", :disposition => "inline"
+	end
+
 end

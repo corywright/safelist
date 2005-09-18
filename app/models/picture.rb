@@ -6,6 +6,7 @@ class Picture < ActiveRecord::Base
 	def image
 		decoded = Base64.decode64(self[:image])
 	    if self[:id] >= 187
+		# remove this block after fix-pics-in-db
 		  tmpimage = Magick::Image.from_blob(decoded)[0]
 		  rotated = tmpimage.rotate(90)
 		  final = rotated.to_blob
@@ -18,6 +19,9 @@ class Picture < ActiveRecord::Base
 	def image=(newimage)
 		tmpimage = Magick::Image.from_blob(newimage)[0]
 		scaled = tmpimage.scale(352, 288)
+# uncomment these and comment the other saveimage after fix-pics-in-db has been run
+#		rotated = tmpimage.rotate(90)
+#		saveimage = Base64.encode64(rotated.to_blob)
 		saveimage = Base64.encode64(scaled.to_blob)
 		self[:image] = saveimage
 	end

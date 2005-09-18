@@ -29,5 +29,5 @@ montagelist = imagelist.montage {
 	self.geometry = '88x72x10x10'
 	self.tile = '10x2000'
 	}
-montagelist.write('../pubclic/images/montage.png')
+montagelist.write('../public/images/montage.png')
 print "done.\nNow go to http://localhost:3000/images/montage.png\n"

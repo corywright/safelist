@@ -10,7 +10,7 @@ class Picture < ActiveRecord::Base
 
 	def image=(newimage)
 		tmpimage = Magick::Image.from_blob(newimage)[0]
-		scaled = tmpimage.resize(352, 288)
+		scaled = tmpimage.scale(352, 288)
 		saveimage = Base64.encode64(scaled.to_blob)
 		self[:image] = saveimage
 	end

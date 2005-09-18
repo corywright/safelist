@@ -1,0 +1,15 @@
+#!/usr/bin/ruby1.8
+RAILS_ENV = 'production'
+require File.dirname(__FILE__) + '/../config/environment'
+
+require 'RMagick'
+
+@pictures = Picture.find(:all, :conditions => ['id <= 186'])
+for @pic in @pictures
+	magicpic = Magick::Image.from_blob(@pic.image)[0]
+	if !magicpic.write "exported/" + @pic.person_id.to_s + ".jpg"
+		print "Could export pic for person " + @pic.person_id.to_s + "\n"
+	else
+		print "Exported picture for person " + @pic.person_id.to_s + "\n"
+	end
+end

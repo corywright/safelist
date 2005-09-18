@@ -3,5 +3,8 @@
 <% for picture in @pictures %>
 <a href="/people/show/<%= picture.person_id %>"><img src="/picture/show_thumb/<%= picture.person_id %>"></a>
 <% end %>
+<% @params.delete('page') %>
+<%= link_to '<< Previous', { :page => @picture_pages.current.previous, :params => @params }, :class =>'textbutton' if @picture_pages.current.previous %>
+
 <%= link_to('Next >>', { :page => @picture_pages.current.next, :params => @params }, :class =>'textbutton') if @picture_pages.current.next %>
 

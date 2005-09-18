@@ -1,0 +1,15 @@
+#!/usr/bin/ruby1.8
+RAILS_ENV = 'production'
+require File.dirname(__FILE__) + '/../config/environment'
+
+@pictures = Picture.find(:all, :conditions => ['id >= 187'])
+for @pic in @pictures
+	@pic.fix_rotation
+	if !@pic.save
+		print "Could not fix picture with id " + @pic.id.to_s + "\n"
+	else
+		print "Fixed picture for person " + @pic.person_id.to_s + "\n"
+	end
+end
+
+print "Don't forget that you must now remove the rotation done in the model's image method!\n"

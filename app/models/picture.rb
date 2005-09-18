@@ -27,4 +27,15 @@ class Picture < ActiveRecord::Base
 		scaled = tmpimage.scale(0.2)
 		write_attribute('thumbnail', scaled.to_blob)
 	end
+
+	def fix_rotation
+	    decoded = Base64.decode64(self[:image])
+        if self[:id] >= 187
+          tmpimage = Magick::Image.from_blob(decoded)[0]
+          rotated = tmpimage.rotate(90)
+          final = Base64.encode64(rotated.to_blob)
+		  self[:image] = final
+        end
+	end
+
 end

@@ -163,6 +163,9 @@ class FamiliesController < ApplicationController
     @family = Family.find(session[:lastfamily])
     @members = Person.find(:all, :conditions => [ "family_id = ?", @family.id] )
     @people = Person.find(:all, :conditions => [ "tag_id = ?", params[:tag_id]] )
+	if @people.empty?
+		@people = Person.find(:all, :conditions => [ "id = ?", params[:tag_id][/[0-9]+/]])
+	end
     if @people.nil?
       flash[:notice] = "No one found by that tag id"
       redirect_to :action => "search"

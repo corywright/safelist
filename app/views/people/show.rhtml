@@ -4,7 +4,7 @@
 <%= link_to 'View People List', {:action => 'list'}, :class => 'textbutton'  %>
 
 <% if @person.family_id != 0 %>
-  <%= link_to 'View Family', {:controller => 'families', :action => 'show', :id => @person.family_id}, :class => 'textbutton' %>
+  <%= link_to 'View Family ('+@family_count.to_s+')', {:controller => 'families', :action => 'show', :id => @person.family_id}, :class => 'textbutton' %>
 <% end %>
 
 <% if @person.checked_in

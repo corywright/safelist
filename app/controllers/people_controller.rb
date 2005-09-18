@@ -28,6 +28,7 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id], :include => :person_type)
+    @family_count = Person.count(["family_id = ?", @person.family_id])
     @pre_disaster_address = Address.find(@person.family.pre_disaster_address_id)
     @shelter = Shelter.find(@person.shelter_id)
     @events = Event.find_all_by_person_id(params[:id],

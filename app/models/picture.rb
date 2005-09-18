@@ -5,7 +5,10 @@ class Picture < ActiveRecord::Base
 
 	def image
 		decoded = Base64.decode64(self[:image])
-		write_attribute('image', decoded)
+		tmpimage = Magick::Image.from_blob(decoded)[0]
+		rotated = tmpimage.rotate(90)
+		final = rotated.to_blob
+		write_attribute('image', final)
 	end
 
 	def image=(newimage)

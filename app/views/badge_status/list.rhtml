@@ -1,0 +1,27 @@
+<h1>Listing badge_status</h1>
+
+<table>
+  <tr>
+  <% for column in BadgeStatus.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for badge_status in @badge_status %>
+  <tr>
+  <% for column in BadgeStatus.content_columns %>
+    <td><%=h badge_status.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => badge_status %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => badge_status %></td>
+    <td><%= link_to 'Destroy', {:action => 'destroy', :id => badge_status}, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @badge_status_pages.current.previous } if @badge_status_pages.current.previous %>
+<%= link_to 'Next page', { :page => @badge_status_pages.current.next } if @badge_status_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New badge_status', :action => 'new' %>

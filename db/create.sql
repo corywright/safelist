@@ -74,6 +74,13 @@ create table ethnicities (
 );
 create index ethnicities_name on ethnicities (name);
 
+select drop_if_exists('badge_status');
+create table badge_status (
+    id serial primary key,
+    name text not null default ''
+);
+create index badge_status_name on badge_status (name);
+
 select drop_if_exists('people');
 CREATE TABLE people(
     id serial PRIMARY KEY,
@@ -93,6 +100,7 @@ CREATE TABLE people(
     ethnicity_id integer references ethnicities (id) not null default 1,
     drivers_license_state text not null default '',
     drivers_license_number text not null default '',
+    badge_status_id integer references badge_status (id) not null default 1,
     FOREIGN KEY("family_id") REFERENCES "families" ("id") ON UPDATE CASCADE ON DELETE CASCADE ,
     FOREIGN KEY("person_type_id") REFERENCES "person_types" ("id") ON UPDATE CASCADE ,
     FOREIGN KEY("shelter_id") REFERENCES "shelters" ("id") ON UPDATE CASCADE 

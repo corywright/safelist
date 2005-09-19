@@ -17,7 +17,13 @@ class PeopleController < ApplicationController
     if (params[:sort] && params[:order])
       @order = params[:sort].strip + ' ' + params[:order].strip
     end
-    @person_pages, @people = paginate :people, :per_page => 30, :order_by => @order
+
+	@conditions = hash_to_conditions @params, ['shelter_id']
+	if !@conditions.empty?
+    	@person_pages, @people = paginate_collection Person.find(:all, :conditions=> @conditions), :per_page => 30, :order_by => @order
+	else
+    	@person_pages, @people = paginate_collection Person.find(:all), :per_page => 30, :order_by => @order
+	end
 
     @shelter_map = {}
     @shelters = Shelter.find(:all)

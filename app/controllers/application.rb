@@ -6,10 +6,9 @@
 # The filters added to this controller will be run for all controllers in the application.
 # Likewise will all the methods added be available for all controllers.
 require_dependency "login_system" 
-
 class ApplicationController < ActionController::Base
-	include LoginSystem
 	model :user
+	include LoginSystem
 	before_filter :add_to_history
 
 	def add_to_history
@@ -21,12 +20,27 @@ class ApplicationController < ActionController::Base
 	def paginate_collection(collection, options = {})
 	  default_options = {:per_page => 30, :page => 1}
 	  options = default_options.merge options
-
-	  pages = Paginator.new self, collection.size, options[:per_page], options[:page]
+	
+  	  pages = Paginator.new self, collection.size, options[:per_page], options[:page]
 	  first = pages.current.offset
 	  last = [first + options[:per_page], collection.size].min
 	  slice = collection[first...last]
 	  return [pages, slice]
+	end
+
+	def hash_to_conditions(myparams, allowed)
+		@sqlparams = []
+		@varparams = []
+		@result = [];
+		for param in allowed
+			if myparams[param]
+				@sqlparams.push("#{param} = ?")
+				@varparams.push(myparams[param].strip)
+			end
+		end
+		@result.push(@sqlparams.join(" AND "))
+		@result.push(@varparams)
+		return @result
 	end
 
 	$CITIZEN_CHECKIN = 1

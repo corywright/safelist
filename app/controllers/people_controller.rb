@@ -208,4 +208,20 @@ class PeopleController < ApplicationController
        redirect_to :action => 'list'
     end
   end
+
+  def badge_queue
+    @people = Person.find_by_sql("select p.id, p.tag_id, p.shelter_id, p.first_name, " +
+                                 " p.last_name, p.family_id, pix.id as pic_id " +
+                                 " from people as p  join pictures as pix on (p.id=pix.person_id) " +
+                                 " where p.badge_status_id=1 " +
+                                 " order by p.id limit 20")
+  end
+ 
+  def badge_queue_mark_printed
+    @person = Person.find(params[:id])
+    @person.badge_status_id=2
+    @person.save!
+    redirect_to :action => 'badge_queue'
+  end
+
 end

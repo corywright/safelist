@@ -52,7 +52,7 @@
 </tr>
 <tr>
 	<th class="vertical">SSN</th>
-	<td><%= text_field 'person','ssn' %></td>
+	<td><%= link_to 'Edit/Verify', {:action => 'editssn', :id => @person.id }, :class => 'textbutton' %></td>
 </tr>
 <tr>
 	<th class="vertical">Badge Status</th>

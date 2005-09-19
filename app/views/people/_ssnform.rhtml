@@ -1,0 +1,13 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+<%= error_messages_for 'person' %>
+
+<!--[form:editssn]-->
+Enter SSN: <input id="ssn" name="ssn" type="text" value="">
+<%= observe_field 'ssn',  :frequency => 0.3, 
+	:update => 'results', :url => 
+	{ :controller => 'people', :action=> 'ssnverify_ajax', :id => @person.id }, 
+	:with => "'ssn=' + escape(value)",
+	:loading => "set_loading('results')"
+%>
+<!--[eoform:editssn]-->

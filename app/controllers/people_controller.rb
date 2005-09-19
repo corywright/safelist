@@ -63,6 +63,31 @@ class PeopleController < ApplicationController
     @shelter = Shelter.find(@person.shelter_id)
   end
 
+  def editssn
+    @person = Person.find(params[:id])
+  end
+
+  def ssnverify_ajax 
+    @person = Person.find(params[:id])
+	testssn = params[:ssn].gsub(/[^0-9]/, '')
+	@match = false
+	if @person.realssn == testssn
+		@match = true
+	end	
+	render :action => 'verifyssn_ajax', :layout => false
+  end
+
+  def updatessn
+    @person = Person.find(params[:id])
+	@person.ssn = params[:ssn].gsub(/[^0-9]/, '')
+	if @person.save
+			flash[:notice] = 'Citizen\'s SSN updated.'
+	else
+			flash[:error] = 'Could not update SSN.'
+	end
+	redirect_to :action => 'show', :id => @person.id
+  end
+  
   def new
     @person = Person.new
     @shelters = Shelter.find(:all)

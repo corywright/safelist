@@ -214,7 +214,7 @@ class PeopleController < ApplicationController
                                  " p.last_name, p.family_id, pix.id as pic_id " +
                                  " from people as p  join pictures as pix on (p.id=pix.person_id) " +
                                  " where p.badge_status_id=1 " +
-                                 " order by p.id limit 20")
+                                 " order by pix.id limit 20")
   end
  
   def badge_queue_mark_printed

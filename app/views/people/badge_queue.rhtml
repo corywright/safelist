@@ -13,7 +13,6 @@
 </div>
 
 <h2> Citizen List</h2>
-<br />
 
 <table>
   <tr>
@@ -31,9 +30,13 @@
     <td><%=h person.shelter.name %></td>
     <td><%=h person.id %></td>
     <td>
+    <% if person.family_id != 0 %>
       <% for member in person.family.people %>
-      <%= member.name %> / <%= member.tag_id %><br />
+        <% if member.id != person.id %>
+          <%= member.name %> / <%= member.tag_id %><br />
+        <% end %>
       <% end %>
+    <% end %>
     </td>
     <td><%= link_to 'Mark Printed', {:controller => 'people',
       :action => 'badge_queue_mark_printed', :id => person.id },

@@ -1,5 +1,6 @@
 class PictureController < ApplicationController
-
+	caches_action :show_image
+	caches_action :show_thumb
 	def upload_receive
 		if @params[:file] && @params[:id]
 			@person = Person.find(@params[:id])
@@ -16,6 +17,8 @@ class PictureController < ApplicationController
 			  #@event.event_time = Time.now
 			  #@event.shelter_id = session[:shelter_id]
 			  #@event.save
+			  expire_page :action => 'show_image', :id => @person.id
+			  expire_page :action => 'show_thumb', :id => @person.id
 			  redirect_to :controller => 'people', :action => 'show', :id => @person.id
 			end
 	    else

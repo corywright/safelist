@@ -40,6 +40,9 @@ class ApplicationController < ActionController::Base
 		end
 		@result.push(@sqlparams.join(" AND "))
 		@result.push(@varparams)
+		if @sqlparams.empty?
+				@result = []
+		end
 		return @result
 	end
 

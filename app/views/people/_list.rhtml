@@ -53,5 +53,6 @@
 <% end %>
 </table>
 <br>
-<%= link_to '<< Previous', { :page => @person_pages.current.previous }, :class =>'textbutton'  if @person_pages.current.previous %>
-<%= link_to 'Next >>', { :page => @person_pages.current.next }, :class =>'textbutton'  if @person_pages.current.next %> 
+<% params.delete('page') %>
+<%= link_to '<< Previous', { :page => @person_pages.current.previous, :params => @params }, :class =>'textbutton'  if @person_pages.current.previous %>
+<%= link_to 'Next >>', { :page => @person_pages.current.next, :params => @params }, :class =>'textbutton'  if @person_pages.current.next %> 

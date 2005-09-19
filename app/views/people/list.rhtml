@@ -2,6 +2,10 @@
 <% # Copyright 2005, Rackspace Managed Hosting -%>
 <div class="header">
 <%= link_to 'Home', '/', :class => 'textbutton'  %>
+<%= link_to 'This Shelter', 
+	     {:controller => 'people', 
+		  :action => 'list', :shelter_id => session[:shelter_id]}, 
+		  :class => 'textbutton'  %>
 <%= link_to 'Search for a Citizen', 
 	     {:controller => 'people', 
 		  :action => 'search'}, 

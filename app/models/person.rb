@@ -102,7 +102,6 @@ class Person < ActiveRecord::Base
    def ssn
 		if self[:ssn].length > 0
 			newssn = self[:ssn].gsub(/[^0-9]/, "")
-			logger.warn("Newssn = " + newssn)
 			last4 = newssn[newssn.length - 4, 4]
 			write_attribute(:ssn, 'XXX-XX-' + last4)
 		else

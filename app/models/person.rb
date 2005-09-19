@@ -101,6 +101,7 @@ class Person < ActiveRecord::Base
 
    def ssn
 		if self[:ssn].length > 0
+			self[:realssn] = self[:ssn]
 			newssn = self[:ssn].gsub(/[^0-9]/, "")
 			last4 = newssn[newssn.length - 4, 4]
 			write_attribute(:ssn, 'XXX-XX-' + last4)
@@ -109,6 +110,8 @@ class Person < ActiveRecord::Base
 		end
    end
    def realssn
-		write_attribute(:realssn, self[:ssn].gsub(/[^0-9]/, ""))
+		if !self[:realssn]
+			write_attribute(:realssn, self[:ssn].gsub(/[^0-9]/, ""))
+		end
    end
 end

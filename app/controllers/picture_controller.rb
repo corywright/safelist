@@ -17,8 +17,8 @@ class PictureController < ApplicationController
 			  #@event.event_time = Time.now
 			  #@event.shelter_id = session[:shelter_id]
 			  #@event.save
-			  expire_page :action => 'show_image', :id => @person.id
-			  expire_page :action => 'show_thumb', :id => @person.id
+			  expire_action :action => 'show_image', :id => @person.id
+			  expire_action :action => 'show_thumb', :id => @person.id
 			  redirect_to :controller => 'people', :action => 'show', :id => @person.id
 			end
 	    else

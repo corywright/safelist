@@ -210,6 +210,8 @@ class PeopleController < ApplicationController
   end
 
   def badge_queue
+    @total_count = Person.count_by_sql("select count(p.id) from people as p join pictures as pix " +
+                                " on (p.id=pix.person_id) where p.badge_status_id=1")
     @people = Person.find_by_sql("select p.id, p.tag_id, p.shelter_id, p.first_name, " +
                                  " p.last_name, p.family_id, pix.id as pic_id " +
                                  " from people as p  join pictures as pix on (p.id=pix.person_id) " +

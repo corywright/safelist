@@ -5,8 +5,7 @@
 <tr>
 	<th class="horizontal">#</th>
 	<th class="horizontal">Tag ID</th>
-	<th class="horizontal">First Name</th>
-	<th class="horizontal">Last Name</th>
+	<th class="horizontal">First/Last</th>
 	<th class="horizontal">DOB</th>
 	<th class="horizontal">SSN</th>
 	<th class="horizontal">Status</th>
@@ -19,8 +18,7 @@
   <tr class="<%=h row_style :people %>">
 	<th class="counter"> <%=h counter :people %></th>  	
 	<td> <%=h person.tag_id %> </td>
-	<td> <%=h person.first_name %> </td>
-	<td> <%=h person.last_name %> </td>
+	<td> <%=h person.first_name %> <%=h person.last_name %> </td>
 	<td> <%=h person.dob %> </td>
 	<td> <%=h person.ssn %> </td>
 	<td>

@@ -69,7 +69,14 @@ class FamiliesController < ApplicationController
   def createmember
     @family = Family.find(session[:lastfamily])
     @shelters = Shelter.find(:all)
-    @person = Person.new(params[:person])
+	@person = Person.new
+    begin
+      @person = @person.update_attributes(params[:person])
+    rescue ActiveRecord::MultiparameterAssignmentErrors
+      @person.errors.add("dob", "Invalid date format.")
+	  render_action 'newmember' and return false
+    end
+
     @person.family_id = @family.id
     if @person.save
 	  if params[:check_in]
@@ -77,7 +84,7 @@ class FamiliesController < ApplicationController
 	  end
       flash[:notice] = 'Citizen was successfully created.'
     else
-      flash[:error] = 'Could not save Citizen.'
+	  render_action 'newmember' and return
     end
     redirect_to :action => 'show', :id => @family.id
   end

@@ -13,7 +13,8 @@ class Person < ActiveRecord::Base
 	has_one :picture
     has_and_belongs_to_many :notes
 
-    validates_presence_of :first_name, :last_name
+    validates_presence_of :first_name, :last_name, :dob
+
 
     def name
       first_name + " " + last_name
@@ -116,4 +117,5 @@ class Person < ActiveRecord::Base
 		@p = Person.find(self.id)
 		write_attribute(:realssn, @p[:ssn].gsub(/[^0-9]/, ""))
    end
+
 end

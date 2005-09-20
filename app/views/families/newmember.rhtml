@@ -9,6 +9,14 @@
 </div>
 </div>
 <br>
+<% unless @person.errors.empty? %>
+  The family member couldn't be saved due to these errors:
+  <ul>
+  <% @person.errors.each_full do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
 <div class="note"><p>When entering a new person, if we find any matches in the
 database, we'll display them. Just click [Show] so what we have about them and 
 make any corrections.</p>

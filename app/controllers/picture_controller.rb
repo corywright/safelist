@@ -28,7 +28,7 @@ class PictureController < ApplicationController
 	end
 
 	def show_image
-		@picture = Picture.find_by_person_id(@params['id'])
+		@picture = Person.find(@params['id']).picture
 		send_data @picture.image, :filename => @picture.person_id, :type => "image/jpeg", :disposition => "inline"
 	end
 
@@ -47,7 +47,7 @@ class PictureController < ApplicationController
 	end
 
 	def show_thumb
-		@picture = Picture.find_by_person_id(@params['id'])
+		@picture = Person.find(@params['id']).picture
 		send_data @picture.thumbnail, :filename => @picture.id, :type => "image/jpeg", :disposition => "inline"
 	end
 

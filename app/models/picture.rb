@@ -1,7 +1,7 @@
 require 'RMagick'
 class Picture < ActiveRecord::Base
 
-	has_one	:person
+	belongs_to :person
 
 	def image
 		decoded = Base64.decode64(self[:image])

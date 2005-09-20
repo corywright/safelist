@@ -71,12 +71,11 @@ class FamiliesController < ApplicationController
     @shelters = Shelter.find(:all)
 	@person = Person.new
     begin
-      @person = @person.update_attributes(params[:person])
+      @person.update_attributes(params[:person])
     rescue ActiveRecord::MultiparameterAssignmentErrors
       @person.errors.add("dob", "Invalid date format.")
-	  render_action 'newmember' and return false
+	  render_action 'newmember' and return 
     end
-
     @person.family_id = @family.id
     if @person.save
 	  if params[:check_in]

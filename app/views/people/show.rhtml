@@ -49,25 +49,21 @@ end
 </div>
 
 <h2>Citizen Details - <%=h @person.first_name %> <%=h @person.last_name %></h2>
-<%= form_tag({:action=>'upload_receive', :controller => 'picture'}, :multipart => true)%>
-<input type="file" name="file" />
-<input type="hidden" name="id" value="<%= @person.id %>" />
-<%= submit_tag 'Upload Picture' %>
-<%= end_form_tag %> 
 <table>
 <tr>
 	<td>
 		<table>
 		<tr>
-			<th class="vertical"> Tag ID </th>
-			<td> <%=h @person.tag_id %></td>
-		</tr><tr>
 			<th class="vertical"> First Name </th>
 			<td> <%=h @person.first_name %></td>
 		</tr>
 		<tr>
 			<th class="vertical"> Last Name </th>
 			<td> <%=h @person.last_name %></td>
+		</tr>
+		<tr>
+			<th class="vertical"> Tag ID </th>
+			<td> <%=h @person.tag_id %></td>
 		</tr>
 		<tr>
 			<th class="vertical">Status</th>
@@ -77,6 +73,11 @@ end
 			<% else %>
 			<div class="errormsg">Off-Site</div>
 			<% end %>
+			</td>
+		</tr>
+		<tr>
+			<th class="vertical">Badge Status</th>
+			<td><%=h @person.badge_status.name %>
 			</td>
 		</tr>
 		<tr>
@@ -107,11 +108,6 @@ end
 		<tr>
 			<th class="vertical"> SSN </th>
 			<td> <%=h @person.ssn %></td>
-		</tr>
-		<tr>
-			<th class="vertical">Badge Status</th>
-			<td><%=h @person.badge_status.name %>
-			</td>
 		</tr>
 		<tr>
 			<th class="vertical"> Medical Problems </th>
@@ -159,8 +155,19 @@ end
 		</tr>
 		</table>
 	</td>
-	<td><% if @person.picture %>
-			<img src="/picture/show_image/<%= @person.id %>" alt="<%= @person.id %>" title="<%= @person.id %>">
+	<td>
+		<table>
+		<tr>
+			<th class="horizontal"> ID Badge Photo</th>
+			<td><img src="/picture/show_image/<%= @person.id %>" alt="<%= @person.id %>" title="<%= @person.id %>"></td>
+		</tr>
+		</table>
+		<%= form_tag({:action=>'upload_receive', :controller => 'picture'}, :multipart => true)%>
+		<input type="file" name="file" />
+		<input type="hidden" name="id" value="<%= @person.id %>" />
+		<%= submit_tag 'Upload Picture' %>
+		<%= end_form_tag %> 
+		<% if @person.picture %>
 		<% end %></td>
 </tr>
 <tr>

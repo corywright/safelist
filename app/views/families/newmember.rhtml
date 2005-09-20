@@ -9,6 +9,7 @@
 </div>
 </div>
 <br>
+<% if @person %>
 <% unless @person.errors.empty? %>
   The family member couldn't be saved due to these errors:
   <ul>
@@ -16,6 +17,7 @@
     <li><%= message %></li>
   <% end %>
   </ul>
+<% end %>
 <% end %>
 <div class="note"><p>When entering a new person, if we find any matches in the
 database, we'll display them. Just click [Show] so what we have about them and 

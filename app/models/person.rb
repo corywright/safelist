@@ -20,19 +20,6 @@ class Person < ActiveRecord::Base
       first_name + " " + last_name
     end
 
-	def first_name
-	  tmp = []
-	  self[:first_name].split.each { |b| tmp.push(b.downcase.capitalize) }
-	  name = tmp.join(' ')
-	  write_attribute('first_name', name)
-	end
-	def last_name
-	  tmp = []
-	  self[:last_name].split.each { |b| tmp.push(b.downcase.capitalize) }
-	  name = tmp.join(' ')
-	  write_attribute('last_name', name)
-	end
-	
     def last_check_in_event
       @event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_CHECKIN, :order => "event_time DESC")
       @temp_event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_TEMPRETURN, :order => "event_time DESC")

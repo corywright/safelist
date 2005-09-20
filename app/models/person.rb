@@ -32,30 +32,38 @@ class Person < ActiveRecord::Base
 	  write_attribute('last_name', name)
 	end
 	
-    def last_check_in
+    def last_check_in_event
       @event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_CHECKIN, :order => "event_time DESC")
-      write_attribute(:last_check_in, @event.event_time) if @event
+      @temp_event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_TEMPRETURN, :order => "event_time DESC")
+      if @event and @temp_event
+        (@event.event_time > @temp_event.event_time) ? @event : @temp_event
+      elsif @temp_event and @event.nil?
+        @temp_event
+      elsif @event and @temp_event.nil?
+        @event
+      end
     end
-    def last_check_out
+    def last_check_out_event
       @event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_CHECKOUT, :order => "event_time DESC")
-      write_attribute(:last_check_out, @event.event_time) if @event
+      @temp_event = Event.find_by_person_id_and_event_type_id(self.id, $CITIZEN_TEMPOUT, :order => "event_time DESC")
+      if @event and @temp_event
+        (@event.event_time > @temp_event.event_time) ? @event : @temp_event
+      elsif @temp_event and @event.nil?
+        @temp_event
+      elsif @event and @temp_event.nil?
+        @event
+      end
     end
     def last_event
-      @event = Event.find_by_person_id(self.id, :order => "event_time DESC");
-      return @event
+      Event.find_by_person_id(self.id, :order => "event_time DESC");
     end
     
     def checked_in
-     @event = self.last_event
-     if (@event)
-	if @event.event_type.id == 1 || @event.event_type.id == 6
-          write_attribute(:checked_in, true)
-	else
-	  write_attribute(:checked_in, false)
-	end
-     else
-	write_attribute(:checked_in, false)
-     end
+      if self.last_check_in_event and self.last_check_out_event
+        (self.last_check_in_event.event_time > self.last_check_out_event.event_time) ? true : false
+      else
+        (self.last_check_in_event) ? true : false
+      end
     end
     
     def age
@@ -69,35 +77,31 @@ class Person < ActiveRecord::Base
       end
       return self[:tag_id]
     end
-   def toggle_in_or_out(perm, shelter_id)
+
+  def toggle_in_or_out(perm, shelter_id)
     @person = Person.find(self.id)
     @event = Event.new
     @event.shelter_id = shelter_id
-    @event.event_type = EventType.find($CITIZEN_CHECKIN) # default is checkin when there's no previous record
-    # this is fucking ugly, but it's late, I'm tired.
-    if (@person.last_event)
-      if (@person.last_event.event_type == EventType.find($CITIZEN_TEMPOUT))
-        @event.event_type = EventType.find($CITIZEN_TEMPRETURN)
+
+    if @person.checked_in
+      if perm == 'true'
+        @event.event_type_id = $CITIZEN_CHECKOUT
+      else
+        @event.event_type_id = $CITIZEN_TEMPOUT
       end
-      if (@person.last_event.event_type == EventType.find($CITIZEN_CHECKIN) || @person.last_event.event_type == EventType.find($CITIZEN_TEMPRETURN))
-        if perm == 'true'
-          @event.event_type = EventType.find($CITIZEN_CHECKOUT)
-        else
-          @event.event_type = EventType.find($CITIZEN_TEMPOUT)
-        end
-      end
-#      if (@person.last_event.event_type == EventType.find(6))
-#        @event.event_type = EventType.find(5)
-#      end
-      if (@person.last_event.event_type == EventType.find($CITIZEN_CHECKOUT))
-        @event.event_type = EventType.find($CITIZEN_CHECKIN)
+    else
+      if @person.last_check_out_event and @person.last_check_out_event.event_type_id = $CITIZEN_TEMPOUT
+        @event.event_type_id = $CITIZEN_TEMPRETURN
+      else
+        @event.event_type_id = $CITIZEN_CHECKIN
       end
     end
+
     @event.person_id = @person.id
     @event.event_time = Time.now
     @event.save
     return @event
-   end
+  end
 
    def ssn
 		if self[:ssn].length > 0

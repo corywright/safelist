@@ -11,12 +11,12 @@ class PictureController < ApplicationController
 			@picture.image = @params[:file].read
 			@picture.person_id = @person.id
 			if @picture.save
-			  #@event = Event.new
-			  #@event.event_type = EventType.find($PICTURE_ADDED)
-			  #@event.person_id = @person.id
-			  #@event.event_time = Time.now
-			  #@event.shelter_id = session[:shelter_id]
-			  #@event.save
+			  @event = Event.new
+			  @event.event_type = EventType.find($PICTURE_ADDED)
+			  @event.person_id = @person.id
+			  @event.event_time = Time.now
+			  @event.shelter_id = session[:shelter_id]
+			  @event.save
 			  expire_action :action => 'show_image', :id => @person.id
 			  expire_action :action => 'show_thumb', :id => @person.id
 			  redirect_to :controller => 'people', :action => 'show', :id => @person.id

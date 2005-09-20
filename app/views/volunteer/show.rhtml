@@ -57,10 +57,10 @@
 	<th class="vertical">Status</th>
 	<td><% if @volunteer.checked_in %>
 			<div class="confirm"> 
-			<%=h distance_of_time_in_words_to_now(@volunteer.last_check_in)%>
+			<%=h distance_of_time_in_words_to_now(@volunteer.last_check_in_event.event_time)%>
 			</div>
 		<% else %>
-		 	<% if @volunteer.last_check_out != nil %>
+		 	<% if @volunteer.last_check_out_event %>
 				<div class="errormsg"> Off-Site </div>
 			<% else %>
 			Never Checked-in

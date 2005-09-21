@@ -140,6 +140,8 @@ class FamiliesController < ApplicationController
    	  end
 	  @postaddress.update_attributes(params[:postaddress])
 	  @postaddress.save
+	  @family.post_disaster_address_id = @postaddress.id
+	  @family.save
 	  @note = Note.new(params[:note])
 	  @note.subject = 'Check Out Notes'
 	  @note.families.push(@family)

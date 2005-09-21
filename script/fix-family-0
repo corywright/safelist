@@ -1,0 +1,36 @@
+#!/usr/bin/ruby1.8
+RAILS_ENV = 'production'
+require File.dirname(__FILE__) + '/../config/environment'
+
+if RAILS_ENV == 'production'
+	print "This is a production environment, are you sure you want to continue? "
+	answer = gets
+	if !answer[/y/i]
+		print "Aborting.\n"
+		exit
+	else
+		print 'Continuing...\n'
+	end
+end
+
+@people = Person.find_all_by_family_id(0)
+for @person in @people
+		@family = Family.new
+		@address = Address.new
+		if !@address.save
+				print "Could not save address for person #{@person.id}\n"
+				next
+		end
+		@family.pre_disaster_address_id = @address.id
+		if !@family.save
+				print "Could not save family for person #{@person.id}\n"
+				next
+		end
+		@person.family_id = @family.id
+		if !@person.save
+				print "Could not save person #{@person.id}\n"
+				next
+		end
+		print "Created a family #{@family.id} for person #{@person.id}\n"
+end
+

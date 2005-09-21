@@ -125,13 +125,35 @@ class FamiliesController < ApplicationController
   end
 
   def checkout
-    @people = Person.find_all_by_family_id(params[:id])
-    for @person in @people
-      if @person.checked_in
-        @person.toggle_in_or_out(params[:perm], session[:shelter_id])
+	if @params[:postaddress] # they've entered the address
+      @people = Person.find_all_by_family_id(params[:id])
+      for @person in @people
+        if @person.checked_in
+          @person.toggle_in_or_out(params[:perm], session[:shelter_id])
+        end
       end
-    end
-    redirect_to :action => 'show', :id => session[:lastfamily]
+	  @family = Family.find(params[:id])
+	  if @family.post_disaster_address
+	    @postaddress = @family.post_disaster_address
+	  else
+	    @postaddress = Address.new
+   	  end
+	  @postaddress.update_attributes(params[:postaddress])
+	  @postaddress.save
+	  @note = Note.new(params[:note])
+	  @note.subject = 'Check Out Notes'
+	  @note.families.push(@family)
+	  @note.save
+      redirect_to :action => 'show', :id => session[:lastfamily]
+	else # render to checkout template otherwise
+	  @family = Family.find(session[:lastfamily])
+      if @family.post_disaster_address
+        @postaddress = @family.post_disaster_address
+      else
+        @postaddress = Address.new
+      end
+	  @note = Note.new
+	end
   end
 
   def checkin

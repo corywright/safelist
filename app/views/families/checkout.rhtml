@@ -1,0 +1,23 @@
+<% # This file is part of the SafeList shelter management software. -%>
+<% # Copyright 2005, Rackspace Managed Hosting -%>
+
+<div class="header">
+<%= link_to 'Family List', {:action => 'list'}, :class => 'textbutton'  %>
+<%= link_to 'View Family', {:action => 'show', :id => @family}, :class => 'textbutton'  %>
+<div align="right" class="help">
+	<a href="http://www.sasafelist.org/kwiki/index.cgi?SafeList<%= controller.controller_name.capitalize %><%= controller.action_name.capitalize %>"
+	 class="textbuttonhelp" target="_help"> HELP </a></div>
+</div>
+</div>
+
+<h2>Family's Destination Address and Notes</h2>
+
+<%= start_form_tag :action => 'checkout', :id => @family %>
+<table>
+  <%= render_partial 'postaddressform' %>
+</table>
+<table>
+  <%= render_partial 'checkoutnotes' %>
+</table>
+  <%= submit_tag 'Save' %>
+<%= end_form_tag %>

@@ -216,6 +216,12 @@ class PeopleController < ApplicationController
 
   def checkinout
     @person = Person.find(params[:id])
+	if @person.checked_in and params[:perm]
+		# this is a permanent checkout, redirect to family
+        flash[:notice] = "Please checkout the family instead"
+		redirect_to :controller => 'families', :action => 'show', :id => @person.family_id
+		return
+	end
     @event = @person.toggle_in_or_out(params[:perm], session[:shelter_id])
     if @event
       flash[:notice] = "#{@event.event_type.name} successful"

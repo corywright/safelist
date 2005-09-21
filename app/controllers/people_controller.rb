@@ -218,7 +218,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
 	if @person.checked_in and params[:perm]
 		# this is a permanent checkout, redirect to family
-        flash[:notice] = "Please checkout the family instead"
+        flash[:error] = "Please checkout the family instead"
 		redirect_to :controller => 'families', :action => 'show', :id => @person.family_id
 		return
 	end
